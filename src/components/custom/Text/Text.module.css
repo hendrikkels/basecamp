@@ -1,0 +1,59 @@
+.base {
+  margin: 0;
+  font-family: var(--mono);
+}
+
+/* Size variants */
+.bodyLg {
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: 0.005em;
+}
+
+.body {
+  font-size: 13px;
+  line-height: 1.55;
+  letter-spacing: 0.005em;
+}
+
+.caption {
+  font-size: 12px;
+  line-height: 1.55;
+  letter-spacing: 0.005em;
+}
+
+.micro {
+  font-size: 10px;
+  line-height: 1.1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Color variants */
+.colorDefault { color: var(--text); }
+.colorMuted { color: var(--muted); }
+.colorDim { color: var(--dim); }
+.colorFaint { color: var(--faint); }
+.colorPrimary { color: var(--acc); }
+.colorSecondary { color: var(--acc-2); }
+.colorDanger { color: var(--danger); }
+.colorWarn { color: var(--warn); }
+.colorInfo { color: var(--info); }
+.colorSuccess { color: var(--success); }
+
+/* Weight variants */
+.weightLight { font-weight: 300; }
+.weightRegular { font-weight: 400; }
+.weightMedium { font-weight: 500; }
+.weightSemibold { font-weight: 600; }
+.weightBold { font-weight: 700; }
+
+/* Align */
+.alignLeft { text-align: left; }
+.alignCenter { text-align: center; }
+.alignRight { text-align: right; }
+
+/* Transform */
+.transformNone { text-transform: none; }
+.transformUppercase { text-transform: uppercase; letter-spacing: 0.12em; }

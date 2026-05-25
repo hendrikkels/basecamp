@@ -1,0 +1,11 @@
+.base {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--sp-6);
+  padding-right: var(--sp-6);
+}
+
+.narrow { max-width: var(--max-narrow); }
+.default { max-width: var(--max); }
+.full { max-width: 100%; }

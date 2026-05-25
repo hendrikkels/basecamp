@@ -1,0 +1,14 @@
+.wrapper {
+  background: var(--surface-1);
+  border-radius: var(--r-sm);
+  padding: 20px;
+  position: relative;
+}
+
+.title {
+  font-family: var(--display);
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin: 0 0 16px;
+}

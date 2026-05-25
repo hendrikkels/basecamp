@@ -1,0 +1,10 @@
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bordered {
+  padding-top: 6px;
+  border-top: 1px solid var(--hairline);
+}

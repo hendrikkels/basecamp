@@ -1,0 +1,56 @@
+.group {
+  display: flex;
+}
+
+.vertical { flex-direction: column; }
+.horizontal { flex-direction: row; flex-wrap: wrap; }
+
+.gap1 { gap: var(--sp-1); }
+.gap2 { gap: var(--sp-2); }
+.gap3 { gap: var(--sp-3); }
+.gap4 { gap: var(--sp-4); }
+.gap5 { gap: var(--sp-5); }
+.gap6 { gap: var(--sp-6); }
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+  color: var(--text);
+}
+
+.item.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.box {
+  width: 16px;
+  height: 16px;
+  background: var(--surface-3);
+  border-radius: var(--r-xs);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  transition: background var(--dur-fast);
+}
+
+.item:hover .box {
+  background: var(--surface-4);
+}
+
+.checked .box {
+  background: var(--acc);
+}
+
+.checkmark {
+  color: var(--acc-on);
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+  font-family: var(--mono);
+}

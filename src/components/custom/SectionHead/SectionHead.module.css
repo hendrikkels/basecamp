@@ -1,0 +1,32 @@
+.base {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 20px;
+}
+
+.base::before {
+  content: '';
+  height: 1px;
+  background: var(--rule);
+  flex: 0 0 32px;
+}
+
+.number {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.title {
+  color: var(--muted);
+  letter-spacing: 0.12em;
+}
+
+.accent {
+  color: var(--acc);
+}

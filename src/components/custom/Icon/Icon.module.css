@@ -1,0 +1,24 @@
+.icon {
+  font-family: var(--mono);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  user-select: none;
+  line-height: 1;
+}
+
+.sm { width: 12px; height: 12px; font-size: 10px; }
+.md { width: 16px; height: 16px; font-size: 13px; }
+.lg { width: 20px; height: 20px; font-size: 16px; }
+.xl { width: 24px; height: 24px; font-size: 20px; }
+
+.colorDefault { color: var(--dim); }
+.colorText { color: var(--text); }
+.colorPrimary { color: var(--acc); }
+.colorSecondary { color: var(--acc-2); }
+.colorMuted { color: var(--muted); }
+.colorDanger { color: var(--danger); }
+.colorSuccess { color: var(--success); }
+.colorWarn { color: var(--warn); }
+.colorInfo { color: var(--info); }

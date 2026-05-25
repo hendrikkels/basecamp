@@ -1,0 +1,31 @@
+.widget {
+  background: var(--surface-1);
+  border-radius: var(--r-sm);
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.frost {
+  background: color-mix(in oklab, var(--surface-2) 65%, transparent);
+  --tw-backdrop-blur: blur(14px);
+  --tw-backdrop-saturate: saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 12px;
+}
+
+.headerAccent {
+  color: var(--acc);
+}

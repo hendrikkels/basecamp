@@ -1,0 +1,181 @@
+/* =========================================================
+   DESIGN TOKENS
+   Dark (default) + Light mode via data-theme attribute
+   ========================================================= */
+
+:root {
+  /* DARK (default) ----------------------------------- */
+  --d-bg:        #0a0a0b;
+  --d-surface-0: #0e0e10;
+  --d-surface-1: #131316;
+  --d-surface-2: #1a1a1e;
+  --d-surface-3: #232328;
+  --d-surface-4: #2d2d33;
+  --d-hairline:  rgba(237,237,238,0.06);
+  --d-rule:      rgba(237,237,238,0.12);
+  --d-text:      #ededee;
+  --d-muted:     #9a9aa1;
+  --d-dim:       #6b6b72;
+  --d-faint:     #4a4a51;
+
+  --d-acc:        #6A76FB;
+  --d-acc-on:     #ffffff;
+  --d-acc-soft:   rgba(106,118,251,0.16);
+  --d-acc-2:      #C839C5;
+  --d-acc-2-on:   #ffffff;
+  --d-acc-2-soft: rgba(200,57,197,0.16);
+  --d-danger:     #FD6F6B;
+  --d-danger-on:  #ffffff;
+  --d-danger-soft: rgba(253,111,107,0.16);
+  --d-warn:       #fffa71;
+  --d-warn-on:    #2a2400;
+  --d-warn-soft:  rgba(255,250,113,0.16);
+  --d-info:       #20c5c6;
+  --d-info-on:    #051f1f;
+  --d-info-soft:  rgba(32,197,198,0.16);
+  --d-success:    #67f86f;
+  --d-success-on: #062a0a;
+  --d-success-soft: rgba(103,248,111,0.16);
+
+  /* LIGHT -------------------------------------------- */
+  --l-bg:        #fafafa;
+  --l-surface-0: #f4f4f5;
+  --l-surface-1: #eeeef0;
+  --l-surface-2: #e4e4e7;
+  --l-surface-3: #d4d4d8;
+  --l-surface-4: #c2c2c6;
+  --l-hairline:  rgba(10,10,11,0.06);
+  --l-rule:      rgba(10,10,11,0.14);
+  --l-text:      #0a0a0b;
+  --l-muted:     #4a4a51;
+  --l-dim:       #74747b;
+  --l-faint:     #a4a4ab;
+
+  --l-acc:        #6A76FB;
+  --l-acc-on:     #ffffff;
+  --l-acc-soft:   rgba(106,118,251,0.14);
+  --l-acc-2:      #C839C5;
+  --l-acc-2-on:   #ffffff;
+  --l-acc-2-soft: rgba(200,57,197,0.14);
+  --l-danger:     #FD6F6B;
+  --l-danger-on:  #ffffff;
+  --l-danger-soft: rgba(253,111,107,0.14);
+  --l-warn:       #d97706;
+  --l-warn-on:    #ffffff;
+  --l-warn-soft:  rgba(217,119,6,0.14);
+  --l-info:       #0e8a8b;
+  --l-info-on:    #ffffff;
+  --l-info-soft:  rgba(14,138,139,0.14);
+  --l-success:    #1d7a25;
+  --l-success-on: #ffffff;
+  --l-success-soft: rgba(29,122,37,0.14);
+
+  /* Typography --------------------------------------- */
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --display: 'Arial Black', 'Helvetica Neue Bold', 'Helvetica Bold', Helvetica, Arial, sans-serif;
+
+  /* Radii -------------------------------------------- */
+  --r-0: 0px;
+  --r-xs: 2px;
+  --r-sm: 3px;
+  --r-md: 4px;
+  --r-pill: 999px;
+
+  /* Spacing scale ------------------------------------ */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+
+  /* Layout ------------------------------------------- */
+  --max: 1320px;
+  --max-narrow: 920px;
+
+  /* Easing/durations --------------------------------- */
+  --ease-out: cubic-bezier(.22,.61,.36,1);
+  --ease-in-out: cubic-bezier(.65,0,.35,1);
+  --dur-fast: 120ms;
+  --dur-base: 180ms;
+  --dur-slow: 320ms;
+
+  /* Z layers ----------------------------------------- */
+  --z-grain: 200;
+  --z-overlay: 80;
+  --z-nav: 50;
+  --z-pop: 40;
+}
+
+/* Dark mode (default) */
+html[data-theme="dark"], html:not([data-theme]) {
+  --bg: var(--d-bg);
+  --surface-0: var(--d-surface-0);
+  --surface-1: var(--d-surface-1);
+  --surface-2: var(--d-surface-2);
+  --surface-3: var(--d-surface-3);
+  --surface-4: var(--d-surface-4);
+  --hairline:  var(--d-hairline);
+  --rule:      var(--d-rule);
+  --text:      var(--d-text);
+  --muted:     var(--d-muted);
+  --dim:       var(--d-dim);
+  --faint:     var(--d-faint);
+  --acc:        var(--d-acc);
+  --acc-on:     var(--d-acc-on);
+  --acc-soft:   var(--d-acc-soft);
+  --acc-2:      var(--d-acc-2);
+  --acc-2-on:   var(--d-acc-2-on);
+  --acc-2-soft: var(--d-acc-2-soft);
+  --danger:     var(--d-danger);
+  --danger-on:  var(--d-danger-on);
+  --danger-soft: var(--d-danger-soft);
+  --warn:       var(--d-warn);
+  --warn-on:    var(--d-warn-on);
+  --warn-soft:  var(--d-warn-soft);
+  --info:       var(--d-info);
+  --info-on:    var(--d-info-on);
+  --info-soft:  var(--d-info-soft);
+  --success:    var(--d-success);
+  --success-on: var(--d-success-on);
+  --success-soft: var(--d-success-soft);
+  color-scheme: dark;
+}
+
+/* Light mode */
+html[data-theme="light"] {
+  --bg: var(--l-bg);
+  --surface-0: var(--l-surface-0);
+  --surface-1: var(--l-surface-1);
+  --surface-2: var(--l-surface-2);
+  --surface-3: var(--l-surface-3);
+  --surface-4: var(--l-surface-4);
+  --hairline:  var(--l-hairline);
+  --rule:      var(--l-rule);
+  --text:      var(--l-text);
+  --muted:     var(--l-muted);
+  --dim:       var(--l-dim);
+  --faint:     var(--l-faint);
+  --acc:        var(--l-acc);
+  --acc-on:     var(--l-acc-on);
+  --acc-soft:   var(--l-acc-soft);
+  --acc-2:      var(--l-acc-2);
+  --acc-2-on:   var(--l-acc-2-on);
+  --acc-2-soft: var(--l-acc-2-soft);
+  --danger:     var(--l-danger);
+  --danger-on:  var(--l-danger-on);
+  --danger-soft: var(--l-danger-soft);
+  --warn:       var(--l-warn);
+  --warn-on:    var(--l-warn-on);
+  --warn-soft:  var(--l-warn-soft);
+  --info:       var(--l-info);
+  --info-on:    var(--l-info-on);
+  --info-soft:  var(--l-info-soft);
+  --success:    var(--l-success);
+  --success-on: var(--l-success-on);
+  --success-soft: var(--l-success-soft);
+  color-scheme: light;
+}

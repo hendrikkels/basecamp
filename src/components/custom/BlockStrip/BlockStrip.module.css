@@ -1,0 +1,16 @@
+.strip {
+  font-family: var(--mono);
+  font-size: 16px;
+  letter-spacing: -0.05em;
+  color: var(--acc);
+  user-select: none;
+  line-height: 1;
+}
+
+.empty {
+  color: var(--surface-3);
+}
+
+.dim {
+  color: var(--dim);
+}

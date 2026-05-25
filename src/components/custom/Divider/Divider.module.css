@@ -1,0 +1,20 @@
+.base {
+  border: 0;
+}
+
+/* Variants */
+.default {
+  height: 1px;
+  background: var(--rule);
+}
+
+.thick {
+  height: 8px;
+  background: var(--surface-3);
+  border-radius: var(--r-xs);
+}
+
+/* Spacing */
+.spacingSm { margin-top: var(--sp-3); margin-bottom: var(--sp-3); }
+.spacingMd { margin-top: var(--sp-6); margin-bottom: var(--sp-6); }
+.spacingLg { margin-top: var(--sp-8); margin-bottom: var(--sp-8); }

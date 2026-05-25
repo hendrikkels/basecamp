@@ -1,0 +1,77 @@
+.base {
+  display: flex;
+  gap: 14px;
+  background: var(--surface-1);
+  padding: 14px 16px;
+  border-radius: var(--r-sm);
+  position: relative;
+  align-items: flex-start;
+}
+
+.base::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: var(--r-xs) 0 0 var(--r-xs);
+}
+
+/* Severity bar colors */
+.default::before { background: var(--acc); }
+.info::before { background: var(--info); }
+.warn::before { background: var(--warn); }
+.danger::before { background: var(--danger); }
+.success::before { background: var(--success); }
+
+/* Icon colors */
+.icon {
+  font-family: var(--display);
+  font-size: 14px;
+  width: 18px;
+  flex-shrink: 0;
+  line-height: 1.3;
+}
+
+.default .icon { color: var(--acc); }
+.info .icon { color: var(--info); }
+.warn .icon { color: var(--warn); }
+.danger .icon { color: var(--danger); }
+.success .icon { color: var(--success); }
+
+.body {
+  flex: 1;
+}
+
+.title {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.message {
+  font-family: var(--mono);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.dismiss {
+  color: var(--dim);
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 13px;
+  padding: 0 0 0 12px;
+  background: none;
+  border: 0;
+  transition: color var(--dur-fast);
+}
+
+.dismiss:hover {
+  color: var(--text);
+}

@@ -1,0 +1,61 @@
+.container {
+  position: fixed;
+  z-index: var(--z-overlay);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 400px;
+  width: 100%;
+  pointer-events: none;
+}
+
+.topLeft {
+  top: 64px;
+  left: 16px;
+}
+
+.topRight {
+  top: 64px;
+  right: 16px;
+}
+
+.bottomLeft {
+  bottom: 16px;
+  left: 16px;
+}
+
+.bottomRight {
+  bottom: 16px;
+  right: 16px;
+}
+
+.item {
+  pointer-events: auto;
+  animation: slideIn var(--dur-base) var(--ease-out);
+}
+
+.itemExit {
+  animation: slideOut var(--dur-fast) var(--ease-out) forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}

@@ -1,0 +1,38 @@
+.empty {
+  text-align: center;
+  padding: 56px 24px;
+  background: var(--surface-1);
+  border-radius: var(--r-sm);
+}
+
+.glyph {
+  font-family: var(--mono);
+  font-size: 32px;
+  letter-spacing: -0.1em;
+  color: var(--dim);
+  margin-bottom: 16px;
+  user-select: none;
+}
+
+.title {
+  font-family: var(--display);
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+  color: var(--text);
+}
+
+.description {
+  font-family: var(--mono);
+  color: var(--muted);
+  font-size: 13px;
+  max-width: 42ch;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}

@@ -1,0 +1,103 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-nav);
+  background: color-mix(in oklab, var(--bg) 72%, transparent);
+  --tw-backdrop-blur: blur(16px);
+  --tw-backdrop-saturate: saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Brand */
+.brand {
+  font-family: var(--display);
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brandBlock {
+  width: 18px;
+  height: 18px;
+  background: var(--acc);
+  display: inline-block;
+  position: relative;
+}
+
+.brandBlock::after {
+  content: '';
+  position: absolute;
+  inset: 4px 0 0 4px;
+  background: var(--bg);
+}
+
+.brandMeta {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--dim);
+  text-transform: uppercase;
+  margin-left: 4px;
+}
+
+/* Links */
+.links {
+  display: flex;
+  gap: 2px;
+  margin-left: auto;
+}
+
+.link {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: var(--r-xs);
+  transition: background var(--dur-fast), color var(--dur-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.link:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.linkActive {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.linkIndex {
+  color: var(--dim);
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

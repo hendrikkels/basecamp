@@ -1,0 +1,46 @@
+.grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px 48px;
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.sectionLabel {
+  font-family: var(--display);
+  font-size: 14px;
+  letter-spacing: -0.005em;
+  color: var(--text);
+}
+
+.sectionNumber {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--dim);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.sectionDescription {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 6px;
+  letter-spacing: 0;
+  font-weight: normal;
+  line-height: 1.55;
+}
+
+.sectionBody {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

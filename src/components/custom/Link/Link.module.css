@@ -1,0 +1,20 @@
+.link {
+  color: var(--acc);
+  text-decoration: none;
+  font-family: var(--mono);
+  transition: color var(--dur-fast);
+  cursor: pointer;
+}
+
+.link:hover {
+  color: var(--text);
+}
+
+.unstyled {
+  color: inherit;
+  text-decoration: none;
+}
+
+.unstyled:hover {
+  color: inherit;
+}

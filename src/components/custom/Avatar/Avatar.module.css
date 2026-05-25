@@ -1,0 +1,39 @@
+.base {
+  border-radius: var(--r-xs);
+  background: var(--surface-3);
+  color: var(--text);
+  display: inline-grid;
+  place-items: center;
+  font-family: var(--mono);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Sizes */
+.sm { width: 24px; height: 24px; font-size: 9px; }
+.md { width: 32px; height: 32px; font-size: 11px; }
+.lg { width: 48px; height: 48px; font-size: 14px; }
+.xl { width: 64px; height: 64px; font-size: 18px; }
+
+/* Colors */
+.colorDefault { background: var(--surface-3); color: var(--text); }
+.colorPrimary { background: var(--acc); color: var(--acc-on); }
+.colorSecondary { background: var(--acc-2); color: var(--acc-2-on); }
+
+/* Round */
+.round { border-radius: 50%; }
+
+/* Presence dot */
+.presence {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  outline: 2px solid var(--bg);
+}

@@ -1,0 +1,57 @@
+.base {
+  margin: 0;
+  font-family: var(--display);
+  color: var(--text);
+}
+
+.displayXl {
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+
+.displayL {
+  font-size: 88px;
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+
+.displayM {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.025em;
+}
+
+.displayS {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.heading {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.subheading {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+/* Color variants — all reference global tokens */
+.colorDefault { color: var(--text); }
+.colorPrimary { color: var(--acc); }
+.colorSecondary { color: var(--acc-2); }
+.colorDanger { color: var(--danger); }
+.colorWarn { color: var(--warn); }
+.colorInfo { color: var(--info); }
+.colorSuccess { color: var(--success); }
+.colorMuted { color: var(--muted); }

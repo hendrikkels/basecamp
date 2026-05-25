@@ -1,0 +1,34 @@
+.base {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: var(--r-xs);
+  font-weight: 500;
+}
+
+/* Color variants */
+.default { background: var(--surface-2); color: var(--text); }
+.primary { background: var(--acc); color: var(--acc-on); }
+.primarySoft { background: var(--acc-soft); color: var(--acc); }
+.secondary { background: var(--acc-2); color: var(--acc-2-on); }
+.secondarySoft { background: var(--acc-2-soft); color: var(--acc-2); }
+.danger { background: var(--danger); color: var(--danger-on); }
+.dangerSoft { background: var(--danger-soft); color: var(--danger); }
+.warn { background: var(--warn-soft); color: var(--warn); }
+.info { background: var(--info-soft); color: var(--info); }
+.success { background: var(--success-soft); color: var(--success); }
+.outline { background: transparent; box-shadow: inset 0 0 0 1px var(--rule); color: var(--text); }
+
+/* Dot indicator */
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}

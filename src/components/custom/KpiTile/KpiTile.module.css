@@ -1,0 +1,68 @@
+.kpi {
+  background: var(--surface-1);
+  padding: 20px;
+  border-radius: var(--r-sm);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.kpi::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 3px;
+  background: var(--acc);
+}
+
+.label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.value {
+  font-family: var(--display);
+  font-size: 40px;
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+  color: var(--text);
+}
+
+.unit {
+  font-size: 18px;
+  color: var(--muted);
+  margin-left: 4px;
+}
+
+.delta {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.deltaUp {
+  color: var(--success);
+}
+
+.deltaDown {
+  color: var(--danger);
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+}

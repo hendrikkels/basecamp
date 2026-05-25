@@ -1,0 +1,22 @@
+import { createPrimitive } from "./utils/create-primitive";
+
+export const Strong = createPrimitive("strong", "Strong");
+export const Em = createPrimitive("em", "Em");
+export const Small = createPrimitive("small", "Small");
+export const B = createPrimitive("b", "B");
+export const I = createPrimitive("i", "I");
+export const U = createPrimitive("u", "U");
+export const S = createPrimitive("s", "S");
+export const Mark = createPrimitive("mark", "Mark");
+export const Sub = createPrimitive("sub", "Sub");
+export const Sup = createPrimitive("sup", "Sup");
+export const Abbr = createPrimitive("abbr", "Abbr");
+export const Code = createPrimitive("code", "Code");
+export const Kbd = createPrimitive("kbd", "Kbd");
+export const Pre = createPrimitive("pre", "Pre");
+export const Blockquote = createPrimitive("blockquote", "Blockquote");
+export const Cite = createPrimitive("cite", "Cite");
+export const Q = createPrimitive("q", "Q");
+export const Time = createPrimitive("time", "Time");
+export const Del = createPrimitive("del", "Del");
+export const Ins = createPrimitive("ins", "Ins");

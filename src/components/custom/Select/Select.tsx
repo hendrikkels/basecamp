@@ -1,0 +1,354 @@
+"use client";
+
+import React, { createContext, useContext, useState, useCallback, useRef, useEffect } from "react";
+import styles from "./Select.module.css";
+
+/* ===================================================================
+   SINGLE SELECT
+   =================================================================== */
+
+interface SelectContextValue {
+  value: string;
+  select: (value: string, label: string, icon?: React.ReactNode) => void;
+  syncLabel: (label: string, icon?: React.ReactNode) => void;
+}
+
+const SelectContext = createContext<SelectContextValue | null>(null);
+
+export interface SelectProps {
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+  disabled?: boolean;
+  error?: boolean;
+  children: React.ReactNode;
+  className?: string;
+}
+
+function SelectRoot({
+  value,
+  onChange,
+  placeholder = "Select...",
+  disabled = false,
+  error = false,
+  children,
+  className,
+}: SelectProps) {
+  const [open, setOpen] = useState(false);
+  const [displayLabel, setDisplayLabel] = useState("");
+  const [displayIcon, setDisplayIcon] = useState<React.ReactNode | null>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  const syncLabel = useCallback(
+    (label: string, icon?: React.ReactNode) => {
+      setDisplayLabel(label);
+      setDisplayIcon(icon ?? null);
+    },
+    []
+  );
+
+  const select = useCallback(
+    (val: string, label: string, icon?: React.ReactNode) => {
+      onChange(val);
+      setDisplayLabel(label);
+      setDisplayIcon(icon ?? null);
+      setOpen(false);
+    },
+    [onChange]
+  );
+
+  useEffect(() => {
+    if (!open) return;
+    function onMouseDown(e: MouseEvent) {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("mousedown", onMouseDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", onMouseDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
+  const triggerClasses = [
+    styles.trigger,
+    open ? styles.triggerOpen : undefined,
+    error ? styles.triggerError : undefined,
+    disabled ? styles.triggerDisabled : undefined,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  return (
+    <SelectContext.Provider value={{ value, select, syncLabel }}>
+      <div ref={wrapperRef} className={[styles.wrapper, className].filter(Boolean).join(" ")}>
+        <button
+          type="button"
+          className={triggerClasses}
+          onClick={() => { if (!disabled) setOpen((p) => !p); }}
+          aria-expanded={open}
+          aria-haspopup="listbox"
+        >
+          {displayIcon && <span className={styles.selectedIcon}>{displayIcon}</span>}
+          {value ? (
+            <span>{displayLabel || value}</span>
+          ) : (
+            <span className={styles.placeholder}>{placeholder}</span>
+          )}
+          <span className={styles.chevron} />
+        </button>
+        {open && (
+          <div className={styles.dropdown} role="listbox">
+            {children}
+          </div>
+        )}
+      </div>
+    </SelectContext.Provider>
+  );
+}
+
+SelectRoot.displayName = "Select";
+
+/* ----- Select.Option ----- */
+export interface SelectOptionProps {
+  value: string;
+  icon?: React.ReactNode;
+  disabled?: boolean;
+  children: React.ReactNode;
+  className?: string;
+}
+
+function SelectOption({ value, icon, disabled = false, children, className }: SelectOptionProps) {
+  const ctx = useContext(SelectContext);
+  if (!ctx) throw new Error("Select.Option must be used within Select");
+
+  const isSelected = ctx.value === value;
+  const label = typeof children === "string" ? children : String(children);
+
+  useEffect(() => {
+    if (isSelected) {
+      ctx.syncLabel(label, icon);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const classes = [
+    styles.option,
+    isSelected ? styles.optionSelected : undefined,
+    disabled ? styles.optionDisabled : undefined,
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  return (
+    <div
+      className={classes}
+      onClick={() => {
+        if (!disabled) ctx.select(value, label, icon);
+      }}
+      role="option"
+      aria-selected={isSelected}
+      aria-disabled={disabled}
+    >
+      {icon && <span className={styles.optionIcon}>{icon}</span>}
+      {children}
+    </div>
+  );
+}
+
+SelectOption.displayName = "Select.Option";
+
+/* ----- Select.Group ----- */
+export interface SelectGroupProps {
+  label: string;
+  children: React.ReactNode;
+  className?: string;
+}
+
+function SelectGroup({ label, children, className }: SelectGroupProps) {
+  return (
+    <div className={className}>
+      <div className={styles.groupSeparator} />
+      <div className={styles.groupLabel}>{label}</div>
+      {children}
+    </div>
+  );
+}
+
+SelectGroup.displayName = "Select.Group";
+
+/* ----- Compose ----- */
+export const Select = Object.assign(SelectRoot, {
+  Option: SelectOption,
+  Group: SelectGroup,
+});
+
+/* ===================================================================
+   MULTI SELECT
+   =================================================================== */
+
+interface MultiSelectContextValue {
+  value: string[];
+  toggle: (val: string, label: string) => void;
+}
+
+const MultiSelectContext = createContext<MultiSelectContextValue | null>(null);
+
+export interface MultiSelectProps {
+  value: string[];
+  onChange: (value: string[]) => void;
+  placeholder?: string;
+  disabled?: boolean;
+  error?: boolean;
+  children: React.ReactNode;
+  className?: string;
+}
+
+function MultiSelectRoot({
+  value,
+  onChange,
+  placeholder = "Select...",
+  disabled = false,
+  error = false,
+  children,
+  className,
+}: MultiSelectProps) {
+  const [open, setOpen] = useState(false);
+  const [labels, setLabels] = useState<Map<string, string>>(new Map());
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  const toggle = useCallback(
+    (val: string, label: string) => {
+      const next = value.includes(val)
+        ? value.filter((v) => v !== val)
+        : [...value, val];
+      onChange(next);
+      setLabels((prev) => {
+        const updated = new Map(prev);
+        updated.set(val, label);
+        return updated;
+      });
+    },
+    [value, onChange]
+  );
+
+  useEffect(() => {
+    if (!open) return;
+    function onMouseDown(e: MouseEvent) {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("mousedown", onMouseDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", onMouseDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
+  const displayValue = (() => {
+    if (value.length === 0) return null;
+    if (value.length <= 2) {
+      return value.map((v) => labels.get(v) || v).join(", ");
+    }
+    return `${value.length} selected`;
+  })();
+
+  const triggerClasses = [
+    styles.trigger,
+    open ? styles.triggerOpen : undefined,
+    error ? styles.triggerError : undefined,
+    disabled ? styles.triggerDisabled : undefined,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  return (
+    <MultiSelectContext.Provider value={{ value, toggle }}>
+      <div ref={wrapperRef} className={[styles.wrapper, className].filter(Boolean).join(" ")}>
+        <button
+          type="button"
+          className={triggerClasses}
+          onMouseDown={(e) => {
+            e.preventDefault();
+            if (!disabled) setOpen((p) => !p);
+          }}
+          aria-expanded={open}
+          aria-haspopup="listbox"
+        >
+          {displayValue ? (
+            <span>{displayValue}</span>
+          ) : (
+            <span className={styles.placeholder}>{placeholder}</span>
+          )}
+          <span className={styles.chevron} />
+        </button>
+        {open && (
+          <div className={styles.dropdown} role="listbox" aria-multiselectable>
+            {children}
+          </div>
+        )}
+      </div>
+    </MultiSelectContext.Provider>
+  );
+}
+
+MultiSelectRoot.displayName = "MultiSelect";
+
+/* ----- MultiSelect.Option ----- */
+export interface MultiSelectOptionProps {
+  value: string;
+  disabled?: boolean;
+  children: React.ReactNode;
+  className?: string;
+}
+
+function MultiSelectOption({ value, disabled = false, children, className }: MultiSelectOptionProps) {
+  const ctx = useContext(MultiSelectContext);
+  if (!ctx) throw new Error("MultiSelect.Option must be used within MultiSelect");
+
+  const isSelected = ctx.value.includes(value);
+  const label = typeof children === "string" ? children : String(children);
+
+  const classes = [
+    styles.option,
+    isSelected ? styles.optionSelected : undefined,
+    disabled ? styles.optionDisabled : undefined,
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  return (
+    <div
+      className={classes}
+      onClick={() => { if (!disabled) ctx.toggle(value, label); }}
+      role="option"
+      aria-selected={isSelected}
+      aria-disabled={disabled}
+    >
+      <span className={`${styles.checkbox} ${isSelected ? styles.checkboxChecked : ""}`}>
+        {isSelected && <span className={styles.checkmark}>✓</span>}
+      </span>
+      {children}
+    </div>
+  );
+}
+
+MultiSelectOption.displayName = "MultiSelect.Option";
+
+/* ----- Compose ----- */
+export const MultiSelect = Object.assign(MultiSelectRoot, {
+  Option: MultiSelectOption,
+  Group: SelectGroup,
+});

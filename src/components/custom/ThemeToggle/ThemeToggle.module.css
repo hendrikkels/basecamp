@@ -1,0 +1,32 @@
+.toggle {
+  background: var(--surface-2);
+  color: var(--text);
+  border: 0;
+  padding: 6px 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--r-xs);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background var(--dur-fast);
+}
+
+.toggle:hover {
+  background: var(--surface-3);
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  background: var(--text);
+  display: inline-block;
+}
+
+:global(html[data-theme="light"]) .indicator {
+  background: var(--bg);
+  outline: 1px solid var(--text);
+}

@@ -1,0 +1,54 @@
+.base {
+  position: relative;
+}
+
+/* Variant: default */
+.default {
+  background: var(--surface-1);
+  border-radius: var(--r-sm);
+}
+
+/* Variant: frost (frosted glass) */
+.frost {
+  background: color-mix(in oklab, var(--surface-2) 65%, transparent);
+  --tw-backdrop-blur: blur(14px);
+  --tw-backdrop-saturate: saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+}
+
+.frost::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent 50%);
+}
+
+:global(html[data-theme="light"]) .frost::after {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.45), transparent 50%);
+}
+
+/* Variant: block (accent bar) */
+.block {
+  background: var(--surface-1);
+  border-radius: var(--r-xs);
+}
+
+.block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 4px;
+  background: var(--acc);
+}
+
+/* Padding sizes */
+.padNone { padding: 0; }
+.padSm { padding: var(--sp-3); }
+.padMd { padding: var(--sp-5); }
+.padLg { padding: var(--sp-7); }

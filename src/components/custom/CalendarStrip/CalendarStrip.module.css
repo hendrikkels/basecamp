@@ -1,0 +1,42 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.day {
+  padding: 8px 4px;
+  background: var(--surface-2);
+  border-radius: var(--r-xs);
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.today {
+  background: var(--acc);
+  color: var(--acc-on);
+}
+
+.dayNumber {
+  font-family: var(--display);
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--acc);
+  margin: 2px 1px 0;
+}
+
+.today .dot {
+  background: var(--acc-on);
+}
