@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useCallback, useRef } from "react";
+import { Box } from "@/components/primitives";
 import { Alert } from "../Alert";
 import type { AlertSeverity } from "../Alert";
 import styles from "./AlertProvider.module.css";
@@ -90,9 +91,9 @@ export function AlertProvider({ position = "bottom-right", children }: AlertProv
   return (
     <AlertContext.Provider value={{ show }}>
       {children}
-      <div className={`${styles.container} ${positionClasses[position]}`}>
+      <Box className={`${styles.container} ${positionClasses[position]}`}>
         {alerts.map((alert) => (
-          <div
+          <Box
             key={alert.id}
             className={`${styles.item} ${alert.exiting ? styles.itemExit : ""}`}
           >
@@ -104,9 +105,9 @@ export function AlertProvider({ position = "bottom-right", children }: AlertProv
             >
               {alert.message}
             </Alert>
-          </div>
+          </Box>
         ))}
-      </div>
+      </Box>
     </AlertContext.Provider>
   );
 }

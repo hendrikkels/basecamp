@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Box, Span } from "@/components/primitives";
 import styles from "./StatRow.module.css";
 
 export interface StatRowProps {
@@ -28,14 +29,14 @@ export const StatRow = React.forwardRef<HTMLDivElement, StatRowProps>(
       .join(" ");
 
     return (
-      <div ref={ref} className={classes}>
-        <span style={{ fontFamily: "var(--mono)", fontSize: "10px", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--dim)" }}>
+      <Box ref={ref} className={classes}>
+        <Span style={{ fontFamily: "var(--mono)", fontSize: "10px", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--dim)" }}>
           {label}
-        </span>
-        <span style={{ fontFamily: "var(--mono)", fontSize: "12px", fontWeight: 500, color: colorMap[color] }}>
+        </Span>
+        <Span style={{ fontFamily: "var(--mono)", fontSize: "12px", fontWeight: 500, color: colorMap[color] }}>
           {value}
-        </span>
-      </div>
+        </Span>
+      </Box>
     );
   }
 );

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useCallback, useEffect, useState } from "react";
+import { Button, Span } from "@/components/primitives";
 import styles from "./ThemeToggle.module.css";
 
 export interface ThemeToggleProps {
@@ -26,10 +27,10 @@ export const ThemeToggle = React.forwardRef<HTMLButtonElement, ThemeToggleProps>
     const classes = [styles.toggle, className].filter(Boolean).join(" ");
 
     return (
-      <button ref={ref} className={classes} onClick={toggle} type="button" aria-label="Toggle theme">
-        <span className={styles.indicator} />
+      <Button ref={ref} className={classes} onClick={toggle} type="button" aria-label="Toggle theme">
+        <Span className={styles.indicator} />
         {theme === "dark" ? "Dark" : "Light"}
-      </button>
+      </Button>
     );
   }
 );

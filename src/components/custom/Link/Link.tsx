@@ -2,11 +2,13 @@
 
 import React from "react";
 import NextLink from "next/link";
+import { Anchor } from "@/components/primitives";
+import type { PrimitiveProps } from "@/components/primitives";
 import styles from "./Link.module.css";
 
 export type LinkVariant = "default" | "unstyled";
 
-export interface LinkProps extends Omit<React.ComponentPropsWithRef<"a">, "href"> {
+export interface LinkProps extends Omit<PrimitiveProps<"a">, "href"> {
   href: string;
   variant?: LinkVariant;
   external?: boolean;
@@ -23,9 +25,9 @@ export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
 
     if (external) {
       return (
-        <a ref={ref} href={href} className={classes} target="_blank" rel="noopener noreferrer" {...props}>
+        <Anchor ref={ref} href={href} className={classes} target="_blank" rel="noopener noreferrer" {...props}>
           {children}
-        </a>
+        </Anchor>
       );
     }
 

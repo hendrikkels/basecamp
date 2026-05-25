@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Aside, Box, Span, Anchor } from "@/components/primitives";
 import styles from "./Sidebar.module.css";
 
 /* ----- Sidebar (root) ----- */
@@ -11,7 +12,7 @@ export interface SidebarProps {
 
 function SidebarRoot({ children, className }: SidebarProps) {
   const classes = [styles.sidebar, className].filter(Boolean).join(" ");
-  return <aside className={classes}>{children}</aside>;
+  return <Aside className={classes}>{children}</Aside>;
 }
 SidebarRoot.displayName = "Sidebar";
 
@@ -26,15 +27,15 @@ export interface SidebarGroupProps {
 function SidebarGroup({ label, action, children, className }: SidebarGroupProps) {
   const classes = [styles.group, className].filter(Boolean).join(" ");
   return (
-    <div className={classes}>
+    <Box className={classes}>
       {label && (
-        <div className={styles.groupLabel}>
+        <Box className={styles.groupLabel}>
           {label}
           {action}
-        </div>
+        </Box>
       )}
       {children}
-    </div>
+    </Box>
   );
 }
 SidebarGroup.displayName = "Sidebar.Group";
@@ -61,20 +62,20 @@ function SidebarItem({ href, active = false, icon, badge, onClick, children, cla
 
   const content = (
     <>
-      {icon && <span className={styles.itemIcon}>{icon}</span>}
+      {icon && <Span className={styles.itemIcon}>{icon}</Span>}
       {children}
-      {badge && <span className={styles.itemBadge}>{badge}</span>}
+      {badge && <Span className={styles.itemBadge}>{badge}</Span>}
     </>
   );
 
   if (href) {
-    return <a href={href} className={classes}>{content}</a>;
+    return <Anchor href={href} className={classes}>{content}</Anchor>;
   }
 
   return (
-    <div className={classes} onClick={onClick} role="button" tabIndex={0}>
+    <Box className={classes} onClick={onClick} role="button" tabIndex={0}>
       {content}
-    </div>
+    </Box>
   );
 }
 SidebarItem.displayName = "Sidebar.Item";
@@ -87,7 +88,7 @@ export interface SidebarFooterProps {
 
 function SidebarFooter({ children, className }: SidebarFooterProps) {
   const classes = [styles.footer, className].filter(Boolean).join(" ");
-  return <div className={classes}>{children}</div>;
+  return <Box className={classes}>{children}</Box>;
 }
 SidebarFooter.displayName = "Sidebar.Footer";
 

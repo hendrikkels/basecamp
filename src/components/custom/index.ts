@@ -129,3 +129,6 @@ export type { HabitGridProps, HabitCellState } from "./HabitGrid";
 
 export { Ticker } from "./Ticker";
 export type { TickerProps, TickerItem } from "./Ticker";
+
+export { MenuToggle } from "./MenuToggle";
+export type { MenuToggleProps } from "./MenuToggle";

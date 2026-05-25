@@ -1,0 +1,11 @@
+.dashGrid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .dashGrid {
+    grid-template-columns: 1fr;
+  }
+}

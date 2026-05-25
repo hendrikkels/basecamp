@@ -108,6 +108,12 @@
   --z-overlay: 80;
   --z-nav: 50;
   --z-pop: 40;
+
+  /* Breakpoints --------------------------------------- */
+  --bp-sm: 540px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
 }
 
 /* Dark mode (default) */

@@ -1,0 +1,50 @@
+.base {
+  display: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  transition: background var(--dur-fast);
+  padding: 0;
+}
+
+/* Inline navbar toggle */
+.default {
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-xs);
+  margin-left: auto;
+}
+
+.default:hover {
+  background: var(--surface-3);
+}
+
+/* Floating action button */
+.fab {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  height: 36px;
+  padding: 0 12px;
+  gap: 6px;
+  background: var(--acc);
+  color: var(--acc-on);
+  border-radius: var(--r-xs);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  z-index: 58;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+  .base {
+    display: flex;
+  }
+}

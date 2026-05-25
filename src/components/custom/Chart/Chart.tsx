@@ -15,6 +15,7 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
+import { Box, H3 } from "@/components/primitives";
 import styles from "./Chart.module.css";
 
 export type ChartVariant = "line" | "bar" | "area";
@@ -180,12 +181,12 @@ export function Chart({
   };
 
   return (
-    <div className={classes}>
-      {title && <h3 className={styles.title}>{title}</h3>}
+    <Box className={classes}>
+      {title && <H3 className={styles.title}>{title}</H3>}
       <ResponsiveContainer width="100%" height={height}>
         {renderChart()}
       </ResponsiveContainer>
-    </div>
+    </Box>
   );
 }
 

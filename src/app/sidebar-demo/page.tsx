@@ -20,13 +20,16 @@ import {
   EmptyState,
   Divider,
   Progress,
+  MenuToggle,
 } from "@/components/custom";
 import { Box } from "@/components/primitives";
+import sidebarStyles from "./sidebar-demo.module.css";
 
 type Page = "dashboard" | "projects" | "analytics" | "reports" | "design-system" | "api" | "docs" | "preferences" | "team";
 
 export default function SidebarDemo() {
   const [activePage, setActivePage] = useState<Page>("dashboard");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <Box _display="flex" _flexDirection="column" _height="100vh" _overflow="hidden">
@@ -44,7 +47,8 @@ export default function SidebarDemo() {
       </Navbar>
 
       <Box _display="flex" _flex="1" _minHeight="0">
-        <Box _width="240px" _flexShrink="0">
+        {sidebarOpen && <Box className={sidebarStyles.sidebarOverlay} onClick={() => setSidebarOpen(false)} />}
+        <Box className={`${sidebarStyles.sidebar} ${sidebarOpen ? sidebarStyles.sidebarOpen : ""}`}>
           <Sidebar>
             <Sidebar.Group label="Navigation">
               <Sidebar.Item icon={<Icon name="diamondFill" />} active={activePage === "dashboard"} onClick={() => setActivePage("dashboard")}>
@@ -105,6 +109,7 @@ export default function SidebarDemo() {
         <Box _flex="1" _overflow="auto" _padding="32px">
           <PageContent page={activePage} />
         </Box>
+        <MenuToggle variant="fab" onClick={() => setSidebarOpen(true)} aria-label="Open sidebar" />
       </Box>
     </Box>
   );

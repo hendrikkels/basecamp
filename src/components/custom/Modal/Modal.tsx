@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useCallback } from "react";
+import { Box, H2 } from "@/components/primitives";
 import styles from "./Modal.module.css";
 
 export interface ModalProps {
@@ -34,11 +35,11 @@ function ModalRoot({ open, onClose, children, className }: ModalProps) {
   const shellClasses = [styles.shell, className].filter(Boolean).join(" ");
 
   return (
-    <div className={styles.overlay} onClick={onClose} role="dialog" aria-modal="true">
-      <div className={shellClasses} onClick={(e) => e.stopPropagation()}>
+    <Box className={styles.overlay} onClick={onClose} role="dialog" aria-modal="true">
+      <Box className={shellClasses} onClick={(e) => e.stopPropagation()}>
         {children}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 }
 
@@ -49,7 +50,7 @@ export interface ModalTitleProps {
 }
 
 function ModalTitle({ children }: ModalTitleProps) {
-  return <h2 className={styles.title}>{children}</h2>;
+  return <H2 className={styles.title}>{children}</H2>;
 }
 ModalTitle.displayName = "Modal.Title";
 
@@ -58,7 +59,7 @@ export interface ModalDescriptionProps {
 }
 
 function ModalDescription({ children }: ModalDescriptionProps) {
-  return <p className={styles.description}>{children}</p>;
+  return <Box className={styles.description}>{children}</Box>;
 }
 ModalDescription.displayName = "Modal.Description";
 
@@ -67,7 +68,7 @@ export interface ModalActionsProps {
 }
 
 function ModalActions({ children }: ModalActionsProps) {
-  return <div className={styles.actions}>{children}</div>;
+  return <Box className={styles.actions}>{children}</Box>;
 }
 ModalActions.displayName = "Modal.Actions";
 

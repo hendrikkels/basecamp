@@ -24,6 +24,7 @@ import {
   Icon,
 } from "@/components/custom";
 import { Box } from "@/components/primitives";
+import dashStyles from "./dashboard.module.css";
 
 const visitData = [
   { name: "May 1", visits: 1420, unique: 980 },
@@ -100,7 +101,7 @@ export default function Dashboard() {
           <Divider spacing="lg" />
 
           {/* Main grid: chart + side widgets */}
-          <Box _display="grid" _gridTemplateColumns="1fr 320px" _gap="24px">
+          <Box className={dashStyles.dashGrid}>
             {/* Left column */}
             <Stack gap="6">
               {/* Featured chart */}

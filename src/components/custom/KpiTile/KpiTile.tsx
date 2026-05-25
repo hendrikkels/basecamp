@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Box, Span } from "@/components/primitives";
 import styles from "./KpiTile.module.css";
 
 export interface KpiTileProps {
@@ -23,20 +24,20 @@ export const KpiTile = React.forwardRef<HTMLDivElement, KpiTileProps>(
     ].join(" ");
 
     return (
-      <div ref={ref} className={classes}>
-        <span className={styles.label}>{label}</span>
-        <span className={styles.value}>
+      <Box ref={ref} className={classes}>
+        <Span className={styles.label}>{label}</Span>
+        <Span className={styles.value}>
           {value}
-          {unit && <span className={styles.unit}>{unit}</span>}
-        </span>
+          {unit && <Span className={styles.unit}>{unit}</Span>}
+        </Span>
         {delta && (
-          <span className={deltaClasses}>
+          <Span className={deltaClasses}>
             {deltaDirection === "up" ? "▲" : "▼"} {delta}
-          </span>
+          </Span>
         )}
         {children}
-        {meta && <div className={styles.meta}>{meta}</div>}
-      </div>
+        {meta && <Box className={styles.meta}>{meta}</Box>}
+      </Box>
     );
   }
 );

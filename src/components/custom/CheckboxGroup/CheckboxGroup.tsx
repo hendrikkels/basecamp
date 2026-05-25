@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useCallback } from "react";
+import { Box, Span } from "@/components/primitives";
 import styles from "./CheckboxGroup.module.css";
 
 /* ----- Context ----- */
@@ -58,9 +59,9 @@ function CheckboxGroupRoot({
 
   return (
     <CheckboxGroupContext.Provider value={{ value, onChange, disabled, name }}>
-      <div className={classes} role="group">
+      <Box className={classes} role="group">
         {children}
-      </div>
+      </Box>
     </CheckboxGroupContext.Provider>
   );
 }
@@ -100,7 +101,7 @@ function CheckboxGroupItem({ value, disabled: itemDisabled, children, className 
     .join(" ");
 
   return (
-    <div
+    <Box
       className={classes}
       onClick={handleClick}
       role="checkbox"
@@ -111,11 +112,11 @@ function CheckboxGroupItem({ value, disabled: itemDisabled, children, className 
         if (e.key === " " || e.key === "Enter") { e.preventDefault(); handleClick(); }
       }}
     >
-      <span className={styles.box}>
-        {isChecked && <span className={styles.checkmark}>✓</span>}
-      </span>
+      <Span className={styles.box}>
+        {isChecked && <Span className={styles.checkmark}>✓</Span>}
+      </Span>
       {children}
-    </div>
+    </Box>
   );
 }
 

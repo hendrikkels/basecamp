@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import { Box, Span, Label, Input, Textarea } from "@/components/primitives";
+import type { PrimitiveProps } from "@/components/primitives";
 import styles from "./Field.module.css";
 
 /* ----- Field (wrapper) ----- */
@@ -11,13 +13,13 @@ export interface FieldProps {
 
 function FieldRoot({ children, className }: FieldProps) {
   const classes = [styles.field, className].filter(Boolean).join(" ");
-  return <div className={classes}>{children}</div>;
+  return <Box className={classes}>{children}</Box>;
 }
 
 FieldRoot.displayName = "Field";
 
 /* ----- Field.Label ----- */
-export interface FieldLabelProps extends React.ComponentPropsWithRef<"label"> {
+export interface FieldLabelProps extends PrimitiveProps<"label"> {
   required?: boolean;
 }
 
@@ -25,10 +27,10 @@ const FieldLabel = React.forwardRef<HTMLLabelElement, FieldLabelProps>(
   function FieldLabel({ required, children, className, ...props }, ref) {
     const classes = [styles.label, className].filter(Boolean).join(" ");
     return (
-      <label ref={ref} className={classes} {...props}>
+      <Label ref={ref} className={classes} {...props}>
         {children}
-        {required && <span className={styles.required}>*</span>}
-      </label>
+        {required && <Span className={styles.required}>*</Span>}
+      </Label>
     );
   }
 );
@@ -36,7 +38,7 @@ const FieldLabel = React.forwardRef<HTMLLabelElement, FieldLabelProps>(
 FieldLabel.displayName = "Field.Label";
 
 /* ----- Field.Input ----- */
-export interface FieldInputProps extends React.ComponentPropsWithRef<"input"> {
+export interface FieldInputProps extends PrimitiveProps<"input"> {
   error?: boolean;
 }
 
@@ -45,14 +47,14 @@ const FieldInput = React.forwardRef<HTMLInputElement, FieldInputProps>(
     const classes = [styles.input, error ? styles.inputError : undefined, className]
       .filter(Boolean)
       .join(" ");
-    return <input ref={ref} className={classes} {...props} />;
+    return <Input ref={ref} className={classes} {...props} />;
   }
 );
 
 FieldInput.displayName = "Field.Input";
 
 /* ----- Field.Textarea ----- */
-export interface FieldTextareaProps extends React.ComponentPropsWithRef<"textarea"> {
+export interface FieldTextareaProps extends PrimitiveProps<"textarea"> {
   error?: boolean;
 }
 
@@ -61,7 +63,7 @@ const FieldTextarea = React.forwardRef<HTMLTextAreaElement, FieldTextareaProps>(
     const classes = [styles.textarea, error ? styles.textareaError : undefined, className]
       .filter(Boolean)
       .join(" ");
-    return <textarea ref={ref} className={classes} {...props} />;
+    return <Textarea ref={ref} className={classes} {...props} />;
   }
 );
 
@@ -75,7 +77,7 @@ export interface FieldHintProps {
 
 function FieldHint({ children, className }: FieldHintProps) {
   const classes = [styles.hint, className].filter(Boolean).join(" ");
-  return <p className={classes}>{children}</p>;
+  return <Box className={classes}>{children}</Box>;
 }
 
 FieldHint.displayName = "Field.Hint";
@@ -88,7 +90,7 @@ export interface FieldErrorProps {
 
 function FieldError({ children, className }: FieldErrorProps) {
   const classes = [styles.error, className].filter(Boolean).join(" ");
-  return <p className={classes}>{children}</p>;
+  return <Box className={classes}>{children}</Box>;
 }
 
 FieldError.displayName = "Field.Error";

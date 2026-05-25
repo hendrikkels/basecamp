@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Box, H3 } from "@/components/primitives";
 import styles from "./EmptyState.module.css";
 
 export interface EmptyStateProps {
@@ -16,12 +17,12 @@ export const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
     const classes = [styles.empty, className].filter(Boolean).join(" ");
 
     return (
-      <div ref={ref} className={classes}>
-        {glyph && <div className={styles.glyph}>{glyph}</div>}
-        <h3 className={styles.title}>{title}</h3>
-        {description && <p className={styles.description}>{description}</p>}
-        {children && <div className={styles.actions}>{children}</div>}
-      </div>
+      <Box ref={ref} className={classes}>
+        {glyph && <Box className={styles.glyph}>{glyph}</Box>}
+        <H3 className={styles.title}>{title}</H3>
+        {description && <Box className={styles.description}>{description}</Box>}
+        {children && <Box className={styles.actions}>{children}</Box>}
+      </Box>
     );
   }
 );

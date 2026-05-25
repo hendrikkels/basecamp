@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useCallback } from "react";
+import { Box, Button, Span } from "@/components/primitives";
 import styles from "./Tabs.module.css";
 
 /* ----- Context ----- */
@@ -22,7 +23,7 @@ export interface TabsProps {
 function TabsRoot({ value, onChange, children, className }: TabsProps) {
   return (
     <TabsContext.Provider value={{ value, onChange }}>
-      <div className={className}>{children}</div>
+      <Box className={className}>{children}</Box>
     </TabsContext.Provider>
   );
 }
@@ -37,7 +38,7 @@ export interface TabsListProps {
 
 function TabsList({ children, className }: TabsListProps) {
   const classes = [styles.tabList, className].filter(Boolean).join(" ");
-  return <div className={classes} role="tablist">{children}</div>;
+  return <Box className={classes} role="tablist">{children}</Box>;
 }
 
 TabsList.displayName = "Tabs.List";
@@ -69,7 +70,7 @@ function Tab({ value, count, children, className }: TabProps) {
     .join(" ");
 
   return (
-    <button
+    <Button
       className={classes}
       onClick={handleClick}
       role="tab"
@@ -77,8 +78,8 @@ function Tab({ value, count, children, className }: TabProps) {
       type="button"
     >
       {children}
-      {count && <span className={styles.count}>{count}</span>}
-    </button>
+      {count && <Span className={styles.count}>{count}</Span>}
+    </Button>
   );
 }
 
@@ -100,9 +101,9 @@ function TabsPanel({ value, children, className }: TabsPanelProps) {
   const classes = [styles.panel, className].filter(Boolean).join(" ");
 
   return (
-    <div className={classes} role="tabpanel">
+    <Box className={classes} role="tabpanel">
       {children}
-    </div>
+    </Box>
   );
 }
 

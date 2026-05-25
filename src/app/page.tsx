@@ -17,6 +17,7 @@ import {
   Link,
 } from "@/components/custom";
 import { Box } from "@/components/primitives";
+import pageStyles from "./page.module.css";
 
 export default function Home() {
   return (
@@ -53,7 +54,7 @@ export default function Home() {
         </Box>
         <Container>
           <Box _padding="80px 0" _position="relative" _zIndex="1">
-            <Box _display="grid" _gridTemplateColumns="1fr 380px" _gap="56px" _alignItems="end">
+            <Box className={pageStyles.heroGrid}>
               <Box>
                 <Box _display="flex" _alignItems="center" _gap="14px" _marginBottom="32px">
                   <Text size="micro" color="dim">Design System</Text>
@@ -115,7 +116,7 @@ export default function Home() {
       {/* Section: Features */}
       <Container>
         <Box _padding="96px 0 32px">
-          <Box _display="grid" _gridTemplateColumns="96px 1fr" _gap="32px" _alignItems="end" _paddingBottom="24px" _marginBottom="40px" _borderBottom="1px solid var(--rule)">
+          <Box className={pageStyles.sectionGrid}>
             <Heading variant="display-l" level={2} color="default">01</Heading>
             <Box>
               <Heading variant="display-s" level={2}>Built from scratch</Heading>
@@ -154,7 +155,7 @@ export default function Home() {
       {/* Section: Screens */}
       <Container>
         <Box _padding="64px 0">
-          <Box _display="grid" _gridTemplateColumns="96px 1fr" _gap="32px" _alignItems="end" _paddingBottom="24px" _marginBottom="40px" _borderBottom="1px solid var(--rule)">
+          <Box className={pageStyles.sectionGrid}>
             <Heading variant="display-l" level={2} color="default">02</Heading>
             <Box>
               <Heading variant="display-s" level={2}>Full-stack screens</Heading>

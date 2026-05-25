@@ -1,0 +1,32 @@
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 56px;
+  align-items: end;
+}
+
+.sectionGrid {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 32px;
+  align-items: end;
+  padding-bottom: 24px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--rule);
+}
+
+@media (max-width: 768px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .sectionGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .sectionGrid .sectionNumber {
+    display: none;
+  }
+}

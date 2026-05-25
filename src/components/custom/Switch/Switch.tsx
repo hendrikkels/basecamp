@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Box, Span } from "@/components/primitives";
 import styles from "./Switch.module.css";
 
 export interface SwitchProps {
@@ -27,7 +28,7 @@ export const Switch = React.forwardRef<HTMLDivElement, SwitchProps>(
     };
 
     return (
-      <div
+      <Box
         ref={ref}
         className={classes}
         onClick={handleClick}
@@ -37,9 +38,9 @@ export const Switch = React.forwardRef<HTMLDivElement, SwitchProps>(
         tabIndex={disabled ? -1 : 0}
         onKeyDown={(e) => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); handleClick(); } }}
       >
-        <span className={styles.track} />
+        <Span className={styles.track} />
         {children}
-      </div>
+      </Box>
     );
   }
 );

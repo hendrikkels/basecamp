@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Box, Span } from "@/components/primitives";
 import styles from "./Avatar.module.css";
 
 export type AvatarSize = "sm" | "md" | "lg" | "xl";
@@ -41,10 +42,10 @@ export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
       .join(" ");
 
     return (
-      <div ref={ref} className={classes}>
+      <Box ref={ref} className={classes}>
         {children}
-        {presence && <span className={styles.presence} />}
-      </div>
+        {presence && <Span className={styles.presence} />}
+      </Box>
     );
   }
 );

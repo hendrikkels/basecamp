@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Span } from "@/components/primitives";
 import styles from "./Icon.module.css";
 
 const ICONS = {
@@ -75,9 +76,9 @@ export const Icon = React.forwardRef<HTMLSpanElement, IconProps>(
       .join(" ");
 
     return (
-      <span ref={ref} className={classes} aria-hidden="true">
+      <Span ref={ref} className={classes} aria-hidden="true">
         {ICONS[name]}
-      </span>
+      </Span>
     );
   }
 );

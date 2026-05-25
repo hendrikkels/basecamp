@@ -1,12 +1,14 @@
 "use client";
 
 import React from "react";
+import { Hr } from "@/components/primitives";
+import type { PrimitiveProps } from "@/components/primitives";
 import styles from "./Divider.module.css";
 
 export type DividerVariant = "default" | "thick";
 export type DividerSpacing = "sm" | "md" | "lg";
 
-export interface DividerProps extends React.ComponentPropsWithRef<"hr"> {
+export interface DividerProps extends PrimitiveProps<"hr"> {
   variant?: DividerVariant;
   spacing?: DividerSpacing;
 }
@@ -28,7 +30,7 @@ export const Divider = React.forwardRef<HTMLHRElement, DividerProps>(
       .filter(Boolean)
       .join(" ");
 
-    return <hr ref={ref} className={classes} {...props} />;
+    return <Hr ref={ref} className={classes} {...props} />;
   }
 );
 

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Box } from "@/components/primitives";
 import styles from "./HabitGrid.module.css";
 
 export type HabitCellState = "empty" | "partial" | "filled";
@@ -15,14 +16,14 @@ export const HabitGrid = React.forwardRef<HTMLDivElement, HabitGridProps>(
     const classes = [styles.grid, className].filter(Boolean).join(" ");
 
     return (
-      <div ref={ref} className={classes}>
+      <Box ref={ref} className={classes}>
         {cells.map((state, i) => (
-          <div
+          <Box
             key={i}
             className={`${styles.cell} ${state === "filled" ? styles.filled : state === "partial" ? styles.partial : ""}`}
           />
         ))}
-      </div>
+      </Box>
     );
   }
 );

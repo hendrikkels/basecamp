@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Nav, Span, Anchor } from "@/components/primitives";
 import styles from "./Breadcrumbs.module.css";
 
 export interface BreadcrumbsProps {
@@ -13,14 +14,14 @@ function BreadcrumbsRoot({ children, className }: BreadcrumbsProps) {
   const items = React.Children.toArray(children);
 
   return (
-    <nav className={classes} aria-label="Breadcrumb">
+    <Nav className={classes} aria-label="Breadcrumb">
       {items.map((child, i) => (
         <React.Fragment key={i}>
-          {i > 0 && <span className={styles.separator}>/</span>}
+          {i > 0 && <Span className={styles.separator}>/</Span>}
           {child}
         </React.Fragment>
       ))}
-    </nav>
+    </Nav>
   );
 }
 
@@ -36,11 +37,11 @@ export interface BreadcrumbsItemProps {
 function BreadcrumbsItem({ href, current = false, children, className }: BreadcrumbsItemProps) {
   if (current || !href) {
     const classes = [styles.current, className].filter(Boolean).join(" ");
-    return <span className={classes} aria-current="page">{children}</span>;
+    return <Span className={classes} aria-current="page">{children}</Span>;
   }
 
   const classes = [styles.link, className].filter(Boolean).join(" ");
-  return <a href={href} className={classes}>{children}</a>;
+  return <Anchor href={href} className={classes}>{children}</Anchor>;
 }
 
 BreadcrumbsItem.displayName = "Breadcrumbs.Item";

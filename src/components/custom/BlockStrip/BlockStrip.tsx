@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Box, Span } from "@/components/primitives";
 import styles from "./BlockStrip.module.css";
 
 export interface BlockStripProps {
@@ -15,13 +16,13 @@ export const BlockStrip = React.forwardRef<HTMLDivElement, BlockStripProps>(
     const blocks = Array.from({ length: total }, (_, i) => i < filled);
 
     return (
-      <div ref={ref} className={classes}>
+      <Box ref={ref} className={classes}>
         {blocks.map((isFilled, i) => (
-          <span key={i} className={isFilled ? undefined : styles.empty}>
+          <Span key={i} className={isFilled ? undefined : styles.empty}>
             █
-          </span>
+          </Span>
         ))}
-      </div>
+      </Box>
     );
   }
 );

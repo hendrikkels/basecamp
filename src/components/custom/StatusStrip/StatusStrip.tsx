@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Box, Span } from "@/components/primitives";
 import styles from "./StatusStrip.module.css";
 
 export interface StatusStripItem {
@@ -21,21 +22,21 @@ export const StatusStrip = React.forwardRef<HTMLDivElement, StatusStripProps>(
     const classes = [styles.strip, className].filter(Boolean).join(" ");
 
     return (
-      <div ref={ref} className={classes}>
+      <Box ref={ref} className={classes}>
         {leading}
         {items.map((item, i) => (
           <React.Fragment key={i}>
-            {i > 0 && <div className={styles.separator} />}
-            <div className={styles.item}>
-              <span className={styles.label}>{item.label}</span>
-              <span style={{ color: item.color || "var(--text)", fontFeatureSettings: '"tnum"' }}>
+            {i > 0 && <Box className={styles.separator} />}
+            <Box className={styles.item}>
+              <Span className={styles.label}>{item.label}</Span>
+              <Span style={{ color: item.color || "var(--text)", fontFeatureSettings: '"tnum"' }}>
                 {item.value}
-              </span>
-            </div>
+              </Span>
+            </Box>
           </React.Fragment>
         ))}
-        {trailing && <div style={{ marginLeft: "auto" }}>{trailing}</div>}
-      </div>
+        {trailing && <Box style={{ marginLeft: "auto" }}>{trailing}</Box>}
+      </Box>
     );
   }
 );

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Box, Span } from "@/components/primitives";
 import styles from "./Radio.module.css";
 
 export interface RadioProps {
@@ -27,7 +28,7 @@ export const Radio = React.forwardRef<HTMLDivElement, RadioProps>(
     };
 
     return (
-      <div
+      <Box
         ref={ref}
         className={classes}
         onClick={handleClick}
@@ -37,11 +38,11 @@ export const Radio = React.forwardRef<HTMLDivElement, RadioProps>(
         tabIndex={disabled ? -1 : 0}
         onKeyDown={(e) => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); handleClick(); } }}
       >
-        <span className={styles.dot}>
-          {checked && <span className={styles.inner} />}
-        </span>
+        <Span className={styles.dot}>
+          {checked && <Span className={styles.inner} />}
+        </Span>
         {children}
-      </div>
+      </Box>
     );
   }
 );

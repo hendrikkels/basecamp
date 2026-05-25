@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Box, Span } from "@/components/primitives";
 import styles from "./Checkbox.module.css";
 
 export interface CheckboxProps {
@@ -27,7 +28,7 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
     };
 
     return (
-      <div
+      <Box
         ref={ref}
         className={classes}
         onClick={handleClick}
@@ -37,11 +38,11 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
         tabIndex={disabled ? -1 : 0}
         onKeyDown={(e) => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); handleClick(); } }}
       >
-        <span className={styles.box}>
-          {checked && <span className={styles.checkmark}>✓</span>}
-        </span>
+        <Span className={styles.box}>
+          {checked && <Span className={styles.checkmark}>✓</Span>}
+        </Span>
         {children}
-      </div>
+      </Box>
     );
   }
 );

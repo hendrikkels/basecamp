@@ -1,9 +1,11 @@
 "use client";
 
 import React from "react";
+import { Box, Span } from "@/components/primitives";
+import type { PrimitiveProps } from "@/components/primitives";
 import styles from "./SectionHead.module.css";
 
-export interface SectionHeadProps extends React.ComponentPropsWithRef<"div"> {
+export interface SectionHeadProps extends PrimitiveProps<"div"> {
   number?: string;
   title: string;
   accent?: string;
@@ -14,11 +16,11 @@ export const SectionHead = React.forwardRef<HTMLDivElement, SectionHeadProps>(
     const classes = [styles.base, className].filter(Boolean).join(" ");
 
     return (
-      <div ref={ref} className={classes} {...props}>
-        {number && <span className={styles.number}>{number}</span>}
-        <span className={styles.title}>{title}</span>
-        {accent && <span className={styles.accent}>{accent}</span>}
-      </div>
+      <Box ref={ref} className={classes} {...props}>
+        {number && <Span className={styles.number}>{number}</Span>}
+        <Span className={styles.title}>{title}</Span>
+        {accent && <Span className={styles.accent}>{accent}</Span>}
+      </Box>
     );
   }
 );

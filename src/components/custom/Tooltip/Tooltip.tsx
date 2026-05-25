@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Span } from "@/components/primitives";
 import styles from "./Tooltip.module.css";
 
 export type TooltipPosition = "top" | "bottom";
@@ -22,10 +23,10 @@ export function Tooltip({ content, position = "top", children, className }: Tool
   const tipClasses = [styles.tip, positionClasses[position]].join(" ");
 
   return (
-    <span className={classes}>
+    <Span className={classes}>
       {children}
-      <span className={tipClasses} role="tooltip">{content}</span>
-    </span>
+      <Span className={tipClasses} role="tooltip">{content}</Span>
+    </Span>
   );
 }
 

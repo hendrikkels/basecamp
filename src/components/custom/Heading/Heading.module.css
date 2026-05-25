@@ -55,3 +55,13 @@
 .colorInfo { color: var(--info); }
 .colorSuccess { color: var(--success); }
 .colorMuted { color: var(--muted); }
+
+/* Responsive sizes */
+@media (max-width: 768px) {
+  .displayXl { font-size: 48px; }
+  .displayL { font-size: 40px; }
+  .displayM { font-size: 32px; }
+  .displayS { font-size: 28px; }
+  .heading { font-size: 22px; }
+  .subheading { font-size: 18px; }
+}

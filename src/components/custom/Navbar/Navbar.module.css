@@ -101,3 +101,38 @@
   align-items: center;
   gap: 8px;
 }
+
+/* Mobile dropdown */
+.mobileLinks {
+  display: none;
+  flex-direction: column;
+  padding: 8px 16px 16px;
+  gap: 2px;
+  border-bottom: 1px solid var(--hairline);
+  background: var(--bg);
+}
+
+.mobileLinks .link {
+  padding: 10px 12px;
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .inner {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .mobileLinks {
+    display: flex;
+  }
+
+  .mobileLinksHidden {
+    display: none;
+  }
+}

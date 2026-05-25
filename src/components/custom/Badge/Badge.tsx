@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import { Span } from "@/components/primitives";
+import type { PrimitiveProps } from "@/components/primitives";
 import styles from "./Badge.module.css";
 
 export type BadgeColor =
@@ -16,7 +18,7 @@ export type BadgeColor =
   | "success"
   | "outline";
 
-export interface BadgeProps extends React.ComponentPropsWithRef<"span"> {
+export interface BadgeProps extends PrimitiveProps<"span"> {
   color?: BadgeColor;
   dot?: boolean;
 }
@@ -42,10 +44,10 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
       .join(" ");
 
     return (
-      <span ref={ref} className={classes} {...props}>
-        {dot && <span className={styles.dot} />}
+      <Span ref={ref} className={classes} {...props}>
+        {dot && <Span className={styles.dot} />}
         {children}
-      </span>
+      </Span>
     );
   }
 );

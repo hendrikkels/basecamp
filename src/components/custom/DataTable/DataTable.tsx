@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Box, Table, Thead, Tbody, Tr, Th as PrimitiveTh, Td as PrimitiveTd } from "@/components/primitives";
 import styles from "./DataTable.module.css";
 
 /* ----- DataTable (wrapper) ----- */
@@ -12,9 +13,9 @@ export interface DataTableProps {
 function DataTableRoot({ children, className }: DataTableProps) {
   const classes = [styles.wrapper, className].filter(Boolean).join(" ");
   return (
-    <div className={classes}>
-      <table className={styles.table}>{children}</table>
-    </div>
+    <Box className={classes}>
+      <Table className={styles.table}>{children}</Table>
+    </Box>
   );
 }
 DataTableRoot.displayName = "DataTable";
@@ -25,7 +26,7 @@ export interface DataTableHeadProps {
 }
 
 function DataTableHead({ children }: DataTableHeadProps) {
-  return <thead>{children}</thead>;
+  return <Thead>{children}</Thead>;
 }
 DataTableHead.displayName = "DataTable.Head";
 
@@ -35,7 +36,7 @@ export interface DataTableBodyProps {
 }
 
 function DataTableBody({ children }: DataTableBodyProps) {
-  return <tbody>{children}</tbody>;
+  return <Tbody>{children}</Tbody>;
 }
 DataTableBody.displayName = "DataTable.Body";
 
@@ -50,7 +51,7 @@ function DataTableRow({ selected = false, children, className }: DataTableRowPro
   const classes = [styles.row, selected ? styles.rowSelected : undefined, className]
     .filter(Boolean)
     .join(" ");
-  return <tr className={classes}>{children}</tr>;
+  return <Tr className={classes}>{children}</Tr>;
 }
 DataTableRow.displayName = "DataTable.Row";
 
@@ -65,7 +66,7 @@ function DataTableTh({ numeric = false, children, className }: DataTableThProps)
   const classes = [styles.th, numeric ? styles.numeric : undefined, className]
     .filter(Boolean)
     .join(" ");
-  return <th className={classes}>{children}</th>;
+  return <PrimitiveTh className={classes}>{children}</PrimitiveTh>;
 }
 DataTableTh.displayName = "DataTable.Th";
 
@@ -80,7 +81,7 @@ function DataTableTd({ numeric = false, children, className }: DataTableTdProps)
   const classes = [styles.td, numeric ? styles.numeric : undefined, className]
     .filter(Boolean)
     .join(" ");
-  return <td className={classes}>{children}</td>;
+  return <PrimitiveTd className={classes}>{children}</PrimitiveTd>;
 }
 DataTableTd.displayName = "DataTable.Td";
 

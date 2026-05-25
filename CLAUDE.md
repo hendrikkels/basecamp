@@ -57,6 +57,60 @@ Styled, opinionated components that extend primitives. These are the components 
 - Abstract/one-off styling (like specific px values for layout) can be hardcoded in component CSS
 - Custom components can still accept `_` prefixed props for one-off layout overrides
 
+### No Raw HTML — Ever
+
+**Custom components MUST be built using primitives. Pages MUST use only primitives or custom components. Raw HTML elements are never allowed in either layer.**
+
+```tsx
+// ✗ WRONG — raw HTML in a custom component or page
+<div className={styles.wrapper}>...</div>
+<span className={styles.label}>text</span>
+<button onClick={fn}>Click</button>
+<a href="/path">Link</a>
+
+// ✓ CORRECT — primitives or custom components only
+<Box className={styles.wrapper}>...</Box>
+<Span className={styles.label}>text</Span>
+<Button onClick={fn}>Click</Button>        // primitive
+<Anchor href="/path">Link</Anchor>         // primitive
+```
+
+The full HTML→primitive mapping:
+
+| HTML | Primitive |
+|------|-----------|
+| `<div>` | `Box` |
+| `<span>` | `Span` |
+| `<button>` | `Button` |
+| `<a>` | `Anchor` |
+| `<nav>` | `Nav` |
+| `<aside>` | `Aside` |
+| `<section>` | `Section` |
+| `<header>` | `Header` |
+| `<footer>` | `Footer` |
+| `<main>` | `Main` |
+| `<label>` | `Label` |
+| `<input>` | `Input` |
+| `<textarea>` | `Textarea` |
+| `<select>` | `Select` (primitive) |
+| `<form>` | `Form` |
+| `<table>` | `Table` |
+| `<thead>` | `Thead` |
+| `<tbody>` | `Tbody` |
+| `<tr>` | `Tr` |
+| `<th>` | `Th` |
+| `<td>` | `Td` |
+| `<ul>` / `<ol>` / `<li>` | `Ul` / `Ol` / `Li` |
+| `<h1>`–`<h6>` | `H1`–`H6` |
+| `<p>` | `Box` (no `P` primitive — use `Box`) |
+| `<hr>` | `Hr` |
+| `<small>` | `Small` |
+| `<strong>` | `Strong` |
+| `<em>` | `Em` |
+| `<img>` | `Image` |
+
+All primitives are exported from `@/components/primitives`. Import only what you use.
+
 ### Compound Components
 
 Complex components use dot-notation sub-components (see Navbar pattern):

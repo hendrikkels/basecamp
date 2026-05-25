@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Box, Span } from "@/components/primitives";
 import styles from "./CalendarStrip.module.css";
 
 export interface CalendarDay {
@@ -20,21 +21,21 @@ export const CalendarStrip = React.forwardRef<HTMLDivElement, CalendarStripProps
     const classes = [styles.grid, className].filter(Boolean).join(" ");
 
     return (
-      <div ref={ref} className={classes}>
+      <Box ref={ref} className={classes}>
         {days.map((day, i) => (
-          <div key={i} className={`${styles.day} ${day.isToday ? styles.today : ""}`}>
-            <span className={styles.dayNumber}>{day.date}</span>
+          <Box key={i} className={`${styles.day} ${day.isToday ? styles.today : ""}`}>
+            <Span className={styles.dayNumber}>{day.date}</Span>
             {day.label}
             {day.dots && day.dots > 0 && (
-              <div>
+              <Box>
                 {Array.from({ length: day.dots }, (_, j) => (
-                  <span key={j} className={styles.dot} />
+                  <Span key={j} className={styles.dot} />
                 ))}
-              </div>
+              </Box>
             )}
-          </div>
+          </Box>
         ))}
-      </div>
+      </Box>
     );
   }
 );

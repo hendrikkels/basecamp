@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Box, Span } from "@/components/primitives";
 import styles from "./FormGrid.module.css";
 
 /* ----- FormGrid (root) ----- */
@@ -11,7 +12,7 @@ export interface FormGridProps {
 
 function FormGridRoot({ children, className }: FormGridProps) {
   const classes = [styles.grid, className].filter(Boolean).join(" ");
-  return <div className={classes}>{children}</div>;
+  return <Box className={classes}>{children}</Box>;
 }
 FormGridRoot.displayName = "FormGrid";
 
@@ -26,12 +27,12 @@ export interface FormGridSectionProps {
 function FormGridSection({ number, title, description, children }: FormGridSectionProps) {
   return (
     <>
-      <div className={styles.sectionLabel}>
-        {number && <span className={styles.sectionNumber}>{number}</span>}
+      <Box className={styles.sectionLabel}>
+        {number && <Span className={styles.sectionNumber}>{number}</Span>}
         {title}
-        {description && <span className={styles.sectionDescription}>{description}</span>}
-      </div>
-      <div className={styles.sectionBody}>{children}</div>
+        {description && <Span className={styles.sectionDescription}>{description}</Span>}
+      </Box>
+      <Box className={styles.sectionBody}>{children}</Box>
     </>
   );
 }

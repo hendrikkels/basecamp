@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Box, Span, Button } from "@/components/primitives";
 import styles from "./Alert.module.css";
 
 export type AlertSeverity = "default" | "info" | "warn" | "danger" | "success";
@@ -35,18 +36,18 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     const displayIcon = icon ?? defaultIcons[severity];
 
     return (
-      <div ref={ref} className={classes} role="alert">
-        <span className={styles.icon}>{displayIcon}</span>
-        <div className={styles.body}>
-          {title && <p className={styles.title}>{title}</p>}
-          <p className={styles.message}>{children}</p>
-        </div>
+      <Box ref={ref} className={classes} role="alert">
+        <Span className={styles.icon}>{displayIcon}</Span>
+        <Box className={styles.body}>
+          {title && <Box className={styles.title}>{title}</Box>}
+          <Box className={styles.message}>{children}</Box>
+        </Box>
         {dismissible && (
-          <button className={styles.dismiss} onClick={onDismiss} type="button" aria-label="Dismiss">
+          <Button className={styles.dismiss} onClick={onDismiss} type="button" aria-label="Dismiss">
             ✕
-          </button>
+          </Button>
         )}
-      </div>
+      </Box>
     );
   }
 );

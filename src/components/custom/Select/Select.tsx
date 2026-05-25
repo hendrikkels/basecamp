@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useCallback, useRef, useEffect } from "react";
+import { Box, Button, Span } from "@/components/primitives";
 import styles from "./Select.module.css";
 
 /* ===================================================================
@@ -86,28 +87,28 @@ function SelectRoot({
 
   return (
     <SelectContext.Provider value={{ value, select, syncLabel }}>
-      <div ref={wrapperRef} className={[styles.wrapper, className].filter(Boolean).join(" ")}>
-        <button
+      <Box ref={wrapperRef} className={[styles.wrapper, className].filter(Boolean).join(" ")}>
+        <Button
           type="button"
           className={triggerClasses}
           onClick={() => { if (!disabled) setOpen((p) => !p); }}
           aria-expanded={open}
           aria-haspopup="listbox"
         >
-          {displayIcon && <span className={styles.selectedIcon}>{displayIcon}</span>}
+          {displayIcon && <Span className={styles.selectedIcon}>{displayIcon}</Span>}
           {value ? (
-            <span>{displayLabel || value}</span>
+            <Span>{displayLabel || value}</Span>
           ) : (
-            <span className={styles.placeholder}>{placeholder}</span>
+            <Span className={styles.placeholder}>{placeholder}</Span>
           )}
-          <span className={styles.chevron} />
-        </button>
+          <Span className={styles.chevron} />
+        </Button>
         {open && (
-          <div className={styles.dropdown} role="listbox">
+          <Box className={styles.dropdown} role="listbox">
             {children}
-          </div>
+          </Box>
         )}
-      </div>
+      </Box>
     </SelectContext.Provider>
   );
 }
@@ -147,7 +148,7 @@ function SelectOption({ value, icon, disabled = false, children, className }: Se
     .join(" ");
 
   return (
-    <div
+    <Box
       className={classes}
       onClick={() => {
         if (!disabled) ctx.select(value, label, icon);
@@ -156,9 +157,9 @@ function SelectOption({ value, icon, disabled = false, children, className }: Se
       aria-selected={isSelected}
       aria-disabled={disabled}
     >
-      {icon && <span className={styles.optionIcon}>{icon}</span>}
+      {icon && <Span className={styles.optionIcon}>{icon}</Span>}
       {children}
-    </div>
+    </Box>
   );
 }
 
@@ -173,11 +174,11 @@ export interface SelectGroupProps {
 
 function SelectGroup({ label, children, className }: SelectGroupProps) {
   return (
-    <div className={className}>
-      <div className={styles.groupSeparator} />
-      <div className={styles.groupLabel}>{label}</div>
+    <Box className={className}>
+      <Box className={styles.groupSeparator} />
+      <Box className={styles.groupLabel}>{label}</Box>
       {children}
-    </div>
+    </Box>
   );
 }
 
@@ -275,8 +276,8 @@ function MultiSelectRoot({
 
   return (
     <MultiSelectContext.Provider value={{ value, toggle }}>
-      <div ref={wrapperRef} className={[styles.wrapper, className].filter(Boolean).join(" ")}>
-        <button
+      <Box ref={wrapperRef} className={[styles.wrapper, className].filter(Boolean).join(" ")}>
+        <Button
           type="button"
           className={triggerClasses}
           onMouseDown={(e) => {
@@ -287,18 +288,18 @@ function MultiSelectRoot({
           aria-haspopup="listbox"
         >
           {displayValue ? (
-            <span>{displayValue}</span>
+            <Span>{displayValue}</Span>
           ) : (
-            <span className={styles.placeholder}>{placeholder}</span>
+            <Span className={styles.placeholder}>{placeholder}</Span>
           )}
-          <span className={styles.chevron} />
-        </button>
+          <Span className={styles.chevron} />
+        </Button>
         {open && (
-          <div className={styles.dropdown} role="listbox" aria-multiselectable>
+          <Box className={styles.dropdown} role="listbox" aria-multiselectable>
             {children}
-          </div>
+          </Box>
         )}
-      </div>
+      </Box>
     </MultiSelectContext.Provider>
   );
 }
@@ -330,18 +331,18 @@ function MultiSelectOption({ value, disabled = false, children, className }: Mul
     .join(" ");
 
   return (
-    <div
+    <Box
       className={classes}
       onClick={() => { if (!disabled) ctx.toggle(value, label); }}
       role="option"
       aria-selected={isSelected}
       aria-disabled={disabled}
     >
-      <span className={`${styles.checkbox} ${isSelected ? styles.checkboxChecked : ""}`}>
-        {isSelected && <span className={styles.checkmark}>✓</span>}
-      </span>
+      <Span className={`${styles.checkbox} ${isSelected ? styles.checkboxChecked : ""}`}>
+        {isSelected && <Span className={styles.checkmark}>✓</Span>}
+      </Span>
       {children}
-    </div>
+    </Box>
   );
 }
 

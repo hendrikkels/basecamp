@@ -1,7 +1,7 @@
 .wrapper {
   background: var(--surface-1);
   border-radius: var(--r-sm);
-  overflow: hidden;
+  overflow-x: auto;
 }
 
 .table {

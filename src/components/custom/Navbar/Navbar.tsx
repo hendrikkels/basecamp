@@ -1,6 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+import { Nav, Box, Anchor, Span, Small } from "@/components/primitives";
+import { MenuToggle } from "@/components/custom/MenuToggle";
 import styles from "./Navbar.module.css";
 
 /* ----- Navbar (root) ----- */
@@ -10,11 +12,25 @@ export interface NavbarProps {
 }
 
 function NavbarRoot({ children, className }: NavbarProps) {
+  const [mobileOpen, setMobileOpen] = useState(false);
   const classes = [styles.nav, className].filter(Boolean).join(" ");
+
+  const linksChild = React.Children.toArray(children).find(
+    (child) => React.isValidElement(child) && child.type === NavbarLinks
+  ) as React.ReactElement<NavbarLinksProps> | undefined;
+
   return (
-    <nav className={classes}>
-      <div className={styles.inner}>{children}</div>
-    </nav>
+    <Nav className={classes}>
+      <Box className={styles.inner}>
+        {children}
+        <MenuToggle open={mobileOpen} onClick={() => setMobileOpen((p) => !p)} />
+      </Box>
+      {linksChild && (
+        <Box className={`${styles.mobileLinks} ${!mobileOpen ? styles.mobileLinksHidden : ""}`}>
+          {linksChild.props.children}
+        </Box>
+      )}
+    </Nav>
   );
 }
 
@@ -31,11 +47,11 @@ export interface NavbarBrandProps {
 function NavbarBrand({ href = "/", children, meta, className }: NavbarBrandProps) {
   const classes = [styles.brand, className].filter(Boolean).join(" ");
   return (
-    <a href={href} className={classes}>
-      <span className={styles.brandBlock} />
+    <Anchor href={href} className={classes}>
+      <Span className={styles.brandBlock} />
       {children}
-      {meta && <small className={styles.brandMeta}>{meta}</small>}
-    </a>
+      {meta && <Small className={styles.brandMeta}>{meta}</Small>}
+    </Anchor>
   );
 }
 
@@ -49,7 +65,7 @@ export interface NavbarLinksProps {
 
 function NavbarLinks({ children, className }: NavbarLinksProps) {
   const classes = [styles.links, className].filter(Boolean).join(" ");
-  return <div className={classes}>{children}</div>;
+  return <Box className={classes}>{children}</Box>;
 }
 
 NavbarLinks.displayName = "Navbar.Links";
@@ -73,10 +89,10 @@ function NavbarLink({ href, active = false, index, children, className }: Navbar
     .join(" ");
 
   return (
-    <a href={href} className={classes}>
-      {index && <span className={styles.linkIndex}>{index}</span>}
+    <Anchor href={href} className={classes}>
+      {index && <Span className={styles.linkIndex}>{index}</Span>}
       {children}
-    </a>
+    </Anchor>
   );
 }
 
@@ -90,7 +106,7 @@ export interface NavbarActionsProps {
 
 function NavbarActions({ children, className }: NavbarActionsProps) {
   const classes = [styles.actions, className].filter(Boolean).join(" ");
-  return <div className={classes}>{children}</div>;
+  return <Box className={classes}>{children}</Box>;
 }
 
 NavbarActions.displayName = "Navbar.Actions";

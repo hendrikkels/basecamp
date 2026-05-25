@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext } from "react";
+import { Box, Span } from "@/components/primitives";
 import styles from "./RadioGroup.module.css";
 
 /* ----- Context ----- */
@@ -58,9 +59,9 @@ function RadioGroupRoot({
 
   return (
     <RadioGroupContext.Provider value={{ value, onChange, disabled, name }}>
-      <div className={classes} role="radiogroup">
+      <Box className={classes} role="radiogroup">
         {children}
-      </div>
+      </Box>
     </RadioGroupContext.Provider>
   );
 }
@@ -96,7 +97,7 @@ function RadioGroupItem({ value, disabled: itemDisabled, children, className }: 
     .join(" ");
 
   return (
-    <div
+    <Box
       className={classes}
       onClick={handleClick}
       role="radio"
@@ -107,11 +108,11 @@ function RadioGroupItem({ value, disabled: itemDisabled, children, className }: 
         if (e.key === " " || e.key === "Enter") { e.preventDefault(); handleClick(); }
       }}
     >
-      <span className={styles.dot}>
-        {isChecked && <span className={styles.inner} />}
-      </span>
+      <Span className={styles.dot}>
+        {isChecked && <Span className={styles.inner} />}
+      </Span>
       {children}
-    </div>
+    </Box>
   );
 }
 

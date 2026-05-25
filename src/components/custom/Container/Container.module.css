@@ -9,3 +9,10 @@
 .narrow { max-width: var(--max-narrow); }
 .default { max-width: var(--max); }
 .full { max-width: 100%; }
+
+@media (max-width: 768px) {
+  .base {
+    padding-left: var(--sp-4);
+    padding-right: var(--sp-4);
+  }
+}
