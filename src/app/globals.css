@@ -1,8 +1,8 @@
 @import "tailwindcss";
 @import "../styles/tokens.css";
 
-*, *::before, *::after { box-sizing: border-box; background: var(--bg); }
-html, body { margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg);}
 
 body {
   background: var(--bg);
