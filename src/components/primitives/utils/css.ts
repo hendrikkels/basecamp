@@ -45,12 +45,14 @@ export interface CSSProps {
   _gridAutoColumns?: CSS.Property.GridAutoColumns;
   _gridAutoFlow?: CSS.Property.GridAutoFlow;
   _gridAutoRows?: CSS.Property.GridAutoRows;
+  _gridArea?: CSS.Property.GridArea;
   _gridColumn?: CSS.Property.GridColumn;
   _gridColumnEnd?: CSS.Property.GridColumnEnd;
   _gridColumnStart?: CSS.Property.GridColumnStart;
   _gridRow?: CSS.Property.GridRow;
   _gridRowEnd?: CSS.Property.GridRowEnd;
   _gridRowStart?: CSS.Property.GridRowStart;
+  _gridTemplateAreas?: CSS.Property.GridTemplateAreas;
   _gridTemplateColumns?: CSS.Property.GridTemplateColumns;
   _gridTemplateRows?: CSS.Property.GridTemplateRows;
   _height?: CSS.Property.Height;
@@ -154,12 +156,14 @@ export const CSS_PROP_KEYS: (keyof CSSProps)[] = [
   "_gridAutoColumns",
   "_gridAutoFlow",
   "_gridAutoRows",
+  "_gridArea",
   "_gridColumn",
   "_gridColumnEnd",
   "_gridColumnStart",
   "_gridRow",
   "_gridRowEnd",
   "_gridRowStart",
+  "_gridTemplateAreas",
   "_gridTemplateColumns",
   "_gridTemplateRows",
   "_height",

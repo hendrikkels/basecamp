@@ -29,6 +29,12 @@
   right: 16px;
 }
 
+@media (max-width: 540px) {
+  .container {
+    max-width: calc(100vw - 32px);
+  }
+}
+
 .item {
   pointer-events: auto;
   animation: slideIn var(--dur-base) var(--ease-out);

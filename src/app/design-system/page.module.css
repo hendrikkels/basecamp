@@ -1,0 +1,43 @@
+.typographyRow {
+  display: grid;
+  grid-template-columns: 140px 1fr 120px;
+  gap: 24px;
+  align-items: baseline;
+  padding-bottom: 14px;
+}
+
+.typographyRowBordered {
+  border-bottom: 1px solid var(--hairline);
+}
+
+@media (max-width: 600px) {
+  .typographyRow {
+    grid-template-columns: 90px 1fr;
+    grid-template-rows: auto auto;
+    gap: 8px 16px;
+    align-items: start;
+  }
+
+  .typographyRow > :nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .typographyRow > :nth-child(2) {
+    margin-left: 20px;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+
+  .typographyRow > :nth-child(3) {
+    grid-column: 1;
+    grid-row: 2;
+    text-align: left !important;
+    min-width: 120px;
+  }
+}

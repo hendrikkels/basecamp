@@ -61,7 +61,7 @@ export default function Home() {
                   <BlockStrip filled={4} total={6} />
                 </Box>
                 <Heading variant="display-xl" level={1}>
-                  The room is on<span style={{ display: "inline-block", width: "0.2em", height: "0.2em", background: "var(--acc)", marginLeft: "0.05em", verticalAlign: "0.06em" }} />
+                  Build Something <span style={{ color: "var(--acc)" }}>Great</span>
                 </Heading>
                 <Text size="body-lg" color="muted" _marginTop="24px" _maxWidth="44ch">
                   A retro-futurist design system built for creative tools, personal dashboards, and focused workspaces. Block aesthetics meet modern engineering.

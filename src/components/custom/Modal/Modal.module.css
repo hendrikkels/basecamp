@@ -18,6 +18,12 @@
   animation: slideUp var(--dur-base) var(--ease-out);
 }
 
+@media (max-width: 540px) {
+  .shell {
+    max-width: calc(100vw - 32px);
+  }
+}
+
 .title {
   font-family: var(--display);
   font-size: 24px;

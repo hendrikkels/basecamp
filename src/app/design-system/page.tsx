@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import styles from "./page.module.css";
 import {
   Heading,
   Card,
@@ -124,37 +125,37 @@ export default function DesignSystem() {
           {/* Typography */}
           <SectionHead number="02" title="Typography" />
           <Stack gap="4">
-            <Box _display="grid" _gridTemplateColumns="140px 1fr 120px" _gap="24px" _alignItems="baseline" _paddingBottom="14px" _borderBottom="1px solid var(--hairline)">
+            <Box className={`${styles.typographyRow} ${styles.typographyRowBordered}`}>
               <Text size="micro" color="dim">Display XL</Text>
               <Heading variant="display-xl" level={2}>Aa</Heading>
               <Text size="micro" color="dim" _textAlign="right">120px / Bold</Text>
             </Box>
-            <Box _display="grid" _gridTemplateColumns="140px 1fr 120px" _gap="24px" _alignItems="baseline" _paddingBottom="14px" _borderBottom="1px solid var(--hairline)">
+            <Box className={`${styles.typographyRow} ${styles.typographyRowBordered}`}>
               <Text size="micro" color="dim">Display L</Text>
               <Heading variant="display-l" level={2}>Basecamp</Heading>
               <Text size="micro" color="dim" _textAlign="right">88px / Bold</Text>
             </Box>
-            <Box _display="grid" _gridTemplateColumns="140px 1fr 120px" _gap="24px" _alignItems="baseline" _paddingBottom="14px" _borderBottom="1px solid var(--hairline)">
+            <Box className={`${styles.typographyRow} ${styles.typographyRowBordered}`}>
               <Text size="micro" color="dim">Display M</Text>
               <Heading variant="display-m" level={2}>Components</Heading>
               <Text size="micro" color="dim" _textAlign="right">56px / Bold</Text>
             </Box>
-            <Box _display="grid" _gridTemplateColumns="140px 1fr 120px" _gap="24px" _alignItems="baseline" _paddingBottom="14px" _borderBottom="1px solid var(--hairline)">
+            <Box className={`${styles.typographyRow} ${styles.typographyRowBordered}`}>
               <Text size="micro" color="dim">Heading</Text>
               <Heading variant="heading" level={3}>Section heading</Heading>
               <Text size="micro" color="dim" _textAlign="right">28px / Bold</Text>
             </Box>
-            <Box _display="grid" _gridTemplateColumns="140px 1fr 120px" _gap="24px" _alignItems="baseline" _paddingBottom="14px" _borderBottom="1px solid var(--hairline)">
+            <Box className={`${styles.typographyRow} ${styles.typographyRowBordered}`}>
               <Text size="micro" color="dim">Body LG</Text>
               <Text size="body-lg">The quick brown fox jumps over the lazy dog.</Text>
               <Text size="micro" color="dim" _textAlign="right">16px / Regular</Text>
             </Box>
-            <Box _display="grid" _gridTemplateColumns="140px 1fr 120px" _gap="24px" _alignItems="baseline" _paddingBottom="14px" _borderBottom="1px solid var(--hairline)">
+            <Box className={`${styles.typographyRow} ${styles.typographyRowBordered}`}>
               <Text size="micro" color="dim">Body</Text>
               <Text size="body">Default body text at 13px with JetBrains Mono.</Text>
               <Text size="micro" color="dim" _textAlign="right">13px / Regular</Text>
             </Box>
-            <Box _display="grid" _gridTemplateColumns="140px 1fr 120px" _gap="24px" _alignItems="baseline">
+            <Box className={styles.typographyRow}>
               <Text size="micro" color="dim">Micro</Text>
               <Text size="micro">Uppercase tracked label text</Text>
               <Text size="micro" color="dim" _textAlign="right">10px / Medium</Text>
@@ -174,7 +175,7 @@ export default function DesignSystem() {
               <Button variant="destructive">Destructive</Button>
               <Button variant="accent2">Accent 2</Button>
             </Stack>
-            <Stack direction="horizontal" gap="3" align="center">
+            <Stack direction="horizontal" gap="3" align="center" wrap>
               <Button variant="primary" size="sm">Small</Button>
               <Button variant="primary" size="md">Medium</Button>
               <Button variant="primary" size="lg">Large</Button>
@@ -308,57 +309,59 @@ export default function DesignSystem() {
 
           {/* Charts */}
           <SectionHead number="08" title="Charts" accent="recharts" />
-          <Row columns={2} gap="4">
+          <Stack gap="4">
+            <Row columns={2} gap="4">
+              <Chart
+                variant="line"
+                title="Line Chart"
+                height={160}
+                data={[
+                  { name: "Jan", value: 120, secondary: 80 },
+                  { name: "Feb", value: 180, secondary: 110 },
+                  { name: "Mar", value: 150, secondary: 95 },
+                  { name: "Apr", value: 240, secondary: 160 },
+                  { name: "May", value: 320, secondary: 200 },
+                  { name: "Jun", value: 280, secondary: 180 },
+                ]}
+                datasets={[
+                  { key: "value", name: "Primary" },
+                  { key: "secondary", name: "Secondary" },
+                ]}
+                showLegend
+              />
+              <Chart
+                variant="bar"
+                title="Bar Chart"
+                height={160}
+                data={[
+                  { name: "Q1", revenue: 4200, costs: 2800 },
+                  { name: "Q2", revenue: 5100, costs: 3100 },
+                  { name: "Q3", revenue: 4700, costs: 2900 },
+                  { name: "Q4", revenue: 6200, costs: 3400 },
+                ]}
+                datasets={[
+                  { key: "revenue", name: "Revenue" },
+                  { key: "costs", name: "Costs", color: "var(--surface-4)" },
+                ]}
+                showLegend
+              />
+            </Row>
             <Chart
-              variant="line"
-              title="Line Chart"
-              height={160}
+              variant="area"
+              title="Area Chart"
+              height={140}
               data={[
-                { name: "Jan", value: 120, secondary: 80 },
-                { name: "Feb", value: 180, secondary: 110 },
-                { name: "Mar", value: 150, secondary: 95 },
-                { name: "Apr", value: 240, secondary: 160 },
-                { name: "May", value: 320, secondary: 200 },
-                { name: "Jun", value: 280, secondary: 180 },
+                { name: "00:00", load: 12 },
+                { name: "04:00", load: 8 },
+                { name: "08:00", load: 35 },
+                { name: "12:00", load: 62 },
+                { name: "16:00", load: 78 },
+                { name: "20:00", load: 45 },
+                { name: "24:00", load: 15 },
               ]}
-              datasets={[
-                { key: "value", name: "Primary" },
-                { key: "secondary", name: "Secondary" },
-              ]}
-              showLegend
+              datasets={[{ key: "load", name: "System Load %" }]}
             />
-            <Chart
-              variant="bar"
-              title="Bar Chart"
-              height={160}
-              data={[
-                { name: "Q1", revenue: 4200, costs: 2800 },
-                { name: "Q2", revenue: 5100, costs: 3100 },
-                { name: "Q3", revenue: 4700, costs: 2900 },
-                { name: "Q4", revenue: 6200, costs: 3400 },
-              ]}
-              datasets={[
-                { key: "revenue", name: "Revenue" },
-                { key: "costs", name: "Costs", color: "var(--surface-4)" },
-              ]}
-              showLegend
-            />
-          </Row>
-          <Chart
-            variant="area"
-            title="Area Chart"
-            height={140}
-            data={[
-              { name: "00:00", load: 12 },
-              { name: "04:00", load: 8 },
-              { name: "08:00", load: 35 },
-              { name: "12:00", load: 62 },
-              { name: "16:00", load: 78 },
-              { name: "20:00", load: 45 },
-              { name: "24:00", load: 15 },
-            ]}
-            datasets={[{ key: "load", name: "System Load %" }]}
-          />
+          </Stack>
 
           <Divider />
 
