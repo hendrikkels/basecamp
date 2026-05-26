@@ -26,6 +26,9 @@ const themeInitScript = `
   if (t === 'light' || t === 'dark') {
     document.documentElement.dataset.theme = t;
   }
+  var color = (t === 'light') ? '#fafafa' : '#0a0a0b';
+  var meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute('content', color);
 })();
 `;
 
@@ -41,6 +44,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <meta name="theme-color" content="#0a0a0b" />
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body><Providers>{children}</Providers></body>
