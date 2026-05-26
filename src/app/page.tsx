@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <>
       <Navbar>
-        <Navbar.Brand href="/" meta="v0.1">basecamp</Navbar.Brand>
+        <Navbar.Brand href="/" meta="v0.1">BaseCamp</Navbar.Brand>
         <Navbar.Links>
           <Navbar.Link href="/" active>Home</Navbar.Link>
           <Navbar.Link href="/design-system">Design System</Navbar.Link>
@@ -206,7 +206,7 @@ export default function Home() {
           <Box _padding="32px 0" _display="flex" _justifyContent="space-between" _alignItems="center">
             <Box _display="flex" _alignItems="center" _gap="12px">
               <BlockStrip filled={3} total={4} />
-              <Text size="caption" color="dim">basecamp · design system · 2026</Text>
+              <Text size="caption" color="dim">BaseCamp · design system · 2026</Text>
             </Box>
             <Stack direction="horizontal" gap="4" align="center">
               <Avatar size="sm" color="primary" round>HV</Avatar>

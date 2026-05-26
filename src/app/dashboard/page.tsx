@@ -48,7 +48,7 @@ export default function Dashboard() {
   return (
     <>
       <Navbar>
-        <Navbar.Brand href="/" meta="v0.1">basecamp</Navbar.Brand>
+        <Navbar.Brand href="/" meta="v0.1">BaseCamp</Navbar.Brand>
         <Navbar.Links>
           <Navbar.Link href="/">Home</Navbar.Link>
           <Navbar.Link href="/design-system">Design System</Navbar.Link>

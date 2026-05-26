@@ -71,8 +71,8 @@
   --l-success-soft: rgba(29,122,37,0.14);
 
   /* Typography --------------------------------------- */
-  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  --display: 'Arial Black', 'Helvetica Neue Bold', 'Helvetica Bold', Helvetica, Arial, sans-serif;
+  --mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --display: var(--font-inter), Arial, sans-serif;
 
   /* Radii -------------------------------------------- */
   --r-0: 0px;

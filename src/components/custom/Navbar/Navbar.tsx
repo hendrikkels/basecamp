@@ -48,7 +48,7 @@ function NavbarBrand({ href = "/", children, meta, className }: NavbarBrandProps
   const classes = [styles.brand, className].filter(Boolean).join(" ");
   return (
     <Anchor href={href} className={classes}>
-      <Span className={styles.brandBlock} />
+      {/* <Span className={styles.brandBlock} /> */}
       {children}
       {meta && <Small className={styles.brandMeta}>{meta}</Small>}
     </Anchor>

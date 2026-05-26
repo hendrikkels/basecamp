@@ -1,4 +1,4 @@
 export const config = {
-  appName: "Anthropic Basecamp",
+  appName: "BaseCamp",
   environment: process.env.NODE_ENV ?? "development",
 } as const;

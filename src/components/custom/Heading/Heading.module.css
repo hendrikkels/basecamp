@@ -6,42 +6,42 @@
 
 .displayXl {
   font-size: 120px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 0.92;
   letter-spacing: -0.04em;
 }
 
 .displayL {
   font-size: 88px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 0.92;
   letter-spacing: -0.04em;
 }
 
 .displayM {
   font-size: 56px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 0.92;
   letter-spacing: -0.025em;
 }
 
 .displayS {
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.025em;
 }
 
 .heading {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.025em;
 }
 
 .subheading {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.025em;
 }

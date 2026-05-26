@@ -60,7 +60,7 @@ export default function DesignSystem() {
   return (
     <>
       <Navbar>
-        <Navbar.Brand href="/" meta="v0.1">basecamp</Navbar.Brand>
+        <Navbar.Brand href="/" meta="v0.1">BaseCamp</Navbar.Brand>
         <Navbar.Links>
           <Navbar.Link href="/">Home</Navbar.Link>
           <Navbar.Link href="/design-system" active>Design System</Navbar.Link>
@@ -132,7 +132,7 @@ export default function DesignSystem() {
             </Box>
             <Box className={`${styles.typographyRow} ${styles.typographyRowBordered}`}>
               <Text size="micro" color="dim">Display L</Text>
-              <Heading variant="display-l" level={2}>Basecamp</Heading>
+              <Heading variant="display-l" level={2}>BaseCamp</Heading>
               <Text size="micro" color="dim" _textAlign="right">88px / Bold</Text>
             </Box>
             <Box className={`${styles.typographyRow} ${styles.typographyRowBordered}`}>
