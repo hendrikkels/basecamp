@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Box, Span } from "@/components/primitives";
+import { Box, Span, H3 } from "@/components/primitives";
 import type { PrimitiveProps } from "@/components/primitives";
 import styles from "./SectionHead.module.css";
 
@@ -18,8 +18,8 @@ export const SectionHead = React.forwardRef<HTMLDivElement, SectionHeadProps>(
     return (
       <Box ref={ref} className={classes} {...props}>
         {number && <Span className={styles.number}>{number}</Span>}
-        <Span className={styles.title}>{title}</Span>
-        {accent && <span className={styles.accent}>{accent}</span>}
+        <H3 className={styles.title} _fontWeight={600}>{title}</H3>
+        {accent && <Span className={styles.accent}>{accent}</Span>}
       </Box>
     );
   }

@@ -15,7 +15,6 @@
 }
 
 .title {
-  font-family: var(--display);
   font-size: 22px;
   letter-spacing: -0.02em;
   margin: 0 0 6px;

@@ -182,7 +182,7 @@ export function Chart({
 
   return (
     <Box className={classes}>
-      {title && <H3 className={styles.title}>{title}</H3>}
+      {title && <H3 className={styles.title} _fontWeight={600}>{title}</H3>}
       <ResponsiveContainer width="100%" height={height}>
         {renderChart()}
       </ResponsiveContainer>
