@@ -1,10 +1,11 @@
 "use client";
 
 import {
+  Heading,
   Navbar,
   ThemeToggle,
   Badge,
-  Heading,
+  SectionHead,
   Text,
   Card,
   Stack,
@@ -66,7 +67,6 @@ export default function Dashboard() {
           <Box _display="flex" _justifyContent="space-between" _alignItems="flex-end" _paddingBottom="24px" _marginBottom="28px" _borderBottom="1px solid var(--rule)">
             <Box>
               <Box _display="flex" _alignItems="center" _gap="12px" _marginBottom="12px">
-                <BlockStrip filled={3} total={4} />
                 <Text size="micro" color="dim">Sunday · May 24, 2026 · 04:18 PM · New York</Text>
               </Box>
               <Heading variant="display-m" level={1}>
@@ -78,9 +78,11 @@ export default function Dashboard() {
             </Stack>
           </Box>
 
+          {/* KPI Row */}
+          <SectionHead title="Key metrics" />
+
           {/* Status strip */}
           <StatusStrip
-            leading={<BlockStrip filled={3} total={4} />}
             items={[
               { label: "Online", value: "Yes", color: "var(--success)" },
               { label: "Uptime", value: "99.94%" },
@@ -90,7 +92,6 @@ export default function Dashboard() {
             trailing={<Text size="caption" color="primary" _cursor="pointer">View Logs →</Text>}
           />
 
-          {/* KPI Row */}
           <Row columns="4" gap="4">
             <KpiTile label="Visitors · 7d" value="12,840" delta="+18.4%" deltaDirection="up" />
             <KpiTile label="Posts · YTD" value="047" delta="+34%" deltaDirection="up" />
@@ -101,36 +102,12 @@ export default function Dashboard() {
           <Divider spacing="lg" />
 
           {/* Main grid: chart + side widgets */}
+          <SectionHead title="Analytics" />
+
           <Box className={dashStyles.dashGrid}>
             {/* Left column */}
             <Stack gap="6">
-              {/* Featured chart */}
-              <Chart
-                variant="area"
-                title="Visits · last 30 days"
-                height={220}
-                data={visitData}
-                datasets={[
-                  { key: "visits", name: "Total Visits" },
-                  { key: "unique", name: "Unique", color: "var(--acc-2)" },
-                ]}
-                showLegend
-              />
-
-              {/* Revenue chart */}
-              <Chart
-                variant="bar"
-                title="Revenue vs Costs"
-                height={180}
-                data={revenueData}
-                datasets={[
-                  { key: "revenue", name: "Revenue" },
-                  { key: "costs", name: "Costs", color: "var(--surface-4)" },
-                ]}
-                showLegend
-              />
-
-              {/* Activity table */}
+              {/* Activity table (moved above charts) */}
               <Card variant="default" padding="none">
                 <Box _padding="16px 20px" _borderBottom="1px solid var(--hairline)" _display="flex" _alignItems="center" _gap="12px">
                   <Heading variant="subheading" level={3}>Recent Activity</Heading>
@@ -178,6 +155,33 @@ export default function Dashboard() {
                   </DataTable.Body>
                 </DataTable>
               </Card>
+
+              {/* Featured chart */}
+              <Chart
+                variant="area"
+                title="Visits · last 30 days"
+                height={220}
+                data={visitData}
+                datasets={[
+                  { key: "visits", name: "Total Visits" },
+                  { key: "unique", name: "Unique", color: "var(--acc-2)" },
+                ]}
+                showLegend
+              />
+
+              {/* Revenue chart */}
+              <Chart
+                variant="bar"
+                title="Revenue vs Costs"
+                height={180}
+                data={revenueData}
+                datasets={[
+                  { key: "revenue", name: "Revenue" },
+                  { key: "costs", name: "Costs", color: "var(--surface-4)" },
+                ]}
+                showLegend
+              />
+
             </Stack>
 
             {/* Right column — widget shelf */}
