@@ -6,11 +6,11 @@
 :root {
   /* DARK (default) ----------------------------------- */
   --d-bg: rgba(10, 10, 11, 1);
-  --d-surface-0: rgba(14, 14, 16, 0.8);
-  --d-surface-1: rgba(19, 19, 22, 0.8);
-  --d-surface-2: rgba(26, 26, 30, 0.8);
-  --d-surface-3: rgba(35, 35, 40, 0.8);
-  --d-surface-4: rgba(45, 45, 51, 0.8);
+  --d-surface-0: rgba(14, 14, 16, 1);
+  --d-surface-1: rgba(19, 19, 22, 1);
+  --d-surface-2: rgba(26, 26, 30, 1);
+  --d-surface-3: rgba(35, 35, 40, 1);
+  --d-surface-4: rgba(45, 45, 51, 1);
   --d-hairline: rgba(237, 237, 238, 0.06);
   --d-rule: rgba(237, 237, 238, 0.12);
   --d-text: rgba(237, 237, 238, 1);
@@ -39,11 +39,11 @@
 
   /* LIGHT -------------------------------------------- */
   --l-bg: rgba(250, 250, 250, 1);
-  --l-surface-0: rgba(244, 244, 245, 0.8);
-  --l-surface-1: rgba(238, 238, 240, 0.8);
-  --l-surface-2: rgba(228, 228, 231, 0.8);
-  --l-surface-3: rgba(212, 212, 216, 0.8);
-  --l-surface-4: rgba(194, 194, 198, 0.8);
+  --l-surface-0: rgba(244, 244, 245, 1);
+  --l-surface-1: rgba(238, 238, 240, 1);
+  --l-surface-2: rgba(228, 228, 231, 1);
+  --l-surface-3: rgba(212, 212, 216, 1);
+  --l-surface-4: rgba(194, 194, 198, 1);
   --l-hairline: rgba(10, 10, 11, 0.06);
   --l-rule: rgba(10, 10, 11, 0.14);
   --l-text: rgba(10, 10, 11, 1);
