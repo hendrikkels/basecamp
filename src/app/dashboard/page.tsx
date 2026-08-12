@@ -23,6 +23,7 @@ import {
   Icon,
   Link,
   TextStrip,
+  CullingBreakpoint,
 } from "@/components/custom";
 import { Box } from "@/components/primitives";
 import dashStyles from "./dashboard.module.css";
@@ -173,56 +174,58 @@ export default function Dashboard() {
             </Stack>
 
             {/* Right column — widget shelf */}
-            <Stack gap="5">
-              <Box _display="flex" _alignItems="center" _gap="12px">
-                <Heading variant="subheading" level={3}>Widgets</Heading>
-                <Text size="micro" color="primary">Live</Text>
-              </Box>
-
-              <Widget label="This Week">
-                <CalendarStrip
-                  days={[
-                    { date: 19, label: "M", dots: 2 },
-                    { date: 20, label: "T", dots: 1 },
-                    { date: 21, label: "W", dots: 3 },
-                    { date: 22, label: "T" },
-                    { date: 23, label: "F", dots: 1 },
-                    { date: 24, label: "S" },
-                    { date: 25, label: "S", isToday: true, dots: 1 },
-                  ]}
-                />
-              </Widget>
-
-              <Widget variant="frost" label="Now Playing" accent={<Icon name="play" size="sm" color="primary" />}>
-                <Heading variant="subheading" level={4}>Ambient Focus</Heading>
-                <TextStrip items={["Deep work playlist", "2:14:08"]} _marginTop="4px" />
-                <Box _display="flex" _gap="10px" _alignItems="center" _marginTop="14px" _padding="8px" _background="var(--surface-2)" _borderRadius="var(--r-xs)">
-                  <Icon name="play" size="lg" color="primary" />
-                  <Box>
-                    <Text size="caption">Brian Eno — Music for Airports</Text>
-                    <Text size="caption" color="dim">Ambient 1</Text>
-                  </Box>
+            <CullingBreakpoint below="md">
+              <Stack gap="5">
+                <Box _display="flex" _alignItems="center" _gap="12px">
+                  <Heading variant="subheading" level={3}>Widgets</Heading>
+                  <Text size="micro" color="primary">Live</Text>
                 </Box>
-              </Widget>
 
-              <Widget label="Habits" accent="92%">
-                <HabitGrid
-                  cells={[
-                    ...Array(22).fill("filled" as const),
-                    ...Array(5).fill("partial" as const),
-                    ...Array(3).fill("empty" as const),
-                  ]}
-                />
-              </Widget>
+                <Widget label="This Week">
+                  <CalendarStrip
+                    days={[
+                      { date: 19, label: "M", dots: 2 },
+                      { date: 20, label: "T", dots: 1 },
+                      { date: 21, label: "W", dots: 3 },
+                      { date: 22, label: "T" },
+                      { date: 23, label: "F", dots: 1 },
+                      { date: 24, label: "S" },
+                      { date: 25, label: "S", isToday: true, dots: 1 },
+                    ]}
+                  />
+                </Widget>
 
-              <Widget label="Quick Stats">
-                <Stack gap="3">
-                  <StatRow label="Words written" value="48,219" />
-                  <StatRow label="Streak" value="14 days" color="primary" />
-                  <StatRow label="Avg session" value="42m" />
-                </Stack>
-              </Widget>
-            </Stack>
+                <Widget variant="frost" label="Now Playing" accent={<Icon name="play" size="sm" color="primary" />}>
+                  <Heading variant="subheading" level={4}>Ambient Focus</Heading>
+                  <TextStrip items={["Deep work playlist", "2:14:08"]} _marginTop="4px" />
+                  <Box _display="flex" _gap="10px" _alignItems="center" _marginTop="14px" _padding="8px" _background="var(--surface-2)" _borderRadius="var(--r-xs)">
+                    <Icon name="play" size="lg" color="primary" />
+                    <Box>
+                      <Text size="caption">Brian Eno — Music for Airports</Text>
+                      <Text size="caption" color="dim">Ambient 1</Text>
+                    </Box>
+                  </Box>
+                </Widget>
+
+                <Widget label="Habits" accent="92%">
+                  <HabitGrid
+                    cells={[
+                      ...Array(22).fill("filled" as const),
+                      ...Array(5).fill("partial" as const),
+                      ...Array(3).fill("empty" as const),
+                    ]}
+                  />
+                </Widget>
+
+                <Widget label="Quick Stats">
+                  <Stack gap="3">
+                    <StatRow label="Words written" value="48,219" />
+                    <StatRow label="Streak" value="14 days" color="primary" />
+                    <StatRow label="Avg session" value="42m" />
+                  </Stack>
+                </Widget>
+              </Stack>
+            </CullingBreakpoint>
           </Box>
         </Stack>
       </Container>

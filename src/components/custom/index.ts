@@ -135,3 +135,6 @@ export type { MenuToggleProps } from "./MenuToggle";
 
 export { TextStrip } from "./TextStrip";
 export type { TextStripProps, TextStripSize, TextStripColor } from "./TextStrip";
+
+export { CullingBreakpoint } from "./CullingBreakpoint";
+export type { CullingBreakpointProps } from "./CullingBreakpoint";
