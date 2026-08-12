@@ -7,6 +7,7 @@ import styles from "./Badge.module.css";
 
 export type BadgeColor =
   | "default"
+  | "default-soft"
   | "primary"
   | "primary-soft"
   | "secondary"
@@ -14,9 +15,11 @@ export type BadgeColor =
   | "danger"
   | "danger-soft"
   | "warn"
+  | "warn-soft"
   | "info"
+  | "info-soft"
   | "success"
-  | "outline";
+  | "success-soft";
 
 export interface BadgeProps extends PrimitiveProps<"span"> {
   color?: BadgeColor;
@@ -25,6 +28,7 @@ export interface BadgeProps extends PrimitiveProps<"span"> {
 
 const colorClasses: Record<BadgeColor, string> = {
   default: styles.default,
+  "default-soft": styles.defaultSoft,
   primary: styles.primary,
   "primary-soft": styles.primarySoft,
   secondary: styles.secondary,
@@ -32,13 +36,15 @@ const colorClasses: Record<BadgeColor, string> = {
   danger: styles.danger,
   "danger-soft": styles.dangerSoft,
   warn: styles.warn,
+  "warn-soft": styles.warnSoft,
   info: styles.info,
+  "info-soft": styles.infoSoft,
   success: styles.success,
-  outline: styles.outline,
+  "success-soft": styles.successSoft,
 };
 
 export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
-  function Badge({ color = "default", dot = false, className, children, ...props }, ref) {
+  function Badge({ color = "default-soft", dot = false, className, children, ...props }, ref) {
     const classes = [styles.base, colorClasses[color], className]
       .filter(Boolean)
       .join(" ");

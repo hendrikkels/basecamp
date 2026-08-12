@@ -190,13 +190,20 @@ export default function DesignSystem() {
           <Stack direction="horizontal" gap="2" wrap>
             <Badge>Default</Badge>
             <Badge color="primary">Primary</Badge>
-            <Badge color="primary-soft">Primary Soft</Badge>
             <Badge color="secondary">Secondary</Badge>
             <Badge color="danger" dot>Danger</Badge>
-            <Badge color="success" dot>Success</Badge>
             <Badge color="warn">Warning</Badge>
             <Badge color="info">Info</Badge>
-            <Badge color="outline">Outline</Badge>
+            <Badge color="success" dot>Success</Badge>
+          </Stack>
+          <Stack direction="horizontal" gap="2" wrap>
+            <Badge color="default-soft">Default Soft</Badge>
+            <Badge color="primary-soft">Primary Soft</Badge>
+            <Badge color="secondary-soft">Secondary Soft</Badge>
+            <Badge color="danger-soft">Danger Soft</Badge>
+            <Badge color="warn-soft">Warn Soft</Badge>
+            <Badge color="info-soft">Info Soft</Badge>
+            <Badge color="success-soft">Success Soft</Badge>
           </Stack>
 
           <Divider />

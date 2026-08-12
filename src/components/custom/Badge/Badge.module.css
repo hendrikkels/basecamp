@@ -13,16 +13,19 @@
 
 /* Color variants */
 .default { background: var(--surface-2); color: var(--text); }
+.defaultSoft { background: var(--surface-1); color: var(--text); }
 .primary { background: var(--acc); color: var(--acc-on); }
 .primarySoft { background: var(--acc-soft); color: var(--acc); }
 .secondary { background: var(--acc-2); color: var(--acc-2-on); }
 .secondarySoft { background: var(--acc-2-soft); color: var(--acc-2); }
 .danger { background: var(--danger); color: var(--danger-on); }
 .dangerSoft { background: var(--danger-soft); color: var(--danger); }
-.warn { background: var(--warn-soft); color: var(--warn); }
-.info { background: var(--info-soft); color: var(--info); }
-.success { background: var(--success-soft); color: var(--success); }
-.outline { background: transparent; box-shadow: inset 0 0 0 1px var(--rule); color: var(--text); }
+.warn { background: var(--warn); color: var(--warn-on); }
+.warnSoft { background: var(--warn-soft); color: var(--warn); }
+.info { background: var(--info); color: var(--info-on); }
+.infoSoft { background: var(--info-soft); color: var(--info); }
+.success { background: var(--success); color: var(--success-on); }
+.successSoft { background: var(--success-soft); color: var(--success); }
 
 /* Dot indicator */
 .dot {
