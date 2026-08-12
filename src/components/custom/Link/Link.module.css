@@ -4,6 +4,11 @@
   font-family: var(--mono);
   transition: color var(--dur-fast);
   cursor: pointer;
+  white-space: nowrap;
+}
+
+.wrap {
+  white-space: normal;
 }
 
 .link:hover {
@@ -27,7 +32,13 @@
   color: inherit;
 }
 
+.arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .arrow::after {
-  content: " →";
+  content: "→";
   color: var(--acc);
 }

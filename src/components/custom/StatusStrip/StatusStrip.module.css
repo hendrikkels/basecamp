@@ -5,8 +5,21 @@
   display: flex;
   gap: 32px;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
+
+.strip::-webkit-scrollbar {
+  display: none;
+}
+
+/* Alignment */
+.left { justify-content: flex-start; }
+.center { justify-content: center; }
+.right { justify-content: flex-end; }
+.between { justify-content: space-between; }
+.evenly { justify-content: space-evenly; }
 
 .item {
   display: flex;
@@ -14,6 +27,7 @@
   align-items: center;
   font-family: var(--mono);
   font-size: 11px;
+  flex-shrink: 0;
 }
 
 .label {
@@ -24,11 +38,17 @@
 }
 
 .separator {
-  width: 1px;
-  height: 16px;
-  background: var(--surface-3);
+  color: var(--faint);
+  font-size: 8px;
+  flex-shrink: 0;
+  user-select: none;
 }
 
 .valueSeparator {
   color: var(--dim);
+}
+
+.trailing {
+  margin-left: auto;
+  flex-shrink: 0;
 }

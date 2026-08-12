@@ -11,7 +11,7 @@ import {
   Badge,
   BlockStrip,
   Avatar,
-  Ticker,
+  StatusStrip,
   Link,
   TextStrip,
 } from "@/components/custom";
@@ -59,9 +59,10 @@ export default function Home() {
         </Container>
       </Box>
 
-      {/* Ticker */}
+      {/* Status strip */}
       <Container>
-        <Ticker
+        <StatusStrip
+          align="evenly"
           items={[
             { label: "Stack", values: ["Next.js 16", "React 19", "TypeScript"] },
             { label: "Styling", values: ["CSS Modules", "Tokens"] },

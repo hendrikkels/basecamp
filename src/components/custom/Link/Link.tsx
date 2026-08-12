@@ -13,6 +13,7 @@ export interface LinkProps extends Omit<PrimitiveProps<"a">, "href"> {
   variant?: LinkVariant;
   external?: boolean;
   arrow?: boolean;
+  wrap?: boolean;
 }
 
 const variantClasses: Record<LinkVariant, string> = {
@@ -22,8 +23,8 @@ const variantClasses: Record<LinkVariant, string> = {
 };
 
 export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
-  function Link({ href, variant = "default", external = false, arrow = false, className, children, ...props }, ref) {
-    const classes = [variantClasses[variant], arrow ? styles.arrow : undefined, className].filter(Boolean).join(" ");
+  function Link({ href, variant = "default", external = false, arrow = false, wrap = false, className, children, ...props }, ref) {
+    const classes = [variantClasses[variant], arrow ? styles.arrow : undefined, wrap ? styles.wrap : undefined, className].filter(Boolean).join(" ");
 
     if (external) {
       return (

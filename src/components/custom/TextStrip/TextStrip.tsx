@@ -44,15 +44,13 @@ export const TextStrip = React.forwardRef<HTMLDivElement, TextStripProps>(
       className,
     ].filter(Boolean).join(" ");
 
-    const separator = icon ?? <Span className={styles.separator}>·</Span>;
-
     return (
       <Box ref={ref} className={classes} {...props}>
         {items.map((item, i) => (
-          <React.Fragment key={i}>
-            {i > 0 && separator}
-            <Span className={styles.item}>{item}</Span>
-          </React.Fragment>
+          <Span key={i} className={styles.item}>
+            {i > 0 && (icon ?? <Span className={styles.separator}>·</Span>)}
+            {item}
+          </Span>
         ))}
       </Box>
     );
