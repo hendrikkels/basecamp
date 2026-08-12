@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useCallback } from "react";
-import { Box, H2 } from "@/components/primitives";
+import { Box, Text, Span } from "@/components/primitives";
 import styles from "./Modal.module.css";
 
 export interface ModalProps {
@@ -50,7 +50,9 @@ export interface ModalTitleProps {
 }
 
 function ModalTitle({ children }: ModalTitleProps) {
-  return <H2 className={styles.title}>{children}</H2>;
+  return <Span className={styles.title}>
+    {children}
+  </Span>;
 }
 ModalTitle.displayName = "Modal.Title";
 
