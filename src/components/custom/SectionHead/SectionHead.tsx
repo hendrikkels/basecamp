@@ -19,7 +19,7 @@ export const SectionHead = React.forwardRef<HTMLDivElement, SectionHeadProps>(
       <Box ref={ref} className={classes} {...props}>
         {number && <Span className={styles.number}>{number}</Span>}
         <Span className={styles.title}>{title}</Span>
-        {accent && <Span className={styles.accent}>{accent}</Span>}
+        {accent && <span className={styles.accent}>{accent}</span>}
       </Box>
     );
   }

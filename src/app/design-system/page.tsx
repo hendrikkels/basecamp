@@ -78,8 +78,8 @@ export default function DesignSystem() {
           <Box _paddingBottom="48px" _borderBottom="1px solid var(--rule)">
             <Box _display="flex" _alignItems="center" _gap="12px" _marginBottom="20px">
               <Text size="micro" color="dim">Design System</Text>
-              <Text size="micro" color="primary">▰▰▰</Text>
-              <Text size="micro" color="dim">Direction C · Block / Retro</Text>
+              <Text size="micro" color="dim"> · </Text>
+              <Text size="micro" color="dim">Block / Retro</Text>
             </Box>
             <Heading variant="display-l" level={1}>
               Component <span style={{ color: "var(--acc)" }}>Library</span>
