@@ -5,81 +5,83 @@
 
 :root {
   /* DARK (default) ----------------------------------- */
-  --d-bg:        #0a0a0b;
-  --d-surface-0: #0e0e10;
-  --d-surface-1: #131316;
-  --d-surface-2: #1a1a1e;
-  --d-surface-3: #232328;
-  --d-surface-4: #2d2d33;
-  --d-hairline:  rgba(237,237,238,0.06);
-  --d-rule:      rgba(237,237,238,0.12);
-  --d-text:      #ededee;
-  --d-muted:     #9a9aa1;
-  --d-dim:       #6b6b72;
-  --d-faint:     #4a4a51;
+  --d-bg: rgba(10, 10, 11, 1);
+  --d-surface-0: rgba(14, 14, 16, 0.8);
+  --d-surface-1: rgba(19, 19, 22, 0.8);
+  --d-surface-2: rgba(26, 26, 30, 0.8);
+  --d-surface-3: rgba(35, 35, 40, 0.8);
+  --d-surface-4: rgba(45, 45, 51, 0.8);
+  --d-hairline: rgba(237, 237, 238, 0.06);
+  --d-rule: rgba(237, 237, 238, 0.12);
+  --d-text: rgba(237, 237, 238, 1);
+  --d-muted: rgba(154, 154, 161, 1);
+  --d-dim: rgba(107, 107, 114, 1);
+  --d-faint: rgba(74, 74, 81, 1);
 
-  --d-acc:        #6A76FB;
-  --d-acc-on:     #ffffff;
-  --d-acc-soft:   rgba(106,118,251,0.16);
-  --d-acc-2:      #C839C5;
-  --d-acc-2-on:   #ffffff;
-  --d-acc-2-soft: rgba(200,57,197,0.16);
-  --d-danger:     #FD6F6B;
-  --d-danger-on:  #ffffff;
-  --d-danger-soft: rgba(253,111,107,0.14);
-  --d-warn:       #e6bd1b;
-  --d-warn-on:    #ffffff;
-  --d-warn-soft:  rgba(230,189,27,0.14);
-  --d-info:       #0dc2c4;;
-  --d-info-on:    #ffffff;
-  --d-info-soft:  rgba(13,194,196,0.14);
-  --d-success:    #15d785;
-  --d-success-on: #ffffff;
-  --d-success-soft: rgba(21,215,133,0.14);
+  --d-acc: rgba(106, 118, 251, 1);
+  --d-acc-on: rgba(237, 237, 238, 1);
+  --d-acc-soft: rgba(106, 118, 251, 0.16);
+  --d-acc-2: rgba(200, 57, 197, 1);
+  --d-acc-2-on: rgba(237, 237, 238, 1);
+  --d-acc-2-soft: rgba(200, 57, 197, 0.16);
+  --d-danger: rgba(253, 111, 107, 1);
+  --d-danger-on: rgba(237, 237, 238, 1);
+  --d-danger-soft: rgba(253, 111, 107, 0.14);
+  --d-warn: rgba(230, 189, 27, 1);
+  --d-warn-on: rgba(237, 237, 238, 1);
+  --d-warn-soft: rgba(230, 189, 27, 0.14);
+  --d-info: rgba(13, 194, 196, 1);
+  --d-info-on: rgba(237, 237, 238, 1);
+  --d-info-soft: rgba(13, 194, 196, 0.14);
+  --d-success: rgba(21, 215, 133, 1);
+  --d-success-on: rgba(237, 237, 238, 1);
+  --d-success-soft: rgba(21, 215, 133, 0.14);
 
   /* LIGHT -------------------------------------------- */
-  --l-bg:        #fafafa;
-  --l-surface-0: #f4f4f5;
-  --l-surface-1: #eeeef0;
-  --l-surface-2: #e4e4e7;
-  --l-surface-3: #d4d4d8;
-  --l-surface-4: #c2c2c6;
-  --l-hairline:  rgba(10,10,11,0.06);
-  --l-rule:      rgba(10,10,11,0.14);
-  --l-text:      #0a0a0b;
-  --l-muted:     #4a4a51;
-  --l-dim:       #74747b;
-  --l-faint:     #a4a4ab;
+  --l-bg: rgba(250, 250, 250, 1);
+  --l-surface-0: rgba(244, 244, 245, 0.8);
+  --l-surface-1: rgba(238, 238, 240, 0.8);
+  --l-surface-2: rgba(228, 228, 231, 0.8);
+  --l-surface-3: rgba(212, 212, 216, 0.8);
+  --l-surface-4: rgba(194, 194, 198, 0.8);
+  --l-hairline: rgba(10, 10, 11, 0.06);
+  --l-rule: rgba(10, 10, 11, 0.14);
+  --l-text: rgba(10, 10, 11, 1);
+  --l-muted: rgba(74, 74, 81, 1);
+  --l-dim: rgba(116, 116, 123, 1);
+  --l-faint: rgba(164, 164, 171, 1);
 
-  --l-acc:        #6A76FB;
-  --l-acc-on:     #ffffff;
-  --l-acc-soft:   rgba(106,118,251,0.14);
-  --l-acc-2:      #C839C5;
-  --l-acc-2-on:   #ffffff;
-  --l-acc-2-soft: rgba(200,57,197,0.14);
-  --l-danger:     #FD6F6B;
-  --l-danger-on:  #ffffff;
-  --l-danger-soft: rgba(253,111,107,0.14);
-  --l-warn:       #e6bd1b;
-  --l-warn-on:    #ffffff;
-  --l-warn-soft:  rgba(230,189,27,0.14);
-  --l-info:       #0dc2c4;;
-  --l-info-on:    #ffffff;
-  --l-info-soft:  rgba(13,194,196,0.14);
-  --l-success:    #15d785;
-  --l-success-on: #ffffff;
-  --l-success-soft: rgba(21,215,133,0.14);
+  --l-acc: rgba(106, 118, 251, 1);
+  --l-acc-on: rgba(255, 255, 255, 1);
+  --l-acc-soft: rgba(106, 118, 251, 0.14);
+  --l-acc-2: rgba(200, 57, 197, 1);
+  --l-acc-2-on: rgba(255, 255, 255, 1);
+  --l-acc-2-soft: rgba(200, 57, 197, 0.14);
+  --l-danger: rgba(253, 111, 107, 1);
+  --l-danger-on: rgba(255, 255, 255, 1);
+  --l-danger-soft: rgba(253, 111, 107, 0.14);
+  --l-warn: rgba(230, 189, 27, 1);
+  --l-warn-on: rgba(255, 255, 255, 1);
+  --l-warn-soft: rgba(230, 189, 27, 0.14);
+  --l-info: rgba(13, 194, 196, 1);
+  --l-info-on: rgba(255, 255, 255, 1);
+  --l-info-soft: rgba(13, 194, 196, 0.14);
+  --l-success: rgba(21, 215, 133, 1);
+  --l-success-on: rgba(255, 255, 255, 1);
+  --l-success-soft: rgba(21, 215, 133, 0.14);
 
   /* Typography --------------------------------------- */
-  --mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --mono:
+    var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Consolas,
+    monospace;
   --display: var(--font-inter), Arial, sans-serif;
   /* Letter spacing tokens (use these rather than ad-hoc values) */
-  --ls-xx-tight: -0.10em; /* very tight, display/large headings */
-  --ls-tight: -0.04em;    /* tight */
+  --ls-xx-tight: -0.1em; /* very tight, display/large headings */
+  --ls-tight: -0.04em; /* tight */
   --ls-tight-sm: -0.02em; /* slightly tight */
-  --ls-normal: 0.005em;   /* default small tracking */
-  --ls-medium: 0.04em;    /* medium tracking */
-  --ls-wide: 0.12em;      /* wide tracking */
+  --ls-normal: 0.005em; /* default small tracking */
+  --ls-medium: 0.04em; /* medium tracking */
+  --ls-wide: 0.12em; /* wide tracking */
 
   /* Radii -------------------------------------------- */
   --r-0: 0px;
@@ -104,8 +106,8 @@
   --max-narrow: 920px;
 
   /* Easing/durations --------------------------------- */
-  --ease-out: cubic-bezier(.22,.61,.36,1);
-  --ease-in-out: cubic-bezier(.65,0,.35,1);
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --dur-fast: 120ms;
   --dur-base: 180ms;
   --dur-slow: 320ms;
@@ -124,35 +126,36 @@
 }
 
 /* Dark mode (default) */
-html[data-theme="dark"], html:not([data-theme]) {
+html[data-theme="dark"],
+html:not([data-theme]) {
   --bg: var(--d-bg);
   --surface-0: var(--d-surface-0);
   --surface-1: var(--d-surface-1);
   --surface-2: var(--d-surface-2);
   --surface-3: var(--d-surface-3);
   --surface-4: var(--d-surface-4);
-  --hairline:  var(--d-hairline);
-  --rule:      var(--d-rule);
-  --text:      var(--d-text);
-  --muted:     var(--d-muted);
-  --dim:       var(--d-dim);
-  --faint:     var(--d-faint);
-  --acc:        var(--d-acc);
-  --acc-on:     var(--d-acc-on);
-  --acc-soft:   var(--d-acc-soft);
-  --acc-2:      var(--d-acc-2);
-  --acc-2-on:   var(--d-acc-2-on);
+  --hairline: var(--d-hairline);
+  --rule: var(--d-rule);
+  --text: var(--d-text);
+  --muted: var(--d-muted);
+  --dim: var(--d-dim);
+  --faint: var(--d-faint);
+  --acc: var(--d-acc);
+  --acc-on: var(--d-acc-on);
+  --acc-soft: var(--d-acc-soft);
+  --acc-2: var(--d-acc-2);
+  --acc-2-on: var(--d-acc-2-on);
   --acc-2-soft: var(--d-acc-2-soft);
-  --danger:     var(--d-danger);
-  --danger-on:  var(--d-danger-on);
+  --danger: var(--d-danger);
+  --danger-on: var(--d-danger-on);
   --danger-soft: var(--d-danger-soft);
-  --warn:       var(--d-warn);
-  --warn-on:    var(--d-warn-on);
-  --warn-soft:  var(--d-warn-soft);
-  --info:       var(--d-info);
-  --info-on:    var(--d-info-on);
-  --info-soft:  var(--d-info-soft);
-  --success:    var(--d-success);
+  --warn: var(--d-warn);
+  --warn-on: var(--d-warn-on);
+  --warn-soft: var(--d-warn-soft);
+  --info: var(--d-info);
+  --info-on: var(--d-info-on);
+  --info-soft: var(--d-info-soft);
+  --success: var(--d-success);
   --success-on: var(--d-success-on);
   --success-soft: var(--d-success-soft);
   color-scheme: dark;
@@ -166,28 +169,28 @@ html[data-theme="light"] {
   --surface-2: var(--l-surface-2);
   --surface-3: var(--l-surface-3);
   --surface-4: var(--l-surface-4);
-  --hairline:  var(--l-hairline);
-  --rule:      var(--l-rule);
-  --text:      var(--l-text);
-  --muted:     var(--l-muted);
-  --dim:       var(--l-dim);
-  --faint:     var(--l-faint);
-  --acc:        var(--l-acc);
-  --acc-on:     var(--l-acc-on);
-  --acc-soft:   var(--l-acc-soft);
-  --acc-2:      var(--l-acc-2);
-  --acc-2-on:   var(--l-acc-2-on);
+  --hairline: var(--l-hairline);
+  --rule: var(--l-rule);
+  --text: var(--l-text);
+  --muted: var(--l-muted);
+  --dim: var(--l-dim);
+  --faint: var(--l-faint);
+  --acc: var(--l-acc);
+  --acc-on: var(--l-acc-on);
+  --acc-soft: var(--l-acc-soft);
+  --acc-2: var(--l-acc-2);
+  --acc-2-on: var(--l-acc-2-on);
   --acc-2-soft: var(--l-acc-2-soft);
-  --danger:     var(--l-danger);
-  --danger-on:  var(--l-danger-on);
+  --danger: var(--l-danger);
+  --danger-on: var(--l-danger-on);
   --danger-soft: var(--l-danger-soft);
-  --warn:       var(--l-warn);
-  --warn-on:    var(--l-warn-on);
-  --warn-soft:  var(--l-warn-soft);
-  --info:       var(--l-info);
-  --info-on:    var(--l-info-on);
-  --info-soft:  var(--l-info-soft);
-  --success:    var(--l-success);
+  --warn: var(--l-warn);
+  --warn-on: var(--l-warn-on);
+  --warn-soft: var(--l-warn-soft);
+  --info: var(--l-info);
+  --info-on: var(--l-info-on);
+  --info-soft: var(--l-info-soft);
+  --success: var(--l-success);
   --success-on: var(--l-success-on);
   --success-soft: var(--l-success-soft);
   color-scheme: light;
