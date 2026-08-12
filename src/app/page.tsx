@@ -126,7 +126,7 @@ export default function Home() {
             </Box>
           </Box>
 
-          <Row columns={3} gap="4">
+          <Row columns="3" gap="4">
             <Card variant="block">
               <Heading variant="subheading" level={3} _marginBottom="8px">Primitives</Heading>
               <Text size="caption" color="muted">
@@ -165,7 +165,7 @@ export default function Home() {
             </Box>
           </Box>
 
-          <Row columns={3} gap="4">
+          <Row columns="3" gap="4">
             <Link href="/dashboard" variant="unstyled">
               <Card variant="frost" _cursor="pointer" _height="100%">
                 <Text size="micro" color="primary" _marginBottom="8px">Screen</Text>

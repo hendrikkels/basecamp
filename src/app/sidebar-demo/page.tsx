@@ -124,7 +124,7 @@ function PageContent({ page }: { page: Page }) {
             <Text size="micro" color="dim">Navigation / Dashboard</Text>
             <Heading variant="heading" level={1}>Overview</Heading>
           </Stack>
-          <Row columns={3} gap="4">
+          <Row columns="3" gap="4">
             <KpiTile label="Revenue" value="$42.8" unit="k" delta="+12.4%" deltaDirection="up" />
             <KpiTile label="Active Users" value="1,284" delta="-3.2%" deltaDirection="down" />
             <KpiTile label="Uptime" value="99.9" unit="%" delta="+0.1%" deltaDirection="up" />
@@ -190,7 +190,7 @@ function PageContent({ page }: { page: Page }) {
             <Text size="micro" color="dim">Navigation / Analytics</Text>
             <Heading variant="heading" level={1}>Analytics</Heading>
           </Stack>
-          <Row columns={2} gap="4">
+          <Row columns="2" gap="4">
             <Chart
               variant="line"
               title="User Growth"
@@ -309,7 +309,7 @@ function PageContent({ page }: { page: Page }) {
             <Text size="micro" color="dim">Settings / Team</Text>
             <Heading variant="heading" level={1}>Team</Heading>
           </Stack>
-          <Row columns={3} gap="3">
+          <Row columns="3" gap="3">
             <Card variant="default" padding="sm">
               <Stack gap="2" align="center">
                 <Avatar color="primary" round>HV</Avatar>

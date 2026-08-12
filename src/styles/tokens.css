@@ -19,23 +19,23 @@
   --d-faint:     #4a4a51;
 
   --d-acc:        #6A76FB;
-  --d-acc-on:     #ffffff;
+  --d-acc-on:     #000000;
   --d-acc-soft:   rgba(106,118,251,0.16);
   --d-acc-2:      #C839C5;
-  --d-acc-2-on:   #ffffff;
+  --d-acc-2-on:   #000000;
   --d-acc-2-soft: rgba(200,57,197,0.16);
   --d-danger:     #FD6F6B;
-  --d-danger-on:  #ffffff;
+  --d-danger-on:  #000000;
   --d-danger-soft: rgba(253,111,107,0.16);
   --d-warn:       #fffa71;
-  --d-warn-on:    #2a2400;
+  --d-warn-on:    #000000;
   --d-warn-soft:  rgba(255,250,113,0.16);
   --d-info:       #20c5c6;
-  --d-info-on:    #051f1f;
+  --d-info-on:    #000000;
   --d-info-soft:  rgba(32,197,198,0.16);
-  --d-success:    #67f86f;
-  --d-success-on: #062a0a;
-  --d-success-soft: rgba(103,248,111,0.16);
+  --d-success:    #2aed6d;
+  --d-success-on: #000000;
+  --d-success-soft: rgba(42,237,109,0.16);
 
   /* LIGHT -------------------------------------------- */
   --l-bg:        #fafafa;

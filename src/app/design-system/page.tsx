@@ -91,7 +91,7 @@ export default function DesignSystem() {
 
           {/* Colors */}
           <SectionHead number="01" title="Colors" accent="tokens" />
-          <Row columns={6} gap="2">
+          <Row columns="6" gap="2">
             {[
               { name: "bg", bg: "var(--bg)", color: "var(--text)", border: true },
               { name: "surface-0", bg: "var(--surface-0)", color: "var(--text)" },
@@ -105,7 +105,7 @@ export default function DesignSystem() {
               </Box>
             ))}
           </Row>
-          <Row columns={6} gap="2">
+          <Row columns="6" gap="2">
             {[
               { name: "acc", bg: "var(--acc)", color: "var(--acc-on)" },
               { name: "acc-2", bg: "var(--acc-2)", color: "var(--acc-2-on)" },
@@ -210,7 +210,7 @@ export default function DesignSystem() {
 
           {/* Cards */}
           <SectionHead number="05" title="Cards" />
-          <Row columns={3} gap="4">
+          <Row columns="3" gap="4">
             <Card variant="default">
               <Heading variant="subheading" level={3}>Default</Heading>
               <Text size="caption" color="muted" _marginTop="8px">Standard surface card.</Text>
@@ -229,7 +229,7 @@ export default function DesignSystem() {
 
           {/* Form Controls */}
           <SectionHead number="06" title="Form Controls" />
-          <Row columns={2} gap="4">
+          <Row columns="2" gap="4">
             <Stack gap="4">
               <Field>
                 <Field.Label htmlFor="ds-input" required>Input</Field.Label>
@@ -289,7 +289,7 @@ export default function DesignSystem() {
 
           {/* Dropdowns */}
           <SectionHead number="07" title="Dropdowns" />
-          <Row columns={2} gap="4">
+          <Row columns="2" gap="4">
             <Card variant="default" padding="sm">
               <Text size="micro" color="dim" _marginBottom="12px">Single Select</Text>
               <Select value={selectVal} onChange={setSelectVal} placeholder="Choose a framework">
@@ -317,7 +317,7 @@ export default function DesignSystem() {
           {/* Charts */}
           <SectionHead number="08" title="Charts" accent="recharts" />
           <Stack gap="4">
-            <Row columns={2} gap="4">
+            <Row columns="2" gap="4">
               <Chart
                 variant="line"
                 title="Line Chart"
@@ -437,18 +437,37 @@ export default function DesignSystem() {
 
           <Divider />
 
-          {/* Progress & Loaders */}
-          <SectionHead number="12" title="Progress & Loaders" />
+          {/* Progress, Loaders & Empty State */}
+          <SectionHead number="12" title="Progress, Loaders & Empty State" />
           <Stack gap="4">
-            <Progress value={72} />
-            <Stack direction="horizontal" gap="2">
-              <Skeleton height="12px" width="100%" />
-              <Skeleton height="12px" width="75%" />
+            <Stack gap="2">
+              <Text size="micro" color="dim">Progress</Text>
+              <Progress value={72} />
             </Stack>
-            <Stack direction="horizontal" gap="5" align="center">
-              <Spinner />
-              <DotsLoader />
-              <BlockStrip filled={6} total={10} />
+            <Stack gap="2">
+              <Text size="micro" color="dim">Skeletons</Text>
+              <Stack direction="horizontal" gap="2">
+                <Skeleton height="12px" width="100%" />
+                <Skeleton height="12px" width="75%" />
+              </Stack>
+            </Stack>
+            <Stack gap="2">
+              <Text size="micro" color="dim">Loaders</Text>
+              <Stack direction="horizontal" gap="5" align="center">
+                <Spinner />
+                <DotsLoader />
+                <BlockStrip filled={6} total={10} />
+              </Stack>
+            </Stack>
+            <Stack gap="2">
+              <Text size="micro" color="dim">Empty state</Text>
+              <EmptyState
+                glyph="[ ◇ ]"
+                title="No results"
+                description="Try adjusting your search or filters to find what you're looking for."
+              >
+                <Button variant="secondary" size="sm">Clear Filters</Button>
+              </EmptyState>
             </Stack>
           </Stack>
 
@@ -515,20 +534,13 @@ export default function DesignSystem() {
 
           <Divider />
 
-          {/* KPI + Empty */}
-          <SectionHead number="15" title="KPI & Empty State" />
-          <Row columns={3} gap="4">
+          {/* KPI */}
+          <SectionHead number="15" title="KPI" />
+          <Row columns="3" gap="4">
             <KpiTile label="Revenue" value="$42.8" unit="k" delta="+12%" deltaDirection="up" />
             <KpiTile label="Users" value="1,284" delta="-3%" deltaDirection="down" />
             <KpiTile label="Uptime" value="99.9" unit="%" delta="+0.1%" deltaDirection="up" />
           </Row>
-          <EmptyState
-            glyph="[ ◇ ]"
-            title="No results"
-            description="Try adjusting your search or filters to find what you're looking for."
-          >
-            <Button variant="secondary" size="sm">Clear Filters</Button>
-          </EmptyState>
         </Stack>
       </Container>
     </>

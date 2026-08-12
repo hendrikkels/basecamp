@@ -91,7 +91,7 @@ export default function Dashboard() {
           />
 
           {/* KPI Row */}
-          <Row columns={4} gap="4">
+          <Row columns="4" gap="4">
             <KpiTile label="Visitors · 7d" value="12,840" delta="+18.4%" deltaDirection="up" />
             <KpiTile label="Posts · YTD" value="047" delta="+34%" deltaDirection="up" />
             <KpiTile label="Avg Read" value="4:18" unit="m" delta="+8%" deltaDirection="up" />

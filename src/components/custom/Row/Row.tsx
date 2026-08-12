@@ -5,7 +5,7 @@ import { Box } from "@/components/primitives";
 import type { PrimitiveProps } from "@/components/primitives";
 import styles from "./Row.module.css";
 
-export type RowColumns = 2 | 3 | 4 | 5 | 6;
+export type RowColumns = "2" | "3" | "4" | "5" | "6";
 export type RowGap = "1" | "2" | "3" | "4" | "5" | "6";
 
 export interface RowProps extends PrimitiveProps<"div"> {
@@ -14,11 +14,11 @@ export interface RowProps extends PrimitiveProps<"div"> {
 }
 
 const columnClasses: Record<RowColumns, string> = {
-  2: styles.col2,
-  3: styles.col3,
-  4: styles.col4,
-  5: styles.col5,
-  6: styles.col6,
+  "2": styles.col2,
+  "3": styles.col3,
+  "4": styles.col4,
+  "5": styles.col5,
+  "6": styles.col6,
 };
 
 const gapClasses: Record<RowGap, string> = {
@@ -31,7 +31,7 @@ const gapClasses: Record<RowGap, string> = {
 };
 
 export const Row = React.forwardRef<HTMLDivElement, RowProps>(
-  function Row({ columns = 3, gap = "4", className, children, ...props }, ref) {
+  function Row({ columns = "3", gap = "4", className, children, ...props }, ref) {
     const classes = [
       styles.base,
       columnClasses[columns],
