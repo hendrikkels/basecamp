@@ -28,7 +28,7 @@
 /* Floating action button */
 .fab {
   position: fixed;
-  top: 12px;
+  bottom: 12px;
   left: 12px;
   height: 36px;
   padding: 0 12px;
