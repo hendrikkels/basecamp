@@ -21,6 +21,7 @@ export type RadioGroupGap = "1" | "2" | "3" | "4" | "5" | "6";
 export interface RadioGroupProps {
   value: string;
   onChange: (value: string) => void;
+  label?: string;
   disabled?: boolean;
   name?: string;
   direction?: RadioGroupDirection;
@@ -46,6 +47,7 @@ const gapClasses: Record<RadioGroupGap, string> = {
 function RadioGroupRoot({
   value,
   onChange,
+  label,
   disabled = false,
   name,
   direction = "vertical",
@@ -59,8 +61,11 @@ function RadioGroupRoot({
 
   return (
     <RadioGroupContext.Provider value={{ value, onChange, disabled, name }}>
-      <Box className={classes} role="radiogroup">
-        {children}
+      <Box>
+        {label && <Span className={styles.label}>{label}</Span>}
+        <Box className={classes} role="radiogroup">
+          {children}
+        </Box>
       </Box>
     </RadioGroupContext.Provider>
   );

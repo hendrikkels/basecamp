@@ -1,3 +1,13 @@
+.label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 6px;
+}
+
 .group {
   display: flex;
 }
