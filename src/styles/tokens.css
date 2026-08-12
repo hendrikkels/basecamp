@@ -60,15 +60,15 @@
   --l-danger:     #FD6F6B;
   --l-danger-on:  #ffffff;
   --l-danger-soft: rgba(253,111,107,0.14);
-  --l-warn:       #d97706;
+  --l-warn:       #e6bd1b;
   --l-warn-on:    #ffffff;
-  --l-warn-soft:  rgba(217,119,6,0.14);
-  --l-info:       #0e8a8b;
+  --l-warn-soft:  rgba(230,189,27,0.14);
+  --l-info:       #0dc2c4;;
   --l-info-on:    #ffffff;
-  --l-info-soft:  rgba(14,138,139,0.14);
-  --l-success:    #1d7a25;
+  --l-info-soft:  rgba(13,194,196,0.14);
+  --l-success:    #15d785;
   --l-success-on: #ffffff;
-  --l-success-soft: rgba(29,122,37,0.14);
+  --l-success-soft: rgba(21,215,133,0.14);
 
   /* Typography --------------------------------------- */
   --mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
