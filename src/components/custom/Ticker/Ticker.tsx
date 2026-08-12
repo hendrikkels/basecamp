@@ -6,7 +6,8 @@ import styles from "./Ticker.module.css";
 
 export interface TickerItem {
   label: string;
-  value: string;
+  value?: string;
+  values?: string[];
   color?: string;
 }
 
@@ -27,7 +28,14 @@ export const Ticker = React.forwardRef<HTMLDivElement, TickerProps>(
             <Span className={styles.item}>
               <Span className={styles.label}>{item.label}</Span>
               <Span style={{ color: item.color || "var(--text)", fontWeight: 500, fontFeatureSettings: '"tnum"' }}>
-                {item.value}
+                {item.values
+                  ? item.values.map((v, vi) => (
+                      <React.Fragment key={vi}>
+                        {vi > 0 && <Span className={styles.valueSeparator}> · </Span>}
+                        {v}
+                      </React.Fragment>
+                    ))
+                  : item.value}
               </Span>
             </Span>
           </React.Fragment>

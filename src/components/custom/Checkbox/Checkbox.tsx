@@ -28,17 +28,16 @@ export const Checkbox = React.forwardRef<HTMLDivElement, CheckboxProps>(
     };
 
     return (
-      <Box
-        ref={ref}
-        className={classes}
-        onClick={handleClick}
-        role="checkbox"
-        aria-checked={checked}
-        aria-disabled={disabled}
-        tabIndex={disabled ? -1 : 0}
-        onKeyDown={(e) => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); handleClick(); } }}
-      >
-        <Span className={styles.box}>
+      <Box ref={ref} className={classes}>
+        <Span
+          className={styles.box}
+          onClick={handleClick}
+          role="checkbox"
+          aria-checked={checked}
+          aria-disabled={disabled}
+          tabIndex={disabled ? -1 : 0}
+          onKeyDown={(e) => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); handleClick(); } }}
+        >
           {checked && <Span className={styles.checkmark}>✓</Span>}
         </Span>
         {children}

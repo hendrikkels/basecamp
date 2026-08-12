@@ -8,3 +8,8 @@
 .title {
   margin: 0 0 24px;
 }
+
+.subtitle {
+  color: var(--dim);
+  font-weight: 400;
+}

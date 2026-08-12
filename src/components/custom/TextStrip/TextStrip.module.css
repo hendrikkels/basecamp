@@ -1,0 +1,35 @@
+.strip {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: var(--mono);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.separator {
+  color: var(--dim);
+  user-select: none;
+}
+
+/* Size variants */
+.bodyLg { font-size: 16px; letter-spacing: var(--ls-normal); }
+.body { font-size: 13px; letter-spacing: var(--ls-normal); }
+.caption { font-size: 12px; letter-spacing: var(--ls-normal); }
+.micro { font-size: 10px; letter-spacing: var(--ls-wide); text-transform: uppercase; font-weight: 500; }
+
+/* Color variants */
+.colorDefault { color: var(--text); }
+.colorMuted { color: var(--muted); }
+.colorDim { color: var(--dim); }
+.colorFaint { color: var(--faint); }
+.colorPrimary { color: var(--acc); }
+.colorSecondary { color: var(--acc-2); }
+.colorDanger { color: var(--danger); }
+.colorWarn { color: var(--warn); }
+.colorInfo { color: var(--info); }
+.colorSuccess { color: var(--success); }

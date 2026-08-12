@@ -27,6 +27,10 @@
   color: var(--dim);
 }
 
+.qualifier {
+  color: var(--muted);
+}
+
 .value {
   font-family: var(--mono);
   font-size: 40px;

@@ -6,7 +6,8 @@ import styles from "./StatusStrip.module.css";
 
 export interface StatusStripItem {
   label: string;
-  value: string;
+  value?: string;
+  values?: string[];
   color?: string;
 }
 
@@ -30,7 +31,14 @@ export const StatusStrip = React.forwardRef<HTMLDivElement, StatusStripProps>(
             <Box className={styles.item}>
               <Span className={styles.label}>{item.label}</Span>
               <Span style={{ color: item.color || "var(--text)", fontFeatureSettings: '"tnum"' }}>
-                {item.value}
+                {item.values
+                  ? item.values.map((v, vi) => (
+                      <React.Fragment key={vi}>
+                        {vi > 0 && <Span className={styles.valueSeparator}> · </Span>}
+                        {v}
+                      </React.Fragment>
+                    ))
+                  : item.value}
               </Span>
             </Box>
           </React.Fragment>

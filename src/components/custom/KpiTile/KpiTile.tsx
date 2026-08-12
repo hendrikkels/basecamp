@@ -6,6 +6,7 @@ import styles from "./KpiTile.module.css";
 
 export interface KpiTileProps {
   label: string;
+  qualifier?: string;
   value: string;
   unit?: string;
   delta?: string;
@@ -16,7 +17,7 @@ export interface KpiTileProps {
 }
 
 export const KpiTile = React.forwardRef<HTMLDivElement, KpiTileProps>(
-  function KpiTile({ label, value, unit, delta, deltaDirection = "up", meta, children, className }, ref) {
+  function KpiTile({ label, qualifier, value, unit, delta, deltaDirection = "up", meta, children, className }, ref) {
     const classes = [styles.kpi, className].filter(Boolean).join(" ");
     const deltaClasses = [
       styles.delta,
@@ -25,7 +26,10 @@ export const KpiTile = React.forwardRef<HTMLDivElement, KpiTileProps>(
 
     return (
       <Box ref={ref} className={classes}>
-        <Span className={styles.label}>{label}</Span>
+        <Span className={styles.label}>
+          {label}
+          {qualifier && <Span className={styles.qualifier}> · {qualifier}</Span>}
+        </Span>
         <Span className={styles.value}>
           {value}
           {unit && <Span className={styles.unit}>{unit}</Span>}

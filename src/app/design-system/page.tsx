@@ -40,6 +40,7 @@ import {
   Modal,
   useAlert,
   Icon,
+  TextStrip,
 } from "@/components/custom";
 import { Box } from "@/components/primitives";
 
@@ -77,9 +78,7 @@ export default function DesignSystem() {
           {/* Hero */}
           <Box _paddingBottom="48px" _borderBottom="1px solid var(--rule)">
             <Box _display="flex" _alignItems="center" _gap="12px" _marginBottom="20px">
-              <Text size="micro" color="dim">Design System</Text>
-              <Text size="micro" color="dim"> · </Text>
-              <Text size="micro" color="dim">Block / Retro</Text>
+              <TextStrip items={["Design System", "Block / Retro"]} />
             </Box>
             <Heading variant="display-l" level={1}>
               Component <span style={{ color: "var(--acc)" }}>Library</span>
@@ -263,7 +262,7 @@ export default function DesignSystem() {
             </Stack>
             <Stack gap="4">
               <Card variant="default" padding="sm">
-                <Text size="micro" color="dim" _marginBottom="12px">RadioGroup · Selected: {radioVal}</Text>
+                <TextStrip items={["RadioGroup", `Selected: ${radioVal}`]} _marginBottom="12px" />
                 <RadioGroup value={radioVal} onChange={(v) => setRadioVal(v)}>
                   <RadioGroup.Item value="a">Option A</RadioGroup.Item>
                   <RadioGroup.Item value="b">Option B</RadioGroup.Item>

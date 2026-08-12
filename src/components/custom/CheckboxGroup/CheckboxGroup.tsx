@@ -101,18 +101,18 @@ function CheckboxGroupItem({ value, disabled: itemDisabled, children, className 
     .join(" ");
 
   return (
-    <Box
-      className={classes}
-      onClick={handleClick}
-      role="checkbox"
-      aria-checked={isChecked}
-      aria-disabled={isDisabled}
-      tabIndex={isDisabled ? -1 : 0}
-      onKeyDown={(e) => {
-        if (e.key === " " || e.key === "Enter") { e.preventDefault(); handleClick(); }
-      }}
-    >
-      <Span className={styles.box}>
+    <Box className={classes}>
+      <Span
+        className={styles.box}
+        onClick={handleClick}
+        role="checkbox"
+        aria-checked={isChecked}
+        aria-disabled={isDisabled}
+        tabIndex={isDisabled ? -1 : 0}
+        onKeyDown={(e) => {
+          if (e.key === " " || e.key === "Enter") { e.preventDefault(); handleClick(); }
+        }}
+      >
         {isChecked && <Span className={styles.checkmark}>✓</Span>}
       </Span>
       {children}

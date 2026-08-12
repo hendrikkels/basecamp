@@ -15,6 +15,7 @@ import {
   Avatar,
   Ticker,
   Link,
+  TextStrip,
 } from "@/components/custom";
 import { Box } from "@/components/primitives";
 import pageStyles from "./page.module.css";
@@ -68,31 +69,6 @@ export default function Home() {
                   </Link>
                 </Stack>
               </Box>
-
-              {/* Hero widget */}
-              <Card variant="frost" _alignSelf="stretch" _minHeight="280px" _display="flex" _flexDirection="column">
-                <Text size="micro" color="primary" _marginBottom="14px">▰▰ Now</Text>
-                <Heading variant="subheading" level={2}>System Status</Heading>
-                <Text size="caption" color="muted" _marginBottom="16px">All services operational</Text>
-                <Stack gap="2" _marginTop="auto">
-                  <Box _display="flex" _justifyContent="space-between" _paddingTop="6px" _borderTop="1px solid var(--hairline)">
-                    <Text size="micro" color="dim">Uptime</Text>
-                    <Text size="caption" weight="medium">99.94%</Text>
-                  </Box>
-                  <Box _display="flex" _justifyContent="space-between" _paddingTop="6px" _borderTop="1px solid var(--hairline)">
-                    <Text size="micro" color="dim">Latency</Text>
-                    <Text size="caption" weight="medium">142ms</Text>
-                  </Box>
-                  <Box _display="flex" _justifyContent="space-between" _paddingTop="6px" _borderTop="1px solid var(--hairline)">
-                    <Text size="micro" color="dim">Components</Text>
-                    <Text size="caption" weight="medium" color="primary">34</Text>
-                  </Box>
-                  <Box _display="flex" _justifyContent="space-between" _paddingTop="6px" _borderTop="1px solid var(--hairline)">
-                    <Text size="micro" color="dim">Tokens</Text>
-                    <Text size="caption" weight="medium">128</Text>
-                  </Box>
-                </Stack>
-              </Card>
             </Box>
           </Box>
         </Container>
@@ -102,8 +78,8 @@ export default function Home() {
       <Container>
         <Ticker
           items={[
-            { label: "Stack", value: "Next.js 16 · React 19 · TypeScript" },
-            { label: "Styling", value: "CSS Modules · Tokens" },
+            { label: "Stack", values: ["Next.js 16", "React 19", "TypeScript"] },
+            { label: "Styling", values: ["CSS Modules", "Tokens"] },
             { label: "Direction", value: "Block / Retro", color: "var(--acc)" },
           ]}
         />
@@ -201,12 +177,11 @@ export default function Home() {
         <Container>
           <Box _padding="32px 0" _display="flex" _justifyContent="space-between" _alignItems="center">
             <Box _display="flex" _alignItems="center" _gap="12px">
-              <BlockStrip filled={3} total={4} />
-              <Text size="caption" color="dim">BaseCamp · design system · 2026</Text>
+              <TextStrip items={["BaseCamp", "design system", "2026"]} />
             </Box>
             <Stack direction="horizontal" gap="4" align="center">
               <Avatar size="sm" color="primary" round>HV</Avatar>
-              <Text size="caption" color="muted">Built by Hendrik</Text>
+              <Text size="caption" color="muted">Hendrik van Heerden</Text>
             </Stack>
           </Box>
         </Container>

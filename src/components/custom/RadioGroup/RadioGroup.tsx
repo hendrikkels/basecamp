@@ -97,18 +97,18 @@ function RadioGroupItem({ value, disabled: itemDisabled, children, className }: 
     .join(" ");
 
   return (
-    <Box
-      className={classes}
-      onClick={handleClick}
-      role="radio"
-      aria-checked={isChecked}
-      aria-disabled={isDisabled}
-      tabIndex={isDisabled ? -1 : 0}
-      onKeyDown={(e) => {
-        if (e.key === " " || e.key === "Enter") { e.preventDefault(); handleClick(); }
-      }}
-    >
-      <Span className={styles.dot}>
+    <Box className={classes}>
+      <Span
+        className={styles.dot}
+        onClick={handleClick}
+        role="radio"
+        aria-checked={isChecked}
+        aria-disabled={isDisabled}
+        tabIndex={isDisabled ? -1 : 0}
+        onKeyDown={(e) => {
+          if (e.key === " " || e.key === "Enter") { e.preventDefault(); handleClick(); }
+        }}
+      >
         {isChecked && <Span className={styles.inner} />}
       </Span>
       {children}

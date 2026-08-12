@@ -23,6 +23,7 @@ import {
   HabitGrid,
   StatRow,
   Icon,
+  TextStrip,
 } from "@/components/custom";
 import { Box } from "@/components/primitives";
 import dashStyles from "./dashboard.module.css";
@@ -67,7 +68,7 @@ export default function Dashboard() {
           <Box _display="flex" _justifyContent="space-between" _alignItems="flex-end" _paddingBottom="24px" _marginBottom="28px" _borderBottom="1px solid var(--rule)">
             <Box>
               <Box _display="flex" _alignItems="center" _gap="12px" _marginBottom="12px">
-                <Text size="micro" color="dim">Sunday · May 24, 2026 · 04:18 PM · New York</Text>
+                <TextStrip items={["Sunday", "May 24, 2026", "04:18 PM", "New York"]} />
               </Box>
               <Heading variant="display-m" level={1}>
                 Good evening, <span style={{ color: "var(--muted)" }}>Hendrik.</span>
@@ -87,14 +88,14 @@ export default function Dashboard() {
               { label: "Online", value: "Yes", color: "var(--success)" },
               { label: "Uptime", value: "99.94%" },
               { label: "P95", value: "142ms" },
-              { label: "Last Deploy", value: "a72f01 · T-04:18" },
+              { label: "Last Deploy", values: ["a72f01", "T-04:18"] },
             ]}
             trailing={<Text size="caption" color="primary" _cursor="pointer">View Logs →</Text>}
           />
 
           <Row columns="4" gap="4">
-            <KpiTile label="Visitors · 7d" value="12,840" delta="+18.4%" deltaDirection="up" />
-            <KpiTile label="Posts · YTD" value="047" delta="+34%" deltaDirection="up" />
+            <KpiTile label="Visitors" qualifier="7d" value="12,840" delta="+18.4%" deltaDirection="up" />
+            <KpiTile label="Posts" qualifier="YTD" value="047" delta="+34%" deltaDirection="up" />
             <KpiTile label="Avg Read" value="4:18" unit="m" delta="+8%" deltaDirection="up" />
             <KpiTile label="Subscribers" value="1,284" delta="+12%" deltaDirection="up" />
           </Row>
@@ -159,7 +160,8 @@ export default function Dashboard() {
               {/* Featured chart */}
               <Chart
                 variant="area"
-                title="Visits · last 30 days"
+                title="Visits"
+                subtitle="last 30 days"
                 height={220}
                 data={visitData}
                 datasets={[
@@ -207,7 +209,7 @@ export default function Dashboard() {
 
               <Widget variant="frost" label="Now Playing" accent={<Icon name="play" size="sm" color="primary" />}>
                 <Heading variant="subheading" level={4}>Ambient Focus</Heading>
-                <Text size="caption" color="muted" _marginTop="4px">Deep work playlist · 2:14:08</Text>
+                <TextStrip items={["Deep work playlist", "2:14:08"]} _marginTop="4px" />
                 <Box _display="flex" _gap="10px" _alignItems="center" _marginTop="14px" _padding="8px" _background="var(--surface-2)" _borderRadius="var(--r-xs)">
                   <Icon name="play" size="lg" color="primary" />
                   <Box>
@@ -217,7 +219,7 @@ export default function Dashboard() {
                 </Box>
               </Widget>
 
-              <Widget label="Habits · 30d" accent="92%">
+              <Widget label="Habits" accent="92%">
                 <HabitGrid
                   cells={[
                     ...Array(22).fill("filled" as const),

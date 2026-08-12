@@ -15,7 +15,7 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-import { Box, H3 } from "@/components/primitives";
+import { Box, H3, Span } from "@/components/primitives";
 import styles from "./Chart.module.css";
 
 export type ChartVariant = "line" | "bar" | "area";
@@ -33,6 +33,7 @@ export interface ChartProps {
   xAxis?: string;
   height?: number;
   title?: string;
+  subtitle?: string;
   showGrid?: boolean;
   showLegend?: boolean;
   showTooltip?: boolean;
@@ -55,6 +56,7 @@ export function Chart({
   xAxis = "name",
   height = 200,
   title,
+  subtitle,
   showGrid = true,
   showLegend = false,
   showTooltip = true,
@@ -182,7 +184,12 @@ export function Chart({
 
   return (
     <Box className={classes}>
-      {title && <H3 className={styles.title} _fontWeight={600}>{title}</H3>}
+      {title && (
+        <H3 className={styles.title} _fontWeight={600}>
+          {title}
+          {subtitle && <Span className={styles.subtitle}> · {subtitle}</Span>}
+        </H3>
+      )}
       <ResponsiveContainer width="100%" height={height}>
         {renderChart()}
       </ResponsiveContainer>

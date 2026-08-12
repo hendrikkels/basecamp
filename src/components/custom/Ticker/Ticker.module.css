@@ -27,3 +27,7 @@
 .separator {
   color: var(--surface-3);
 }
+
+.valueSeparator {
+  color: var(--dim);
+}

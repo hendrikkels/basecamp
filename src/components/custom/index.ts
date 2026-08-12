@@ -132,3 +132,6 @@ export type { TickerProps, TickerItem } from "./Ticker";
 
 export { MenuToggle } from "./MenuToggle";
 export type { MenuToggleProps } from "./MenuToggle";
+
+export { TextStrip } from "./TextStrip";
+export type { TextStripProps, TextStripSize, TextStripColor } from "./TextStrip";
