@@ -1,6 +1,11 @@
 .sidebar {
   width: 240px;
   flex-shrink: 0;
+  position: sticky;
+  top: var(--nav-h);
+  align-self: flex-start;
+  height: calc(100dvh - var(--nav-h));
+  overflow-y: auto;
 }
 
 .sidebarOverlay {

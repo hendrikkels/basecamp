@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Providers } from "./providers";
 import "./globals.css";
-import { Navbar, ThemeToggle } from "@/components/custom";
+import { AppNavbar } from "./AppNavbar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -53,6 +53,7 @@ export default function RootLayout({
       </head>
       <body>
         <Providers>
+          <AppNavbar />
           {children}
         </Providers>
       </body>

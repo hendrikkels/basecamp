@@ -2,8 +2,6 @@
 
 import {
   Heading,
-  Navbar,
-  ThemeToggle,
   Badge,
   SectionHead,
   Text,
@@ -50,19 +48,6 @@ const revenueData = [
 export default function Dashboard() {
   return (
     <>
-      <Navbar>
-        <Navbar.Brand href="/" meta="v0.1">BaseCamp</Navbar.Brand>
-        <Navbar.Actions>
-          <ThemeToggle />
-        </Navbar.Actions>
-        <Navbar.Links>
-          <Navbar.Link href="/">Home</Navbar.Link>
-          <Navbar.Link href="/design-system">Design System</Navbar.Link>
-          <Navbar.Link href="/dashboard" active>Dashboard</Navbar.Link>
-          <Navbar.Link href="/sidebar-demo">App Shell</Navbar.Link>
-        </Navbar.Links>
-      </Navbar>
-
       <Container>
         <Stack gap="6" _paddingTop="32px" _paddingBottom="80px">
           {/* Hero header */}

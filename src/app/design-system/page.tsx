@@ -10,8 +10,6 @@ import {
   Container,
   Stack,
   Row,
-  Navbar,
-  ThemeToggle,
   Badge,
   Divider,
   SectionHead,
@@ -60,23 +58,6 @@ export default function DesignSystem() {
 
   return (
     <>
-      <Navbar>
-        <Navbar.Brand href="/" meta="v0.1">
-          BaseCamp
-        </Navbar.Brand>
-        <Navbar.Actions>
-          <ThemeToggle />
-        </Navbar.Actions>
-        <Navbar.Links>
-          <Navbar.Link href="/">Home</Navbar.Link>
-          <Navbar.Link href="/design-system" active>
-            Design System
-          </Navbar.Link>
-          <Navbar.Link href="/dashboard">Dashboard</Navbar.Link>
-          <Navbar.Link href="/sidebar-demo">App Shell</Navbar.Link>
-        </Navbar.Links>
-      </Navbar>
-
       <Container>
         <Stack gap="8" _paddingTop="48px" _paddingBottom="96px">
           {/* Hero */}
