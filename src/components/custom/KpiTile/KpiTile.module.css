@@ -22,7 +22,7 @@
 .label {
   font-family: var(--mono);
   font-size: 10px;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--ls-wide);
   text-transform: uppercase;
   color: var(--dim);
 }
@@ -30,7 +30,7 @@
 .value {
   font-family: var(--mono);
   font-size: 40px;
-  letter-spacing: -0.025em;
+  letter-spacing: var(--ls-tight-sm);
   line-height: 0.95;
   color: var(--text);
 }
@@ -44,7 +44,7 @@
 .delta {
   font-family: var(--mono);
   font-size: 10px;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--ls-medium);
   display: inline-flex;
   align-items: center;
   gap: 4px;

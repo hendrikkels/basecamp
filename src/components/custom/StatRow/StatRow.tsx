@@ -30,7 +30,7 @@ export const StatRow = React.forwardRef<HTMLDivElement, StatRowProps>(
 
     return (
       <Box ref={ref} className={classes}>
-        <Span style={{ fontFamily: "var(--mono)", fontSize: "10px", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--dim)" }}>
+        <Span style={{ fontFamily: "var(--mono)", fontSize: "10px", letterSpacing: "var(--ls-wide)", textTransform: "uppercase", color: "var(--dim)" }}>
           {label}
         </Span>
         <Span style={{ fontFamily: "var(--mono)", fontSize: "12px", fontWeight: 500, color: colorMap[color] }}>

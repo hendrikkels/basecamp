@@ -69,7 +69,7 @@ export function Chart({
   const axisStyle = {
     fontFamily: "var(--mono)",
     fontSize: 9,
-    letterSpacing: "0.12em",
+    letterSpacing: "var(--ls-wide)",
     fill: "var(--dim)",
   };
 

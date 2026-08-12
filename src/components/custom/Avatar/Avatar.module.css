@@ -6,7 +6,7 @@
   place-items: center;
   font-family: var(--mono);
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: var(--ls-medium);
   text-transform: uppercase;
   flex-shrink: 0;
   position: relative;

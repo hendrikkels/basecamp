@@ -14,7 +14,7 @@
 .sectionLabel {
   font-family: var(--display);
   font-size: 14px;
-  letter-spacing: -0.005em;
+  letter-spacing: var(--ls-normal);
   color: var(--text);
 }
 
@@ -22,7 +22,7 @@
   display: block;
   font-family: var(--mono);
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: var(--ls-wide);
   color: var(--dim);
   margin-bottom: 4px;
   text-transform: uppercase;
@@ -34,7 +34,7 @@
   font-size: 11px;
   color: var(--muted);
   margin-top: 6px;
-  letter-spacing: 0;
+  letter-spacing: var(--ls-normal);
   font-weight: normal;
   line-height: 1.55;
 }

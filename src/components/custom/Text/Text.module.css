@@ -7,25 +7,25 @@
 .bodyLg {
   font-size: 16px;
   line-height: 1.65;
-  letter-spacing: 0.005em;
+  letter-spacing: var(--ls-normal);
 }
 
 .body {
   font-size: 13px;
   line-height: 1.55;
-  letter-spacing: 0.005em;
+  letter-spacing: var(--ls-normal);
 }
 
 .caption {
   font-size: 12px;
   line-height: 1.55;
-  letter-spacing: 0.005em;
+  letter-spacing: var(--ls-normal);
 }
 
 .micro {
   font-size: 10px;
   line-height: 1.1;
-  letter-spacing: 0.12em;
+  letter-spacing: var(--ls-wide);
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -56,4 +56,4 @@
 
 /* Transform */
 .transformNone { text-transform: none; }
-.transformUppercase { text-transform: uppercase; letter-spacing: 0.12em; }
+.transformUppercase { text-transform: uppercase; letter-spacing: var(--ls-wide); }

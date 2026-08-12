@@ -13,7 +13,7 @@
   padding: 10px 16px;
   cursor: pointer;
   position: relative;
-  letter-spacing: 0.04em;
+  letter-spacing: var(--ls-medium);
   transition: color var(--dur-fast);
 }
 

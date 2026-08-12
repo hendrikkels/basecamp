@@ -44,7 +44,7 @@ export default function Home() {
           _fontFamily="var(--mono)"
           _fontSize="200px"
           _color="var(--surface-1)"
-          _letterSpacing="-0.1em"
+          _letterSpacing="var(--ls-xx-tight)"
           _transform="rotate(-12deg)"
           _pointerEvents="none"
           _userSelect="none"

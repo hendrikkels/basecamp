@@ -2,7 +2,7 @@
   display: flex;
   align-items: baseline;
   gap: 16px;
-  letter-spacing: 0.16em;
+  letter-spacing: var(--ls-wide);
   text-transform: uppercase;
   margin-bottom: 20px;
 }
@@ -13,7 +13,7 @@
 
 .title {
   color: var(--muted);
-  letter-spacing: 0.12em;
+  letter-spacing: var(--ls-wide);
 }
 
 .accent {

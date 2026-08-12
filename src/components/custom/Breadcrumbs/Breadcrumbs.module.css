@@ -4,7 +4,7 @@
   align-items: center;
   font-family: var(--mono);
   font-size: 11px;
-  letter-spacing: 0.04em;
+  letter-spacing: var(--ls-medium);
   color: var(--dim);
 }
 

@@ -8,7 +8,7 @@
 .glyph {
   font-family: var(--mono);
   font-size: 32px;
-  letter-spacing: -0.1em;
+  letter-spacing: var(--ls-xx-tight);
   color: var(--dim);
   margin-bottom: 16px;
   user-select: none;
@@ -16,7 +16,7 @@
 
 .title {
   font-size: 22px;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--ls-tight-sm);
   margin: 0 0 6px;
   color: var(--text);
 }

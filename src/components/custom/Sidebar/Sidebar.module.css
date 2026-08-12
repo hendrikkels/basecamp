@@ -33,7 +33,7 @@
 .groupLabel {
   font-family: var(--mono);
   font-size: 9px;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--ls-wide);
   text-transform: uppercase;
   color: var(--dim);
   padding: 4px 10px;

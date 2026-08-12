@@ -1,7 +1,7 @@
 .strip {
   font-family: var(--mono);
   font-size: 16px;
-  letter-spacing: -0.05em;
+  letter-spacing: var(--ls-tight);
   color: var(--acc);
   user-select: none;
   line-height: 1;

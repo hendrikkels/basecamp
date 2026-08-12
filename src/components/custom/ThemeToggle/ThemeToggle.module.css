@@ -5,7 +5,7 @@
   padding: 6px 10px;
   font-family: var(--mono);
   font-size: 11px;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--ls-medium);
   text-transform: uppercase;
   border-radius: var(--r-xs);
   cursor: pointer;

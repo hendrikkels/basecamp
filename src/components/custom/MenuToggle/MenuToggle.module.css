@@ -37,7 +37,7 @@
   color: var(--acc-on);
   border-radius: var(--r-xs);
   font-size: 14px;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--ls-medium);
   text-transform: uppercase;
   z-index: 58;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);

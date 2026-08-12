@@ -13,7 +13,7 @@
   font-size: 11px;
   padding: 6px 10px;
   border-radius: var(--r-xs);
-  letter-spacing: 0.04em;
+  letter-spacing: var(--ls-medium);
   white-space: nowrap;
   pointer-events: none;
   opacity: 0;
