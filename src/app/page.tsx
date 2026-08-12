@@ -24,15 +24,15 @@ export default function Home() {
     <>
       <Navbar>
         <Navbar.Brand href="/" meta="v0.1">BaseCamp</Navbar.Brand>
+        <Navbar.Actions>
+          <ThemeToggle />
+        </Navbar.Actions>
         <Navbar.Links>
           <Navbar.Link href="/" active>Home</Navbar.Link>
           <Navbar.Link href="/design-system">Design System</Navbar.Link>
           <Navbar.Link href="/dashboard">Dashboard</Navbar.Link>
           <Navbar.Link href="/sidebar-demo">App Shell</Navbar.Link>
         </Navbar.Links>
-        <Navbar.Actions>
-          <ThemeToggle />
-        </Navbar.Actions>
       </Navbar>
 
       {/* Hero */}
