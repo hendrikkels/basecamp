@@ -6,22 +6,24 @@ import { Anchor } from "@/components/primitives";
 import type { PrimitiveProps } from "@/components/primitives";
 import styles from "./Link.module.css";
 
-export type LinkVariant = "default" | "unstyled";
+export type LinkVariant = "default" | "muted" | "unstyled";
 
 export interface LinkProps extends Omit<PrimitiveProps<"a">, "href"> {
   href: string;
   variant?: LinkVariant;
   external?: boolean;
+  arrow?: boolean;
 }
 
 const variantClasses: Record<LinkVariant, string> = {
   default: styles.link,
+  muted: [styles.link, styles.muted].join(" "),
   unstyled: styles.unstyled,
 };
 
 export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
-  function Link({ href, variant = "default", external = false, className, children, ...props }, ref) {
-    const classes = [variantClasses[variant], className].filter(Boolean).join(" ");
+  function Link({ href, variant = "default", external = false, arrow = false, className, children, ...props }, ref) {
+    const classes = [variantClasses[variant], arrow ? styles.arrow : undefined, className].filter(Boolean).join(" ");
 
     if (external) {
       return (

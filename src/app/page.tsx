@@ -138,36 +138,30 @@ export default function Home() {
           </Box>
 
           <Row columns="3" gap="4">
-            <Link href="/dashboard" variant="unstyled">
-              <Card variant="frost" _cursor="pointer" _height="100%">
-                <Text size="micro" color="primary" _marginBottom="8px">Screen</Text>
-                <Heading variant="subheading" level={3}>Dashboard</Heading>
-                <Text size="caption" color="muted" _marginTop="4px">
-                  KPIs, charts, data tables, widgets.
-                </Text>
-                <Text size="caption" color="primary" _marginTop="16px">→ /dashboard</Text>
-              </Card>
-            </Link>
-            <Link href="/sidebar-demo" variant="unstyled">
-              <Card variant="frost" _cursor="pointer" _height="100%">
-                <Text size="micro" color="primary" _marginBottom="8px">Screen</Text>
-                <Heading variant="subheading" level={3}>App Shell</Heading>
-                <Text size="caption" color="muted" _marginTop="4px">
-                  Sidebar navigation with content area.
-                </Text>
-                <Text size="caption" color="primary" _marginTop="16px">→ /sidebar-demo</Text>
-              </Card>
-            </Link>
-            <Link href="/design-system" variant="unstyled">
-              <Card variant="frost" _cursor="pointer" _height="100%">
-                <Text size="micro" color="primary" _marginBottom="8px">Screen</Text>
-                <Heading variant="subheading" level={3}>Design System</Heading>
-                <Text size="caption" color="muted" _marginTop="4px">
-                  Component showcase and token reference.
-                </Text>
-                <Text size="caption" color="primary" _marginTop="16px">→ /design-system</Text>
-              </Card>
-            </Link>
+            <Card variant="frost" _height="100%">
+              <Text size="micro" color="primary" _marginBottom="8px">Screen</Text>
+              <Heading variant="subheading" level={3}>Dashboard</Heading>
+              <Text size="caption" color="muted" _marginTop="4px">
+                KPIs, charts, data tables, widgets.
+              </Text>
+              <Text size="caption" _marginTop="16px"><Link href="/dashboard" variant="muted" arrow>/dashboard</Link></Text>
+            </Card>
+            <Card variant="frost" _height="100%">
+              <Text size="micro" color="primary" _marginBottom="8px">Screen</Text>
+              <Heading variant="subheading" level={3}>App Shell</Heading>
+              <Text size="caption" color="muted" _marginTop="4px">
+                Sidebar navigation with content area.
+              </Text>
+              <Text size="caption" _marginTop="16px"><Link href="/sidebar-demo" variant="muted" arrow>/sidebar-demo</Link></Text>
+            </Card>
+            <Card variant="frost" _height="100%">
+              <Text size="micro" color="primary" _marginBottom="8px">Screen</Text>
+              <Heading variant="subheading" level={3}>Design System</Heading>
+              <Text size="caption" color="muted" _marginTop="4px">
+                Component showcase and token reference.
+              </Text>
+              <Text size="caption" _marginTop="16px"><Link href="/design-system" variant="muted" arrow>/design-system</Link></Text>
+            </Card>
           </Row>
         </Box>
       </Container>

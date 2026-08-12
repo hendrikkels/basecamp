@@ -10,6 +10,14 @@
   color: var(--text);
 }
 
+.muted {
+  color: var(--muted);
+}
+
+.muted:hover {
+  color: var(--text);
+}
+
 .unstyled {
   color: inherit;
   text-decoration: none;
@@ -17,4 +25,9 @@
 
 .unstyled:hover {
   color: inherit;
+}
+
+.arrow::after {
+  content: " →";
+  color: var(--acc);
 }

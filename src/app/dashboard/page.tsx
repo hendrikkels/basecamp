@@ -23,6 +23,7 @@ import {
   HabitGrid,
   StatRow,
   Icon,
+  Link,
   TextStrip,
 } from "@/components/custom";
 import { Box } from "@/components/primitives";
@@ -90,7 +91,7 @@ export default function Dashboard() {
               { label: "P95", value: "142ms" },
               { label: "Last Deploy", values: ["a72f01", "T-04:18"] },
             ]}
-            trailing={<Text size="caption" color="primary" _cursor="pointer">View Logs →</Text>}
+            trailing={<Link href="#" arrow><Text size="caption" color="primary">View Logs</Text></Link>}
           />
 
           <Row columns="4" gap="4">
