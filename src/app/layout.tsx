@@ -18,6 +18,10 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "BaseCamp",
   description: "BaseCamp is a retro-futurist design system built for creative tools, personal dashboards, and focused workspaces. Block aesthetics meet modern engineering.",
+  icons: {
+    icon: "/ulbic/favicon.svg",
+    apple: "/ulbic/apple-touch-icon.png",
+  },
 };
 
 const themeInitScript = `
@@ -40,8 +44,10 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
-      <head>
+        <head>
         <meta name="theme-color" content="#000000" />
+        <link rel="icon" href="/ulbic/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/ulbic/apple-touch-icon.png" />
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body><Providers>{children}</Providers></body>
