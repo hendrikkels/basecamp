@@ -56,10 +56,6 @@ export default function Home() {
           <Box _padding="80px 0" _position="relative" _zIndex="1">
             <Box className={pageStyles.heroGrid}>
               <Box>
-                <Box _display="flex" _alignItems="center" _gap="14px" _marginBottom="32px">
-                  <Text size="micro" color="dim">Design System</Text>
-                  <BlockStrip filled={4} total={6} />
-                </Box>
                 <Heading variant="display-xl" level={1}>
                   Build Something <span style={{ color: "var(--acc)" }}>Great</span>
                 </Heading>
