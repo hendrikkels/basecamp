@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Providers } from "./providers";
 import "./globals.css";
+import { Navbar, ThemeToggle } from "@/components/custom";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -50,7 +51,11 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/ulbic/apple-touch-icon.png" />
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body><Providers>{children}</Providers></body>
+      <body>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }
