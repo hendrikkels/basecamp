@@ -20,5 +20,4 @@
 
 .uppercase {
   text-transform: uppercase;
-  letter-spacing: var(--ls-wide);
 }

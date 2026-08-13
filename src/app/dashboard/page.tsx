@@ -67,7 +67,7 @@ export default function Dashboard() {
           </Box>
 
           {/* KPI Row */}
-          <SectionHead title="Key metrics"/>
+          <SectionHead title="Key metrics" uppercase/>
 
           {/* Status strip */}
           <StatusStrip
@@ -90,7 +90,7 @@ export default function Dashboard() {
           <Divider spacing="lg" />
 
           {/* Main grid: chart + side widgets */}
-          <SectionHead title="Analytics"/>
+          <SectionHead title="Analytics" uppercase/>
 
           <Box className={dashStyles.dashGrid}>
             {/* Left column */}

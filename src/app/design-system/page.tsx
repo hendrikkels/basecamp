@@ -83,7 +83,7 @@ export default function DesignSystem() {
           </Box>
 
           {/* Colors */}
-          <SectionHead number="01" title="Colors" accent="tokens" />
+          <SectionHead number="01" title="Colors" accent="tokens" uppercase/>
           <Row columns="6" gap="2">
             {[
               {
@@ -174,7 +174,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Typography */}
-          <SectionHead number="02" title="Typography"/>
+          <SectionHead number="02" title="Typography" uppercase/>
           <Stack gap="4">
             <Box
               className={`${styles.typographyRow} ${styles.typographyRowBordered}`}
@@ -307,7 +307,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Icons */}
-          <SectionHead number="03" title="Icons" accent="unicode glyphs" />
+          <SectionHead number="03" title="Icons" accent="unicode glyphs" uppercase/>
           <Stack gap="5">
             <Text size="micro" color="dim">All Icons — Default</Text>
             <Box _display="flex" _flexWrap="wrap" _gap="12px">
@@ -362,7 +362,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Buttons */}
-          <SectionHead number="04" title="Buttons"/>
+          <SectionHead number="04" title="Buttons" uppercase/>
           <Stack gap="4">
             <Text size="micro" color="dim">Small</Text>
             <Stack direction="horizontal" gap="3" align="center" wrap>
@@ -421,7 +421,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Badges */}
-          <SectionHead number="05" title="Badges"/>
+          <SectionHead number="05" title="Badges" uppercase/>
           <Stack direction="horizontal" gap="2" wrap>
             <Badge>Default</Badge>
             <Badge color="primary">Primary</Badge>
@@ -448,7 +448,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Cards */}
-          <SectionHead number="06" title="Cards"/>
+          <SectionHead number="06" title="Cards" uppercase/>
           <Row columns="3" gap="4">
             <Card variant="default" title="Default" titleVariant="heading">
               <Text color="muted">
@@ -470,7 +470,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Form Controls */}
-          <SectionHead number="07" title="Form Controls"/>
+          <SectionHead number="07" title="Form Controls" uppercase/>
           <Row columns="2" gap="4">
             <Stack gap="4">
               <Field>
@@ -557,7 +557,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Dropdowns */}
-          <SectionHead number="08" title="Dropdowns"/>
+          <SectionHead number="08" title="Dropdowns" uppercase/>
           <Row columns="2" gap="4">
             <Card variant="default" padding="sm" title="Single Select" titleVariant="micro">
               <Select
@@ -606,7 +606,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Charts */}
-          <SectionHead number="09" title="Charts" accent="recharts"/>
+          <SectionHead number="09" title="Charts" accent="recharts" uppercase/>
           <Stack gap="4">
             <Row columns="2" gap="4">
               <Chart
@@ -664,7 +664,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Modal */}
-          <SectionHead number="10" title="Modal"/>
+          <SectionHead number="10" title="Modal" uppercase/>
           <Button
             variant="primary"
             size="sm"
@@ -697,7 +697,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Alerts */}
-          <SectionHead number="11" title="Alerts"/>
+          <SectionHead number="11" title="Alerts" uppercase/>
           <Stack gap="3">
             <Alert severity="info" title="Information">
               Informational message for the user.
@@ -749,7 +749,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Avatars */}
-          <SectionHead number="12" title="Avatars"/>
+          <SectionHead number="12" title="Avatars" uppercase/>
           <Stack direction="horizontal" gap="3" align="center" wrap>
             <Avatar size="sm">SM</Avatar>
             <Avatar size="md">MD</Avatar>
@@ -765,7 +765,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Progress, Loaders & Empty State */}
-          <SectionHead number="13" title="Progress, Loaders & Empty State"/>
+          <SectionHead number="13" title="Progress, Loaders & Empty State" uppercase/>
           <Stack gap="4">
             <Stack gap="2">
               <Text size="micro" color="dim">
@@ -811,7 +811,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Data Table */}
-          <SectionHead number="14" title="Data Table"/>
+          <SectionHead number="14" title="Data Table" uppercase/>
           <DataTable>
             <DataTable.Head>
               <DataTable.Row>
@@ -868,7 +868,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Tooltip & Breadcrumbs */}
-          <SectionHead number="15" title="Navigation"/>
+          <SectionHead number="15" title="Navigation" uppercase/>
           <Stack gap="4">
             <Breadcrumbs>
               <Breadcrumbs.Item href="/">Home</Breadcrumbs.Item>
@@ -894,7 +894,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* KPI */}
-          <SectionHead number="16" title="KPI"/>
+          <SectionHead number="16" title="KPI" uppercase/>
           <Row columns="3" gap="4">
             <KpiTile
               label="Revenue"
