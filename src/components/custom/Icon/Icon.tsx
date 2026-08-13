@@ -4,21 +4,23 @@ import React from "react";
 import { Span } from "@/components/primitives";
 import styles from "./Icon.module.css";
 
+const VS15 = "︎";
+
 const ICONS = {
   // Arrows & navigation
   arrow: "▸",
   arrowLeft: "◂",
   arrowUp: "▴",
   arrowDown: "▾",
-  arrowRight: "→",
-  arrowTopRight: "↗",
-  arrowBottomRight: "↘",
-  arrowBack: "←",
+  arrowRight: `→${VS15}`,
+  arrowTopRight: `↗${VS15}`,
+  arrowBottomRight: `↘${VS15}`,
+  arrowBack: `←${VS15}`,
   chevronDown: "▾",
   chevronRight: "›",
   chevronLeft: "‹",
   chevronUp: "ˆ",
-  return: "⏎",
+  return: `⏎${VS15}`,
   refresh: "↺",
   swap: "⇄",
 
@@ -26,25 +28,25 @@ const ICONS = {
   plus: "+",
   minus: "−",
   close: "✕",
-  check: "✓",
-  edit: "✎",
+  check: `✓${VS15}`,
+  edit: `✎${VS15}`,
   trash: "␡",
   search: "⌕",
-  link: "↗",
+  link: `↗${VS15}`,
   pin: "⌃",
   copy: "⧉",
-  power: "⏻",
-  eject: "⏏",
-  download: "↓",
-  upload: "↑",
+  power: `⏻${VS15}`,
+  eject: `⏏${VS15}`,
+  download: `↓${VS15}`,
+  upload: `↑${VS15}`,
   expand: "⊞",
   collapse: "⊟",
   filter: "⊳",
   sort: "⇅",
 
   // Shapes & indicators
-  diamond: "◇",
-  diamondFill: "◆",
+  diamond: `◇${VS15}`,
+  diamondFill: `◆${VS15}`,
   square: "□",
   squareFill: "■",
   squareCheck: "▣",
@@ -55,32 +57,32 @@ const ICONS = {
   triangleFill: "▲",
   triangleDown: "▽",
   triangleDownFill: "▼",
-  star: "★",
-  starEmpty: "☆",
+  star: `★${VS15}`,
+  starEmpty: `☆${VS15}`,
   dot: "●",
   ring: "○",
   block: "▰",
   blockEmpty: "▱",
 
   // Status & feedback
-  warning: "⚠",
-  info: "ℹ",
+  warning: `⚠${VS15}`,
+  info: `ℹ${VS15}`,
   prohibited: "⊘",
   null: "∅",
-  success: "✓",
+  success: `✓${VS15}`,
   error: "✕",
-  bolt: "⚡",
+  bolt: `⚡${VS15}`,
 
   // Media
-  play: "▶",
-  pause: "⏸",
+  play: `▶${VS15}`,
+  pause: `⏸${VS15}`,
   stop: "■",
   record: "●",
-  forward: "⏩",
-  backward: "⏪",
+  forward: `⏩${VS15}`,
+  backward: `⏪${VS15}`,
 
   // UI / System
-  gear: "⚙",
+  gear: `⚙${VS15}`,
   command: "⌘",
   option: "⌥",
   shift: "⇧",
@@ -89,13 +91,13 @@ const ICONS = {
   menu: "⋯",
   menuVertical: "⋮",
   grip: "⠿",
-  clock: "⏱",
-  separator: "◆",
+  clock: `⏱${VS15}`,
+  separator: `◆${VS15}`,
 
   // Data & structure
   list: "≡",
   grid: "⊞",
-  stack: "☰",
+  stack: `☰${VS15}`,
   inbox: "⌸",
   folder: "⊡",
   file: "⎔",
@@ -105,7 +107,7 @@ const ICONS = {
   branch: "⑂",
 
   // Communication
-  mail: "✉",
+  mail: `✉${VS15}`,
   at: "@",
   broadcast: "◉",
 
