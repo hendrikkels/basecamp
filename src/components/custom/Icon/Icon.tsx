@@ -124,7 +124,7 @@ const ICONS = {
 } as const;
 
 export type IconName = keyof typeof ICONS;
-export type IconSize = "sm" | "md" | "lg" | "xl";
+export type IconSize = "sm" | "md" | "lg";
 export type IconColor = "default" | "text" | "primary" | "secondary" | "muted" | "danger" | "success" | "warn" | "info";
 
 export interface IconProps {
@@ -138,7 +138,6 @@ const sizeClasses: Record<IconSize, string> = {
   sm: styles.sm,
   md: styles.md,
   lg: styles.lg,
-  xl: styles.xl,
 };
 
 const colorClasses: Record<IconColor, string> = {

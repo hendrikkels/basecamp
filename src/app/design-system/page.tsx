@@ -331,21 +331,17 @@ export default function DesignSystem() {
 
             <Text size="micro" color="dim">Sizes</Text>
             <Stack direction="horizontal" gap="5" align="center">
-              <Stack direction="horizontal" gap="2" align="center">
+              <Stack direction="vertical" gap="2" align="center">
                 <Icon name="star" size="sm" />
                 <Text size="micro" color="muted">sm</Text>
               </Stack>
-              <Stack direction="horizontal" gap="2" align="center">
+              <Stack direction="vertical" gap="2" align="center">
                 <Icon name="star" size="md" />
                 <Text size="micro" color="muted">md</Text>
               </Stack>
-              <Stack direction="horizontal" gap="2" align="center">
+              <Stack direction="vertical" gap="2" align="center">
                 <Icon name="star" size="lg" />
                 <Text size="micro" color="muted">lg</Text>
-              </Stack>
-              <Stack direction="horizontal" gap="2" align="center">
-                <Icon name="star" size="xl" />
-                <Text size="micro" color="muted">xl</Text>
               </Stack>
             </Stack>
 

@@ -158,7 +158,7 @@
 /* Sizes */
 .sm {
   height: 28px;
-  font-size: var(--fs-micro);
+  font-size: var(--fs-body-sm);
   padding: 0 10px;
 }
 
@@ -170,7 +170,7 @@
 
 .lg {
   height: 44px;
-  font-size: var(--fs-body);
+  font-size: var(--fs-body-lg);
   padding: 0 20px;
 }
 

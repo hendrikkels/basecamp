@@ -39,8 +39,8 @@ const sizeClasses: Record<ButtonSize, string> = {
 
 const iconSizeMap: Record<ButtonSize, "sm" | "md" | "lg"> = {
   sm: "sm",
-  md: "sm",
-  lg: "md",
+  md: "md",
+  lg: "lg",
 };
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
