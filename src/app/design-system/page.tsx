@@ -689,7 +689,7 @@ export default function DesignSystem() {
                 Empty state
               </Text>
               <EmptyState
-                glyph="[ ◇ ]"
+                glyph="[ ? ]"
                 title="No results"
                 description="Try adjusting your search or filters to find what you're looking for."
               >

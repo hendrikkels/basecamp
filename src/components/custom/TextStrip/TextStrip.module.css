@@ -23,7 +23,7 @@
 /* Size variants */
 .bodyLg { font-size: var(--fs-body-lg); letter-spacing: var(--ls-normal); }
 .body { font-size: var(--fs-body); letter-spacing: var(--ls-normal); }
-.micro { font-size: var(--fs-micro); letter-spacing: var(--ls-wide); text-transform: uppercase; font-weight: 500; }
+.micro { font-size: var(--fs-micro); letter-spacing: var(--ls-wide); text-transform: uppercase}
 
 /* Color variants */
 .colorDefault { color: var(--text); }

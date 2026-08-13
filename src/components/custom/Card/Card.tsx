@@ -55,7 +55,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
         {title && (
           headingVariants.has(titleVariant)
             ? <Heading variant={titleVariant as HeadingVariant} level={3} className={titleClasses}>{title}</Heading>
-            : <Text size={titleVariant as TextSize} className={titleClasses}>{title}</Text>
+            : <Text size={titleVariant as TextSize} color="dim" className={titleClasses}>{title}</Text>
         )}
         {children}
       </Box>

@@ -29,6 +29,7 @@
   letter-spacing: var(--ls-tight-sm);
   line-height: 0.95;
   color: var(--text);
+  font-weight: 400;
 }
 
 .unit {

@@ -59,7 +59,7 @@
 
 .checkmark {
   color: var(--acc-on);
-  font-size: var(--fs-micro);
+  font-size: var(--fs-body);
   line-height: 1;
   font-weight: 700;
   font-family: var(--mono);

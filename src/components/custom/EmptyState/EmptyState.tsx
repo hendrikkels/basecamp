@@ -3,6 +3,7 @@
 import React from "react";
 import { Box, H3 } from "@/components/primitives";
 import styles from "./EmptyState.module.css";
+import { Text } from "@/components/custom";
 
 export interface EmptyStateProps {
   glyph?: string;
@@ -19,7 +20,7 @@ export const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
     return (
       <Box ref={ref} className={classes}>
         {glyph && <Box className={styles.glyph}>{glyph}</Box>}
-        <H3 className={styles.title}>{title}</H3>
+        <Text size="body-lg">{title}</Text>
         {description && <Box className={styles.description}>{description}</Box>}
         {children && <Box className={styles.actions}>{children}</Box>}
       </Box>
