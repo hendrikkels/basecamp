@@ -33,16 +33,16 @@ export const SectionHead = React.forwardRef<HTMLDivElement, SectionHeadProps>(
         {number && (
           headingVariants.has(numberVariant)
             ? <Heading variant={numberVariant as HeadingVariant} level={3} className={styles.number}>{number}</Heading>
-            : <Text size={numberVariant as TextSize} className={styles.number}>{number}</Text>
+            : <Text size={numberVariant as TextSize} className={styles.number} color="dim">{number}</Text>
         )}
         {headingVariants.has(titleVariant)
           ? <Heading variant={titleVariant as HeadingVariant} level={3} className={styles.title}>{title}</Heading>
-          : <Text size={titleVariant as TextSize} className={styles.title}>{title}</Text>
+          : <Text size={titleVariant as TextSize} className={styles.title} color="dim">{title}</Text>
         }
         {accent && (
           headingVariants.has(accentVariant)
             ? <Heading variant={accentVariant as HeadingVariant} level={3} className={styles.accent}>{accent}</Heading>
-            : <Text size={accentVariant as TextSize} className={styles.accent}>{accent}</Text>
+            : <Text size={accentVariant as TextSize} className={styles.accent} color="dim">{accent}</Text>
         )}
       </Box>
     );

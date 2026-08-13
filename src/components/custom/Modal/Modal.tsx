@@ -53,7 +53,7 @@ function ModalRoot({ open, onClose, title, titleVariant = "heading", uppercase, 
         {title && (
           headingVariants.has(titleVariant)
             ? <Heading variant={titleVariant as HeadingVariant} level={2} className={titleClasses}>{title}</Heading>
-            : <Text size={titleVariant as TextSize} className={titleClasses}>{title}</Text>
+            : <Text size={titleVariant as TextSize} className={titleClasses} color="dim">{title}</Text>
         )}
         {children}
       </Box>
