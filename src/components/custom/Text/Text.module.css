@@ -21,7 +21,7 @@
   line-height: 1.1;
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: var(--fw-medium);
 }
 
 /* Color variants */
@@ -37,11 +37,11 @@
 .colorSuccess { color: var(--success); }
 
 /* Weight variants */
-.weightLight { font-weight: 300; }
-.weightRegular { font-weight: 400; }
-.weightMedium { font-weight: 500; }
-.weightSemibold { font-weight: 600; }
-.weightBold { font-weight: 700; }
+.weightLight { font-weight: var(--fw-light); }
+.weightRegular { font-weight: var(--fw-regular); }
+.weightMedium { font-weight: var(--fw-medium); }
+.weightSemibold { font-weight: var(--fw-semibold); }
+.weightBold { font-weight: var(--fw-bold); }
 
 /* Align */
 .alignLeft { text-align: left; }

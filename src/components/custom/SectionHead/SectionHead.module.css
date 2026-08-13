@@ -7,7 +7,7 @@
 
 .number {
   color: var(--text);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 
 .title {

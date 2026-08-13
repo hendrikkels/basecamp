@@ -1,6 +1,6 @@
 .base {
   font-family: var(--mono);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   letter-spacing: var(--ls-medium);
   border-radius: var(--r-xs);
   border: 0;

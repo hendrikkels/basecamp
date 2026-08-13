@@ -5,7 +5,7 @@
   display: inline-grid;
   place-items: center;
   font-family: var(--mono);
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   letter-spacing: var(--ls-medium);
   text-transform: uppercase;
   flex-shrink: 0;

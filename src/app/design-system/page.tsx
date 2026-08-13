@@ -14,14 +14,11 @@ import {
   Divider,
   SectionHead,
   Field,
-  Checkbox,
-  Radio,
   Switch,
   RadioGroup,
   CheckboxGroup,
   Select,
   MultiSelect,
-  Tabs,
   Alert,
   Avatar,
   Breadcrumbs,
@@ -48,7 +45,6 @@ export default function DesignSystem() {
   const [multiSelectVal, setMultiSelectVal] = useState<string[]>([]);
   const [radioVal, setRadioVal] = useState("a");
   const [checkVals, setCheckVals] = useState(["one"]);
-  const [tabVal, setTabVal] = useState("colors");
   const [modalOpen, setModalOpen] = useState(false);
   const [switchA, setSwitchA] = useState(true);
   const [switchB, setSwitchB] = useState(false);

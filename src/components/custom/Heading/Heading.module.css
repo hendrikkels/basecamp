@@ -6,42 +6,42 @@
 
 .displayXl {
   font-size: var(--fs-display-xl);
-  font-weight: 800;
+  font-weight: var(--fw-extrabold);
   line-height: 0.92;
   letter-spacing: var(--ls-tight);
 }
 
 .displayL {
   font-size: var(--fs-display-l);
-  font-weight: 800;
+  font-weight: var(--fw-extrabold);
   line-height: 0.92;
   letter-spacing: var(--ls-tight);
 }
 
 .displayM {
   font-size: var(--fs-display-m);
-  font-weight: 800;
+  font-weight: var(--fw-extrabold);
   line-height: 0.92;
   letter-spacing: var(--ls-tight-sm);
 }
 
 .displayS {
   font-size: var(--fs-display-s);
-  font-weight: 800;
+  font-weight: var(--fw-extrabold);
   line-height: 1.1;
   letter-spacing: var(--ls-tight-sm);
 }
 
 .heading {
   font-size: var(--fs-heading);
-  font-weight: 800;
+  font-weight: var(--fw-extrabold);
   line-height: 1.1;
   letter-spacing: var(--ls-tight-sm);
 }
 
 .subheading {
   font-size: var(--fs-subheading);
-  font-weight: 800;
+  font-weight: var(--fw-extrabold);
   line-height: 1.1;
   letter-spacing: var(--ls-tight-sm);
 }

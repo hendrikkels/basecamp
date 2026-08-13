@@ -95,6 +95,14 @@
     --fs-heading-mobile: 22px;
     --fs-subheading-mobile: 18px;
 
+    /* Font weights */
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+
     /* Letter spacing tokens (use these rather than ad-hoc values) */
     --ls-xx-tight: -0.1em; /* very tight, display/large headings */
     --ls-tight: -0.04em; /* tight */

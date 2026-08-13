@@ -15,7 +15,7 @@
   text-align: left;
   padding: 12px 14px;
   color: var(--dim);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   font-size: var(--fs-micro);
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
