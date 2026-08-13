@@ -33,6 +33,7 @@
 .primary {
   background: var(--acc);
   color: var(--acc-on);
+  position: relative;
 }
 
 .primary::before {
@@ -53,11 +54,34 @@
 }
 
 .secondary {
+  background: var(--acc-2);
+  color: var(--acc-2-on);
+  position: relative;
+}
+
+.secondary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 45%);
+  pointer-events: none;
+}
+
+.secondary:hover {
+  background: color-mix(in oklab, var(--acc-2) 88%, white);
+}
+
+:global(html[data-theme="light"]) .secondary:hover {
+  background: color-mix(in oklab, var(--acc-2) 88%, black);
+}
+
+.tertiary {
   background: var(--surface-2);
   color: var(--text);
 }
 
-.secondary:hover {
+.tertiary:hover {
   background: var(--surface-3);
 }
 
@@ -90,23 +114,45 @@
   filter: brightness(1.08);
 }
 
+.accent1 {
+  background: var(--acc);
+  color: var(--acc-on);
+}
+
+.accent1:hover {
+  filter: brightness(1.08);
+}
+
 .accent2 {
   background: var(--acc-2);
   color: var(--acc-2-on);
-  position: relative;
-}
-
-.accent2::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 45%);
-  pointer-events: none;
 }
 
 .accent2:hover {
   filter: brightness(1.08);
+}
+
+.success {
+  background: var(--success);
+  color: var(--success-on);
+}
+
+.success:hover {
+  filter: brightness(1.08);
+}
+
+.warn {
+  background: var(--warn);
+  color: var(--warn-on);
+}
+
+.warn:hover {
+  filter: brightness(1.08);
+}
+
+/* Icon color inheritance */
+.iconInherit {
+  color: inherit;
 }
 
 /* Sizes */

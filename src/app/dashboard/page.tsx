@@ -62,7 +62,7 @@ export default function Dashboard() {
               </Heading>
             </Box>
             <Stack direction="horizontal" gap="3" align="center">
-              <Button variant="secondary" size="sm"><Icon name="link" size="sm" /> Export</Button>
+              <Button variant="tertiary" size="sm"><Icon name="link" size="sm" /> Export</Button>
             </Stack>
           </Box>
 

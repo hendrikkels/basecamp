@@ -100,7 +100,7 @@ export type { SidebarProps, SidebarGroupProps, SidebarItemProps, SidebarFooterPr
 export { AlertProvider, useAlert } from "./AlertProvider";
 export type { AlertProviderProps } from "./AlertProvider";
 
-export { Icon } from "./Icon";
+export { Icon, ICON_NAMES } from "./Icon";
 export type { IconProps, IconName, IconSize, IconColor } from "./Icon";
 
 export { StatRow } from "./StatRow";

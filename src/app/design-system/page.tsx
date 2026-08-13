@@ -35,6 +35,7 @@ import {
   Modal,
   useAlert,
   Icon,
+  ICON_NAMES,
   TextStrip,
 } from "@/components/custom";
 import { Box } from "@/components/primitives";
@@ -305,37 +306,137 @@ export default function DesignSystem() {
 
           <Divider />
 
+          {/* Icons */}
+          <SectionHead number="03" title="Icons" accent="unicode glyphs" />
+          <Stack gap="5">
+            <Text size="micro" color="dim">All Icons — Default</Text>
+            <Box _display="flex" _flexWrap="wrap" _gap="12px">
+              {Object.keys(ICON_NAMES).map((name) => (
+                <Tooltip key={name} content={name}>
+                  <Box
+                    _display="flex"
+                    _flexDirection="column"
+                    _alignItems="center"
+                    _gap="6px"
+                    _width="56px"
+                  >
+                    <Icon name={name as keyof typeof ICON_NAMES} size="md" />
+                    <Text size="micro" color="dim" _fontSize="7px" _textTransform="none" _letterSpacing="0">
+                      {name}
+                    </Text>
+                  </Box>
+                </Tooltip>
+              ))}
+            </Box>
+
+            <Text size="micro" color="dim">Sizes</Text>
+            <Stack direction="horizontal" gap="5" align="center">
+              <Stack direction="horizontal" gap="2" align="center">
+                <Icon name="star" size="sm" />
+                <Text size="micro" color="muted">sm</Text>
+              </Stack>
+              <Stack direction="horizontal" gap="2" align="center">
+                <Icon name="star" size="md" />
+                <Text size="micro" color="muted">md</Text>
+              </Stack>
+              <Stack direction="horizontal" gap="2" align="center">
+                <Icon name="star" size="lg" />
+                <Text size="micro" color="muted">lg</Text>
+              </Stack>
+              <Stack direction="horizontal" gap="2" align="center">
+                <Icon name="star" size="xl" />
+                <Text size="micro" color="muted">xl</Text>
+              </Stack>
+            </Stack>
+
+            <Text size="micro" color="dim">Colors</Text>
+            <Stack direction="horizontal" gap="4" align="center" wrap>
+              <Icon name="diamond" size="lg" color="default" />
+              <Icon name="diamond" size="lg" color="text" />
+              <Icon name="diamond" size="lg" color="primary" />
+              <Icon name="diamond" size="lg" color="secondary" />
+              <Icon name="diamond" size="lg" color="muted" />
+              <Icon name="diamond" size="lg" color="danger" />
+              <Icon name="diamond" size="lg" color="success" />
+              <Icon name="diamond" size="lg" color="warn" />
+              <Icon name="diamond" size="lg" color="info" />
+            </Stack>
+          </Stack>
+
+          <Divider />
+
           {/* Buttons */}
-          <SectionHead number="03" title="Buttons"/>
+          <SectionHead number="04" title="Buttons"/>
           <Stack gap="4">
+            <Text size="micro" color="dim">Small</Text>
             <Stack direction="horizontal" gap="3" align="center" wrap>
-              <Button variant="primary">Primary</Button>
-              <Button variant="secondary">Secondary</Button>
-              <Button variant="ghost">Ghost</Button>
-              <Button variant="outline">Outline</Button>
-              <Button variant="destructive">Destructive</Button>
-              <Button variant="accent2">Accent 2</Button>
+              <Button variant="primary" size="sm">Primary</Button>
+              <Button variant="secondary" size="sm">Secondary</Button>
+              <Button variant="tertiary" size="sm">Tertiary</Button>
+              <Button variant="ghost" size="sm">Ghost</Button>
+              <Button variant="outline" size="sm">Outline</Button>
+              <Button variant="accent1" size="sm">Accent 1</Button>
+              <Button variant="accent2" size="sm">Accent 2</Button>
+              <Button variant="destructive" size="sm">Destructive</Button>
+              <Button variant="success" size="sm">Success</Button>
+              <Button variant="warn" size="sm">Warn</Button>
+              <Button variant="primary" size="sm" disabled>Disabled</Button>
+            </Stack>
+            <Text size="micro" color="dim">Medium</Text>
+            <Stack direction="horizontal" gap="3" align="center" wrap>
+              <Button variant="primary" size="md">Primary</Button>
+              <Button variant="secondary" size="md">Secondary</Button>
+              <Button variant="tertiary" size="md">Tertiary</Button>
+              <Button variant="ghost" size="md">Ghost</Button>
+              <Button variant="outline" size="md">Outline</Button>
+              <Button variant="accent1" size="md">Accent 1</Button>
+              <Button variant="accent2" size="md">Accent 2</Button>
+              <Button variant="destructive" size="md">Destructive</Button>
+              <Button variant="success" size="md">Success</Button>
+              <Button variant="warn" size="md">Warn</Button>
+              <Button variant="primary" size="md" disabled>Disabled</Button>
+            </Stack>
+            <Text size="micro" color="dim">Large</Text>
+            <Stack direction="horizontal" gap="3" align="center" wrap>
+              <Button variant="primary" size="lg">Primary</Button>
+              <Button variant="secondary" size="lg">Secondary</Button>
+              <Button variant="tertiary" size="lg">Tertiary</Button>
+              <Button variant="ghost" size="lg">Ghost</Button>
+              <Button variant="outline" size="lg">Outline</Button>
+              <Button variant="accent1" size="lg">Accent 1</Button>
+              <Button variant="accent2" size="lg">Accent 2</Button>
+              <Button variant="destructive" size="lg">Destructive</Button>
+              <Button variant="success" size="lg">Success</Button>
+              <Button variant="warn" size="lg">Warn</Button>
+              <Button variant="primary" size="lg" disabled>Disabled</Button>
+            </Stack>
+            <Text size="micro" color="dim">With Icons</Text>
+            <Stack direction="horizontal" gap="3" align="center" wrap>
+              <Button variant="primary" iconLeft="plus">Add Item</Button>
+              <Button variant="secondary" iconLeft="star">Favorite</Button>
+              <Button variant="tertiary" iconLeft="search">Search</Button>
+              <Button variant="ghost" iconLeft="gear">Settings</Button>
+              <Button variant="outline" iconRight="arrow">Continue</Button>
+              <Button variant="accent1" iconLeft="bolt">Boost</Button>
+              <Button variant="accent2" iconLeft="diamond">Premium</Button>
+              <Button variant="destructive" iconLeft="trash">Delete</Button>
+              <Button variant="success" iconLeft="check">Confirm</Button>
+              <Button variant="warn" iconLeft="warning">Caution</Button>
             </Stack>
             <Stack direction="horizontal" gap="3" align="center" wrap>
-              <Button variant="primary" size="sm">
-                Small
-              </Button>
-              <Button variant="primary" size="md">
-                Medium
-              </Button>
-              <Button variant="primary" size="lg">
-                Large
-              </Button>
-              <Button variant="primary" disabled>
-                Disabled
-              </Button>
+              <Button variant="primary" size="sm" iconLeft="plus">Small</Button>
+              <Button variant="primary" size="md" iconLeft="plus">Medium</Button>
+              <Button variant="primary" size="lg" iconLeft="plus">Large</Button>
+              <Button variant="outline" size="sm" iconLeft="edit" iconRight="arrow">Both</Button>
+              <Button variant="outline" size="md" iconLeft="edit" iconRight="arrow">Both</Button>
+              <Button variant="outline" size="lg" iconLeft="edit" iconRight="arrow">Both</Button>
             </Stack>
           </Stack>
 
           <Divider />
 
           {/* Badges */}
-          <SectionHead number="04" title="Badges"/>
+          <SectionHead number="05" title="Badges"/>
           <Stack direction="horizontal" gap="2" wrap>
             <Badge>Default</Badge>
             <Badge color="primary">Primary</Badge>
@@ -362,7 +463,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Cards */}
-          <SectionHead number="05" title="Cards"/>
+          <SectionHead number="06" title="Cards"/>
           <Row columns="3" gap="4">
             <Card variant="default" title="Default" titleVariant="heading">
               <Text color="muted">
@@ -384,7 +485,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Form Controls */}
-          <SectionHead number="06" title="Form Controls"/>
+          <SectionHead number="07" title="Form Controls"/>
           <Row columns="2" gap="4">
             <Stack gap="4">
               <Field>
@@ -471,7 +572,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Dropdowns */}
-          <SectionHead number="07" title="Dropdowns"/>
+          <SectionHead number="08" title="Dropdowns"/>
           <Row columns="2" gap="4">
             <Card variant="default" padding="sm" title="Single Select" titleVariant="micro">
               <Select
@@ -520,7 +621,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Charts */}
-          <SectionHead number="08" title="Charts" accent="recharts"/>
+          <SectionHead number="09" title="Charts" accent="recharts"/>
           <Stack gap="4">
             <Row columns="2" gap="4">
               <Chart
@@ -578,7 +679,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Modal */}
-          <SectionHead number="09" title="Modal"/>
+          <SectionHead number="10" title="Modal"/>
           <Button
             variant="primary"
             size="sm"
@@ -611,7 +712,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Alerts */}
-          <SectionHead number="10" title="Alerts"/>
+          <SectionHead number="11" title="Alerts"/>
           <Stack gap="3">
             <Alert severity="info" title="Information">
               Informational message for the user.
@@ -663,7 +764,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Avatars */}
-          <SectionHead number="11" title="Avatars"/>
+          <SectionHead number="12" title="Avatars"/>
           <Stack direction="horizontal" gap="3" align="center" wrap>
             <Avatar size="sm">SM</Avatar>
             <Avatar size="md">MD</Avatar>
@@ -679,7 +780,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Progress, Loaders & Empty State */}
-          <SectionHead number="12" title="Progress, Loaders & Empty State"/>
+          <SectionHead number="13" title="Progress, Loaders & Empty State"/>
           <Stack gap="4">
             <Stack gap="2">
               <Text size="micro" color="dim">
@@ -715,7 +816,7 @@ export default function DesignSystem() {
                 title="No results"
                 description="Try adjusting your search or filters to find what you're looking for."
               >
-                <Button variant="secondary" size="sm">
+                <Button variant="tertiary" size="sm">
                   Clear Filters
                 </Button>
               </EmptyState>
@@ -725,7 +826,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Data Table */}
-          <SectionHead number="13" title="Data Table"/>
+          <SectionHead number="14" title="Data Table"/>
           <DataTable>
             <DataTable.Head>
               <DataTable.Row>
@@ -782,7 +883,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Tooltip & Breadcrumbs */}
-          <SectionHead number="14" title="Navigation"/>
+          <SectionHead number="15" title="Navigation"/>
           <Stack gap="4">
             <Breadcrumbs>
               <Breadcrumbs.Item href="/">Home</Breadcrumbs.Item>
@@ -793,7 +894,7 @@ export default function DesignSystem() {
             </Breadcrumbs>
             <Stack direction="horizontal" gap="4" align="center">
               <Tooltip content="Top tooltip">
-                <Button variant="secondary" size="sm">
+                <Button variant="tertiary" size="sm">
                   Tooltip (top)
                 </Button>
               </Tooltip>
@@ -808,7 +909,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* KPI */}
-          <SectionHead number="15" title="KPI"/>
+          <SectionHead number="16" title="KPI"/>
           <Row columns="3" gap="4">
             <KpiTile
               label="Revenue"
@@ -831,6 +932,7 @@ export default function DesignSystem() {
               deltaDirection="up"
             />
           </Row>
+
         </Stack>
       </Container>
     </>
