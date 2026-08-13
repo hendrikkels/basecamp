@@ -177,7 +177,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Typography */}
-          <SectionHead number="02" title="Typography" />
+          <SectionHead number="02" title="Typography"/>
           <Stack gap="4">
             <Box
               className={`${styles.typographyRow} ${styles.typographyRowBordered}`}
@@ -264,10 +264,10 @@ export default function DesignSystem() {
                 Body
               </Text>
               <Text size="body">
-                Default body text at 13px with JetBrains Mono.
+                Default body text at 12px with JetBrains Mono.
               </Text>
               <Text size="micro" color="dim" _textAlign="right">
-                13px / Regular
+                12px / Regular
               </Text>
             </Box>
             <Box className={styles.typographyRow}>
@@ -284,7 +284,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Buttons */}
-          <SectionHead number="03" title="Buttons" />
+          <SectionHead number="03" title="Buttons"/>
           <Stack gap="4">
             <Stack direction="horizontal" gap="3" align="center" wrap>
               <Button variant="primary">Primary</Button>
@@ -313,7 +313,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Badges */}
-          <SectionHead number="04" title="Badges" />
+          <SectionHead number="04" title="Badges"/>
           <Stack direction="horizontal" gap="2" wrap>
             <Badge>Default</Badge>
             <Badge color="primary">Primary</Badge>
@@ -340,20 +340,20 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Cards */}
-          <SectionHead number="05" title="Cards" />
+          <SectionHead number="05" title="Cards"/>
           <Row columns="3" gap="4">
             <Card variant="default" title="Default" titleVariant="heading">
-              <Text size="caption" color="muted">
+              <Text color="muted">
                 Standard surface card.
               </Text>
             </Card>
             <Card variant="frost" title="Frost" titleVariant="heading">
-              <Text size="caption" color="muted">
+              <Text color="muted">
                 Frosted glass backdrop blur.
               </Text>
             </Card>
             <Card variant="block" title="Block" titleVariant="heading">
-              <Text size="caption" color="muted">
+              <Text color="muted">
                 Accent bar indicator.
               </Text>
             </Card>
@@ -362,7 +362,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Form Controls */}
-          <SectionHead number="06" title="Form Controls" />
+          <SectionHead number="06" title="Form Controls"/>
           <Row columns="2" gap="4">
             <Stack gap="4">
               <Field>
@@ -449,7 +449,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Dropdowns */}
-          <SectionHead number="07" title="Dropdowns" />
+          <SectionHead number="07" title="Dropdowns"/>
           <Row columns="2" gap="4">
             <Card variant="default" padding="sm" title="Single Select" titleVariant="micro">
               <Select
@@ -470,7 +470,7 @@ export default function DesignSystem() {
                   SvelteKit (N/A)
                 </Select.Option>
               </Select>
-              <Text size="caption" color="dim" _marginTop="8px">
+              <Text color="dim" _marginTop="8px">
                 Selected: {selectVal || "none"}
               </Text>
             </Card>
@@ -489,7 +489,7 @@ export default function DesignSystem() {
                 </MultiSelect.Option>
                 <MultiSelect.Option value="node">Node.js</MultiSelect.Option>
               </MultiSelect>
-              <Text size="caption" color="dim" _marginTop="8px">
+              <Text color="dim" _marginTop="8px">
                 Selected: {multiSelectVal.join(", ") || "none"}
               </Text>
             </Card>
@@ -498,7 +498,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Charts */}
-          <SectionHead number="08" title="Charts" accent="recharts" />
+          <SectionHead number="08" title="Charts" accent="recharts"/>
           <Stack gap="4">
             <Row columns="2" gap="4">
               <Chart
@@ -556,7 +556,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Modal */}
-          <SectionHead number="09" title="Modal" />
+          <SectionHead number="09" title="Modal"/>
           <Button
             variant="primary"
             size="sm"
@@ -589,7 +589,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Alerts */}
-          <SectionHead number="10" title="Alerts" />
+          <SectionHead number="10" title="Alerts"/>
           <Stack gap="3">
             <Alert severity="info" title="Information">
               Informational message for the user.
@@ -641,7 +641,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Avatars */}
-          <SectionHead number="11" title="Avatars" />
+          <SectionHead number="11" title="Avatars"/>
           <Stack direction="horizontal" gap="3" align="center" wrap>
             <Avatar size="sm">SM</Avatar>
             <Avatar size="md">MD</Avatar>
@@ -657,7 +657,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Progress, Loaders & Empty State */}
-          <SectionHead number="12" title="Progress, Loaders & Empty State" />
+          <SectionHead number="12" title="Progress, Loaders & Empty State"/>
           <Stack gap="4">
             <Stack gap="2">
               <Text size="micro" color="dim">
@@ -703,7 +703,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Data Table */}
-          <SectionHead number="13" title="Data Table" />
+          <SectionHead number="13" title="Data Table"/>
           <DataTable>
             <DataTable.Head>
               <DataTable.Row>
@@ -760,7 +760,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Tooltip & Breadcrumbs */}
-          <SectionHead number="14" title="Navigation" />
+          <SectionHead number="14" title="Navigation"/>
           <Stack gap="4">
             <Breadcrumbs>
               <Breadcrumbs.Item href="/">Home</Breadcrumbs.Item>
@@ -786,7 +786,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* KPI */}
-          <SectionHead number="15" title="KPI" />
+          <SectionHead number="15" title="KPI"/>
           <Row columns="3" gap="4">
             <KpiTile
               label="Revenue"

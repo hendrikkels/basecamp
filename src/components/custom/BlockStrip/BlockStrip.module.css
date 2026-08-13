@@ -1,6 +1,6 @@
 .strip {
   font-family: var(--mono);
-  font-size: 16px;
+  font-size: var(--fs-body-lg);
   letter-spacing: var(--ls-tight);
   color: var(--acc);
   user-select: none;

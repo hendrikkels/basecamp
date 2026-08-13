@@ -11,13 +11,14 @@ import styles from "./Card.module.css";
 
 export type CardVariant = "default" | "frost" | "block";
 export type CardPadding = "none" | "sm" | "md" | "lg";
-export type CardTitleVariant = "display-xl" | "display-l" | "display-m" | "display-s" | "heading" | "subheading" | "body-lg" | "body" | "caption" | "micro";
+export type CardTitleVariant = "display-xl" | "display-l" | "display-m" | "display-s" | "heading" | "subheading" | "body-lg" | "body" | "micro";
 
 export interface CardProps extends PrimitiveProps<"div"> {
   variant?: CardVariant;
   padding?: CardPadding;
   title?: string;
   titleVariant?: CardTitleVariant;
+  uppercase?: boolean;
 }
 
 const variantClasses: Record<CardVariant, string> = {
@@ -35,23 +36,9 @@ const paddingClasses: Record<CardPadding, string> = {
 
 const headingVariants = new Set<string>(["display-xl", "display-l", "display-m", "display-s", "heading", "subheading"]);
 
-function CardTitle({ variant, title }: { variant: CardTitleVariant; title: string }) {
-  if (headingVariants.has(variant)) {
-    return (
-      <Heading variant={variant as HeadingVariant} level={3} className={styles.title}>
-        {title}
-      </Heading>
-    );
-  }
-  return (
-    <Text size={variant as TextSize} className={styles.title}>
-      {title}
-    </Text>
-  );
-}
-
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  function Card({ variant = "default", padding = "md", title, titleVariant = "heading", className, children, ...props }, ref) {
+  function Card({ variant = "default", padding = "md", title, titleVariant = "heading", uppercase, className, children, ...props }, ref) {
+    const isUppercase = uppercase ?? !headingVariants.has(titleVariant);
     const classes = [
       styles.base,
       variantClasses[variant],
@@ -61,9 +48,15 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
       .filter(Boolean)
       .join(" ");
 
+    const titleClasses = [styles.title, isUppercase && styles.uppercase].filter(Boolean).join(" ");
+
     return (
       <Box ref={ref} className={classes} {...props}>
-        {title && <CardTitle variant={titleVariant} title={title} />}
+        {title && (
+          headingVariants.has(titleVariant)
+            ? <Heading variant={titleVariant as HeadingVariant} level={3} className={titleClasses}>{title}</Heading>
+            : <Text size={titleVariant as TextSize} className={titleClasses}>{title}</Text>
+        )}
         {children}
       </Box>
     );

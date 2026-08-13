@@ -15,7 +15,7 @@
 }
 
 .title {
-  font-size: 22px;
+  font-size: var(--fs-subheading);
   letter-spacing: var(--ls-tight-sm);
   margin: 0 0 6px;
   color: var(--text);
@@ -24,7 +24,7 @@
 .description {
   font-family: var(--mono);
   color: var(--muted);
-  font-size: 13px;
+  font-size: var(--fs-body);
   max-width: 42ch;
   margin: 0 auto 20px;
   line-height: 1.6;

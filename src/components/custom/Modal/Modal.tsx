@@ -8,35 +8,21 @@ import type { HeadingVariant } from "@/components/custom/Heading";
 import type { TextSize } from "@/components/custom/Text";
 import styles from "./Modal.module.css";
 
-export type ModalTitleVariant = "display-xl" | "display-l" | "display-m" | "display-s" | "heading" | "subheading" | "body-lg" | "body" | "caption" | "micro";
+export type ModalTitleVariant = "display-xl" | "display-l" | "display-m" | "display-s" | "heading" | "subheading" | "body-lg" | "body" | "micro";
 
 export interface ModalProps {
   open: boolean;
   onClose: () => void;
   title?: string;
   titleVariant?: ModalTitleVariant;
+  uppercase?: boolean;
   children: React.ReactNode;
   className?: string;
 }
 
 const headingVariants = new Set<string>(["display-xl", "display-l", "display-m", "display-s", "heading", "subheading"]);
 
-function ModalTitle({ variant, title }: { variant: ModalTitleVariant; title: string }) {
-  if (headingVariants.has(variant)) {
-    return (
-      <Heading variant={variant as HeadingVariant} level={2} className={styles.title}>
-        {title}
-      </Heading>
-    );
-  }
-  return (
-    <Text size={variant as TextSize} className={styles.title}>
-      {title}
-    </Text>
-  );
-}
-
-function ModalRoot({ open, onClose, title, titleVariant = "heading", children, className }: ModalProps) {
+function ModalRoot({ open, onClose, title, titleVariant = "heading", uppercase, children, className }: ModalProps) {
   const handleEscape = useCallback(
     (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); },
     [onClose]
@@ -57,12 +43,18 @@ function ModalRoot({ open, onClose, title, titleVariant = "heading", children, c
 
   if (!open) return null;
 
+  const isUppercase = uppercase ?? !headingVariants.has(titleVariant);
   const shellClasses = [styles.shell, className].filter(Boolean).join(" ");
+  const titleClasses = [styles.title, isUppercase && styles.uppercase].filter(Boolean).join(" ");
 
   return (
     <Box className={styles.overlay} onClick={onClose} role="dialog" aria-modal="true">
       <Box className={shellClasses} onClick={(e) => e.stopPropagation()}>
-        {title && <ModalTitle variant={titleVariant} title={title} />}
+        {title && (
+          headingVariants.has(titleVariant)
+            ? <Heading variant={titleVariant as HeadingVariant} level={2} className={titleClasses}>{title}</Heading>
+            : <Text size={titleVariant as TextSize} className={titleClasses}>{title}</Text>
+        )}
         {children}
       </Box>
     </Box>

@@ -32,7 +32,7 @@
 
 .groupLabel {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: var(--fs-micro);
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
   color: var(--dim);
@@ -48,7 +48,7 @@
   gap: 10px;
   padding: 7px 10px;
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: var(--fs-body);
   color: var(--muted);
   border-radius: var(--r-xs);
   cursor: pointer;
@@ -71,7 +71,7 @@
   text-align: center;
   color: var(--dim);
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: var(--fs-body);
   flex-shrink: 0;
 }
 

@@ -5,25 +5,19 @@
 
 /* Size variants */
 .bodyLg {
-  font-size: 16px;
+  font-size: var(--fs-body-lg);
   line-height: 1.65;
   letter-spacing: var(--ls-normal);
 }
 
 .body {
-  font-size: 13px;
-  line-height: 1.55;
-  letter-spacing: var(--ls-normal);
-}
-
-.caption {
-  font-size: 12px;
+  font-size: var(--fs-body);
   line-height: 1.55;
   letter-spacing: var(--ls-normal);
 }
 
 .micro {
-  font-size: 10px;
+  font-size: var(--fs-micro);
   line-height: 1.1;
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;

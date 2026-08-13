@@ -5,7 +5,7 @@ import { Box, Span } from "@/components/primitives";
 import type { PrimitiveProps } from "@/components/primitives";
 import styles from "./TextStrip.module.css";
 
-export type TextStripSize = "body-lg" | "body" | "caption" | "micro";
+export type TextStripSize = "body-lg" | "body" | "micro";
 export type TextStripColor = "default" | "muted" | "dim" | "faint" | "primary" | "secondary" | "danger" | "warn" | "info" | "success";
 
 export interface TextStripProps extends PrimitiveProps<"div"> {
@@ -18,7 +18,6 @@ export interface TextStripProps extends PrimitiveProps<"div"> {
 const sizeClasses: Record<TextStripSize, string> = {
   "body-lg": styles.bodyLg,
   "body": styles.body,
-  "caption": styles.caption,
   "micro": styles.micro,
 };
 

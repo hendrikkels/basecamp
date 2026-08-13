@@ -5,42 +5,42 @@
 }
 
 .displayXl {
-  font-size: 120px;
+  font-size: var(--fs-display-xl);
   font-weight: 800;
   line-height: 0.92;
   letter-spacing: var(--ls-tight);
 }
 
 .displayL {
-  font-size: 88px;
+  font-size: var(--fs-display-l);
   font-weight: 800;
   line-height: 0.92;
   letter-spacing: var(--ls-tight);
 }
 
 .displayM {
-  font-size: 56px;
+  font-size: var(--fs-display-m);
   font-weight: 800;
   line-height: 0.92;
   letter-spacing: var(--ls-tight-sm);
 }
 
 .displayS {
-  font-size: 40px;
+  font-size: var(--fs-display-s);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: var(--ls-tight-sm);
 }
 
 .heading {
-  font-size: 28px;
+  font-size: var(--fs-heading);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: var(--ls-tight-sm);
 }
 
 .subheading {
-  font-size: 22px;
+  font-size: var(--fs-subheading);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: var(--ls-tight-sm);
@@ -58,10 +58,10 @@
 
 /* Responsive sizes */
 @media (max-width: 768px) {
-  .displayXl { font-size: 48px; }
-  .displayL { font-size: 40px; }
-  .displayM { font-size: 32px; }
-  .displayS { font-size: 28px; }
-  .heading { font-size: 22px; }
-  .subheading { font-size: 18px; }
+  .displayXl { font-size: var(--fs-display-xl-mobile); }
+  .displayL { font-size: var(--fs-display-l-mobile); }
+  .displayM { font-size: var(--fs-display-m-mobile); }
+  .displayS { font-size: var(--fs-display-s-mobile); }
+  .heading { font-size: var(--fs-heading-mobile); }
+  .subheading { font-size: var(--fs-subheading-mobile); }
 }

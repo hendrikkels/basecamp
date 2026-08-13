@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { Box, Span } from "@/components/primitives";
+import { Box } from "@/components/primitives";
+import { Text } from "@/components/custom/Text";
 import styles from "./Widget.module.css";
 
 export type WidgetVariant = "default" | "frost";
@@ -28,8 +29,8 @@ export const Widget = React.forwardRef<HTMLDivElement, WidgetProps>(
       <Box ref={ref} className={classes}>
         {(label || accent) && (
           <Box className={styles.header}>
-            {label && <Span>{label}</Span>}
-            {accent && <Span className={styles.headerAccent}>{accent}</Span>}
+            {label && <Text size="micro" color="dim" transform="uppercase">{label}</Text>}
+            {accent && <Text size="micro" transform="uppercase" color="primary">{accent}</Text>}
           </Box>
         )}
         {children}

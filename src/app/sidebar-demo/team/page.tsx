@@ -20,22 +20,22 @@ export default function TeamPage() {
         <Card variant="default" padding="sm">
           <Stack gap="2" align="center">
             <Avatar color="primary" round>HV</Avatar>
-            <Text size="caption" weight="medium">Hendrik</Text>
-            <Text size="caption" color="dim">Engineer</Text>
+            <Text weight="medium">Hendrik</Text>
+            <Text color="dim">Engineer</Text>
           </Stack>
         </Card>
         <Card variant="default" padding="sm">
           <Stack gap="2" align="center">
             <Avatar color="secondary" round>AB</Avatar>
-            <Text size="caption" weight="medium">Alice</Text>
-            <Text size="caption" color="dim">Designer</Text>
+            <Text weight="medium">Alice</Text>
+            <Text color="dim">Designer</Text>
           </Stack>
         </Card>
         <Card variant="default" padding="sm">
           <Stack gap="2" align="center">
             <Avatar round>CD</Avatar>
-            <Text size="caption" weight="medium">Charlie</Text>
-            <Text size="caption" color="dim">Product</Text>
+            <Text weight="medium">Charlie</Text>
+            <Text color="dim">Product</Text>
           </Stack>
         </Card>
       </Row>

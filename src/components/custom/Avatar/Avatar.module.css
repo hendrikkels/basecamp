@@ -13,10 +13,10 @@
 }
 
 /* Sizes */
-.sm { width: 24px; height: 24px; font-size: 9px; }
-.md { width: 32px; height: 32px; font-size: 11px; }
-.lg { width: 48px; height: 48px; font-size: 14px; }
-.xl { width: 64px; height: 64px; font-size: 18px; }
+.sm { width: 24px; height: 24px; font-size: var(--fs-micro); }
+.md { width: 32px; height: 32px; font-size: var(--fs-micro); }
+.lg { width: 48px; height: 48px; font-size: var(--fs-body-lg); }
+.xl { width: 64px; height: 64px; font-size: var(--fs-body-lg); }
 
 /* Colors */
 .colorDefault { background: var(--surface-3); color: var(--text); }

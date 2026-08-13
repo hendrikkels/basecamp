@@ -29,9 +29,14 @@
   margin: 0 0 24px;
 }
 
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+}
+
 .description {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: var(--fs-body);
   color: var(--muted);
   margin: 0 0 20px;
   line-height: 1.6;

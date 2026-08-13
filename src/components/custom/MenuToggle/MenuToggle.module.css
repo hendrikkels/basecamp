@@ -14,7 +14,7 @@
 .default {
   background: var(--surface-2);
   color: var(--text);
-  font-size: 16px;
+  font-size: var(--fs-body-lg);
   width: 36px;
   height: 36px;
   border-radius: var(--r-xs);
@@ -36,7 +36,7 @@
   background: var(--acc);
   color: var(--acc-on);
   border-radius: var(--r-xs);
-  font-size: 14px;
+  font-size: var(--fs-body-lg);
   letter-spacing: var(--ls-medium);
   text-transform: uppercase;
   z-index: 58;

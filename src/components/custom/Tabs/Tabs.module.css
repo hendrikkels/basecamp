@@ -9,7 +9,7 @@
   border: 0;
   color: var(--muted);
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: var(--fs-body);
   padding: 10px 16px;
   cursor: pointer;
   position: relative;
@@ -36,7 +36,7 @@
 }
 
 .count {
-  font-size: 10px;
+  font-size: var(--fs-micro);
   color: var(--dim);
   margin-left: 6px;
 }

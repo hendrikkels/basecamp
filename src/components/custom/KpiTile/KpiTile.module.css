@@ -19,54 +19,32 @@
   background: var(--acc);
 }
 
-.label {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: var(--ls-wide);
-  text-transform: uppercase;
-  color: var(--dim);
-}
-
 .qualifier {
   color: var(--muted);
 }
 
 .value {
   font-family: var(--mono);
-  font-size: 40px;
+  font-size: var(--fs-display-s);
   letter-spacing: var(--ls-tight-sm);
   line-height: 0.95;
   color: var(--text);
 }
 
 .unit {
-  font-size: 18px;
+  font-size: var(--fs-body-lg);
   color: var(--muted);
   margin-left: 4px;
 }
 
 .delta {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: var(--ls-medium);
   display: inline-flex;
   align-items: center;
   gap: 4px;
-}
-
-.deltaUp {
-  color: var(--success);
-}
-
-.deltaDown {
-  color: var(--danger);
 }
 
 .meta {
   display: flex;
   justify-content: space-between;
   align-items: end;
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--muted);
 }

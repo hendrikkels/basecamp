@@ -1,7 +1,7 @@
 .label {
   display: block;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: var(--fs-micro);
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
   color: var(--dim);
@@ -27,7 +27,7 @@
   align-items: center;
   gap: 10px;
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: var(--fs-body);
   user-select: none;
   color: var(--text);
 }

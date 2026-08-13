@@ -21,10 +21,9 @@
 }
 
 /* Size variants */
-.bodyLg { font-size: 16px; letter-spacing: var(--ls-normal); }
-.body { font-size: 13px; letter-spacing: var(--ls-normal); }
-.caption { font-size: 12px; letter-spacing: var(--ls-normal); }
-.micro { font-size: 10px; letter-spacing: var(--ls-wide); text-transform: uppercase; font-weight: 500; }
+.bodyLg { font-size: var(--fs-body-lg); letter-spacing: var(--ls-normal); }
+.body { font-size: var(--fs-body); letter-spacing: var(--ls-normal); }
+.micro { font-size: var(--fs-micro); letter-spacing: var(--ls-wide); text-transform: uppercase; font-weight: 500; }
 
 /* Color variants */
 .colorDefault { color: var(--text); }

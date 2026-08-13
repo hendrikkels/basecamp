@@ -67,7 +67,7 @@ export default function Dashboard() {
           </Box>
 
           {/* KPI Row */}
-          <SectionHead title="Key metrics" />
+          <SectionHead title="Key metrics"/>
 
           {/* Status strip */}
           <StatusStrip
@@ -77,7 +77,7 @@ export default function Dashboard() {
               { label: "P95", value: "142ms" },
               { label: "Last Deploy", values: ["a72f01", "T-04:18"] },
             ]}
-            trailing={<Link href="#" arrow><Text size="caption" color="primary">View Logs</Text></Link>}
+            trailing={<Link href="#" arrow><Text color="primary">View Logs</Text></Link>}
           />
 
           <Row columns="4" gap="4">
@@ -90,7 +90,7 @@ export default function Dashboard() {
           <Divider spacing="lg" />
 
           {/* Main grid: chart + side widgets */}
-          <SectionHead title="Analytics" />
+          <SectionHead title="Analytics"/>
 
           <Box className={dashStyles.dashGrid}>
             {/* Left column */}
@@ -202,8 +202,8 @@ export default function Dashboard() {
                   <Box _display="flex" _gap="10px" _alignItems="center" _marginTop="14px" _padding="8px" _background="var(--surface-2)" _borderRadius="var(--r-xs)">
                     <Icon name="play" size="lg" color="primary" />
                     <Box>
-                      <Text size="caption">Brian Eno — Music for Airports</Text>
-                      <Text size="caption" color="dim">Ambient 1</Text>
+                      <Text>Brian Eno — Music for Airports</Text>
+                      <Text color="dim">Ambient 1</Text>
                     </Box>
                   </Box>
                 </Widget>

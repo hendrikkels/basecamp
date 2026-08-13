@@ -145,7 +145,7 @@ Tailwind v4 is installed and available but NOT used for component styling. It co
 | Component | Variants/Props | File |
 |-----------|---------------|------|
 | Heading | variant (display-xl/l/m/s, heading, subheading), color, level | `custom/Heading/` |
-| Text | size (body-lg/body/caption/micro), color, weight, align, transform | `custom/Text/` |
+| Text | size (body-lg/body/micro), color, weight, align, transform | `custom/Text/` |
 | Button | variant (primary/secondary/ghost/outline/destructive/accent2), size (sm/md/lg), iconOnly | `custom/Button/` |
 | Card | variant (default/frost/block), padding (none/sm/md/lg) | `custom/Card/` |
 | Container | size (narrow/default/full) | `custom/Container/` |

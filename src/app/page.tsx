@@ -86,19 +86,19 @@ export default function Home() {
 
           <Row columns="3" gap="4">
             <Card variant="block" title="Primitives" titleVariant="heading">
-              <Text size="caption" color="muted">
+              <Text color="muted">
                 Every HTML element wrapped as a typed React component. Full native prop access with underscore-prefixed CSS-as-props.
               </Text>
               <Box _marginTop="16px"><Badge color="primary-soft">Foundation</Badge></Box>
             </Card>
             <Card variant="block" title="Custom Components" titleVariant="heading">
-              <Text size="caption" color="muted">
+              <Text color="muted">
                 Opinionated styled components extending primitives. Typed variant props mapped to CSS Module classes using design tokens.
               </Text>
               <Box _marginTop="16px"><Badge color="secondary-soft">34 Components</Badge></Box>
             </Card>
             <Card variant="block" title="Token System" titleVariant="heading">
-              <Text size="caption" color="muted">
+              <Text color="muted">
                 Single source of truth for colors, spacing, typography. Dark/light mode switches all variables instantly via data-theme.
               </Text>
               <Box _marginTop="16px"><Badge color="success-soft">128 Tokens</Badge></Box>
@@ -124,26 +124,26 @@ export default function Home() {
             <Card variant="frost" _height="100%">
               <Text size="micro" color="primary" _marginBottom="8px">Screen</Text>
               <Text size="body-lg" _marginBottom="4px">Dashboard</Text>
-              <Text size="caption" color="muted">
+              <Text color="muted">
                 KPIs, charts, data tables, widgets.
               </Text>
-              <Text size="caption" _marginTop="16px"><Link href="/dashboard" variant="muted" arrow>/dashboard</Link></Text>
+              <Text _marginTop="16px"><Link href="/dashboard" variant="muted" arrow>/dashboard</Link></Text>
             </Card>
             <Card variant="frost" _height="100%">
               <Text size="micro" color="primary" _marginBottom="8px">Screen</Text>
               <Text size="body-lg" _marginBottom="4px">App Shell</Text>
-              <Text size="caption" color="muted">
+              <Text color="muted">
                 Sidebar navigation with content area.
               </Text>
-              <Text size="caption" _marginTop="16px"><Link href="/sidebar-demo" variant="muted" arrow>/sidebar-demo</Link></Text>
+              <Text _marginTop="16px"><Link href="/sidebar-demo" variant="muted" arrow>/sidebar-demo</Link></Text>
             </Card>
             <Card variant="frost" _height="100%">
               <Text size="micro" color="primary" _marginBottom="8px">Screen</Text>
               <Text size="body-lg" _marginBottom="4px">Design System</Text>
-              <Text size="caption" color="muted">
+              <Text color="muted">
                 Component showcase and token reference.
               </Text>
-              <Text size="caption" _marginTop="16px"><Link href="/design-system" variant="muted" arrow>/design-system</Link></Text>
+              <Text _marginTop="16px"><Link href="/design-system" variant="muted" arrow>/design-system</Link></Text>
             </Card>
           </Row>
         </Box>
@@ -158,7 +158,7 @@ export default function Home() {
             </Box>
             <Stack direction="horizontal" gap="4" align="center">
               <Avatar size="sm" color="primary" round>HV</Avatar>
-              <Text size="caption" color="muted">Hendrik van Heerden</Text>
+              <Text color="muted">Hendrik van Heerden</Text>
             </Stack>
           </Box>
         </Container>

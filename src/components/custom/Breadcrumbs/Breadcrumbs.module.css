@@ -3,7 +3,7 @@
   gap: 8px;
   align-items: center;
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: var(--fs-micro);
   letter-spacing: var(--ls-medium);
   color: var(--dim);
 }

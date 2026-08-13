@@ -3,7 +3,7 @@
   align-items: center;
   gap: 10px;
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: var(--fs-body);
   cursor: pointer;
   user-select: none;
   color: var(--text);

@@ -72,8 +72,8 @@ export default function SidebarDemoLayout({ children }: { children: React.ReactN
               >
                 <Avatar size="sm" color="primary" round>HV</Avatar>
                 <Box>
-                  <Text size="caption" color="default">Hendrik</Text>
-                  <Text size="caption" color="dim">Engineer</Text>
+                  <Text>Hendrik</Text>
+                  <Text color="dim">Engineer</Text>
                 </Box>
               </Box>
             </Sidebar.Footer>
