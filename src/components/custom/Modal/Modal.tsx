@@ -8,7 +8,7 @@ import type { HeadingVariant } from "@/components/custom/Heading";
 import type { TextSize } from "@/components/custom/Text";
 import styles from "./Modal.module.css";
 
-export type ModalTitleVariant = "display-xl" | "display-l" | "display-m" | "display-s" | "heading" | "subheading" | "body-lg" | "body" | "micro";
+export type ModalTitleVariant = HeadingVariant | TextSize;
 
 export interface ModalProps {
   open: boolean;
@@ -22,7 +22,7 @@ export interface ModalProps {
 
 const headingVariants = new Set<string>(["display-xl", "display-l", "display-m", "display-s", "heading", "subheading"]);
 
-function ModalRoot({ open, onClose, title, titleVariant = "heading", uppercase, children, className }: ModalProps) {
+function ModalRoot({ open, onClose, title, titleVariant = "heading", uppercase = false, children, className }: ModalProps) {
   const handleEscape = useCallback(
     (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); },
     [onClose]
@@ -43,9 +43,8 @@ function ModalRoot({ open, onClose, title, titleVariant = "heading", uppercase, 
 
   if (!open) return null;
 
-  const isUppercase = uppercase ?? !headingVariants.has(titleVariant);
   const shellClasses = [styles.shell, className].filter(Boolean).join(" ");
-  const titleClasses = [styles.title, isUppercase && styles.uppercase].filter(Boolean).join(" ");
+  const titleClasses = [styles.title, uppercase && styles.uppercase].filter(Boolean).join(" ");
 
   return (
     <Box className={styles.overlay} onClick={onClose} role="dialog" aria-modal="true">

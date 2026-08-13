@@ -150,6 +150,15 @@
   filter: brightness(1.08);
 }
 
+.info {
+  background: var(--info);
+  color: var(--info-on);
+}
+
+.info:hover {
+  filter: brightness(1.08);
+}
+
 /* Icon color inheritance */
 .iconInherit {
   color: inherit;
@@ -159,19 +168,19 @@
 .sm {
   height: 28px;
   font-size: var(--fs-body-sm);
-  padding: 0 10px;
+  padding: 0 11px;
 }
 
 .md {
   height: 36px;
   font-size: var(--fs-body);
-  padding: 0 16px;
+  padding: 0 13px;
 }
 
 .lg {
   height: 44px;
   font-size: var(--fs-body-lg);
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 /* Icon-only modifier */

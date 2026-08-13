@@ -11,7 +11,7 @@ import styles from "./Card.module.css";
 
 export type CardVariant = "default" | "frost" | "block";
 export type CardPadding = "none" | "sm" | "md" | "lg";
-export type CardTitleVariant = "display-xl" | "display-l" | "display-m" | "display-s" | "heading" | "subheading" | "body-lg" | "body" | "micro";
+export type CardTitleVariant = HeadingVariant | TextSize;
 
 export interface CardProps extends PrimitiveProps<"div"> {
   variant?: CardVariant;
@@ -37,8 +37,7 @@ const paddingClasses: Record<CardPadding, string> = {
 const headingVariants = new Set<string>(["display-xl", "display-l", "display-m", "display-s", "heading", "subheading"]);
 
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  function Card({ variant = "default", padding = "md", title, titleVariant = "heading", uppercase, className, children, ...props }, ref) {
-    const isUppercase = uppercase ?? !headingVariants.has(titleVariant);
+  function Card({ variant = "default", padding = "md", title, titleVariant = "heading", uppercase = false, className, children, ...props }, ref) {
     const classes = [
       styles.base,
       variantClasses[variant],
@@ -48,7 +47,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
       .filter(Boolean)
       .join(" ");
 
-    const titleClasses = [styles.title, isUppercase && styles.uppercase].filter(Boolean).join(" ");
+    const titleClasses = [styles.title, uppercase && styles.uppercase].filter(Boolean).join(" ");
 
     return (
       <Box ref={ref} className={classes} {...props}>

@@ -373,6 +373,10 @@ export default function DesignSystem() {
               <Button variant="outline" size="sm">Outline</Button>
               <Button variant="accent1" size="sm">Accent 1</Button>
               <Button variant="accent2" size="sm">Accent 2</Button>
+              <Button variant="destructive" size="sm">Destructive</Button>
+              <Button variant="success" size="sm">Success</Button>
+              <Button variant="warn" size="sm">Warn</Button>
+              <Button variant="info" size="sm">Info</Button>
               <Button variant="primary" size="sm" disabled>Disabled</Button>
             </Stack>
             <Text size="micro" color="dim">Medium</Text>
@@ -387,15 +391,22 @@ export default function DesignSystem() {
               <Button variant="destructive" size="md">Destructive</Button>
               <Button variant="success" size="md">Success</Button>
               <Button variant="warn" size="md">Warn</Button>
+              <Button variant="info" size="md">Info</Button>
               <Button variant="primary" size="md" disabled>Disabled</Button>
             </Stack>
             <Text size="micro" color="dim">Large</Text>
             <Stack direction="horizontal" gap="3" align="center" wrap>
+              <Button variant="primary" size="lg">Primary</Button>
+              <Button variant="secondary" size="lg">Secondary</Button>
+              <Button variant="tertiary" size="lg">Tertiary</Button>
+              <Button variant="ghost" size="lg">Ghost</Button>
+              <Button variant="outline" size="lg">Outline</Button>
               <Button variant="accent1" size="lg">Accent 1</Button>
               <Button variant="accent2" size="lg">Accent 2</Button>
               <Button variant="destructive" size="lg">Destructive</Button>
               <Button variant="success" size="lg">Success</Button>
               <Button variant="warn" size="lg">Warn</Button>
+              <Button variant="info" size="lg">Info</Button>
               <Button variant="primary" size="lg" disabled>Disabled</Button>
             </Stack>
             <Text size="micro" color="dim">With Icons</Text>
@@ -407,6 +418,7 @@ export default function DesignSystem() {
               <Button variant="destructive" iconLeft="trash">Delete</Button>
               <Button variant="success" iconLeft="check">Confirm</Button>
               <Button variant="warn" iconLeft="warning">Caution</Button>
+              <Button variant="info" iconLeft="info">Info</Button>
             </Stack>
             <Stack direction="horizontal" gap="3" align="center" wrap>
               <Button variant="primary" size="sm" iconLeft="plus">Small</Button>
@@ -582,7 +594,7 @@ export default function DesignSystem() {
                 Selected: {selectVal || "none"}
               </Text>
             </Card>
-            <Card variant="default" padding="sm" title="Multi Select" titleVariant="micro">
+            <Card padding="sm" title="Multi Select" titleVariant="micro">
               <MultiSelect
                 value={multiSelectVal}
                 onChange={setMultiSelectVal}
@@ -667,7 +679,6 @@ export default function DesignSystem() {
           <SectionHead number="10" title="Modal" uppercase/>
           <Button
             variant="primary"
-            size="sm"
             onClick={() => setModalOpen(true)}
           >
             Open Modal
@@ -719,7 +730,6 @@ export default function DesignSystem() {
           <Stack direction="horizontal" gap="3" align="center">
             <Button
               variant="primary"
-              size="sm"
               onClick={() =>
                 alert.show({
                   severity: "success",
@@ -732,7 +742,6 @@ export default function DesignSystem() {
             </Button>
             <Button
               variant="secondary"
-              size="sm"
               onClick={() =>
                 alert.show({
                   severity: "warn",
@@ -826,7 +835,7 @@ export default function DesignSystem() {
                 <DataTable.Td>Button</DataTable.Td>
                 <DataTable.Td>Interactive</DataTable.Td>
                 <DataTable.Td>
-                  <Badge color="success" dot>
+                  <Badge color="success">
                     Complete
                   </Badge>
                 </DataTable.Td>
@@ -836,8 +845,8 @@ export default function DesignSystem() {
                 <DataTable.Td>Select</DataTable.Td>
                 <DataTable.Td>Form</DataTable.Td>
                 <DataTable.Td>
-                  <Badge color="success" dot>
-                    Complete
+                  <Badge color="warn">
+                    In Progress
                   </Badge>
                 </DataTable.Td>
                 <DataTable.Td numeric>7</DataTable.Td>
@@ -846,7 +855,7 @@ export default function DesignSystem() {
                 <DataTable.Td>Chart</DataTable.Td>
                 <DataTable.Td>Data Viz</DataTable.Td>
                 <DataTable.Td>
-                  <Badge color="success" dot>
+                  <Badge color="success">
                     Complete
                   </Badge>
                 </DataTable.Td>
@@ -856,7 +865,7 @@ export default function DesignSystem() {
                 <DataTable.Td>Modal</DataTable.Td>
                 <DataTable.Td>Overlay</DataTable.Td>
                 <DataTable.Td>
-                  <Badge color="success" dot>
+                  <Badge color="success">
                     Complete
                   </Badge>
                 </DataTable.Td>
@@ -879,12 +888,12 @@ export default function DesignSystem() {
             </Breadcrumbs>
             <Stack direction="horizontal" gap="4" align="center">
               <Tooltip content="Top tooltip">
-                <Button variant="tertiary" size="sm">
+                <Button variant="tertiary">
                   Tooltip (top)
                 </Button>
               </Tooltip>
               <Tooltip content="Bottom tooltip" position="bottom">
-                <Button variant="outline" size="sm">
+                <Button variant="tertiary">
                   Tooltip (bottom)
                 </Button>
               </Tooltip>

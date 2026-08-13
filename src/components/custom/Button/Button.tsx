@@ -7,7 +7,7 @@ import { Icon } from "@/components/custom/Icon";
 import type { IconName } from "@/components/custom/Icon";
 import styles from "./Button.module.css";
 
-export type ButtonVariant = "primary" | "secondary" | "tertiary" | "ghost" | "outline" | "destructive" | "accent1" | "accent2" | "success" | "warn";
+export type ButtonVariant = "primary" | "secondary" | "tertiary" | "ghost" | "outline" | "destructive" | "accent1" | "accent2" | "success" | "warn" | "info";
 export type ButtonSize = "sm" | "md" | "lg";
 
 export interface ButtonProps extends PrimitiveProps<"button"> {
@@ -29,6 +29,7 @@ const variantClasses: Record<ButtonVariant, string> = {
   accent2: styles.accent2,
   success: styles.success,
   warn: styles.warn,
+  info: styles.info,
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
