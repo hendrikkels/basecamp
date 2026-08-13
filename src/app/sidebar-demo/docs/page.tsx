@@ -13,7 +13,7 @@ export default function DocsPage() {
           Documentation
         </Heading>
       </Stack>
-      <Card variant="default">
+      <Card variant="block">
         <Text size="body" color="muted">
           Documentation pages are built from the component library. Each
           component includes usage examples, prop tables, and accessibility

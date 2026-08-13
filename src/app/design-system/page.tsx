@@ -59,7 +59,7 @@ export default function DesignSystem() {
   return (
     <>
       <Container>
-        <Stack gap="8" _paddingTop="48px" _paddingBottom="96px">
+        <Stack gap="8" _paddingTop="32px" _paddingBottom="80px">
           {/* Hero */}
           <Box _paddingBottom="48px" _borderBottom="1px solid var(--rule)">
             <Box
@@ -235,6 +235,19 @@ export default function DesignSystem() {
               className={`${styles.typographyRow} ${styles.typographyRowBordered}`}
             >
               <Text size="micro" color="dim">
+                Subheading
+              </Text>
+              <Heading variant="subheading" level={3}>
+                Section subheading
+              </Heading>
+              <Text size="micro" color="dim" _textAlign="right">
+                22px / Bold
+              </Text>
+            </Box>
+            <Box
+              className={`${styles.typographyRow} ${styles.typographyRowBordered}`}
+            >
+              <Text size="micro" color="dim">
                 Body LG
               </Text>
               <Text size="body-lg">
@@ -329,27 +342,18 @@ export default function DesignSystem() {
           {/* Cards */}
           <SectionHead number="05" title="Cards" />
           <Row columns="3" gap="4">
-            <Card variant="default">
-              <Heading variant="subheading" level={3}>
-                Default
-              </Heading>
-              <Text size="caption" color="muted" _marginTop="8px">
+            <Card variant="default" title="Default" titleVariant="heading">
+              <Text size="caption" color="muted">
                 Standard surface card.
               </Text>
             </Card>
-            <Card variant="frost">
-              <Heading variant="subheading" level={3}>
-                Frost
-              </Heading>
-              <Text size="caption" color="muted" _marginTop="8px">
+            <Card variant="frost" title="Frost" titleVariant="heading">
+              <Text size="caption" color="muted">
                 Frosted glass backdrop blur.
               </Text>
             </Card>
-            <Card variant="block">
-              <Heading variant="subheading" level={3}>
-                Block
-              </Heading>
-              <Text size="caption" color="muted" _marginTop="8px">
+            <Card variant="block" title="Block" titleVariant="heading">
+              <Text size="caption" color="muted">
                 Accent bar indicator.
               </Text>
             </Card>
@@ -409,21 +413,14 @@ export default function DesignSystem() {
               </Select>
             </Stack>
             <Stack gap="4">
-              <Card variant="default" padding="sm">
-                <TextStrip
-                  items={["RadioGroup", `Selected: ${radioVal}`]}
-                  _marginBottom="12px"
-                />
+              <Card variant="default" padding="sm" title="Radiogroup" titleVariant="micro">
                 <RadioGroup value={radioVal} onChange={(v) => setRadioVal(v)}>
                   <RadioGroup.Item value="a">Option A</RadioGroup.Item>
                   <RadioGroup.Item value="b">Option B</RadioGroup.Item>
                   <RadioGroup.Item value="c">Option C</RadioGroup.Item>
                 </RadioGroup>
               </Card>
-              <Card variant="default" padding="sm">
-                <Text size="micro" color="dim" _marginBottom="12px">
-                  CheckboxGroup
-                </Text>
+              <Card variant="default" padding="sm" title="CheckboxGroup" titleVariant="micro">
                 <CheckboxGroup value={checkVals} onChange={setCheckVals}>
                   <CheckboxGroup.Item value="one">Checked</CheckboxGroup.Item>
                   <CheckboxGroup.Item value="two">Unchecked</CheckboxGroup.Item>
@@ -432,10 +429,7 @@ export default function DesignSystem() {
                   </CheckboxGroup.Item>
                 </CheckboxGroup>
               </Card>
-              <Card variant="default" padding="sm">
-                <Text size="micro" color="dim" _marginBottom="12px">
-                  Switches
-                </Text>
+              <Card variant="default" padding="sm" title="Switches" titleVariant="micro">
                 <Stack direction="horizontal" gap="4" align="center">
                   <Switch checked={switchA} onChange={setSwitchA}>
                     Enabled
@@ -457,10 +451,7 @@ export default function DesignSystem() {
           {/* Dropdowns */}
           <SectionHead number="07" title="Dropdowns" />
           <Row columns="2" gap="4">
-            <Card variant="default" padding="sm">
-              <Text size="micro" color="dim" _marginBottom="12px">
-                Single Select
-              </Text>
+            <Card variant="default" padding="sm" title="Single Select" titleVariant="micro">
               <Select
                 value={selectVal}
                 onChange={setSelectVal}
@@ -483,10 +474,7 @@ export default function DesignSystem() {
                 Selected: {selectVal || "none"}
               </Text>
             </Card>
-            <Card variant="default" padding="sm">
-              <Text size="micro" color="dim" _marginBottom="12px">
-                Multi Select
-              </Text>
+            <Card variant="default" padding="sm" title="Multi Select" titleVariant="micro">
               <MultiSelect
                 value={multiSelectVal}
                 onChange={setMultiSelectVal}
@@ -576,8 +564,7 @@ export default function DesignSystem() {
           >
             Open Modal
           </Button>
-          <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
-            <Modal.Title>Confirm Action</Modal.Title>
+          <Modal open={modalOpen} onClose={() => setModalOpen(false)} title="Confirm Action">
             <Modal.Description>
               This action cannot be undone. Are you sure you want to proceed?
             </Modal.Description>
@@ -659,7 +646,6 @@ export default function DesignSystem() {
             <Avatar size="sm">SM</Avatar>
             <Avatar size="md">MD</Avatar>
             <Avatar size="lg">LG</Avatar>
-            <Avatar size="xl">XL</Avatar>
             <Avatar color="primary" round>
               AC
             </Avatar>
@@ -675,6 +661,16 @@ export default function DesignSystem() {
           <Stack gap="4">
             <Stack gap="2">
               <Text size="micro" color="dim">
+                Loaders
+              </Text>
+              <Stack direction="horizontal" gap="5" align="center">
+                <Spinner />
+                <DotsLoader />
+                <BlockStrip filled={6} total={10} />
+              </Stack>
+            </Stack>
+            <Stack gap="2">
+              <Text size="micro" color="dim">
                 Progress
               </Text>
               <Progress value={72} />
@@ -686,16 +682,6 @@ export default function DesignSystem() {
               <Stack direction="horizontal" gap="2">
                 <Skeleton height="12px" width="100%" />
                 <Skeleton height="12px" width="75%" />
-              </Stack>
-            </Stack>
-            <Stack gap="2">
-              <Text size="micro" color="dim">
-                Loaders
-              </Text>
-              <Stack direction="horizontal" gap="5" align="center">
-                <Spinner />
-                <DotsLoader />
-                <BlockStrip filled={6} total={10} />
               </Stack>
             </Stack>
             <Stack gap="2">

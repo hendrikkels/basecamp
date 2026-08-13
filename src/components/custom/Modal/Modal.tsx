@@ -1,17 +1,42 @@
 "use client";
 
 import React, { useEffect, useCallback } from "react";
-import { Box, Text, H3 } from "@/components/primitives";
+import { Box } from "@/components/primitives";
+import { Heading } from "@/components/custom/Heading";
+import { Text } from "@/components/custom/Text";
+import type { HeadingVariant } from "@/components/custom/Heading";
+import type { TextSize } from "@/components/custom/Text";
 import styles from "./Modal.module.css";
+
+export type ModalTitleVariant = "display-xl" | "display-l" | "display-m" | "display-s" | "heading" | "subheading" | "body-lg" | "body" | "caption" | "micro";
 
 export interface ModalProps {
   open: boolean;
   onClose: () => void;
+  title?: string;
+  titleVariant?: ModalTitleVariant;
   children: React.ReactNode;
   className?: string;
 }
 
-function ModalRoot({ open, onClose, children, className }: ModalProps) {
+const headingVariants = new Set<string>(["display-xl", "display-l", "display-m", "display-s", "heading", "subheading"]);
+
+function ModalTitle({ variant, title }: { variant: ModalTitleVariant; title: string }) {
+  if (headingVariants.has(variant)) {
+    return (
+      <Heading variant={variant as HeadingVariant} level={2} className={styles.title}>
+        {title}
+      </Heading>
+    );
+  }
+  return (
+    <Text size={variant as TextSize} className={styles.title}>
+      {title}
+    </Text>
+  );
+}
+
+function ModalRoot({ open, onClose, title, titleVariant = "heading", children, className }: ModalProps) {
   const handleEscape = useCallback(
     (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); },
     [onClose]
@@ -37,6 +62,7 @@ function ModalRoot({ open, onClose, children, className }: ModalProps) {
   return (
     <Box className={styles.overlay} onClick={onClose} role="dialog" aria-modal="true">
       <Box className={shellClasses} onClick={(e) => e.stopPropagation()}>
+        {title && <ModalTitle variant={titleVariant} title={title} />}
         {children}
       </Box>
     </Box>
@@ -44,15 +70,6 @@ function ModalRoot({ open, onClose, children, className }: ModalProps) {
 }
 
 ModalRoot.displayName = "Modal";
-
-export interface ModalTitleProps {
-  children: React.ReactNode;
-}
-
-function ModalTitle({ children }: ModalTitleProps) {
-  return <H3 className={styles.title} _fontWeight={600}>{children}</H3>;
-}
-ModalTitle.displayName = "Modal.Title";
 
 export interface ModalDescriptionProps {
   children: React.ReactNode;
@@ -73,7 +90,6 @@ function ModalActions({ children }: ModalActionsProps) {
 ModalActions.displayName = "Modal.Actions";
 
 export const Modal = Object.assign(ModalRoot, {
-  Title: ModalTitle,
   Description: ModalDescription,
   Actions: ModalActions,
 });

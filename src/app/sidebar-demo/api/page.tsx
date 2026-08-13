@@ -5,7 +5,8 @@ import {
   Text,
   Stack,
   Card,
-  Divider,
+  DataTable,
+  Badge,
 } from "@/components/custom";
 
 export default function ApiPage() {
@@ -15,13 +16,28 @@ export default function ApiPage() {
         <Text size="micro" color="dim">Workspace / API Integration</Text>
         <Heading variant="heading" level={1}>API Integration</Heading>
       </Stack>
-      <Card variant="block">
-        <Stack gap="3">
-          <Heading variant="subheading" level={3}>2 pending issues</Heading>
-          <Text size="caption" color="muted">Rate limiting needs configuration for the new endpoints.</Text>
-          <Divider spacing="sm" />
-          <Text size="caption" color="muted">Authentication token refresh flow needs testing.</Text>
-        </Stack>
+      <Card padding="none" title="2 pending issues" titleVariant="subheading">
+        <DataTable>
+          <DataTable.Head>
+            <DataTable.Row>
+              <DataTable.Th>Issue</DataTable.Th>
+              <DataTable.Th>Area</DataTable.Th>
+              <DataTable.Th>Priority</DataTable.Th>
+            </DataTable.Row>
+          </DataTable.Head>
+          <DataTable.Body>
+            <DataTable.Row>
+              <DataTable.Td>Rate limiting needs configuration for new endpoints</DataTable.Td>
+              <DataTable.Td><Badge color="default">Infrastructure</Badge></DataTable.Td>
+              <DataTable.Td><Badge color="danger" dot>High</Badge></DataTable.Td>
+            </DataTable.Row>
+            <DataTable.Row>
+              <DataTable.Td>Authentication token refresh flow needs testing</DataTable.Td>
+              <DataTable.Td><Badge color="default">Auth</Badge></DataTable.Td>
+              <DataTable.Td><Badge color="warn" dot>Medium</Badge></DataTable.Td>
+            </DataTable.Row>
+          </DataTable.Body>
+        </DataTable>
       </Card>
     </Stack>
   );

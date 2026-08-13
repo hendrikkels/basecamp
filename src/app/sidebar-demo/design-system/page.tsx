@@ -6,6 +6,7 @@ import {
   Stack,
   Card,
   Progress,
+  Divider,
 } from "@/components/custom";
 
 export default function DesignSystemPage() {
@@ -15,11 +16,11 @@ export default function DesignSystemPage() {
         <Text size="micro" color="dim">Workspace / Design System</Text>
         <Heading variant="heading" level={1}>Design System</Heading>
       </Stack>
-      <Card variant="default">
+      <Card variant="default" title="Component library progress" titleVariant="subheading">
+        <Divider spacing="sm" />
         <Stack gap="3">
-          <Text size="body" color="muted">Component library progress</Text>
-          <Progress value={92} />
           <Text size="caption" color="dim">34 of 37 components complete</Text>
+                    <Progress value={92} />
         </Stack>
       </Card>
     </Stack>

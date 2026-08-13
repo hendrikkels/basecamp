@@ -96,10 +96,7 @@ export default function Dashboard() {
             {/* Left column */}
             <Stack gap="6">
               {/* Activity table (moved above charts) */}
-              <Card variant="default" padding="none">
-                <Box _padding="16px 20px" _borderBottom="1px solid var(--hairline)" _display="flex" _alignItems="center" _gap="12px">
-                  <Heading variant="subheading" level={3}>Recent Activity</Heading>
-                </Box>
+              <Card variant="default" padding="none" title="Recent Activity" titleVariant="heading">
                 <DataTable>
                   <DataTable.Head>
                     <DataTable.Row>
@@ -113,19 +110,19 @@ export default function Dashboard() {
                     <DataTable.Row>
                       <DataTable.Td>Building a Design System</DataTable.Td>
                       <DataTable.Td><Badge>Post</Badge></DataTable.Td>
-                      <DataTable.Td><Badge color="success" dot>Published</Badge></DataTable.Td>
+                      <DataTable.Td><Badge color="success">Published</Badge></DataTable.Td>
                       <DataTable.Td numeric>2,841</DataTable.Td>
                     </DataTable.Row>
                     <DataTable.Row>
                       <DataTable.Td>Component Architecture Notes</DataTable.Td>
                       <DataTable.Td><Badge>Note</Badge></DataTable.Td>
-                      <DataTable.Td><Badge color="primary-soft" dot>Draft</Badge></DataTable.Td>
+                      <DataTable.Td><Badge color="primary-soft">Draft</Badge></DataTable.Td>
                       <DataTable.Td numeric>—</DataTable.Td>
                     </DataTable.Row>
                     <DataTable.Row>
                       <DataTable.Td>Weekly Recap #47</DataTable.Td>
                       <DataTable.Td><Badge>Post</Badge></DataTable.Td>
-                      <DataTable.Td><Badge color="success" dot>Published</Badge></DataTable.Td>
+                      <DataTable.Td><Badge color="success">Published</Badge></DataTable.Td>
                       <DataTable.Td numeric>1,204</DataTable.Td>
                     </DataTable.Row>
                     <DataTable.Row>
@@ -137,14 +134,14 @@ export default function Dashboard() {
                     <DataTable.Row>
                       <DataTable.Td>Token System Changelog</DataTable.Td>
                       <DataTable.Td><Badge>Note</Badge></DataTable.Td>
-                      <DataTable.Td><Badge color="success" dot>Published</Badge></DataTable.Td>
+                      <DataTable.Td><Badge color="success">Published</Badge></DataTable.Td>
                       <DataTable.Td numeric>892</DataTable.Td>
                     </DataTable.Row>
                   </DataTable.Body>
                 </DataTable>
               </Card>
 
-              <Card variant="default" padding="none" >
+              <Card variant="default" padding="none" title="Metrics" titleVariant="heading" >
               {/* Featured chart */}
               <Chart
                 variant="area"

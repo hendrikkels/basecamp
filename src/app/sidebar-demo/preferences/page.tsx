@@ -14,7 +14,7 @@ export default function PreferencesPage() {
         <Text size="micro" color="dim">Settings / Preferences</Text>
         <Heading variant="heading" level={1}>Preferences</Heading>
       </Stack>
-      <Card variant="default">
+      <Card variant="block">
         <Text size="body" color="muted">
           Application preferences and configuration options would live here.
         </Text>

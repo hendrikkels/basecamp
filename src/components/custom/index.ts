@@ -2,7 +2,7 @@ export { Heading } from "./Heading";
 export type { HeadingProps, HeadingVariant, HeadingColor, HeadingLevel } from "./Heading";
 
 export { Card } from "./Card";
-export type { CardProps, CardVariant, CardPadding } from "./Card";
+export type { CardProps, CardVariant, CardPadding, CardTitleVariant } from "./Card";
 
 export { Text } from "./Text";
 export type { TextProps, TextSize, TextWeight, TextColor, TextAlign, TextTransform } from "./Text";
@@ -83,7 +83,7 @@ export { Tooltip } from "./Tooltip";
 export type { TooltipProps, TooltipPosition } from "./Tooltip";
 
 export { Modal } from "./Modal";
-export type { ModalProps, ModalTitleProps, ModalDescriptionProps, ModalActionsProps } from "./Modal";
+export type { ModalProps, ModalTitleVariant, ModalDescriptionProps, ModalActionsProps } from "./Modal";
 
 export { KpiTile } from "./KpiTile";
 export type { KpiTileProps } from "./KpiTile";

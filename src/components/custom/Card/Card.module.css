@@ -52,3 +52,15 @@
 .padSm { padding: var(--sp-3); }
 .padMd { padding: var(--sp-5); }
 .padLg { padding: var(--sp-7); }
+
+/* Title */
+.title {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.padNone .title {
+  padding: 16px 20px;
+  margin-bottom: 0;
+  box-shadow: inset 0 -1px 0 var(--hairline);
+}
