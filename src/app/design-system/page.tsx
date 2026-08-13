@@ -373,9 +373,6 @@ export default function DesignSystem() {
               <Button variant="outline" size="sm">Outline</Button>
               <Button variant="accent1" size="sm">Accent 1</Button>
               <Button variant="accent2" size="sm">Accent 2</Button>
-              <Button variant="destructive" size="sm">Destructive</Button>
-              <Button variant="success" size="sm">Success</Button>
-              <Button variant="warn" size="sm">Warn</Button>
               <Button variant="primary" size="sm" disabled>Disabled</Button>
             </Stack>
             <Text size="micro" color="dim">Medium</Text>
@@ -394,11 +391,6 @@ export default function DesignSystem() {
             </Stack>
             <Text size="micro" color="dim">Large</Text>
             <Stack direction="horizontal" gap="3" align="center" wrap>
-              <Button variant="primary" size="lg">Primary</Button>
-              <Button variant="secondary" size="lg">Secondary</Button>
-              <Button variant="tertiary" size="lg">Tertiary</Button>
-              <Button variant="ghost" size="lg">Ghost</Button>
-              <Button variant="outline" size="lg">Outline</Button>
               <Button variant="accent1" size="lg">Accent 1</Button>
               <Button variant="accent2" size="lg">Accent 2</Button>
               <Button variant="destructive" size="lg">Destructive</Button>
@@ -409,12 +401,9 @@ export default function DesignSystem() {
             <Text size="micro" color="dim">With Icons</Text>
             <Stack direction="horizontal" gap="3" align="center" wrap>
               <Button variant="primary" iconLeft="plus">Add Item</Button>
-              <Button variant="secondary" iconLeft="star">Favorite</Button>
               <Button variant="tertiary" iconLeft="search">Search</Button>
-              <Button variant="ghost" iconLeft="gear">Settings</Button>
               <Button variant="outline" iconRight="arrow">Continue</Button>
               <Button variant="accent1" iconLeft="bolt">Boost</Button>
-              <Button variant="accent2" iconLeft="diamond">Premium</Button>
               <Button variant="destructive" iconLeft="trash">Delete</Button>
               <Button variant="success" iconLeft="check">Confirm</Button>
               <Button variant="warn" iconLeft="warning">Caution</Button>
