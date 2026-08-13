@@ -16,6 +16,12 @@
   letter-spacing: var(--ls-normal);
 }
 
+.bodySm {
+  font-size: var(--fs-body-sm);
+  line-height: 1.55;
+  letter-spacing: var(--ls-normal);
+}
+
 .micro {
   font-size: var(--fs-micro);
   line-height: 1.1;

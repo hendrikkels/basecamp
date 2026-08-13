@@ -27,7 +27,7 @@
 .brand {
   font-family: var(--display);
   font-size: var(--fs-body-lg);
-  letter-spacing: var(--ls-tight-sm);
+  letter-spacing: var(--ls-xx-tight);
   text-transform: none;
   display: inline-flex;
   align-items: center;

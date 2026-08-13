@@ -8,7 +8,7 @@
   font-size: var(--fs-display-xl);
   font-weight: var(--fw-extrabold);
   line-height: 0.92;
-  letter-spacing: var(--ls-tight);
+  letter-spacing: var(--ls-xx-tight);
 }
 
 .displayL {

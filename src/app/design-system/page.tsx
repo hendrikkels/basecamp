@@ -55,7 +55,7 @@ export default function DesignSystem() {
   return (
     <>
       <Container>
-        <Stack gap="8" _paddingTop="32px" _paddingBottom="80px">
+        <Stack gap="6" _paddingTop="32px" _paddingBottom="80px">
           {/* Hero */}
           <Box _paddingBottom="48px" _borderBottom="1px solid var(--rule)">
             <Box
@@ -185,7 +185,7 @@ export default function DesignSystem() {
                 Aa
               </Heading>
               <Text size="micro" color="dim" _textAlign="right">
-                120px / Bold
+                120px / Extrabold
               </Text>
             </Box>
             <Box
@@ -198,7 +198,7 @@ export default function DesignSystem() {
                 BaseCamp
               </Heading>
               <Text size="micro" color="dim" _textAlign="right">
-                88px / Bold
+                88px / Extrabold
               </Text>
             </Box>
             <Box
@@ -211,7 +211,20 @@ export default function DesignSystem() {
                 Components
               </Heading>
               <Text size="micro" color="dim" _textAlign="right">
-                56px / Bold
+                56px / Extrabold
+              </Text>
+            </Box>
+            <Box
+              className={`${styles.typographyRow} ${styles.typographyRowBordered}`}
+            >
+              <Text size="micro" color="dim">
+                Display S
+              </Text>
+              <Heading variant="display-s" level={2}>
+                Interfaces
+              </Heading>
+              <Text size="micro" color="dim" _textAlign="right">
+                40px / Extrabold
               </Text>
             </Box>
             <Box
@@ -221,10 +234,10 @@ export default function DesignSystem() {
                 Heading
               </Text>
               <Heading variant="heading" level={3}>
-                Section heading
+                Content heading
               </Heading>
               <Text size="micro" color="dim" _textAlign="right">
-                28px / Bold
+                28px / Extrabold
               </Text>
             </Box>
             <Box
@@ -234,10 +247,10 @@ export default function DesignSystem() {
                 Subheading
               </Text>
               <Heading variant="subheading" level={3}>
-                Section subheading
+                Content subheading
               </Heading>
               <Text size="micro" color="dim" _textAlign="right">
-                22px / Bold
+                22px / Extrabold
               </Text>
             </Box>
             <Box
@@ -247,10 +260,10 @@ export default function DesignSystem() {
                 Body LG
               </Text>
               <Text size="body-lg">
-                The quick brown fox jumps over the lazy dog.
+                Section Heading
               </Text>
               <Text size="micro" color="dim" _textAlign="right">
-                16px / Regular
+                15px / Regular
               </Text>
             </Box>
             <Box
@@ -260,10 +273,23 @@ export default function DesignSystem() {
                 Body
               </Text>
               <Text size="body">
-                Default body text at 12px with JetBrains Mono.
+                Default body text at 13px with JetBrains Mono.
               </Text>
               <Text size="micro" color="dim" _textAlign="right">
-                12px / Regular
+                13px / Regular
+              </Text>
+            </Box>
+            <Box
+              className={`${styles.typographyRow} ${styles.typographyRowBordered}`}
+            >
+              <Text size="micro" color="dim">
+                Body SM
+              </Text>
+              <Text size="body-sm">
+                Small body text at 11px with JetBrains Mono.
+              </Text>
+              <Text size="micro" color="dim" _textAlign="right">
+                11px / Regular
               </Text>
             </Box>
             <Box className={styles.typographyRow}>
@@ -272,7 +298,7 @@ export default function DesignSystem() {
               </Text>
               <Text size="micro">Uppercase tracked label text</Text>
               <Text size="micro" color="dim" _textAlign="right">
-                10px / Medium
+                9px / Medium
               </Text>
             </Box>
           </Stack>

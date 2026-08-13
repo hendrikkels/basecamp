@@ -5,7 +5,7 @@ import { Text as PrimitiveText } from "@/components/primitives";
 import type { PrimitiveProps } from "@/components/primitives";
 import styles from "./Text.module.css";
 
-export type TextSize = "body-lg" | "body" | "micro";
+export type TextSize = "body-lg" | "body" | "body-sm" | "micro";
 export type TextWeight = "light" | "regular" | "medium" | "semibold" | "bold";
 export type TextColor = "default" | "muted" | "dim" | "faint" | "primary" | "secondary" | "danger" | "warn" | "info" | "success";
 export type TextAlign = "left" | "center" | "right";
@@ -22,6 +22,7 @@ export interface TextProps extends Omit<PrimitiveProps<"p">, "color"> {
 const sizeClasses: Record<TextSize, string> = {
   "body-lg": styles.bodyLg,
   "body": styles.body,
+  "body-sm": styles.bodySm,
   "micro": styles.micro,
 };
 

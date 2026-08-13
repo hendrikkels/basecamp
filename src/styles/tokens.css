@@ -83,9 +83,10 @@
     --fs-display-s: 40px;
     --fs-heading: 28px;
     --fs-subheading: 22px;
-    --fs-body-lg: 14px;
-    --fs-body: 12px;
-    --fs-micro: 10px;
+    --fs-body-lg: 15px;
+    --fs-body: 13px;
+    --fs-body-sm: 11px;
+    --fs-micro: 9px;
 
     /* Font sizes — mobile responsive */
     --fs-display-xl-mobile: 48px;
@@ -104,11 +105,11 @@
     --fw-extrabold: 800;
 
     /* Letter spacing tokens (use these rather than ad-hoc values) */
-    --ls-xx-tight: -0.1em; /* very tight, display/large headings */
-    --ls-tight: -0.04em; /* tight */
-    --ls-tight-sm: -0.02em; /* slightly tight */
-    --ls-normal: 0.005em; /* default small tracking */
-    --ls-medium: 0.04em; /* medium tracking */
+    --ls-xx-tight: -0.08em; /* very tight, display/large headings */
+    --ls-tight: -0.06em; /* tight */
+    --ls-tight-sm: -0.05em; /* slightly tight */
+    --ls-normal: 0.002em; /* default small tracking */
+    --ls-medium: 0.06em; /* medium tracking */
     --ls-wide: 0.12em; /* wide tracking */
 
     /* Radii -------------------------------------------- */
