@@ -104,7 +104,7 @@ export default function Home() {
               <Text size="caption" color="muted">
                 Single source of truth for colors, spacing, typography. Dark/light mode switches all variables instantly via data-theme.
               </Text>
-              <Box _marginTop="16px"><Badge color="success">128 Tokens</Badge></Box>
+              <Box _marginTop="16px"><Badge color="success-soft">128 Tokens</Badge></Box>
             </Card>
           </Row>
         </Box>

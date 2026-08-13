@@ -27,10 +27,10 @@
   --d-danger: rgba(253, 111, 107, 1);
   --d-danger-on: rgba(237, 237, 238, 1);
   --d-danger-soft: rgba(253, 111, 107, 0.14);
-  --d-warn: rgba(230, 189, 27, 1);
+  --d-warn: rgba(230, 206, 47, 1);
   --d-warn-on: rgba(237, 237, 238, 1);
-  --d-warn-soft: rgba(230, 189, 27, 0.14);
-  --d-info: rgba(13, 194, 196, 1);
+  --d-warn-soft: rgba(230, 206, 47, 0.14);
+  --d-info: rgb(17, 205, 208);
   --d-info-on: rgba(237, 237, 238, 1);
   --d-info-soft: rgba(13, 194, 196, 0.14);
   --d-success: rgba(21, 215, 133, 1);
@@ -60,9 +60,9 @@
   --l-danger: rgba(253, 111, 107, 1);
   --l-danger-on: rgba(255, 255, 255, 1);
   --l-danger-soft: rgba(253, 111, 107, 0.14);
-  --l-warn: rgba(230, 189, 27, 1);
+  --l-warn: rgba(230, 206, 47, 1);
   --l-warn-on: rgba(255, 255, 255, 1);
-  --l-warn-soft: rgba(230, 189, 27, 0.14);
+  --l-warn-soft: rgba(230, 206, 47, 0.14);
   --l-info: rgba(13, 194, 196, 1);
   --l-info-on: rgba(255, 255, 255, 1);
   --l-info-soft: rgba(13, 194, 196, 0.14);

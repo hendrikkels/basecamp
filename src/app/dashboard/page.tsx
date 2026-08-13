@@ -144,6 +144,7 @@ export default function Dashboard() {
                 </DataTable>
               </Card>
 
+              <Card variant="default" padding="none" >
               {/* Featured chart */}
               <Chart
                 variant="area"
@@ -170,6 +171,9 @@ export default function Dashboard() {
                 ]}
                 showLegend
               />
+              </Card>
+
+
 
             </Stack>
 
