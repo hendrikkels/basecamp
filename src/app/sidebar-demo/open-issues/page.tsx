@@ -257,15 +257,9 @@ export default function DesignSystemPage() {
             <Field>
               <Field.Label>Priority</Field.Label>
               <Select value={priority} onChange={setPriority} placeholder="Select priority">
-                <Select.Option value="critical">
-                  <Icon name="dot" size="sm" color="danger" /> Critical
-                </Select.Option>
-                <Select.Option value="high">
-                  <Icon name="dot" size="sm" color="warn" /> High
-                </Select.Option>
-                <Select.Option value="medium">
-                  <Icon name="dot" size="sm" color="info" /> Medium
-                </Select.Option>
+                <Select.Option value="critical" icon={<Icon name="dot" size="sm" color="danger" />}>Critical</Select.Option>
+                <Select.Option value="high" icon={<Icon name="dot" size="sm" color="warn" />}>High</Select.Option>
+                <Select.Option value="medium" icon={<Icon name="dot" size="sm" color="info" />}>Medium</Select.Option>
                 <Select.Option value="low">Low</Select.Option>
               </Select>
             </Field>
