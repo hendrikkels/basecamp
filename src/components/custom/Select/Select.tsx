@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useCallback, useRef, useEffect } from "react";
-import { Box, Button, Span } from "@/components/primitives";
+import { Box, Button, Span, Label } from "@/components/primitives";
 import styles from "./Select.module.css";
 
 /* ===================================================================
@@ -90,7 +90,7 @@ function SelectRoot({
   return (
     <SelectContext.Provider value={{ value, select, syncLabel }}>
       <Box ref={wrapperRef} className={[styles.wrapper, className].filter(Boolean).join(" ")}>
-        {label && <Span className={styles.label}>{label}</Span>}
+        {label && <Label className={styles.label}>{label}</Label>}
         <Button
           type="button"
           className={triggerClasses}
@@ -282,7 +282,7 @@ function MultiSelectRoot({
   return (
     <MultiSelectContext.Provider value={{ value, toggle }}>
       <Box ref={wrapperRef} className={[styles.wrapper, className].filter(Boolean).join(" ")}>
-        {label && <Span className={styles.label}>{label}</Span>}
+        {label && <Label className={styles.label}>{label}</Label>}
         <Button
           type="button"
           className={triggerClasses}

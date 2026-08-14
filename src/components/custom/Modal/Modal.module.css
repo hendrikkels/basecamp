@@ -11,17 +11,44 @@
 .shell {
   background: var(--surface-1);
   border-radius: var(--r-sm);
-  padding: 24px;
   width: 100%;
   max-width: 480px;
+  max-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 0 0 1px var(--hairline), 0 24px 64px rgba(0, 0, 0, 0.5);
   animation: slideUp var(--dur-base) var(--ease-out);
+}
+
+.wide {
+  max-width: 640px;
 }
 
 @media (max-width: 540px) {
   .shell {
     max-width: calc(100vw - 32px);
   }
+
+  .wide {
+    max-width: calc(100vw - 32px);
+  }
+}
+
+.header {
+  flex-shrink: 0;
+  padding: 24px 24px 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast);
+}
+
+.headerBorder {
+  border-bottom-color: var(--hairline);
+}
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 24px;
 }
 
 .title {
@@ -43,10 +70,17 @@
 }
 
 .actions {
+  flex-shrink: 0;
   display: flex;
   gap: 8px;
   justify-content: flex-end;
-  margin-top: 20px;
+  padding: 20px 24px 24px;
+  border-top: 1px solid transparent;
+  transition: border-color var(--dur-fast);
+}
+
+.actionsBorder {
+  border-top-color: var(--hairline);
 }
 
 @keyframes fadeIn {

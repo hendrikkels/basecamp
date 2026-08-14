@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext } from "react";
-import { Box, Span } from "@/components/primitives";
+import { Box, Span, Label } from "@/components/primitives";
 import styles from "./RadioGroup.module.css";
 
 /* ----- Context ----- */
@@ -62,7 +62,7 @@ function RadioGroupRoot({
   return (
     <RadioGroupContext.Provider value={{ value, onChange, disabled, name }}>
       <Box>
-        {label && <Span className={styles.label}>{label}</Span>}
+        {label && <Label className={styles.label}>{label}</Label>}
         <Box className={classes} role="radiogroup">
           {children}
         </Box>

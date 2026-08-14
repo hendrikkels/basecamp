@@ -20,7 +20,7 @@
 .input {
   font-family: var(--mono);
   font-size: var(--fs-body);
-  height: 36px;
+  height: var(--ic-h-md);
   padding: 0 12px;
   background: var(--surface-2);
   color: var(--text);

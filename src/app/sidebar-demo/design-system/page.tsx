@@ -152,7 +152,7 @@ export default function DesignSystemPage() {
           </DataTable.Head>
           <DataTable.Body>
             {filteredIssues.map((issue) => (
-              <DataTable.Row key={issue.id} selected={issue.id === "BC-141"}>
+              <DataTable.Row key={issue.id}>
                 <DataTable.Td>
                   <Text size="micro" color="primary">{issue.id}</Text>
                 </DataTable.Td>
@@ -227,7 +227,7 @@ export default function DesignSystemPage() {
       </Row>
 
       {/* Create Issue Modal */}
-      <Modal open={modalOpen} onClose={() => setModalOpen(false)} title="Create New Issue">
+      <Modal open={modalOpen} onClose={() => setModalOpen(false)} title="Create New Issue" size="wide">
         <Modal.Description>
           Fill out the details below to create a new issue. Required fields are marked with an asterisk.
         </Modal.Description>

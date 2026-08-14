@@ -432,57 +432,8 @@ export default function DesignSystem() {
 
           <Divider />
 
-          {/* Badges */}
-          <SectionHead number="05" title="Badges" uppercase/>
-          <Stack direction="horizontal" gap="2" wrap>
-            <Badge>Default</Badge>
-            <Badge color="primary">Primary</Badge>
-            <Badge color="secondary">Secondary</Badge>
-            <Badge color="danger" dot>
-              Danger
-            </Badge>
-            <Badge color="warn">Warning</Badge>
-            <Badge color="info">Info</Badge>
-            <Badge color="success" dot>
-              Success
-            </Badge>
-          </Stack>
-          <Stack direction="horizontal" gap="2" wrap>
-            <Badge color="default-soft">Default Soft</Badge>
-            <Badge color="primary-soft">Primary Soft</Badge>
-            <Badge color="secondary-soft">Secondary Soft</Badge>
-            <Badge color="danger-soft">Danger Soft</Badge>
-            <Badge color="warn-soft">Warn Soft</Badge>
-            <Badge color="info-soft">Info Soft</Badge>
-            <Badge color="success-soft">Success Soft</Badge>
-          </Stack>
-
-          <Divider />
-
-          {/* Cards */}
-          <SectionHead number="06" title="Cards" uppercase/>
-          <Row columns="3" gap="4">
-            <Card variant="default" title="Default" titleVariant="heading">
-              <Text color="muted">
-                Standard surface card.
-              </Text>
-            </Card>
-            <Card variant="frost" title="Frost" titleVariant="heading">
-              <Text color="muted">
-                Frosted glass backdrop blur.
-              </Text>
-            </Card>
-            <Card variant="block" title="Block" titleVariant="heading">
-              <Text color="muted">
-                Accent bar indicator.
-              </Text>
-            </Card>
-          </Row>
-
-          <Divider />
-
           {/* Form Controls */}
-          <SectionHead number="07" title="Form Controls" uppercase/>
+          <SectionHead number="05" title="Form Controls" uppercase/>
           <Row columns="2" gap="4">
             <Stack gap="4">
               <Field>
@@ -521,55 +472,60 @@ export default function DesignSystem() {
                 <Field.Label htmlFor="ds-ta">Textarea</Field.Label>
                 <Field.Textarea id="ds-ta" placeholder="Multi-line..." />
               </Field>
-              <Select
-                label="Dropdown"
-                value={formSelectVal}
-                onChange={setFormSelectVal}
-                placeholder="Select option"
-              >
-                <Select.Option value="one">Option One</Select.Option>
-                <Select.Option value="two">Option Two</Select.Option>
-                <Select.Option value="three">Option Three</Select.Option>
-              </Select>
+              <Field>
+                <Field.Label>Dropdown</Field.Label>
+                <Select
+                  value={formSelectVal}
+                  onChange={setFormSelectVal}
+                  placeholder="Select option"
+                >
+                  <Select.Option value="one">Option One</Select.Option>
+                  <Select.Option value="two">Option Two</Select.Option>
+                  <Select.Option value="three">Option Three</Select.Option>
+                </Select>
+              </Field>
             </Stack>
-            <Stack gap="4">
-              <Card variant="default" padding="sm" title="Radiogroup" titleVariant="micro">
-                <RadioGroup value={radioVal} onChange={(v) => setRadioVal(v)}>
-                  <RadioGroup.Item value="a">Option A</RadioGroup.Item>
-                  <RadioGroup.Item value="b">Option B</RadioGroup.Item>
-                  <RadioGroup.Item value="c">Option C</RadioGroup.Item>
-                </RadioGroup>
-              </Card>
-              <Card variant="default" padding="sm" title="CheckboxGroup" titleVariant="micro">
-                <CheckboxGroup value={checkVals} onChange={setCheckVals}>
-                  <CheckboxGroup.Item value="one">Checked</CheckboxGroup.Item>
-                  <CheckboxGroup.Item value="two">Unchecked</CheckboxGroup.Item>
-                  <CheckboxGroup.Item value="three" disabled>
-                    Disabled
-                  </CheckboxGroup.Item>
-                </CheckboxGroup>
-              </Card>
-              <Card variant="default" padding="sm" title="Switches" titleVariant="micro">
-                <Stack direction="horizontal" gap="4" align="center">
-                  <Switch checked={switchA} onChange={setSwitchA}>
-                    Enabled
-                  </Switch>
-                  <Switch
-                    disabled={true}
-                    checked={switchB}
-                    onChange={setSwitchB}
-                  >
-                    Disabled
-                  </Switch>
-                </Stack>
-              </Card>
+            <Stack gap="6">
+                <Field>
+                  <Field.Label>Radio Group</Field.Label>
+                  <RadioGroup value={radioVal} onChange={(v) => setRadioVal(v)}>
+                    <RadioGroup.Item value="a">Option A</RadioGroup.Item>
+                    <RadioGroup.Item value="b">Option B</RadioGroup.Item>
+                    <RadioGroup.Item value="c">Option C</RadioGroup.Item>
+                  </RadioGroup>
+                </Field>
+                <Field>
+                  <Field.Label>Checkbox Group</Field.Label>
+                  <CheckboxGroup value={checkVals} onChange={setCheckVals}>
+                    <CheckboxGroup.Item value="one">Checked</CheckboxGroup.Item>
+                    <CheckboxGroup.Item value="two">Unchecked</CheckboxGroup.Item>
+                    <CheckboxGroup.Item value="three" disabled>
+                      Disabled
+                    </CheckboxGroup.Item>
+                  </CheckboxGroup>
+                </Field>
+                <Field>
+                  <Field.Label>Switches</Field.Label>
+                  <Stack direction="horizontal" gap="4" align="center">
+                    <Switch checked={switchA} onChange={setSwitchA}>
+                      Enabled
+                    </Switch>
+                    <Switch
+                      disabled={true}
+                      checked={switchB}
+                      onChange={setSwitchB}
+                    >
+                      Disabled
+                    </Switch>
+                  </Stack>
+                </Field>
             </Stack>
           </Row>
 
           <Divider />
 
           {/* Dropdowns */}
-          <SectionHead number="08" title="Dropdowns" uppercase/>
+          <SectionHead number="06" title="Dropdowns" uppercase/>
           <Row columns="2" gap="4">
             <Card variant="default" padding="sm" title="Single Select" titleVariant="micro">
               <Select
@@ -611,6 +567,55 @@ export default function DesignSystem() {
               </MultiSelect>
               <Text color="dim" _marginTop="8px">
                 Selected: {multiSelectVal.join(", ") || "none"}
+              </Text>
+            </Card>
+          </Row>
+
+          <Divider />
+
+          {/* Badges */}
+          <SectionHead number="07" title="Badges" uppercase/>
+          <Stack direction="horizontal" gap="2" wrap>
+            <Badge>Default</Badge>
+            <Badge color="primary">Primary</Badge>
+            <Badge color="secondary">Secondary</Badge>
+            <Badge color="danger" dot>
+              Danger
+            </Badge>
+            <Badge color="warn">Warning</Badge>
+            <Badge color="info">Info</Badge>
+            <Badge color="success" dot>
+              Success
+            </Badge>
+          </Stack>
+          <Stack direction="horizontal" gap="2" wrap>
+            <Badge color="default-soft">Default Soft</Badge>
+            <Badge color="primary-soft">Primary Soft</Badge>
+            <Badge color="secondary-soft">Secondary Soft</Badge>
+            <Badge color="danger-soft">Danger Soft</Badge>
+            <Badge color="warn-soft">Warn Soft</Badge>
+            <Badge color="info-soft">Info Soft</Badge>
+            <Badge color="success-soft">Success Soft</Badge>
+          </Stack>
+
+          <Divider />
+
+          {/* Cards */}
+          <SectionHead number="08" title="Cards" uppercase/>
+          <Row columns="3" gap="4">
+            <Card variant="default" title="Default" titleVariant="heading">
+              <Text color="muted">
+                Standard surface card.
+              </Text>
+            </Card>
+            <Card variant="frost" title="Frost" titleVariant="heading">
+              <Text color="muted">
+                Frosted glass backdrop blur.
+              </Text>
+            </Card>
+            <Card variant="block" title="Block" titleVariant="heading">
+              <Text color="muted">
+                Accent bar indicator.
               </Text>
             </Card>
           </Row>

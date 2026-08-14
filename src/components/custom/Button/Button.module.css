@@ -166,38 +166,38 @@
 
 /* Sizes */
 .sm {
-  height: 28px;
+  height: var(--ic-h-sm);
   font-size: var(--fs-body-sm);
   padding: 0 11px;
 }
 
 .md {
-  height: 36px;
+  height: var(--ic-h-md);
   font-size: var(--fs-body);
   padding: 0 13px;
 }
 
 .lg {
-  height: 44px;
+  height: var(--ic-h-lg);
   font-size: var(--fs-body-lg);
   padding: 0 15px;
 }
 
 /* Icon-only modifier */
 .iconOnly.sm {
-  width: 28px;
+  width: var(--ic-h-sm);
   padding: 0;
   justify-content: center;
 }
 
 .iconOnly.md {
-  width: 36px;
+  width: var(--ic-h-md);
   padding: 0;
   justify-content: center;
 }
 
 .iconOnly.lg {
-  width: 44px;
+  width: var(--ic-h-lg);
   padding: 0;
   justify-content: center;
 }
