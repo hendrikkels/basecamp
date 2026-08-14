@@ -86,13 +86,11 @@ export default function DesignSystemPage() {
       <Stack gap="3">
         <Breadcrumbs>
           <Breadcrumbs.Item href="/sidebar-demo">Workspace</Breadcrumbs.Item>
-          <Breadcrumbs.Item current>Component Testing</Breadcrumbs.Item>
+          <Breadcrumbs.Item current>Open Issues</Breadcrumbs.Item>
         </Breadcrumbs>
-        <Heading variant="heading" level={1}>Component Testing</Heading>
+        <Heading variant="heading" level={1}>Open Issues</Heading>
         <Text size="body-lg" color="muted" _maxWidth="72ch">
-          A comprehensive testing ground that exercises the full component library in a realistic product context.
-          This page simulates a project issue tracker to validate how typography, forms, tables, modals, and
-          status indicators work together at scale.
+          Track and manage open issues across the project. Search, filter, and create new items from this view.
         </Text>
       </Stack>
 

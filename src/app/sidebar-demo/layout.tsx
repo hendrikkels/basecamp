@@ -40,8 +40,8 @@ export default function SidebarDemoLayout({ children }: { children: React.ReactN
             </Sidebar.Group>
 
             <Sidebar.Group label="Workspace" action={<Icon name="plus" color="muted" size="sm" />}>
-              <Sidebar.Item icon={<Icon name="block" />} active={isActive("design-system")} href="/sidebar-demo/design-system">
-                Design System
+              <Sidebar.Item icon={<Icon name="block" />} active={isActive("open-issues")} href="/sidebar-demo/open-issues">
+                Open Issues
               </Sidebar.Item>
               <Sidebar.Item icon={<Icon name="block" />} active={isActive("api")} href="/sidebar-demo/api" badge={<Badge color="warn" dot>2</Badge>}>
                 API Integration
