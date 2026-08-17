@@ -4,6 +4,10 @@
   gap: 24px;
 }
 
+.dashGrid > * {
+  min-width: 0;
+}
+
 @media (max-width: 768px) {
   .dashGrid {
     grid-template-columns: 1fr;

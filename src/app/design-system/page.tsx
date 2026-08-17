@@ -880,7 +880,7 @@ export default function DesignSystem() {
           <Text size="micro" color="dim" _marginTop="16px" _marginBottom="8px">
             Notification System (useAlert)
           </Text>
-          <Stack direction="horizontal" gap="3" align="center">
+          <Stack direction="horizontal" gap="3" align="center" wrap>
             <Button
               variant="primary"
               onClick={() =>
@@ -1039,7 +1039,7 @@ export default function DesignSystem() {
 
           {/* Tooltips */}
           <SectionHead number="16" title="Tooltips" uppercase />
-          <Stack direction="horizontal" gap="4" align="center">
+          <Stack direction="horizontal" gap="4" align="center" wrap>
             <Tooltip content="Top tooltip">
               <Button variant="tertiary">Tooltip (top)</Button>
             </Tooltip>

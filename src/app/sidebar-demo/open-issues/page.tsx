@@ -213,11 +213,9 @@ export default function DesignSystemPage() {
             <StatRow label="James" value="Available" color="success" />
             <StatRow label="Alex" value="Out of Office" color="danger" bordered />
           </Stack>
-          <Box _marginTop="16px">
-            <Stack direction="horizontal" gap="3" align="center">
-              <Button variant="tertiary" size="sm" iconLeft="mail">Message All</Button>
-              <Button variant="ghost" size="sm" iconLeft="refresh">Refresh</Button>
-            </Stack>
+          <Box _marginTop="16px" _display="flex" _justifyContent="space-between" _alignItems="center">
+            <Button variant="tertiary" size="sm" iconLeft="mail">Message All</Button>
+            <Button variant="ghost" size="sm" iconOnly><Icon name="refresh" size="sm" /></Button>
           </Box>
         </Card>
       </Row>

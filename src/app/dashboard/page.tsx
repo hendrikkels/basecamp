@@ -98,7 +98,7 @@ export default function Dashboard() {
             {/* Left column */}
             <Stack gap="6">
               {/* Activity table (moved above charts) */}
-              <Card variant="default" padding="none" title="Recent Activity" titleVariant="heading">
+              <Card variant="default" padding="none" title="Recent Activity">
                 <DataTable>
                   <DataTable.Head>
                     <DataTable.Row>
