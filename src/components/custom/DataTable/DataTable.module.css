@@ -2,14 +2,11 @@
   background: var(--surface-1);
   border-radius: var(--r-sm);
   overflow-x: auto;
-  display: grid;
 }
 
 .table {
   width: 100%;
-  min-width: max-content;
-  border-collapse: separate;
-  border-spacing: 0;
+  border-collapse: collapse;
   font-family: var(--mono);
   font-size: var(--fs-body);
 }
