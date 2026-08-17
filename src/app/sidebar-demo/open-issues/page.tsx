@@ -23,6 +23,7 @@ import {
   StatusStrip,
   StatRow,
   Progress,
+  Tooltip,
   useAlert,
   Icon,
 } from "@/components/custom";
@@ -140,7 +141,9 @@ export default function DesignSystemPage() {
               <DataTable.Th>Priority</DataTable.Th>
               <DataTable.Th>Status</DataTable.Th>
               <DataTable.Th>Assignee</DataTable.Th>
-              <DataTable.Th>Created</DataTable.Th>
+              <DataTable.Th>
+                <Tooltip content="Date the issue was created">Created</Tooltip>
+              </DataTable.Th>
             </DataTable.Row>
           </DataTable.Head>
           <DataTable.Body>
