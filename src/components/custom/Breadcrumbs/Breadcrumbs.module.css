@@ -25,3 +25,7 @@
 .current {
   color: var(--acc);
 }
+
+.uppercase {
+  text-transform: uppercase;
+}

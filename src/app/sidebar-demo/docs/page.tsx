@@ -1,17 +1,16 @@
 "use client";
 
-import { Heading, Text, Stack, Card } from "@/components/custom";
+import { Heading, Text, Stack, Card, Breadcrumbs } from "@/components/custom";
 
 export default function DocsPage() {
   return (
     <Stack gap="6">
-      <Stack gap="2">
-        <Text size="micro" color="dim">
-          Workspace / Documentation
-        </Text>
-        <Heading variant="heading" level={1}>
-          Documentation
-        </Heading>
+      <Stack gap="3">
+        <Breadcrumbs uppercase>
+          <Breadcrumbs.Item href="/sidebar-demo">Workspace</Breadcrumbs.Item>
+          <Breadcrumbs.Item current>Documentation</Breadcrumbs.Item>
+        </Breadcrumbs>
+        <Heading variant="heading" level={1}>Documentation</Heading>
       </Stack>
       <Card variant="block">
         <Text size="body" color="muted">

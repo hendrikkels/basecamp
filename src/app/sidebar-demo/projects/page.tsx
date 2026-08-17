@@ -2,17 +2,20 @@
 
 import {
   Heading,
-  Text,
   Stack,
   Badge,
   DataTable,
+  Breadcrumbs,
 } from "@/components/custom";
 
 export default function ProjectsPage() {
   return (
     <Stack gap="6">
-      <Stack gap="2">
-        <Text size="micro" color="dim">Navigation / Projects</Text>
+      <Stack gap="3">
+        <Breadcrumbs uppercase>
+          <Breadcrumbs.Item href="/sidebar-demo">Navigation</Breadcrumbs.Item>
+          <Breadcrumbs.Item current>Projects</Breadcrumbs.Item>
+        </Breadcrumbs>
         <Heading variant="heading" level={1}>Projects</Heading>
       </Stack>
       <DataTable>

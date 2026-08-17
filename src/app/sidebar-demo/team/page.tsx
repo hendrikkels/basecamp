@@ -7,13 +7,17 @@ import {
   Row,
   Card,
   Avatar,
+  Breadcrumbs,
 } from "@/components/custom";
 
 export default function TeamPage() {
   return (
     <Stack gap="6">
-      <Stack gap="2">
-        <Text size="micro" color="dim">Settings / Team</Text>
+      <Stack gap="3">
+        <Breadcrumbs uppercase>
+          <Breadcrumbs.Item href="/sidebar-demo">Settings</Breadcrumbs.Item>
+          <Breadcrumbs.Item current>Team</Breadcrumbs.Item>
+        </Breadcrumbs>
         <Heading variant="heading" level={1}>Team</Heading>
       </Stack>
       <Row columns="3" gap="3">

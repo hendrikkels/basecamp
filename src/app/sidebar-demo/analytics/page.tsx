@@ -2,17 +2,20 @@
 
 import {
   Heading,
-  Text,
   Stack,
   Row,
   Chart,
+  Breadcrumbs,
 } from "@/components/custom";
 
 export default function AnalyticsPage() {
   return (
     <Stack gap="6">
-      <Stack gap="2">
-        <Text size="micro" color="dim">Navigation / Analytics</Text>
+      <Stack gap="3">
+        <Breadcrumbs uppercase>
+          <Breadcrumbs.Item href="/sidebar-demo">Navigation</Breadcrumbs.Item>
+          <Breadcrumbs.Item current>Analytics</Breadcrumbs.Item>
+        </Breadcrumbs>
         <Heading variant="heading" level={1}>Analytics</Heading>
       </Stack>
       <Row columns="2" gap="4">

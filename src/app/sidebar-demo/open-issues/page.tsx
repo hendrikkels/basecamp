@@ -84,7 +84,7 @@ export default function DesignSystemPage() {
     <Stack gap="6">
       {/* Header */}
       <Stack gap="3">
-        <Breadcrumbs>
+        <Breadcrumbs uppercase>
           <Breadcrumbs.Item href="/sidebar-demo">Workspace</Breadcrumbs.Item>
           <Breadcrumbs.Item current>Open Issues</Breadcrumbs.Item>
         </Breadcrumbs>
@@ -142,9 +142,10 @@ export default function DesignSystemPage() {
               <DataTable.Th>Status</DataTable.Th>
               <DataTable.Th>Assignee</DataTable.Th>
               <DataTable.Th>
-                <Tooltip content="Date the issue was created">
+                Created
+                {/* <Tooltip content="Date the issue was created">
                   Created
-                </Tooltip>
+                </Tooltip> */}
               </DataTable.Th>
             </DataTable.Row>
           </DataTable.Head>
@@ -171,13 +172,13 @@ export default function DesignSystemPage() {
                 </DataTable.Td>
               </DataTable.Row>
             ))}
-            {filteredIssues.length === 0 && (
+            {/* {filteredIssues.length === 0 && (
               <DataTable.Row>
                 <DataTable.Td>
                   <Text color="dim" _padding="16px 0">No issues match your search.</Text>
                 </DataTable.Td>
               </DataTable.Row>
-            )}
+            )} */}
           </DataTable.Body>
         </DataTable>
       </Card>

@@ -9,6 +9,7 @@
   padding: 3px 8px;
   border-radius: var(--r-xs);
   font-weight: var(--fw-medium);
+  text-wrap: nowrap;
 }
 
 /* Color variants */

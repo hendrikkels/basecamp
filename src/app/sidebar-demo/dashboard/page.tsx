@@ -2,18 +2,21 @@
 
 import {
   Heading,
-  Text,
   Stack,
   Row,
   KpiTile,
   Chart,
+  Breadcrumbs,
 } from "@/components/custom";
 
 export default function DashboardPage() {
   return (
     <Stack gap="6">
-      <Stack gap="2">
-        <Text size="micro" color="dim">Navigation / Dashboard</Text>
+      <Stack gap="3">
+        <Breadcrumbs uppercase>
+          <Breadcrumbs.Item href="/sidebar-demo">Navigation</Breadcrumbs.Item>
+          <Breadcrumbs.Item current>Dashboard</Breadcrumbs.Item>
+        </Breadcrumbs>
         <Heading variant="heading" level={1}>Overview</Heading>
       </Stack>
       <Row columns="3" gap="4">

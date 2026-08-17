@@ -2,18 +2,21 @@
 
 import {
   Heading,
-  Text,
   Stack,
   Card,
   DataTable,
   Badge,
+  Breadcrumbs,
 } from "@/components/custom";
 
 export default function ApiPage() {
   return (
     <Stack gap="6">
-      <Stack gap="2">
-        <Text size="micro" color="dim">Workspace / API Integration</Text>
+      <Stack gap="3">
+        <Breadcrumbs uppercase>
+          <Breadcrumbs.Item href="/sidebar-demo">Workspace</Breadcrumbs.Item>
+          <Breadcrumbs.Item current>API Integration</Breadcrumbs.Item>
+        </Breadcrumbs>
         <Heading variant="heading" level={1}>API Integration</Heading>
       </Stack>
       <Card padding="none" title="2 pending issues" titleVariant="subheading">

@@ -5,12 +5,13 @@ import { Nav, Span, Anchor } from "@/components/primitives";
 import styles from "./Breadcrumbs.module.css";
 
 export interface BreadcrumbsProps {
+  uppercase?: boolean;
   children: React.ReactNode;
   className?: string;
 }
 
-function BreadcrumbsRoot({ children, className }: BreadcrumbsProps) {
-  const classes = [styles.crumbs, className].filter(Boolean).join(" ");
+function BreadcrumbsRoot({ uppercase = false, children, className }: BreadcrumbsProps) {
+  const classes = [styles.crumbs, uppercase ? styles.uppercase : undefined, className].filter(Boolean).join(" ");
   const items = React.Children.toArray(children);
 
   return (

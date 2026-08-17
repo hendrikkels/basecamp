@@ -11,6 +11,7 @@ import {
   Switch,
   RadioGroup,
   Badge,
+  Breadcrumbs,
 } from "@/components/custom";
 
 export default function PreferencesPage() {
@@ -21,8 +22,11 @@ export default function PreferencesPage() {
 
   return (
     <Stack gap="6">
-      <Stack gap="2">
-        <Text size="micro" color="dim">Settings / Preferences</Text>
+      <Stack gap="3">
+        <Breadcrumbs uppercase>
+          <Breadcrumbs.Item href="/sidebar-demo">Settings</Breadcrumbs.Item>
+          <Breadcrumbs.Item current>Preferences</Breadcrumbs.Item>
+        </Breadcrumbs>
         <Heading variant="heading" level={1}>Preferences</Heading>
       </Stack>
 
