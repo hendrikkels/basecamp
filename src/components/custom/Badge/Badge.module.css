@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 3px 8px;
+  padding: 6px 8px;
   border-radius: var(--r-xs);
   text-wrap: nowrap;
 }
@@ -25,9 +25,8 @@
 
 /* Dot indicator */
 .dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: currentColor;
-  flex-shrink: 0;
+  color: inherit;
+  font-size: 6px;
+  width: auto;
+  height: auto;
 }

@@ -2,8 +2,8 @@
 
 import React from "react";
 import { Span } from "@/components/primitives";
-import type { PrimitiveProps } from "@/components/primitives";
-import { Text } from '@/components/custom'
+import { Text } from "@/components/custom/Text";
+import { Icon } from "@/components/custom/Icon";
 import styles from "./Badge.module.css";
 
 export type BadgeColor =
@@ -22,9 +22,11 @@ export type BadgeColor =
   | "success"
   | "success-soft";
 
-export interface BadgeProps extends PrimitiveProps<"span"> {
+export interface BadgeProps {
   color?: BadgeColor;
   dot?: boolean;
+  className?: string;
+  children?: React.ReactNode;
 }
 
 const colorClasses: Record<BadgeColor, string> = {
@@ -44,22 +46,15 @@ const colorClasses: Record<BadgeColor, string> = {
   "success-soft": styles.successSoft,
 };
 
-export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
-  function Badge({ color = "default-soft", dot = false, className, children, ...props }, ref) {
-    const classes = [styles.base, colorClasses[color], className]
-      .filter(Boolean)
-      .join(" ");
+export function Badge({ color = "default-soft", dot = false, className, children }: BadgeProps) {
+  const classes = [styles.base, colorClasses[color], className]
+    .filter(Boolean)
+    .join(" ");
 
-    return (
-      <Span ref={ref} className={classes} {...props}>
-
-        {dot && <Text className={styles.dot} />}
-        <Text size="micro">
-          {children}
-        </Text>
-      </Span>
-    );
-  }
-);
-
-Badge.displayName = "Badge";
+  return (
+    <Span className={classes}>
+      {dot && <Icon name="dot" size="sm" className={styles.dot} />}
+      <Text size="micro" _color="inherit">{children}</Text>
+    </Span>
+  );
+}
