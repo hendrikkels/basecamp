@@ -2,37 +2,10 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  font-family: var(--mono);
-  row-gap: 4px;
-  margin-left: -8px;
+  gap: 8px;
   overflow: hidden;
 }
 
-.item {
-  display: flex;
-  align-items: center;
-  padding-left: 8px;
-}
-
 .separator {
-  color: var(--dim);
   user-select: none;
-  padding-right: 8px;
 }
-
-/* Size variants */
-.bodyLg { font-size: var(--fs-body-lg); letter-spacing: var(--ls-normal); }
-.body { font-size: var(--fs-body); letter-spacing: var(--ls-normal); }
-.micro { font-size: var(--fs-micro); letter-spacing: var(--ls-wide); text-transform: uppercase}
-
-/* Color variants */
-.colorDefault { color: var(--text); }
-.colorMuted { color: var(--muted); }
-.colorDim { color: var(--dim); }
-.colorFaint { color: var(--faint); }
-.colorPrimary { color: var(--acc); }
-.colorSecondary { color: var(--acc-2); }
-.colorDanger { color: var(--danger); }
-.colorWarn { color: var(--warn); }
-.colorInfo { color: var(--info); }
-.colorSuccess { color: var(--success); }

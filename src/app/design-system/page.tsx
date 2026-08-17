@@ -65,7 +65,10 @@ export default function DesignSystem() {
               _gap="12px"
               _marginBottom="20px"
             >
-              <TextStrip items={["Design System", "Block / Retro"]} />
+              <TextStrip>
+                <TextStrip.Item>Design System</TextStrip.Item>
+                <TextStrip.Item>Block / Retro</TextStrip.Item>
+              </TextStrip>
             </Box>
             <Heading variant="display-l" level={1}>
               Component <span style={{ color: "var(--acc)" }}>Library</span>
@@ -839,41 +842,25 @@ export default function DesignSystem() {
               <DataTable.Row>
                 <DataTable.Td>Button</DataTable.Td>
                 <DataTable.Td>Interactive</DataTable.Td>
-                <DataTable.Td>
-                  <Badge color="success">
-                    Complete
-                  </Badge>
-                </DataTable.Td>
+                <DataTable.Td><Badge color="success-soft">Complete</Badge></DataTable.Td>
                 <DataTable.Td numeric>3</DataTable.Td>
               </DataTable.Row>
               <DataTable.Row>
                 <DataTable.Td>Select</DataTable.Td>
                 <DataTable.Td>Form</DataTable.Td>
-                <DataTable.Td>
-                  <Badge color="warn">
-                    In Progress
-                  </Badge>
-                </DataTable.Td>
+                <DataTable.Td><Badge color="warn-soft">In Progress</Badge></DataTable.Td>
                 <DataTable.Td numeric>7</DataTable.Td>
               </DataTable.Row>
               <DataTable.Row>
                 <DataTable.Td>Chart</DataTable.Td>
                 <DataTable.Td>Data Viz</DataTable.Td>
-                <DataTable.Td>
-                  <Badge color="success">
-                    Complete
-                  </Badge>
-                </DataTable.Td>
+                <DataTable.Td><Badge color="success-soft">Complete</Badge></DataTable.Td>
                 <DataTable.Td numeric>9</DataTable.Td>
               </DataTable.Row>
               <DataTable.Row>
                 <DataTable.Td>Modal</DataTable.Td>
                 <DataTable.Td>Overlay</DataTable.Td>
-                <DataTable.Td>
-                  <Badge color="success">
-                    Complete
-                  </Badge>
-                </DataTable.Td>
+                <DataTable.Td><Badge color="success-soft">Complete</Badge></DataTable.Td>
                 <DataTable.Td numeric>4</DataTable.Td>
               </DataTable.Row>
             </DataTable.Body>

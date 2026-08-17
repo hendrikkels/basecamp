@@ -61,14 +61,11 @@ export default function Home() {
 
       {/* Status strip */}
       <Container>
-        <StatusStrip
-          align="evenly"
-          items={[
-            { label: "Stack", values: ["Next.js 16", "React 19", "TypeScript"] },
-            { label: "Styling", values: ["CSS Modules", "Tokens"] },
-            { label: "Direction", value: "Block / Retro", color: "var(--acc)" },
-          ]}
-        />
+        <StatusStrip align="evenly">
+          <StatusStrip.Item label="Stack">Next.js 16 · React 19 · TypeScript</StatusStrip.Item>
+          <StatusStrip.Item label="Styling">CSS Modules · Tokens</StatusStrip.Item>
+          <StatusStrip.Item label="Direction" color="primary">Block / Retro</StatusStrip.Item>
+        </StatusStrip>
       </Container>
 
       {/* Section: Features */}
@@ -154,7 +151,11 @@ export default function Home() {
         <Container>
           <Box _padding="32px 0" _display="flex" _justifyContent="space-between" _alignItems="center">
             <Box _display="flex" _alignItems="center" _gap="12px">
-              <TextStrip items={["BaseCamp", "design system", "2026"]} />
+              <TextStrip color="dim">
+                <TextStrip.Item>BaseCamp</TextStrip.Item>
+                <TextStrip.Item>design system</TextStrip.Item>
+                <TextStrip.Item>2026</TextStrip.Item>
+              </TextStrip>
             </Box>
             <Stack direction="horizontal" gap="4" align="center">
               <Avatar size="sm" color="primary" round>HV</Avatar>

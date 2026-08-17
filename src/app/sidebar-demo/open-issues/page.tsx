@@ -40,16 +40,16 @@ const ISSUES = [
   { id: "BC-136", title: "Add Chart tooltip formatting", priority: "low", status: "closed", assignee: "James", created: "Aug 1" },
 ];
 
-const PRIORITY_BADGE: Record<string, { color: "danger" | "warn" | "info" | "default"; label: string }> = {
-  critical: { color: "danger", label: "Critical" },
-  high: { color: "warn", label: "High" },
-  medium: { color: "info", label: "Medium" },
-  low: { color: "default", label: "Low" },
+const PRIORITY_BADGE: Record<string, { color: "danger-soft" | "warn-soft" | "info-soft" | "default-soft"; label: string }> = {
+  critical: { color: "danger-soft", label: "Critical" },
+  high: { color: "warn-soft", label: "High" },
+  medium: { color: "info-soft", label: "Medium" },
+  low: { color: "default-soft", label: "Low" },
 };
 
-const STATUS_BADGE: Record<string, { color: "success" | "primary-soft" | "default-soft"; label: string }> = {
+const STATUS_BADGE: Record<string, { color: "success-soft" | "primary-soft" | "default-soft"; label: string }> = {
   open: { color: "primary-soft", label: "Open" },
-  "in-progress": { color: "success", label: "In Progress" },
+  "in-progress": { color: "success-soft", label: "In Progress" },
   closed: { color: "default-soft", label: "Closed" },
 };
 
@@ -96,14 +96,12 @@ export default function DesignSystemPage() {
       </Stack>
 
       {/* Status strip */}
-      <StatusStrip
-        items={[
-          { label: "Total", value: "7", color: "var(--text)" },
-          { label: "Open", value: "4", color: "var(--acc)" },
-          { label: "In Progress", value: "2", color: "var(--success)" },
-          { label: "Closed", value: "1", color: "var(--dim)" },
-        ]}
-      />
+      <StatusStrip>
+        <StatusStrip.Item label="Total">7</StatusStrip.Item>
+        <StatusStrip.Item label="Open" color="primary">4</StatusStrip.Item>
+        <StatusStrip.Item label="In Progress" color="success">2</StatusStrip.Item>
+        <StatusStrip.Item label="Closed" color="dim">1</StatusStrip.Item>
+      </StatusStrip>
 
       {/* KPIs */}
       <Row columns="3" gap="4">
@@ -156,7 +154,7 @@ export default function DesignSystemPage() {
                   </DataTable.Td>
                   <DataTable.Td>{issue.title}</DataTable.Td>
                   <DataTable.Td>
-                    <Badge color={PRIORITY_BADGE[issue.priority].color} dot>
+                    <Badge color={PRIORITY_BADGE[issue.priority].color}>
                       {PRIORITY_BADGE[issue.priority].label}
                     </Badge>
                   </DataTable.Td>

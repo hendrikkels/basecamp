@@ -55,7 +55,12 @@ export default function Dashboard() {
           <Box _display="flex" _justifyContent="space-between" _alignItems="flex-end" _paddingBottom="24px" _marginBottom="28px" _borderBottom="1px solid var(--rule)">
             <Box>
               <Box _display="flex" _alignItems="center" _gap="12px" _marginBottom="12px">
-                <TextStrip items={["Sunday", "May 24, 2026", "04:18 PM", "New York"]} />
+                <TextStrip>
+                  <TextStrip.Item>Sunday</TextStrip.Item>
+                  <TextStrip.Item>May 24, 2026</TextStrip.Item>
+                  <TextStrip.Item>04:18 PM</TextStrip.Item>
+                  <TextStrip.Item>New York</TextStrip.Item>
+                </TextStrip>
               </Box>
               <Heading variant="display-m" level={1}>
                 Good evening, <span style={{ color: "var(--muted)" }}>Hendrik.</span>
@@ -70,15 +75,12 @@ export default function Dashboard() {
           <SectionHead title="Key metrics" uppercase/>
 
           {/* Status strip */}
-          <StatusStrip
-            items={[
-              { label: "Online", value: "Yes", color: "var(--success)" },
-              { label: "Uptime", value: "99.94%" },
-              { label: "P95", value: "142ms" },
-              { label: "Last Deploy", values: ["a72f01", "T-04:18"] },
-            ]}
-            trailing={<Link href="#" arrow><Text color="primary">View Logs</Text></Link>}
-          />
+          <StatusStrip trailing={<Link href="#" arrow><Text color="primary">View Logs</Text></Link>}>
+            <StatusStrip.Item label="Online" color="success">Yes</StatusStrip.Item>
+            <StatusStrip.Item label="Uptime">99.94%</StatusStrip.Item>
+            <StatusStrip.Item label="P95">142ms</StatusStrip.Item>
+            <StatusStrip.Item label="Last Deploy">a72f01 · T-04:18</StatusStrip.Item>
+          </StatusStrip>
 
           <Row columns="4" gap="4">
             <KpiTile label="Visitors" qualifier="7d" value="12,840" delta="+18.4%" deltaDirection="up" />
@@ -110,7 +112,7 @@ export default function Dashboard() {
                     <DataTable.Row>
                       <DataTable.Td>Building a Design System</DataTable.Td>
                       <DataTable.Td><Badge>Post</Badge></DataTable.Td>
-                      <DataTable.Td><Badge color="success">Published</Badge></DataTable.Td>
+                      <DataTable.Td><Badge color="success-soft">Published</Badge></DataTable.Td>
                       <DataTable.Td numeric>2,841</DataTable.Td>
                     </DataTable.Row>
                     <DataTable.Row>
@@ -122,19 +124,19 @@ export default function Dashboard() {
                     <DataTable.Row>
                       <DataTable.Td>Weekly Recap #47</DataTable.Td>
                       <DataTable.Td><Badge>Post</Badge></DataTable.Td>
-                      <DataTable.Td><Badge color="success">Published</Badge></DataTable.Td>
+                      <DataTable.Td><Badge color="success-soft">Published</Badge></DataTable.Td>
                       <DataTable.Td numeric>1,204</DataTable.Td>
                     </DataTable.Row>
                     <DataTable.Row>
                       <DataTable.Td>API Integration Guide</DataTable.Td>
                       <DataTable.Td><Badge>Post</Badge></DataTable.Td>
-                      <DataTable.Td><Badge color="warn" dot>Scheduled</Badge></DataTable.Td>
+                      <DataTable.Td><Badge color="warn-soft">Scheduled</Badge></DataTable.Td>
                       <DataTable.Td numeric>—</DataTable.Td>
                     </DataTable.Row>
                     <DataTable.Row>
                       <DataTable.Td>Token System Changelog</DataTable.Td>
                       <DataTable.Td><Badge>Note</Badge></DataTable.Td>
-                      <DataTable.Td><Badge color="success">Published</Badge></DataTable.Td>
+                      <DataTable.Td><Badge color="success-soft">Published</Badge></DataTable.Td>
                       <DataTable.Td numeric>892</DataTable.Td>
                     </DataTable.Row>
                   </DataTable.Body>
@@ -198,7 +200,10 @@ export default function Dashboard() {
 
                 <Widget variant="frost" label="Now Playing" accent={<Icon name="play" size="sm" color="primary" />}>
                   <Heading variant="subheading" level={4}>Ambient Focus</Heading>
-                  <TextStrip items={["Deep work playlist", "2:14:08"]} _marginTop="4px" />
+                  <TextStrip _marginTop="4px">
+                    <TextStrip.Item>Deep work playlist</TextStrip.Item>
+                    <TextStrip.Item>2:14:08</TextStrip.Item>
+                  </TextStrip>
                   <Box _display="flex" _gap="10px" _alignItems="center" _marginTop="14px" _padding="8px" _background="var(--surface-2)" _borderRadius="var(--r-xs)">
                     <Icon name="play" size="lg" color="primary" />
                     <Box>

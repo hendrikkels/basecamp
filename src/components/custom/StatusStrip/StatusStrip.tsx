@@ -1,23 +1,20 @@
 "use client";
 
 import React from "react";
-import { Box, Span } from "@/components/primitives";
+import { Box } from "@/components/primitives";
+import { Text } from "@/components/custom/Text";
+import type { TextColor } from "@/components/custom/Text";
+import { Icon } from "@/components/custom/Icon";
 import styles from "./StatusStrip.module.css";
 
+/* ----- StatusStrip (root) ----- */
 export type StatusStripAlign = "left" | "center" | "right" | "between" | "evenly";
 
-export interface StatusStripItem {
-  label: string;
-  value?: string;
-  values?: string[];
-  color?: string;
-}
-
 export interface StatusStripProps {
-  items: StatusStripItem[];
   align?: StatusStripAlign;
   leading?: React.ReactNode;
   trailing?: React.ReactNode;
+  children: React.ReactNode;
   className?: string;
 }
 
@@ -29,35 +26,48 @@ const alignClasses: Record<StatusStripAlign, string> = {
   evenly: styles.evenly,
 };
 
-export const StatusStrip = React.forwardRef<HTMLDivElement, StatusStripProps>(
-  function StatusStrip({ items, align = "left", leading, trailing, className }, ref) {
-    const classes = [styles.strip, alignClasses[align], className].filter(Boolean).join(" ");
+function StatusStripRoot({ align = "left", leading, trailing, children, className }: StatusStripProps) {
+  const classes = [styles.strip, alignClasses[align], className].filter(Boolean).join(" ");
+  const items = React.Children.toArray(children);
 
-    return (
-      <Box ref={ref} className={classes}>
-        {leading}
-        {items.map((item, i) => (
-          <React.Fragment key={i}>
-            {i > 0 && <Span className={styles.separator}>◆</Span>}
-            <Box className={styles.item}>
-              <Span className={styles.label}>{item.label}</Span>
-              <Span style={{ color: item.color || "var(--text)", fontFeatureSettings: '"tnum"' }}>
-                {item.values
-                  ? item.values.map((v, vi) => (
-                      <React.Fragment key={vi}>
-                        {vi > 0 && <Span className={styles.valueSeparator}> · </Span>}
-                        {v}
-                      </React.Fragment>
-                    ))
-                  : item.value}
-              </Span>
-            </Box>
-          </React.Fragment>
-        ))}
-        {trailing && <Box className={styles.trailing}>{trailing}</Box>}
-      </Box>
-    );
-  }
-);
+  return (
+    <Box className={classes}>
+      {leading}
+      {items.map((child, i) => (
+        <React.Fragment key={i}>
+          {i > 0 && <Icon name="separator" size="sm" className={styles.separator} />}
+          {child}
+        </React.Fragment>
+      ))}
+      {trailing && <Box className={styles.trailing}>{trailing}</Box>}
+    </Box>
+  );
+}
 
-StatusStrip.displayName = "StatusStrip";
+StatusStripRoot.displayName = "StatusStrip";
+
+/* ----- StatusStrip.Item ----- */
+export interface StatusStripItemProps {
+  label: string;
+  color?: TextColor;
+  children: React.ReactNode;
+  className?: string;
+}
+
+function StatusStripItem({ label, color = "default", children, className }: StatusStripItemProps) {
+  const classes = [styles.item, className].filter(Boolean).join(" ");
+
+  return (
+    <Box className={classes}>
+      <Text size="micro" color="dim">{label}</Text>
+      <Text size="micro" color={color}>{children}</Text>
+    </Box>
+  );
+}
+
+StatusStripItem.displayName = "StatusStrip.Item";
+
+/* ----- Compose ----- */
+export const StatusStrip = Object.assign(StatusStripRoot, {
+  Item: StatusStripItem,
+});

@@ -22,16 +22,10 @@
 .evenly { justify-content: space-evenly; }
 
 .item {
-  display: flex;
+  display: inline-flex;
   gap: 8px;
   align-items: center;
-  font-family: var(--mono);
-  font-size: var(--fs-micro);
   flex-shrink: 0;
-}
-
-.label {
-  text-wrap: nowrap;
 }
 
 .separator {
@@ -39,10 +33,6 @@
   font-size: 8px;
   flex-shrink: 0;
   user-select: none;
-}
-
-.valueSeparator {
-  color: var(--dim);
 }
 
 .trailing {

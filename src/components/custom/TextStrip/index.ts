@@ -1,2 +1,2 @@
 export { TextStrip } from "./TextStrip";
-export type { TextStripProps, TextStripSize, TextStripColor } from "./TextStrip";
+export type { TextStripProps, TextStripItemProps } from "./TextStrip";

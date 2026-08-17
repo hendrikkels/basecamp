@@ -113,7 +113,7 @@ export { Widget } from "./Widget";
 export type { WidgetProps, WidgetVariant } from "./Widget";
 
 export { StatusStrip } from "./StatusStrip";
-export type { StatusStripProps, StatusStripItem } from "./StatusStrip";
+export type { StatusStripProps, StatusStripItemProps } from "./StatusStrip";
 
 export { CalendarStrip } from "./CalendarStrip";
 export type { CalendarStripProps, CalendarDay } from "./CalendarStrip";
@@ -128,7 +128,7 @@ export { MenuToggle } from "./MenuToggle";
 export type { MenuToggleProps } from "./MenuToggle";
 
 export { TextStrip } from "./TextStrip";
-export type { TextStripProps, TextStripSize, TextStripColor } from "./TextStrip";
+export type { TextStripProps, TextStripItemProps } from "./TextStrip";
 
 export { CullingBreakpoint } from "./CullingBreakpoint";
 export type { CullingBreakpointProps } from "./CullingBreakpoint";

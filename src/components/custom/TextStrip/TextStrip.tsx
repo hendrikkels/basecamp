@@ -1,59 +1,65 @@
 "use client";
 
 import React from "react";
-import { Box, Span } from "@/components/primitives";
-import type { PrimitiveProps } from "@/components/primitives";
+import { Box } from "@/components/primitives";
+import { Text } from "@/components/custom/Text";
+import type { TextColor, TextSize } from "@/components/custom/Text";
 import styles from "./TextStrip.module.css";
 
-export type TextStripSize = "body-lg" | "body" | "micro";
-export type TextStripColor = "default" | "muted" | "dim" | "faint" | "primary" | "secondary" | "danger" | "warn" | "info" | "success";
-
-export interface TextStripProps extends PrimitiveProps<"div"> {
-  items: string[];
-  size?: TextStripSize;
-  color?: TextStripColor;
-  icon?: React.ReactNode;
+/* ----- Context ----- */
+interface TextStripContext {
+  size: TextSize;
+  color: TextColor;
 }
 
-const sizeClasses: Record<TextStripSize, string> = {
-  "body-lg": styles.bodyLg,
-  "body": styles.body,
-  "micro": styles.micro,
-};
+const Ctx = React.createContext<TextStripContext>({ size: "micro", color: "dim" });
 
-const colorClasses: Record<TextStripColor, string> = {
-  default: styles.colorDefault,
-  muted: styles.colorMuted,
-  dim: styles.colorDim,
-  faint: styles.colorFaint,
-  primary: styles.colorPrimary,
-  secondary: styles.colorSecondary,
-  danger: styles.colorDanger,
-  warn: styles.colorWarn,
-  info: styles.colorInfo,
-  success: styles.colorSuccess,
-};
+/* ----- TextStrip (root) ----- */
+export interface TextStripProps {
+  size?: TextSize;
+  color?: TextColor;
+  icon?: React.ReactNode;
+  children: React.ReactNode;
+  className?: string;
+}
 
-export const TextStrip = React.forwardRef<HTMLDivElement, TextStripProps>(
-  function TextStrip({ items, size = "micro", color = "dim", icon, className, ...props }, ref) {
-    const classes = [
-      styles.strip,
-      sizeClasses[size],
-      colorClasses[color],
-      className,
-    ].filter(Boolean).join(" ");
+function TextStripRoot({ size = "micro", color = "dim", icon, children, className, ...props }: TextStripProps & Record<string, unknown>) {
+  const classes = [styles.strip, className].filter(Boolean).join(" ");
+  const items = React.Children.toArray(children);
 
-    return (
-      <Box ref={ref} className={classes} {...props}>
-        {items.map((item, i) => (
-          <Span key={i} className={styles.item}>
-            {i > 0 && (icon ?? <Span className={styles.separator}>·</Span>)}
-            {item}
-          </Span>
+  return (
+    <Ctx value={{ size, color }}>
+      <Box className={classes} {...props}>
+        {items.map((child, i) => (
+          <React.Fragment key={i}>
+            {i > 0 && (icon ?? <Text size={size} color="dim" className={styles.separator}>·</Text>)}
+            {child}
+          </React.Fragment>
         ))}
       </Box>
-    );
-  }
-);
+    </Ctx>
+  );
+}
 
-TextStrip.displayName = "TextStrip";
+TextStripRoot.displayName = "TextStrip";
+
+/* ----- TextStrip.Item ----- */
+export interface TextStripItemProps {
+  color?: TextColor;
+  children: React.ReactNode;
+  className?: string;
+}
+
+function TextStripItem({ color, children, className }: TextStripItemProps) {
+  const ctx = React.useContext(Ctx);
+  return (
+    <Text size={ctx.size} color={color ?? ctx.color} className={className}>{children}</Text>
+  );
+}
+
+TextStripItem.displayName = "TextStrip.Item";
+
+/* ----- Compose ----- */
+export const TextStrip = Object.assign(TextStripRoot, {
+  Item: TextStripItem,
+});
