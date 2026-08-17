@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useCallback } from "react";
-import { Box, Span, Label } from "@/components/primitives";
+import { Box, Span } from "@/components/primitives";
 import styles from "./CheckboxGroup.module.css";
 
 /* ----- Context ----- */
@@ -21,7 +21,6 @@ export type CheckboxGroupGap = "1" | "2" | "3" | "4" | "5" | "6";
 export interface CheckboxGroupProps {
   value: string[];
   onChange: (value: string[]) => void;
-  label?: string;
   disabled?: boolean;
   name?: string;
   direction?: CheckboxGroupDirection;
@@ -47,7 +46,6 @@ const gapClasses: Record<CheckboxGroupGap, string> = {
 function CheckboxGroupRoot({
   value,
   onChange,
-  label,
   disabled = false,
   name,
   direction = "vertical",
@@ -61,11 +59,8 @@ function CheckboxGroupRoot({
 
   return (
     <CheckboxGroupContext.Provider value={{ value, onChange, disabled, name }}>
-      <Box>
-        {label && <Label className={styles.label}>{label}</Label>}
-        <Box className={classes} role="group">
-          {children}
-        </Box>
+      <Box className={classes} role="group">
+        {children}
       </Box>
     </CheckboxGroupContext.Provider>
   );

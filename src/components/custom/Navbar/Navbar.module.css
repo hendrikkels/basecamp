@@ -53,11 +53,6 @@
 }
 
 .brandMeta {
-  font-family: var(--mono);
-  font-size: var(--fs-micro);
-  letter-spacing: var(--ls-wide);
-  color: var(--dim);
-  text-transform: uppercase;
   margin-left: 4px;
 }
 

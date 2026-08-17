@@ -31,11 +31,6 @@
 }
 
 .groupLabel {
-  font-family: var(--mono);
-  font-size: var(--fs-micro);
-  letter-spacing: var(--ls-wide);
-  text-transform: uppercase;
-  color: var(--dim);
   padding: 4px 10px;
   display: flex;
   align-items: center;

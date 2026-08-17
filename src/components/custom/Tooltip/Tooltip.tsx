@@ -3,6 +3,7 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Span } from "@/components/primitives";
+import { Text } from "@/components/custom/Text";
 import styles from "./Tooltip.module.css";
 
 export type TooltipPosition = "top" | "bottom";
@@ -73,7 +74,7 @@ export function Tooltip({ content, position = "top", children, className }: Tool
               left: `${coords.left}px`,
             }}
           >
-            {content}
+            <Text size="micro" color="dim">{content}</Text>
           </Span>,
           getPortalContainer()
         )}

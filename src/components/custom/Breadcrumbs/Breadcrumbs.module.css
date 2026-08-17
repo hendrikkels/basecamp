@@ -2,30 +2,13 @@
   display: flex;
   gap: 8px;
   align-items: center;
-  font-family: var(--mono);
-  font-size: var(--fs-micro);
-  letter-spacing: var(--ls-medium);
-  color: var(--dim);
 }
 
 .link {
-  color: var(--muted);
   text-decoration: none;
   transition: color var(--dur-fast);
 }
 
-.link:hover {
+.link:hover p {
   color: var(--text);
-}
-
-.separator {
-  color: var(--faint);
-}
-
-.current {
-  color: var(--acc);
-}
-
-.uppercase {
-  text-transform: uppercase;
 }

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Box, Span } from "@/components/primitives";
+import { Text } from "@/components/custom/Text";
 import styles from "./FormGrid.module.css";
 
 /* ----- FormGrid (root) ----- */
@@ -28,7 +29,7 @@ function FormGridSection({ number, title, description, children }: FormGridSecti
   return (
     <>
       <Box className={styles.sectionLabel}>
-        {number && <Span className={styles.sectionNumber}>{number}</Span>}
+        {number && <Text size="micro" color="dim" className={styles.sectionNumber}>{number}</Text>}
         {title}
         {description && <Span className={styles.sectionDescription}>{description}</Span>}
       </Box>

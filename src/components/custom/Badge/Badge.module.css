@@ -2,13 +2,8 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-family: var(--mono);
-  font-size: var(--fs-micro);
-  letter-spacing: var(--ls-wide);
-  text-transform: uppercase;
   padding: 3px 8px;
   border-radius: var(--r-xs);
-  font-weight: var(--fw-medium);
   text-wrap: nowrap;
 }
 

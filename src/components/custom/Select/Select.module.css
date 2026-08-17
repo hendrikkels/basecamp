@@ -3,16 +3,6 @@
   width: 100%;
 }
 
-.label {
-  display: block;
-  font-family: var(--mono);
-  font-size: var(--fs-micro);
-  letter-spacing: var(--ls-wide);
-  text-transform: uppercase;
-  color: var(--dim);
-  margin-bottom: 6px;
-}
-
 /* Trigger — matches Field.Input style */
 .trigger {
   font-family: var(--mono);

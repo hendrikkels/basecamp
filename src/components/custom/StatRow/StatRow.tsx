@@ -1,7 +1,9 @@
 "use client";
 
 import React from "react";
-import { Box, Span } from "@/components/primitives";
+import { Box } from "@/components/primitives";
+import { Text } from "@/components/custom/Text";
+import type { TextColor } from "@/components/custom/Text";
 import styles from "./StatRow.module.css";
 
 export interface StatRowProps {
@@ -12,16 +14,6 @@ export interface StatRowProps {
   className?: string;
 }
 
-const colorMap: Record<string, string> = {
-  default: "var(--text)",
-  primary: "var(--acc)",
-  success: "var(--success)",
-  danger: "var(--danger)",
-  warn: "var(--warn)",
-  info: "var(--info)",
-  muted: "var(--muted)",
-};
-
 export const StatRow = React.forwardRef<HTMLDivElement, StatRowProps>(
   function StatRow({ label, value, color = "default", bordered = false, className }, ref) {
     const classes = [styles.row, bordered ? styles.bordered : undefined, className]
@@ -30,12 +22,8 @@ export const StatRow = React.forwardRef<HTMLDivElement, StatRowProps>(
 
     return (
       <Box ref={ref} className={classes}>
-        <Span style={{ fontFamily: "var(--mono)", fontSize: "10px", letterSpacing: "var(--ls-wide)", textTransform: "uppercase", color: "var(--dim)" }}>
-          {label}
-        </Span>
-        <Span style={{ fontFamily: "var(--mono)", fontSize: "12px", fontWeight: 500, color: colorMap[color] }}>
-          {value}
-        </Span>
+        <Text size="micro" color="dim" >{label}</Text>
+        <Text size="body-sm" color={color as TextColor} weight="medium">{value}</Text>
       </Box>
     );
   }

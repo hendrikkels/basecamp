@@ -13,7 +13,7 @@ export default function DashboardPage() {
   return (
     <Stack gap="6">
       <Stack gap="3">
-        <Breadcrumbs uppercase>
+        <Breadcrumbs>
           <Breadcrumbs.Item href="/sidebar-demo">Navigation</Breadcrumbs.Item>
           <Breadcrumbs.Item current>Dashboard</Breadcrumbs.Item>
         </Breadcrumbs>

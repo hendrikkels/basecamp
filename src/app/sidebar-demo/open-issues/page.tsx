@@ -24,6 +24,7 @@ import {
   StatRow,
   Progress,
   Tooltip,
+  EmptyState,
   useAlert,
   Icon,
 } from "@/components/custom";
@@ -84,7 +85,7 @@ export default function DesignSystemPage() {
     <Stack gap="6">
       {/* Header */}
       <Stack gap="3">
-        <Breadcrumbs uppercase>
+        <Breadcrumbs>
           <Breadcrumbs.Item href="/sidebar-demo">Workspace</Breadcrumbs.Item>
           <Breadcrumbs.Item current>Open Issues</Breadcrumbs.Item>
         </Breadcrumbs>
@@ -133,51 +134,52 @@ export default function DesignSystemPage() {
 
       {/* Data Table */}
       <Card variant="default" padding="none">
-        <DataTable>
-          <DataTable.Head>
-            <DataTable.Row>
-              <DataTable.Th>ID</DataTable.Th>
-              <DataTable.Th>Title</DataTable.Th>
-              <DataTable.Th>Priority</DataTable.Th>
-              <DataTable.Th>Status</DataTable.Th>
-              <DataTable.Th>Assignee</DataTable.Th>
-              <DataTable.Th>
-                <Tooltip content="Date the issue was created">Created</Tooltip>
-              </DataTable.Th>
-            </DataTable.Row>
-          </DataTable.Head>
-          <DataTable.Body>
-            {filteredIssues.map((issue) => (
-              <DataTable.Row key={issue.id}>
-                <DataTable.Td>
-                  <Text size="micro" color="primary">{issue.id}</Text>
-                </DataTable.Td>
-                <DataTable.Td>{issue.title}</DataTable.Td>
-                <DataTable.Td>
-                  <Badge color={PRIORITY_BADGE[issue.priority].color} dot>
-                    {PRIORITY_BADGE[issue.priority].label}
-                  </Badge>
-                </DataTable.Td>
-                <DataTable.Td>
-                  <Badge color={STATUS_BADGE[issue.status].color}>
-                    {STATUS_BADGE[issue.status].label}
-                  </Badge>
-                </DataTable.Td>
-                <DataTable.Td>{issue.assignee}</DataTable.Td>
-                <DataTable.Td>
-                  <Text size="body-sm" color="dim">{issue.created}</Text>
-                </DataTable.Td>
-              </DataTable.Row>
-            ))}
-            {/* {filteredIssues.length === 0 && (
+        {filteredIssues.length > 0 ? (
+          <DataTable>
+            <DataTable.Head>
               <DataTable.Row>
-                <DataTable.Td>
-                  <Text color="dim" _padding="16px 0">No issues match your search.</Text>
-                </DataTable.Td>
+                <DataTable.Th>ID</DataTable.Th>
+                <DataTable.Th>Title</DataTable.Th>
+                <DataTable.Th>Priority</DataTable.Th>
+                <DataTable.Th>Status</DataTable.Th>
+                <DataTable.Th>Assignee</DataTable.Th>
+                <DataTable.Th>
+                  <Tooltip content="Date the issue was created">Created</Tooltip>
+                </DataTable.Th>
               </DataTable.Row>
-            )} */}
-          </DataTable.Body>
-        </DataTable>
+            </DataTable.Head>
+            <DataTable.Body>
+              {filteredIssues.map((issue) => (
+                <DataTable.Row key={issue.id}>
+                  <DataTable.Td>
+                    <Text size="micro" color="primary">{issue.id}</Text>
+                  </DataTable.Td>
+                  <DataTable.Td>{issue.title}</DataTable.Td>
+                  <DataTable.Td>
+                    <Badge color={PRIORITY_BADGE[issue.priority].color} dot>
+                      {PRIORITY_BADGE[issue.priority].label}
+                    </Badge>
+                  </DataTable.Td>
+                  <DataTable.Td>
+                    <Badge color={STATUS_BADGE[issue.status].color}>
+                      {STATUS_BADGE[issue.status].label}
+                    </Badge>
+                  </DataTable.Td>
+                  <DataTable.Td>{issue.assignee}</DataTable.Td>
+                  <DataTable.Td>
+                    <Text size="body-sm" color="dim">{issue.created}</Text>
+                  </DataTable.Td>
+                </DataTable.Row>
+              ))}
+            </DataTable.Body>
+          </DataTable>
+        ) : (
+          <EmptyState
+            glyph="[ ◇ ]"
+            title="No issues found"
+            description="Try adjusting your search to find what you're looking for."
+          />
+        )}
       </Card>
 
       <Divider />

@@ -20,12 +20,7 @@
 
 .sectionNumber {
   display: block;
-  font-family: var(--mono);
-  font-size: var(--fs-micro);
-  letter-spacing: var(--ls-wide);
-  color: var(--dim);
   margin-bottom: 4px;
-  text-transform: uppercase;
 }
 
 .sectionDescription {

@@ -1,24 +1,24 @@
 "use client";
 
 import React from "react";
-import { Nav, Span, Anchor } from "@/components/primitives";
+import { Nav, Anchor } from "@/components/primitives";
+import { Text } from "@/components/custom/Text";
 import styles from "./Breadcrumbs.module.css";
 
 export interface BreadcrumbsProps {
-  uppercase?: boolean;
   children: React.ReactNode;
   className?: string;
 }
 
-function BreadcrumbsRoot({ uppercase = false, children, className }: BreadcrumbsProps) {
-  const classes = [styles.crumbs, uppercase ? styles.uppercase : undefined, className].filter(Boolean).join(" ");
+function BreadcrumbsRoot({ children, className }: BreadcrumbsProps) {
+  const classes = [styles.crumbs, className].filter(Boolean).join(" ");
   const items = React.Children.toArray(children);
 
   return (
     <Nav className={classes} aria-label="Breadcrumb">
       {items.map((child, i) => (
         <React.Fragment key={i}>
-          {i > 0 && <Span className={styles.separator}>/</Span>}
+          {i > 0 && <Text size="micro" color="faint">/</Text>}
           {child}
         </React.Fragment>
       ))}
@@ -36,13 +36,19 @@ export interface BreadcrumbsItemProps {
 }
 
 function BreadcrumbsItem({ href, current = false, children, className }: BreadcrumbsItemProps) {
-  if (current || !href) {
-    const classes = [styles.current, className].filter(Boolean).join(" ");
-    return <Span className={classes} aria-current="page">{children}</Span>;
+  if (current) {
+    return (
+      <Text size="micro" color="primary" className={className} aria-current="page">
+        {children}
+      </Text>
+    );
   }
 
-  const classes = [styles.link, className].filter(Boolean).join(" ");
-  return <Anchor href={href} className={classes}>{children}</Anchor>;
+  return (
+    <Anchor href={href} className={[styles.link, className].filter(Boolean).join(" ")}>
+      <Text size="micro" color="muted">{children}</Text>
+    </Anchor>
+  );
 }
 
 BreadcrumbsItem.displayName = "Breadcrumbs.Item";

@@ -6,7 +6,7 @@ export default function DocsPage() {
   return (
     <Stack gap="6">
       <Stack gap="3">
-        <Breadcrumbs uppercase>
+        <Breadcrumbs>
           <Breadcrumbs.Item href="/sidebar-demo">Workspace</Breadcrumbs.Item>
           <Breadcrumbs.Item current>Documentation</Breadcrumbs.Item>
         </Breadcrumbs>

@@ -13,7 +13,7 @@ export default function ApiPage() {
   return (
     <Stack gap="6">
       <Stack gap="3">
-        <Breadcrumbs uppercase>
+        <Breadcrumbs>
           <Breadcrumbs.Item href="/sidebar-demo">Workspace</Breadcrumbs.Item>
           <Breadcrumbs.Item current>API Integration</Breadcrumbs.Item>
         </Breadcrumbs>

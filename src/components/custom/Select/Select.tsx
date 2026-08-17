@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useCallback, useRef, useEffect } from "react";
-import { Box, Button, Span, Label } from "@/components/primitives";
+import { Box, Button, Span } from "@/components/primitives";
 import styles from "./Select.module.css";
 
 /* ===================================================================
@@ -19,7 +19,6 @@ const SelectContext = createContext<SelectContextValue | null>(null);
 export interface SelectProps {
   value: string;
   onChange: (value: string) => void;
-  label?: string;
   placeholder?: string;
   disabled?: boolean;
   error?: boolean;
@@ -30,7 +29,6 @@ export interface SelectProps {
 function SelectRoot({
   value,
   onChange,
-  label,
   placeholder = "Select...",
   disabled = false,
   error = false,
@@ -90,7 +88,6 @@ function SelectRoot({
   return (
     <SelectContext.Provider value={{ value, select, syncLabel }}>
       <Box ref={wrapperRef} className={[styles.wrapper, className].filter(Boolean).join(" ")}>
-        {label && <Label className={styles.label}>{label}</Label>}
         <Button
           type="button"
           className={triggerClasses}
@@ -207,7 +204,6 @@ const MultiSelectContext = createContext<MultiSelectContextValue | null>(null);
 export interface MultiSelectProps {
   value: string[];
   onChange: (value: string[]) => void;
-  label?: string;
   placeholder?: string;
   disabled?: boolean;
   error?: boolean;
@@ -218,7 +214,6 @@ export interface MultiSelectProps {
 function MultiSelectRoot({
   value,
   onChange,
-  label,
   placeholder = "Select...",
   disabled = false,
   error = false,
@@ -282,7 +277,6 @@ function MultiSelectRoot({
   return (
     <MultiSelectContext.Provider value={{ value, toggle }}>
       <Box ref={wrapperRef} className={[styles.wrapper, className].filter(Boolean).join(" ")}>
-        {label && <Label className={styles.label}>{label}</Label>}
         <Button
           type="button"
           className={triggerClasses}

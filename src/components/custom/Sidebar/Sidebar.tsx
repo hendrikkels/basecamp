@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Aside, Box, Span, Anchor } from "@/components/primitives";
+import { Text } from "@/components/custom/Text";
 import styles from "./Sidebar.module.css";
 
 /* ----- Sidebar (root) ----- */
@@ -30,7 +31,7 @@ function SidebarGroup({ label, action, children, className }: SidebarGroupProps)
     <Box className={classes}>
       {label && (
         <Box className={styles.groupLabel}>
-          {label}
+          <Text size="micro" color="dim" >{label}</Text>
           {action}
         </Box>
       )}

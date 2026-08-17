@@ -31,10 +31,6 @@
 }
 
 .label {
-  color: var(--dim);
-  letter-spacing: var(--ls-wide);
-  text-transform: uppercase;
-  font-size: var(--fs-micro);
   text-wrap: nowrap;
 }
 

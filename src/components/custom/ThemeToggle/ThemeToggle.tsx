@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useState } from "react";
 import { Button, Span } from "@/components/primitives";
+import { Text } from "@/components/custom"
 import styles from "./ThemeToggle.module.css";
 
 export interface ThemeToggleProps {
@@ -29,7 +30,9 @@ export const ThemeToggle = React.forwardRef<HTMLButtonElement, ThemeToggleProps>
     return (
       <Button ref={ref} className={classes} onClick={toggle} type="button" aria-label="Toggle theme">
         <Span className={styles.indicator} />
+        <Text size="micro">
         {theme === "dark" ? "Dark" : "Light"}
+        </Text>
       </Button>
     );
   }

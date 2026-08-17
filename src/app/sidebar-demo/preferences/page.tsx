@@ -23,7 +23,7 @@ export default function PreferencesPage() {
   return (
     <Stack gap="6">
       <Stack gap="3">
-        <Breadcrumbs uppercase>
+        <Breadcrumbs>
           <Breadcrumbs.Item href="/sidebar-demo">Settings</Breadcrumbs.Item>
           <Breadcrumbs.Item current>Preferences</Breadcrumbs.Item>
         </Breadcrumbs>

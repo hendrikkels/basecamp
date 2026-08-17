@@ -29,8 +29,8 @@ export const Widget = React.forwardRef<HTMLDivElement, WidgetProps>(
       <Box ref={ref} className={classes}>
         {(label || accent) && (
           <Box className={styles.header}>
-            {label && <Text size="micro" color="dim" transform="uppercase">{label}</Text>}
-            {accent && <Text size="micro" transform="uppercase" color="primary">{accent}</Text>}
+            {label && <Text size="micro" color="dim" >{label}</Text>}
+            {accent && <Text size="micro" color="primary">{accent}</Text>}
           </Box>
         )}
         {children}

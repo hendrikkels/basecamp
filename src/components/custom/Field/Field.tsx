@@ -3,6 +3,7 @@
 import React from "react";
 import { Box, Span, Label, Input, Textarea } from "@/components/primitives";
 import type { PrimitiveProps } from "@/components/primitives";
+import { Text } from "@/components/custom/Text";
 import styles from "./Field.module.css";
 
 /* ----- Field (wrapper) ----- */
@@ -28,8 +29,10 @@ const FieldLabel = React.forwardRef<HTMLLabelElement, FieldLabelProps>(
     const classes = [styles.label, className].filter(Boolean).join(" ");
     return (
       <Label ref={ref} className={classes} {...props}>
-        {children}
-        {required && <Span className={styles.required}>*</Span>}
+        <Text size="micro" color="dim">
+          {children}
+          {required && <Span className={styles.required}>*</Span>}
+        </Text>
       </Label>
     );
   }

@@ -881,34 +881,37 @@ export default function DesignSystem() {
 
           <Divider />
 
-          {/* Tooltip & Breadcrumbs */}
-          <SectionHead number="15" title="Navigation" uppercase/>
-          <Stack gap="4">
-            <Breadcrumbs>
-              <Breadcrumbs.Item href="/">Home</Breadcrumbs.Item>
-              <Breadcrumbs.Item href="/design-system">
-                Design System
-              </Breadcrumbs.Item>
-              <Breadcrumbs.Item current>Components</Breadcrumbs.Item>
-            </Breadcrumbs>
-            <Stack direction="horizontal" gap="4" align="center">
-              <Tooltip content="Top tooltip">
-                <Button variant="tertiary">
-                  Tooltip (top)
-                </Button>
-              </Tooltip>
-              <Tooltip content="Bottom tooltip" position="bottom">
-                <Button variant="tertiary">
-                  Tooltip (bottom)
-                </Button>
-              </Tooltip>
-            </Stack>
+          {/* Breadcrumbs */}
+          <SectionHead number="15" title="Breadcrumbs" uppercase/>
+          <Breadcrumbs>
+            <Breadcrumbs.Item href="/">Home</Breadcrumbs.Item>
+            <Breadcrumbs.Item href="/design-system">
+              Design System
+            </Breadcrumbs.Item>
+            <Breadcrumbs.Item current>Components</Breadcrumbs.Item>
+          </Breadcrumbs>
+
+          <Divider />
+
+          {/* Tooltips */}
+          <SectionHead number="16" title="Tooltips" uppercase/>
+          <Stack direction="horizontal" gap="4" align="center">
+            <Tooltip content="Top tooltip">
+              <Button variant="tertiary">
+                Tooltip (top)
+              </Button>
+            </Tooltip>
+            <Tooltip content="Bottom tooltip" position="bottom">
+              <Button variant="tertiary">
+                Tooltip (bottom)
+              </Button>
+            </Tooltip>
           </Stack>
 
           <Divider />
 
           {/* KPI */}
-          <SectionHead number="16" title="KPI" uppercase/>
+          <SectionHead number="17" title="KPI" uppercase/>
           <Row columns="3" gap="4">
             <KpiTile
               label="Revenue"

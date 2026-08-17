@@ -12,7 +12,7 @@ export default function ProjectsPage() {
   return (
     <Stack gap="6">
       <Stack gap="3">
-        <Breadcrumbs uppercase>
+        <Breadcrumbs>
           <Breadcrumbs.Item href="/sidebar-demo">Navigation</Breadcrumbs.Item>
           <Breadcrumbs.Item current>Projects</Breadcrumbs.Item>
         </Breadcrumbs>

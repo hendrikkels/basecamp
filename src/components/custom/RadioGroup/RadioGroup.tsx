@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext } from "react";
-import { Box, Span, Label } from "@/components/primitives";
+import { Box, Span } from "@/components/primitives";
 import styles from "./RadioGroup.module.css";
 
 /* ----- Context ----- */
@@ -21,7 +21,6 @@ export type RadioGroupGap = "1" | "2" | "3" | "4" | "5" | "6";
 export interface RadioGroupProps {
   value: string;
   onChange: (value: string) => void;
-  label?: string;
   disabled?: boolean;
   name?: string;
   direction?: RadioGroupDirection;
@@ -47,7 +46,6 @@ const gapClasses: Record<RadioGroupGap, string> = {
 function RadioGroupRoot({
   value,
   onChange,
-  label,
   disabled = false,
   name,
   direction = "vertical",
@@ -61,11 +59,8 @@ function RadioGroupRoot({
 
   return (
     <RadioGroupContext.Provider value={{ value, onChange, disabled, name }}>
-      <Box>
-        {label && <Label className={styles.label}>{label}</Label>}
-        <Box className={classes} role="radiogroup">
-          {children}
-        </Box>
+      <Box className={classes} role="radiogroup">
+        {children}
       </Box>
     </RadioGroupContext.Provider>
   );

@@ -14,7 +14,7 @@ export default function TeamPage() {
   return (
     <Stack gap="6">
       <Stack gap="3">
-        <Breadcrumbs uppercase>
+        <Breadcrumbs>
           <Breadcrumbs.Item href="/sidebar-demo">Settings</Breadcrumbs.Item>
           <Breadcrumbs.Item current>Team</Breadcrumbs.Item>
         </Breadcrumbs>

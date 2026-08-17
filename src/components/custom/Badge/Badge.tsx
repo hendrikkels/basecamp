@@ -3,6 +3,7 @@
 import React from "react";
 import { Span } from "@/components/primitives";
 import type { PrimitiveProps } from "@/components/primitives";
+import { Text } from '@/components/custom'
 import styles from "./Badge.module.css";
 
 export type BadgeColor =
@@ -51,8 +52,11 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
 
     return (
       <Span ref={ref} className={classes} {...props}>
-        {dot && <Span className={styles.dot} />}
-        {children}
+
+        {dot && <Text className={styles.dot} />}
+        <Text size="micro">
+          {children}
+        </Text>
       </Span>
     );
   }

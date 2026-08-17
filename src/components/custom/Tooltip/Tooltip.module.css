@@ -6,12 +6,8 @@
   position: fixed;
   transform: translateX(-50%);
   background: var(--surface-3);
-  color: var(--text);
-  font-family: var(--mono);
-  font-size: var(--fs-micro);
   padding: 6px 10px;
   border-radius: var(--r-xs);
-  letter-spacing: var(--ls-medium);
   white-space: nowrap;
   pointer-events: none;
   opacity: 0;

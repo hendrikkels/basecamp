@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Nav, Box, Anchor, Span, Small } from "@/components/primitives";
+import { Nav, Box, Anchor, Span } from "@/components/primitives";
+import { Text } from "@/components/custom/Text";
 import { MenuToggle } from "@/components/custom/MenuToggle";
 import styles from "./Navbar.module.css";
 
@@ -50,7 +51,7 @@ function NavbarBrand({ href = "/", children, meta, className }: NavbarBrandProps
     <Anchor href={href} className={classes}>
       {/* <Span className={styles.brandBlock} /> */}
       {children}
-      {meta && <Small className={styles.brandMeta}>{meta}</Small>}
+      {meta && <Text size="micro" color="dim"  className={styles.brandMeta}>{meta}</Text>}
     </Anchor>
   );
 }

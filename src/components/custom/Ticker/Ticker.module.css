@@ -17,13 +17,6 @@
   align-items: baseline;
 }
 
-.label {
-  color: var(--dim);
-  text-transform: uppercase;
-  font-size: var(--fs-micro);
-  letter-spacing: var(--ls-wide);
-}
-
 .separator {
   color: var(--surface-3);
 }

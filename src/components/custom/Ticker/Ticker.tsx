@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Box, Span } from "@/components/primitives";
+import { Text } from "@/components/custom/Text";
 import styles from "./Ticker.module.css";
 
 export interface TickerItem {
@@ -26,7 +27,7 @@ export const Ticker = React.forwardRef<HTMLDivElement, TickerProps>(
           <React.Fragment key={i}>
             {i > 0 && <Span className={styles.separator}>◆</Span>}
             <Span className={styles.item}>
-              <Span className={styles.label}>{item.label}</Span>
+              <Text size="micro" color="dim">{item.label}</Text>
               <Span style={{ color: item.color || "var(--text)", fontWeight: 500, fontFeatureSettings: '"tnum"' }}>
                 {item.values
                   ? item.values.map((v, vi) => (
