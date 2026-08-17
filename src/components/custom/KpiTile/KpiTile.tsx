@@ -23,7 +23,7 @@ export const KpiTile = React.forwardRef<HTMLDivElement, KpiTileProps>(
 
     return (
       <Box ref={ref} className={classes}>
-        <Text size="micro" color="dim">
+        <Text size="micro" color="dim" className={styles.label}>
           {label}
           {qualifier && <Span className={styles.qualifier}> · {qualifier}</Span>}
         </Text>

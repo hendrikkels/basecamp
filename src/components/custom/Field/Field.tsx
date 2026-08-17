@@ -29,7 +29,7 @@ const FieldLabel = React.forwardRef<HTMLLabelElement, FieldLabelProps>(
     const classes = [styles.label, className].filter(Boolean).join(" ");
     return (
       <Label ref={ref} className={classes} {...props}>
-        <Text size="micro" color="dim">
+        <Text size="micro" color="dim" className={styles.labelText}>
           {children}
           {required && <Span className={styles.required}>*</Span>}
         </Text>

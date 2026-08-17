@@ -40,17 +40,17 @@ const ISSUES = [
   { id: "BC-136", title: "Add Chart tooltip formatting", priority: "low", status: "closed", assignee: "James", created: "Aug 1" },
 ];
 
-const PRIORITY_BADGE: Record<string, { color: "danger-soft" | "warn-soft" | "info-soft" | "default-soft"; label: string }> = {
-  critical: { color: "danger-soft", label: "Critical" },
-  high: { color: "warn-soft", label: "High" },
-  medium: { color: "info-soft", label: "Medium" },
-  low: { color: "default-soft", label: "Low" },
+const PRIORITY_BADGE: Record<string, { color: "danger" | "warn" | "info" | "default"; label: string }> = {
+  critical: { color: "danger", label: "Critical" },
+  high: { color: "warn", label: "High" },
+  medium: { color: "info", label: "Medium" },
+  low: { color: "default", label: "Low" },
 };
 
-const STATUS_BADGE: Record<string, { color: "success-soft" | "primary-soft" | "default-soft"; label: string }> = {
-  open: { color: "primary-soft", label: "Open" },
-  "in-progress": { color: "success-soft", label: "In Progress" },
-  closed: { color: "default-soft", label: "Closed" },
+const STATUS_BADGE: Record<string, { color: "success" | "primary" | "default"; label: string }> = {
+  open: { color: "primary", label: "Open" },
+  "in-progress": { color: "success", label: "In Progress" },
+  closed: { color: "default", label: "Closed" },
 };
 
 export default function DesignSystemPage() {

@@ -31,7 +31,7 @@ function SidebarGroup({ label, action, children, className }: SidebarGroupProps)
     <Box className={classes}>
       {label && (
         <Box className={styles.groupLabel}>
-          <Text size="micro" color="dim" >{label}</Text>
+          <Text size="micro" color="dim" className={styles.groupLabelText}>{label}</Text>
           {action}
         </Box>
       )}

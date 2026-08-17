@@ -111,32 +111,32 @@ export default function Dashboard() {
                   <DataTable.Body>
                     <DataTable.Row>
                       <DataTable.Td>Building a Design System</DataTable.Td>
-                      <DataTable.Td><Badge>Post</Badge></DataTable.Td>
-                      <DataTable.Td><Badge color="success-soft">Published</Badge></DataTable.Td>
+                      <DataTable.Td><Badge color="default-soft">Post</Badge></DataTable.Td>
+                      <DataTable.Td><Badge color="success">Published</Badge></DataTable.Td>
                       <DataTable.Td numeric>2,841</DataTable.Td>
                     </DataTable.Row>
                     <DataTable.Row>
                       <DataTable.Td>Component Architecture Notes</DataTable.Td>
-                      <DataTable.Td><Badge>Note</Badge></DataTable.Td>
-                      <DataTable.Td><Badge color="primary-soft">Draft</Badge></DataTable.Td>
+                      <DataTable.Td><Badge color="default-soft">Note</Badge></DataTable.Td>
+                      <DataTable.Td><Badge color="primary">Draft</Badge></DataTable.Td>
                       <DataTable.Td numeric>—</DataTable.Td>
                     </DataTable.Row>
                     <DataTable.Row>
                       <DataTable.Td>Weekly Recap #47</DataTable.Td>
-                      <DataTable.Td><Badge>Post</Badge></DataTable.Td>
-                      <DataTable.Td><Badge color="success-soft">Published</Badge></DataTable.Td>
+                      <DataTable.Td><Badge color="default-soft">Post</Badge></DataTable.Td>
+                      <DataTable.Td><Badge color="success">Published</Badge></DataTable.Td>
                       <DataTable.Td numeric>1,204</DataTable.Td>
                     </DataTable.Row>
                     <DataTable.Row>
                       <DataTable.Td>API Integration Guide</DataTable.Td>
-                      <DataTable.Td><Badge>Post</Badge></DataTable.Td>
-                      <DataTable.Td><Badge color="warn-soft">Scheduled</Badge></DataTable.Td>
+                      <DataTable.Td><Badge color="default-soft">Post</Badge></DataTable.Td>
+                      <DataTable.Td><Badge color="warn">Scheduled</Badge></DataTable.Td>
                       <DataTable.Td numeric>—</DataTable.Td>
                     </DataTable.Row>
                     <DataTable.Row>
                       <DataTable.Td>Token System Changelog</DataTable.Td>
-                      <DataTable.Td><Badge>Note</Badge></DataTable.Td>
-                      <DataTable.Td><Badge color="success-soft">Published</Badge></DataTable.Td>
+                      <DataTable.Td><Badge color="default-soft">Note</Badge></DataTable.Td>
+                      <DataTable.Td><Badge color="success">Published</Badge></DataTable.Td>
                       <DataTable.Td numeric>892</DataTable.Td>
                     </DataTable.Row>
                   </DataTable.Body>

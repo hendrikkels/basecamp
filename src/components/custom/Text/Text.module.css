@@ -30,6 +30,14 @@
   font-weight: var(--fw-medium);
 }
 
+.nano {
+  font-size: var(--fs-nano);
+  line-height: 1.1;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  font-weight: var(--fw-medium);
+}
+
 /* Color variants */
 .colorDefault { color: var(--text); }
 .colorMuted { color: var(--muted); }

@@ -8,6 +8,10 @@
   display: block;
 }
 
+.labelText {
+  /* font-weight: var(--fw-bold) !important; */
+}
+
 .required {
   color: var(--acc);
   margin-left: 2px;

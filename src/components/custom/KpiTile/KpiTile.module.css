@@ -19,6 +19,10 @@
   background: var(--acc);
 }
 
+.label {
+  font-weight: var(--fw-bold) !important;
+}
+
 .qualifier {
   color: var(--muted);
 }

@@ -59,7 +59,7 @@ function StatusStripItem({ label, color = "default", children, className }: Stat
 
   return (
     <Box className={classes}>
-      <Text size="micro" color="dim">{label}</Text>
+      <Text size="micro" color="dim" className={styles.label}>{label}</Text>
       <Text size="micro" color={color}>{children}</Text>
     </Box>
   );

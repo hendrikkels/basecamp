@@ -86,7 +86,7 @@ export default function DesignSystem() {
           </Box>
 
           {/* Colors */}
-          <SectionHead number="01" title="Colors" accent="tokens" uppercase/>
+          <SectionHead number="01" title="Colors" accent="tokens" uppercase />
           <Row columns="6" gap="2">
             {[
               {
@@ -177,7 +177,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Typography */}
-          <SectionHead number="02" title="Typography" uppercase/>
+          <SectionHead number="02" title="Typography" uppercase />
           <Stack gap="4">
             <Box
               className={`${styles.typographyRow} ${styles.typographyRowBordered}`}
@@ -263,9 +263,7 @@ export default function DesignSystem() {
               <Text size="micro" color="dim">
                 Body LG
               </Text>
-              <Text size="body-lg">
-                Section Heading
-              </Text>
+              <Text size="body-lg">Section Heading</Text>
               <Text size="micro" color="dim" _textAlign="right">
                 15px / Regular
               </Text>
@@ -310,9 +308,16 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Icons */}
-          <SectionHead number="03" title="Icons" accent="unicode glyphs" uppercase/>
+          <SectionHead
+            number="03"
+            title="Icons"
+            accent="unicode glyphs"
+            uppercase
+          />
           <Stack gap="5">
-            <Text size="micro" color="dim">All Icons — Default</Text>
+            <Text size="micro" color="dim">
+              All Icons — Default
+            </Text>
             <Box _display="flex" _flexWrap="wrap" _gap="12px">
               {Object.keys(ICON_NAMES).map((name) => (
                 <Tooltip key={name} content={name}>
@@ -324,7 +329,13 @@ export default function DesignSystem() {
                     _width="56px"
                   >
                     <Icon name={name as keyof typeof ICON_NAMES} size="md" />
-                    <Text size="micro" color="dim" _fontSize="7px" _textTransform="none" _letterSpacing="0">
+                    <Text
+                      size="micro"
+                      color="dim"
+                      _fontSize="7px"
+                      _textTransform="none"
+                      _letterSpacing="0"
+                    >
                       {name}
                     </Text>
                   </Box>
@@ -332,23 +343,33 @@ export default function DesignSystem() {
               ))}
             </Box>
 
-            <Text size="micro" color="dim">Sizes</Text>
+            <Text size="micro" color="dim">
+              Sizes
+            </Text>
             <Stack direction="horizontal" gap="5" align="center">
               <Stack direction="vertical" gap="2" align="center">
                 <Icon name="star" size="sm" />
-                <Text size="micro" color="muted">sm</Text>
+                <Text size="micro" color="muted">
+                  sm
+                </Text>
               </Stack>
               <Stack direction="vertical" gap="2" align="center">
                 <Icon name="star" size="md" />
-                <Text size="micro" color="muted">md</Text>
+                <Text size="micro" color="muted">
+                  md
+                </Text>
               </Stack>
               <Stack direction="vertical" gap="2" align="center">
                 <Icon name="star" size="lg" />
-                <Text size="micro" color="muted">lg</Text>
+                <Text size="micro" color="muted">
+                  lg
+                </Text>
               </Stack>
             </Stack>
 
-            <Text size="micro" color="dim">Colors</Text>
+            <Text size="micro" color="dim">
+              Colors
+            </Text>
             <Stack direction="horizontal" gap="4" align="center" wrap>
               <Icon name="diamond" size="lg" color="default" />
               <Icon name="diamond" size="lg" color="text" />
@@ -365,78 +386,201 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Buttons */}
-          <SectionHead number="04" title="Buttons" uppercase/>
+          <SectionHead number="04" title="Buttons" uppercase />
           <Stack gap="4">
-            <Text size="micro" color="dim">Small</Text>
+            <Text size="micro" color="dim">
+              Small
+            </Text>
             <Stack direction="horizontal" gap="3" align="center" wrap>
-              <Button variant="primary" size="sm">Primary</Button>
-              <Button variant="secondary" size="sm">Secondary</Button>
-              <Button variant="tertiary" size="sm">Tertiary</Button>
-              <Button variant="ghost" size="sm">Ghost</Button>
-              <Button variant="outline" size="sm">Outline</Button>
-              <Button variant="accent1" size="sm">Accent 1</Button>
-              <Button variant="accent2" size="sm">Accent 2</Button>
-              <Button variant="destructive" size="sm">Destructive</Button>
-              <Button variant="success" size="sm">Success</Button>
-              <Button variant="warn" size="sm">Warn</Button>
-              <Button variant="info" size="sm">Info</Button>
-              <Button variant="primary" size="sm" disabled>Disabled</Button>
+              <Button variant="primary" size="sm">
+                Primary
+              </Button>
+              <Button variant="secondary" size="sm">
+                Secondary
+              </Button>
+              <Button variant="tertiary" size="sm">
+                Tertiary
+              </Button>
+              <Button variant="ghost" size="sm">
+                Ghost
+              </Button>
+              <Button variant="outline" size="sm">
+                Outline
+              </Button>
+              <Button variant="accent1" size="sm">
+                Accent 1
+              </Button>
+              <Button variant="accent2" size="sm">
+                Accent 2
+              </Button>
+              <Button variant="destructive" size="sm">
+                Destructive
+              </Button>
+              <Button variant="success" size="sm">
+                Success
+              </Button>
+              <Button variant="warn" size="sm">
+                Warn
+              </Button>
+              <Button variant="info" size="sm">
+                Info
+              </Button>
+              <Button variant="primary" size="sm" disabled>
+                Disabled
+              </Button>
             </Stack>
-            <Text size="micro" color="dim">Medium</Text>
+            <Text size="micro" color="dim">
+              Medium
+            </Text>
             <Stack direction="horizontal" gap="3" align="center" wrap>
-              <Button variant="primary" size="md">Primary</Button>
-              <Button variant="secondary" size="md">Secondary</Button>
-              <Button variant="tertiary" size="md">Tertiary</Button>
-              <Button variant="ghost" size="md">Ghost</Button>
-              <Button variant="outline" size="md">Outline</Button>
-              <Button variant="accent1" size="md">Accent 1</Button>
-              <Button variant="accent2" size="md">Accent 2</Button>
-              <Button variant="destructive" size="md">Destructive</Button>
-              <Button variant="success" size="md">Success</Button>
-              <Button variant="warn" size="md">Warn</Button>
-              <Button variant="info" size="md">Info</Button>
-              <Button variant="primary" size="md" disabled>Disabled</Button>
+              <Button variant="primary" size="md">
+                Primary
+              </Button>
+              <Button variant="secondary" size="md">
+                Secondary
+              </Button>
+              <Button variant="tertiary" size="md">
+                Tertiary
+              </Button>
+              <Button variant="ghost" size="md">
+                Ghost
+              </Button>
+              <Button variant="outline" size="md">
+                Outline
+              </Button>
+              <Button variant="accent1" size="md">
+                Accent 1
+              </Button>
+              <Button variant="accent2" size="md">
+                Accent 2
+              </Button>
+              <Button variant="destructive" size="md">
+                Destructive
+              </Button>
+              <Button variant="success" size="md">
+                Success
+              </Button>
+              <Button variant="warn" size="md">
+                Warn
+              </Button>
+              <Button variant="info" size="md">
+                Info
+              </Button>
+              <Button variant="primary" size="md" disabled>
+                Disabled
+              </Button>
             </Stack>
-            <Text size="micro" color="dim">Large</Text>
+            <Text size="micro" color="dim">
+              Large
+            </Text>
             <Stack direction="horizontal" gap="3" align="center" wrap>
-              <Button variant="primary" size="lg">Primary</Button>
-              <Button variant="secondary" size="lg">Secondary</Button>
-              <Button variant="tertiary" size="lg">Tertiary</Button>
-              <Button variant="ghost" size="lg">Ghost</Button>
-              <Button variant="outline" size="lg">Outline</Button>
-              <Button variant="accent1" size="lg">Accent 1</Button>
-              <Button variant="accent2" size="lg">Accent 2</Button>
-              <Button variant="destructive" size="lg">Destructive</Button>
-              <Button variant="success" size="lg">Success</Button>
-              <Button variant="warn" size="lg">Warn</Button>
-              <Button variant="info" size="lg">Info</Button>
-              <Button variant="primary" size="lg" disabled>Disabled</Button>
+              <Button variant="primary" size="lg">
+                Primary
+              </Button>
+              <Button variant="secondary" size="lg">
+                Secondary
+              </Button>
+              <Button variant="tertiary" size="lg">
+                Tertiary
+              </Button>
+              <Button variant="ghost" size="lg">
+                Ghost
+              </Button>
+              <Button variant="outline" size="lg">
+                Outline
+              </Button>
+              <Button variant="accent1" size="lg">
+                Accent 1
+              </Button>
+              <Button variant="accent2" size="lg">
+                Accent 2
+              </Button>
+              <Button variant="destructive" size="lg">
+                Destructive
+              </Button>
+              <Button variant="success" size="lg">
+                Success
+              </Button>
+              <Button variant="warn" size="lg">
+                Warn
+              </Button>
+              <Button variant="info" size="lg">
+                Info
+              </Button>
+              <Button variant="primary" size="lg" disabled>
+                Disabled
+              </Button>
             </Stack>
-            <Text size="micro" color="dim">With Icons</Text>
+            <Text size="micro" color="dim">
+              With Icons
+            </Text>
             <Stack direction="horizontal" gap="3" align="center" wrap>
-              <Button variant="primary" iconLeft="plus">Add Item</Button>
-              <Button variant="tertiary" iconLeft="search">Search</Button>
-              <Button variant="outline" iconRight="arrow">Continue</Button>
-              <Button variant="accent1" iconLeft="bolt">Boost</Button>
-              <Button variant="destructive" iconLeft="trash">Delete</Button>
-              <Button variant="success" iconLeft="check">Confirm</Button>
-              <Button variant="warn" iconLeft="warning">Caution</Button>
-              <Button variant="info" iconLeft="info">Info</Button>
+              <Button variant="primary" iconLeft="plus">
+                Add Item
+              </Button>
+              <Button variant="tertiary" iconLeft="search">
+                Search
+              </Button>
+              <Button variant="outline" iconRight="arrow">
+                Continue
+              </Button>
+              <Button variant="accent1" iconLeft="bolt">
+                Boost
+              </Button>
+              <Button variant="destructive" iconLeft="trash">
+                Delete
+              </Button>
+              <Button variant="success" iconLeft="check">
+                Confirm
+              </Button>
+              <Button variant="warn" iconLeft="warning">
+                Caution
+              </Button>
+              <Button variant="info" iconLeft="info">
+                Info
+              </Button>
             </Stack>
             <Stack direction="horizontal" gap="3" align="center" wrap>
-              <Button variant="primary" size="sm" iconLeft="plus">Small</Button>
-              <Button variant="primary" size="md" iconLeft="plus">Medium</Button>
-              <Button variant="primary" size="lg" iconLeft="plus">Large</Button>
-              <Button variant="outline" size="sm" iconLeft="edit" iconRight="arrow">Both</Button>
-              <Button variant="outline" size="md" iconLeft="edit" iconRight="arrow">Both</Button>
-              <Button variant="outline" size="lg" iconLeft="edit" iconRight="arrow">Both</Button>
+              <Button variant="primary" size="sm" iconLeft="plus">
+                Small
+              </Button>
+              <Button variant="primary" size="md" iconLeft="plus">
+                Medium
+              </Button>
+              <Button variant="primary" size="lg" iconLeft="plus">
+                Large
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                iconLeft="edit"
+                iconRight="arrow"
+              >
+                Both
+              </Button>
+              <Button
+                variant="outline"
+                size="md"
+                iconLeft="edit"
+                iconRight="arrow"
+              >
+                Both
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                iconLeft="edit"
+                iconRight="arrow"
+              >
+                Both
+              </Button>
             </Stack>
           </Stack>
 
           <Divider />
 
           {/* Form Controls */}
-          <SectionHead number="05" title="Form Controls" uppercase/>
+          <SectionHead number="05" title="Form Controls" uppercase />
           <Row columns="2" gap="4">
             <Stack gap="4">
               <Field>
@@ -489,85 +633,91 @@ export default function DesignSystem() {
               </Field>
             </Stack>
             <Stack gap="6">
-                <Field>
-                  <Field.Label>Radio Group</Field.Label>
-                  <RadioGroup value={radioVal} onChange={(v) => setRadioVal(v)}>
-                    <RadioGroup.Item value="a">Option A</RadioGroup.Item>
-                    <RadioGroup.Item value="b">Option B</RadioGroup.Item>
-                    <RadioGroup.Item value="c">Option C</RadioGroup.Item>
-                  </RadioGroup>
-                </Field>
-                <Field>
-                  <Field.Label>Checkbox Group</Field.Label>
-                  <CheckboxGroup value={checkVals} onChange={setCheckVals}>
-                    <CheckboxGroup.Item value="one">Checked</CheckboxGroup.Item>
-                    <CheckboxGroup.Item value="two">Unchecked</CheckboxGroup.Item>
-                    <CheckboxGroup.Item value="three" disabled>
-                      Disabled
-                    </CheckboxGroup.Item>
-                  </CheckboxGroup>
-                </Field>
-                <Field>
-                  <Field.Label>Switches</Field.Label>
-                  <Stack direction="horizontal" gap="4" align="center">
-                    <Switch checked={switchA} onChange={setSwitchA}>
-                      Enabled
-                    </Switch>
-                    <Switch
-                      disabled={true}
-                      checked={switchB}
-                      onChange={setSwitchB}
-                    >
-                      Disabled
-                    </Switch>
-                  </Stack>
-                </Field>
+              <Field>
+                <Field.Label>Radio Group</Field.Label>
+                <RadioGroup value={radioVal} onChange={(v) => setRadioVal(v)}>
+                  <RadioGroup.Item value="a">Option A</RadioGroup.Item>
+                  <RadioGroup.Item value="b">Option B</RadioGroup.Item>
+                  <RadioGroup.Item value="c">Option C</RadioGroup.Item>
+                </RadioGroup>
+              </Field>
+              <Field>
+                <Field.Label>Checkbox Group</Field.Label>
+                <CheckboxGroup value={checkVals} onChange={setCheckVals}>
+                  <CheckboxGroup.Item value="one">Checked</CheckboxGroup.Item>
+                  <CheckboxGroup.Item value="two">Unchecked</CheckboxGroup.Item>
+                  <CheckboxGroup.Item value="three" disabled>
+                    Disabled
+                  </CheckboxGroup.Item>
+                </CheckboxGroup>
+              </Field>
+              <Field>
+                <Field.Label>Switches</Field.Label>
+                <Stack direction="horizontal" gap="4" align="center">
+                  <Switch checked={switchA} onChange={setSwitchA}>
+                    Enabled
+                  </Switch>
+                  <Switch
+                    disabled={true}
+                    checked={switchB}
+                    onChange={setSwitchB}
+                  >
+                    Disabled
+                  </Switch>
+                </Stack>
+              </Field>
             </Stack>
           </Row>
 
           <Divider />
 
           {/* Dropdowns */}
-          <SectionHead number="06" title="Dropdowns" uppercase/>
+          <SectionHead number="06" title="Dropdowns" uppercase />
           <Row columns="2" gap="4">
-            <Card variant="default" padding="sm" title="Single Select" titleVariant="micro">
-              <Select
-                value={selectVal}
-                onChange={setSelectVal}
-                placeholder="Choose a framework"
-              >
-                <Select.Option value="next" icon={<Icon name="arrow" />}>
-                  Next.js
-                </Select.Option>
-                <Select.Option value="remix" icon={<Icon name="diamond" />}>
-                  Remix
-                </Select.Option>
-                <Select.Option value="astro" icon={<Icon name="star" />}>
-                  Astro
-                </Select.Option>
-                <Select.Option value="svelte" disabled>
-                  SvelteKit (N/A)
-                </Select.Option>
-              </Select>
+            <Card variant="default" padding="sm">
+              <Field>
+                <Field.Label>Single Select</Field.Label>
+                <Select
+                  value={selectVal}
+                  onChange={setSelectVal}
+                  placeholder="Choose a framework"
+                >
+                  <Select.Option value="next" icon={<Icon name="arrow" />}>
+                    Next.js
+                  </Select.Option>
+                  <Select.Option value="remix" icon={<Icon name="diamond" />}>
+                    Remix
+                  </Select.Option>
+                  <Select.Option value="astro" icon={<Icon name="star" />}>
+                    Astro
+                  </Select.Option>
+                  <Select.Option value="svelte" disabled>
+                    SvelteKit (N/A)
+                  </Select.Option>
+                </Select>
+              </Field>
               <Text color="dim" _marginTop="8px">
                 Selected: {selectVal || "none"}
               </Text>
             </Card>
-            <Card padding="sm" title="Multi Select" titleVariant="micro">
-              <MultiSelect
-                value={multiSelectVal}
-                onChange={setMultiSelectVal}
-                placeholder="Select technologies"
-              >
-                <MultiSelect.Option value="react">React</MultiSelect.Option>
-                <MultiSelect.Option value="typescript">
-                  TypeScript
-                </MultiSelect.Option>
-                <MultiSelect.Option value="tailwind">
-                  Tailwind
-                </MultiSelect.Option>
-                <MultiSelect.Option value="node">Node.js</MultiSelect.Option>
-              </MultiSelect>
+            <Card padding="sm">
+              <Field>
+                <Field.Label>Multi Select</Field.Label>
+                <MultiSelect
+                  value={multiSelectVal}
+                  onChange={setMultiSelectVal}
+                  placeholder="Select technologies"
+                >
+                  <MultiSelect.Option value="react">React</MultiSelect.Option>
+                  <MultiSelect.Option value="typescript">
+                    TypeScript
+                  </MultiSelect.Option>
+                  <MultiSelect.Option value="tailwind">
+                    Tailwind
+                  </MultiSelect.Option>
+                  <MultiSelect.Option value="node">Node.js</MultiSelect.Option>
+                </MultiSelect>
+              </Field>
               <Text color="dim" _marginTop="8px">
                 Selected: {multiSelectVal.join(", ") || "none"}
               </Text>
@@ -577,7 +727,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Badges */}
-          <SectionHead number="07" title="Badges" uppercase/>
+          <SectionHead number="07" title="Badges" uppercase />
           <Stack direction="horizontal" gap="2" wrap>
             <Badge>Default</Badge>
             <Badge color="primary">Primary</Badge>
@@ -604,29 +754,23 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Cards */}
-          <SectionHead number="08" title="Cards" uppercase/>
+          <SectionHead number="08" title="Cards" uppercase />
           <Row columns="3" gap="4">
             <Card variant="default" title="Default" titleVariant="heading">
-              <Text color="muted">
-                Standard surface card.
-              </Text>
+              <Text color="muted">Standard surface card.</Text>
             </Card>
             <Card variant="frost" title="Frost" titleVariant="heading">
-              <Text color="muted">
-                Frosted glass backdrop blur.
-              </Text>
+              <Text color="muted">Frosted glass backdrop blur.</Text>
             </Card>
             <Card variant="block" title="Block" titleVariant="heading">
-              <Text color="muted">
-                Accent bar indicator.
-              </Text>
+              <Text color="muted">Accent bar indicator.</Text>
             </Card>
           </Row>
 
           <Divider />
 
           {/* Charts */}
-          <SectionHead number="09" title="Charts" accent="recharts" uppercase/>
+          <SectionHead number="09" title="Charts" accent="recharts" uppercase />
           <Stack gap="4">
             <Row columns="2" gap="4">
               <Chart
@@ -684,14 +828,15 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Modal */}
-          <SectionHead number="10" title="Modal" uppercase/>
-          <Button
-            variant="primary"
-            onClick={() => setModalOpen(true)}
-          >
+          <SectionHead number="10" title="Modal" uppercase />
+          <Button variant="primary" onClick={() => setModalOpen(true)}>
             Open Modal
           </Button>
-          <Modal open={modalOpen} onClose={() => setModalOpen(false)} title="Confirm Action">
+          <Modal
+            open={modalOpen}
+            onClose={() => setModalOpen(false)}
+            title="Confirm Action"
+          >
             <Modal.Description>
               This action cannot be undone. Are you sure you want to proceed?
             </Modal.Description>
@@ -716,7 +861,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Alerts */}
-          <SectionHead number="11" title="Alerts" uppercase/>
+          <SectionHead number="11" title="Alerts" uppercase />
           <Stack gap="3">
             <Alert severity="info" title="Information">
               Informational message for the user.
@@ -766,7 +911,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Avatars */}
-          <SectionHead number="12" title="Avatars" uppercase/>
+          <SectionHead number="12" title="Avatars" uppercase />
           <Stack direction="horizontal" gap="3" align="center" wrap>
             <Avatar size="sm">SM</Avatar>
             <Avatar size="md">MD</Avatar>
@@ -782,7 +927,11 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Progress, Loaders & Empty State */}
-          <SectionHead number="13" title="Progress, Loaders & Empty State" uppercase/>
+          <SectionHead
+            number="13"
+            title="Progress, Loaders & Empty State"
+            uppercase
+          />
           <Stack gap="4">
             <Stack gap="2">
               <Text size="micro" color="dim">
@@ -828,7 +977,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Data Table */}
-          <SectionHead number="14" title="Data Table" uppercase/>
+          <SectionHead number="14" title="Data Table" uppercase />
           <DataTable>
             <DataTable.Head>
               <DataTable.Row>
@@ -842,25 +991,33 @@ export default function DesignSystem() {
               <DataTable.Row>
                 <DataTable.Td>Button</DataTable.Td>
                 <DataTable.Td>Interactive</DataTable.Td>
-                <DataTable.Td><Badge color="success-soft">Complete</Badge></DataTable.Td>
+                <DataTable.Td>
+                  <Badge color="success-soft">Complete</Badge>
+                </DataTable.Td>
                 <DataTable.Td numeric>3</DataTable.Td>
               </DataTable.Row>
               <DataTable.Row>
                 <DataTable.Td>Select</DataTable.Td>
                 <DataTable.Td>Form</DataTable.Td>
-                <DataTable.Td><Badge color="warn-soft">In Progress</Badge></DataTable.Td>
+                <DataTable.Td>
+                  <Badge color="warn-soft">In Progress</Badge>
+                </DataTable.Td>
                 <DataTable.Td numeric>7</DataTable.Td>
               </DataTable.Row>
               <DataTable.Row>
                 <DataTable.Td>Chart</DataTable.Td>
                 <DataTable.Td>Data Viz</DataTable.Td>
-                <DataTable.Td><Badge color="success-soft">Complete</Badge></DataTable.Td>
+                <DataTable.Td>
+                  <Badge color="success-soft">Complete</Badge>
+                </DataTable.Td>
                 <DataTable.Td numeric>9</DataTable.Td>
               </DataTable.Row>
               <DataTable.Row>
                 <DataTable.Td>Modal</DataTable.Td>
                 <DataTable.Td>Overlay</DataTable.Td>
-                <DataTable.Td><Badge color="success-soft">Complete</Badge></DataTable.Td>
+                <DataTable.Td>
+                  <Badge color="success-soft">Complete</Badge>
+                </DataTable.Td>
                 <DataTable.Td numeric>4</DataTable.Td>
               </DataTable.Row>
             </DataTable.Body>
@@ -869,7 +1026,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Breadcrumbs */}
-          <SectionHead number="15" title="Breadcrumbs" uppercase/>
+          <SectionHead number="15" title="Breadcrumbs" uppercase />
           <Breadcrumbs>
             <Breadcrumbs.Item href="/">Home</Breadcrumbs.Item>
             <Breadcrumbs.Item href="/design-system">
@@ -881,24 +1038,20 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Tooltips */}
-          <SectionHead number="16" title="Tooltips" uppercase/>
+          <SectionHead number="16" title="Tooltips" uppercase />
           <Stack direction="horizontal" gap="4" align="center">
             <Tooltip content="Top tooltip">
-              <Button variant="tertiary">
-                Tooltip (top)
-              </Button>
+              <Button variant="tertiary">Tooltip (top)</Button>
             </Tooltip>
             <Tooltip content="Bottom tooltip" position="bottom">
-              <Button variant="tertiary">
-                Tooltip (bottom)
-              </Button>
+              <Button variant="tertiary">Tooltip (bottom)</Button>
             </Tooltip>
           </Stack>
 
           <Divider />
 
           {/* KPI */}
-          <SectionHead number="17" title="KPI" uppercase/>
+          <SectionHead number="17" title="KPI" uppercase />
           <Row columns="3" gap="4">
             <KpiTile
               label="Revenue"
@@ -921,7 +1074,6 @@ export default function DesignSystem() {
               deltaDirection="up"
             />
           </Row>
-
         </Stack>
       </Container>
     </>

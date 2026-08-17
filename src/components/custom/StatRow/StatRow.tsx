@@ -22,7 +22,7 @@ export const StatRow = React.forwardRef<HTMLDivElement, StatRowProps>(
 
     return (
       <Box ref={ref} className={classes}>
-        <Text size="micro" color="dim" >{label}</Text>
+        <Text size="micro" color="dim" className={styles.label}>{label}</Text>
         <Text size="body-sm" color={color as TextColor} weight="medium">{value}</Text>
       </Box>
     );

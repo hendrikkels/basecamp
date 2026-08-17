@@ -32,12 +32,12 @@ export default function ApiPage() {
             <DataTable.Row>
               <DataTable.Td>Rate limiting needs configuration for new endpoints</DataTable.Td>
               <DataTable.Td><Badge color="default-soft">Infrastructure</Badge></DataTable.Td>
-              <DataTable.Td><Badge color="danger-soft">High</Badge></DataTable.Td>
+              <DataTable.Td><Badge color="danger">High</Badge></DataTable.Td>
             </DataTable.Row>
             <DataTable.Row>
               <DataTable.Td>Authentication token refresh flow needs testing</DataTable.Td>
               <DataTable.Td><Badge color="default-soft">Auth</Badge></DataTable.Td>
-              <DataTable.Td><Badge color="warn-soft">Medium</Badge></DataTable.Td>
+              <DataTable.Td><Badge color="warn">Medium</Badge></DataTable.Td>
             </DataTable.Row>
           </DataTable.Body>
         </DataTable>

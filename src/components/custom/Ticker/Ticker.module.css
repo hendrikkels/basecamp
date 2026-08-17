@@ -17,6 +17,10 @@
   align-items: baseline;
 }
 
+.label {
+  font-weight: var(--fw-bold) !important;
+}
+
 .separator {
   color: var(--surface-3);
 }

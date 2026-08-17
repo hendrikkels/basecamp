@@ -27,7 +27,7 @@ export const Ticker = React.forwardRef<HTMLDivElement, TickerProps>(
           <React.Fragment key={i}>
             {i > 0 && <Span className={styles.separator}>◆</Span>}
             <Span className={styles.item}>
-              <Text size="micro" color="dim">{item.label}</Text>
+              <Text size="micro" color="dim" className={styles.label}>{item.label}</Text>
               <Span style={{ color: item.color || "var(--text)", fontWeight: 500, fontFeatureSettings: '"tnum"' }}>
                 {item.values
                   ? item.values.map((v, vi) => (

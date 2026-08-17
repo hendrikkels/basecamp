@@ -21,6 +21,7 @@
 .sectionNumber {
   display: block;
   margin-bottom: 4px;
+  font-weight: var(--fw-bold) !important;
 }
 
 .sectionDescription {

@@ -29,17 +29,17 @@ export default function ProjectsPage() {
         <DataTable.Body>
           <DataTable.Row>
             <DataTable.Td>Design System</DataTable.Td>
-            <DataTable.Td><Badge color="success-soft">Active</Badge></DataTable.Td>
+            <DataTable.Td><Badge color="success">Active</Badge></DataTable.Td>
             <DataTable.Td numeric>92%</DataTable.Td>
           </DataTable.Row>
           <DataTable.Row>
             <DataTable.Td>API v2</DataTable.Td>
-            <DataTable.Td><Badge color="primary-soft">In Progress</Badge></DataTable.Td>
+            <DataTable.Td><Badge color="primary">In Progress</Badge></DataTable.Td>
             <DataTable.Td numeric>64%</DataTable.Td>
           </DataTable.Row>
           <DataTable.Row>
             <DataTable.Td>Mobile App</DataTable.Td>
-            <DataTable.Td><Badge color="warn-soft">Planning</Badge></DataTable.Td>
+            <DataTable.Td><Badge color="warn">Planning</Badge></DataTable.Td>
             <DataTable.Td numeric>12%</DataTable.Td>
           </DataTable.Row>
         </DataTable.Body>
