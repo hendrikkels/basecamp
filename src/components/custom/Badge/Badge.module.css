@@ -5,6 +5,7 @@
   padding: 6px 8px;
   border-radius: var(--r-xs);
   text-wrap: nowrap;
+
 }
 
 /* Color variants */
@@ -29,4 +30,9 @@
   font-size: 6px;
   width: auto;
   height: auto;
+}
+
+.label {
+  font-weight: var(--fw-bold);
+    text-wrap: nowrap;
 }

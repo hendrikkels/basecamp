@@ -54,7 +54,7 @@ export function Badge({ color = "default-soft", dot = false, className, children
   return (
     <Span className={classes}>
       {dot && <Icon name="dot" size="sm" className={styles.dot} />}
-      <Text size="micro" _color="inherit">{children}</Text>
+      <Text size="micro" _color="inherit" className={styles.label}>{children}</Text>
     </Span>
   );
 }
