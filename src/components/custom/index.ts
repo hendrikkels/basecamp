@@ -132,3 +132,9 @@ export type { TextStripProps, TextStripItemProps } from "./TextStrip";
 
 export { CullingBreakpoint } from "./CullingBreakpoint";
 export type { CullingBreakpointProps } from "./CullingBreakpoint";
+
+export { FileInput } from "./FileInput";
+export type { FileInputProps } from "./FileInput";
+
+export { FileUpload } from "./FileUpload";
+export type { FileUploadProps, UploadFile, FileStatus } from "./FileUpload";

@@ -35,6 +35,24 @@
   color: var(--dim);
 }
 
+.input::-webkit-datetime-edit-text,
+.input::-webkit-datetime-edit-month-field,
+.input::-webkit-datetime-edit-day-field,
+.input::-webkit-datetime-edit-year-field {
+  color: inherit;
+}
+
+.inputDateEmpty::-webkit-datetime-edit-text,
+.inputDateEmpty::-webkit-datetime-edit-month-field,
+.inputDateEmpty::-webkit-datetime-edit-day-field,
+.inputDateEmpty::-webkit-datetime-edit-year-field {
+  color: var(--dim);
+}
+
+.input:hover {
+  background: var(--surface-3);
+}
+
 .input:focus {
   background: var(--surface-3);
   box-shadow: inset 0 0 0 1px var(--acc);
@@ -63,6 +81,10 @@
 
 .textarea::placeholder {
   color: var(--dim);
+}
+
+.textarea:hover {
+  background: var(--surface-3);
 }
 
 .textarea:focus {

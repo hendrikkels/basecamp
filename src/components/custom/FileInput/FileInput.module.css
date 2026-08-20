@@ -1,0 +1,47 @@
+.dropzone {
+  cursor: pointer;
+  outline: 0;
+  transition: border-color var(--dur-fast);
+}
+
+.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: var(--sp-3) var(--sp-4);
+  min-height: 64px;
+  border: 1px dashed var(--rule);
+  border-radius: var(--r-xs);
+  transition: border-color var(--dur-fast);
+}
+
+.dragOver .inner {
+  border-color: var(--acc);
+}
+
+.icon {
+  color: var(--dim);
+}
+
+.dragOver .icon {
+  color: var(--acc);
+}
+
+.hiddenInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

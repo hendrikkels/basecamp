@@ -38,6 +38,8 @@ import {
   ICON_NAMES,
   TextStrip,
 } from "@/components/custom";
+import { FileInput } from "@/components/custom/FileInput";
+import { FileUpload } from "@/components/custom/FileUpload";
 import { Box } from "@/components/primitives";
 
 export default function DesignSystem() {
@@ -631,6 +633,10 @@ export default function DesignSystem() {
                   <Select.Option value="three">Option Three</Select.Option>
                 </Select>
               </Field>
+              <Field>
+                <Field.Label htmlFor="ds-date">Date Picker</Field.Label>
+                <Field.Input id="ds-date" type="date" />
+              </Field>
             </Stack>
             <Stack gap="6">
               <Field>
@@ -665,6 +671,14 @@ export default function DesignSystem() {
                     Disabled
                   </Switch>
                 </Stack>
+              </Field>
+              <Field>
+                <Field.Label>File Upload</Field.Label>
+                <FileUpload
+                  accept="image/*,.pdf"
+                  multiple
+                  maxSize={10 * 1024 * 1024}
+                />
               </Field>
             </Stack>
           </Row>

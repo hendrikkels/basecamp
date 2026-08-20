@@ -24,6 +24,10 @@
   text-align: left;
 }
 
+.trigger:hover {
+  background: var(--surface-3);
+}
+
 .trigger:focus {
   background: var(--surface-3);
   box-shadow: inset 0 0 0 1px var(--acc);

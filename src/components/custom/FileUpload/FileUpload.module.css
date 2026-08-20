@@ -1,0 +1,67 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.container {
+  background: var(--surface-2);
+  border-radius: var(--r-xs);
+  padding: var(--sp-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  min-width: 0;
+}
+
+
+.tableWrapper {
+  min-width: 0;
+}
+
+.tableWrapper :global(td),
+.tableWrapper :global(th) {
+  white-space: nowrap;
+}
+
+.tableWrapper :global(td:first-child) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.tableWrapper :global(td:nth-child(n+2)),
+.tableWrapper :global(th:nth-child(n+2)) {
+  width: 1%;
+}
+
+.fileName {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.fileNameText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.progressCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progressBar {
+  flex: 1;
+  min-width: 60px;
+}
+
+.actions {
+  display: flex;
+  gap: 4px;
+}

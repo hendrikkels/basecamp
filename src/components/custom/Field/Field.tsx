@@ -46,11 +46,18 @@ export interface FieldInputProps extends PrimitiveProps<"input"> {
 }
 
 const FieldInput = React.forwardRef<HTMLInputElement, FieldInputProps>(
-  function FieldInput({ error, className, ...props }, ref) {
-    const classes = [styles.input, error ? styles.inputError : undefined, className]
+  function FieldInput({ error, className, type, value, defaultValue, ...props }, ref) {
+    const isDateType = type === "date" || type === "datetime-local" || type === "time";
+    const isEmpty = isDateType && !value && !defaultValue;
+    const classes = [
+      styles.input,
+      error ? styles.inputError : undefined,
+      isEmpty ? styles.inputDateEmpty : undefined,
+      className,
+    ]
       .filter(Boolean)
       .join(" ");
-    return <Input ref={ref} className={classes} {...props} />;
+    return <Input ref={ref} className={classes} type={type} value={value} defaultValue={defaultValue} {...props} />;
   }
 );
 
