@@ -19,7 +19,8 @@ export default function ApiPage() {
         </Breadcrumbs>
         <Heading variant="heading" level={1}>API Integration</Heading>
       </Stack>
-      <Card padding="none" title="2 pending issues" titleVariant="subheading">
+      <Card padding="none">
+        <Card.Header title="2 pending issues" titleVariant="subheading" />
         <DataTable>
           <DataTable.Head>
             <DataTable.Row>

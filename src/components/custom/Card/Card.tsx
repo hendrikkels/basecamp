@@ -113,9 +113,24 @@ function CardRoot({ variant = "default", padding = "md", title, titleVariant = "
     ? (footerChild.props as CardFooterProps).children
     : null;
 
-  const headerClasses = [styles.header, styles[`headerPad${capitalize(padding)}`], scrolledTop && styles.headerBorder].filter(Boolean).join(" ");
-  const bodyClasses = [styles.body, styles[`bodyPad${capitalize(padding)}`]].filter(Boolean).join(" ");
-  const footerClasses = [styles.footer, styles[`footerPad${capitalize(padding)}`], scrolledBottom && styles.footerBorder].filter(Boolean).join(" ");
+  const headerPadding = React.isValidElement(headerChild)
+    ? (headerChild.props as CardHeaderProps).padding ?? (padding === "none" ? "md" : padding)
+    : (padding === "none" ? "md" : padding);
+  const footerPadding = React.isValidElement(footerChild)
+    ? (footerChild.props as CardFooterProps).padding ?? (padding === "none" ? "md" : padding)
+    : (padding === "none" ? "md" : padding);
+
+  const hasHeader = !!(headerTitle || headerContent);
+  const hasFooter = !!footerContent;
+
+  const headerClasses = [styles.header, styles[`headerPad${capitalize(headerPadding)}`], scrolledTop && styles.headerBorder].filter(Boolean).join(" ");
+  const bodyClasses = [
+    styles.body,
+    styles[`bodyPad${capitalize(padding)}`],
+    !hasHeader && styles[`bodyTop${capitalize(padding)}`],
+    !hasFooter && styles[`bodyBottom${capitalize(padding)}`],
+  ].filter(Boolean).join(" ");
+  const footerClasses = [styles.footer, styles[`footerPad${capitalize(footerPadding)}`], scrolledBottom && styles.footerBorder].filter(Boolean).join(" ");
 
   const headerTitleClasses = [styles.title, headerUppercase && styles.uppercase].filter(Boolean).join(" ");
 
@@ -155,22 +170,24 @@ export interface CardHeaderProps {
   title?: string;
   titleVariant?: CardTitleVariant;
   uppercase?: boolean;
+  padding?: CardPadding;
   children?: React.ReactNode;
 }
 
-function CardHeader({ children: _c, title: _t, titleVariant: _tv, uppercase: _u }: CardHeaderProps) {
-  void _c; void _t; void _tv; void _u;
+function CardHeader({ children: _c, title: _t, titleVariant: _tv, uppercase: _u, padding: _p }: CardHeaderProps) {
+  void _c; void _t; void _tv; void _u; void _p;
   return null;
 }
 CardHeader.displayName = "Card.Header";
 
 /* ----- Card.Footer ----- */
 export interface CardFooterProps {
+  padding?: CardPadding;
   children: React.ReactNode;
 }
 
-function CardFooter({ children: _c }: CardFooterProps) {
-  void _c;
+function CardFooter({ children: _c, padding: _p }: CardFooterProps) {
+  void _c; void _p;
   return null;
 }
 CardFooter.displayName = "Card.Footer";

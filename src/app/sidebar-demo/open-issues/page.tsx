@@ -113,7 +113,7 @@ export default function DesignSystemPage() {
       <Divider />
 
       {/* Open Items Section */}
-      <SectionHead title="Open Items" accent={`${filteredIssues.length} issues`} uppercase />
+      <SectionHead size="micro" title="Open Items" accent={`${filteredIssues.length} issues`} uppercase />
 
       {/* Search + Actions bar */}
       <Box _display="flex" _gap="8px" _alignItems="center" _flexWrap="wrap">
@@ -183,15 +183,15 @@ export default function DesignSystemPage() {
       <Divider />
 
       {/* Sprint Status */}
-      <SectionHead title="Sprint Progress" accent="Sprint 14" uppercase />
+      <SectionHead size="micro" title="Sprint Progress" accent="Sprint 14" />
 
       <Alert severity="info" title="Testing ground">
         This page is a living test for the design system. All data shown here is mock data used to validate component rendering and interaction patterns.
       </Alert>
 
       <Row columns="2" gap="4">
-        <Card variant="frost" title="Sprint Metrics" titleVariant="subheading">
-          <Divider spacing="sm" />
+        <Card variant="frost" padding="sm">
+          <Card.Header title="Sprint Metrics" titleVariant="subheading" />
           <Stack gap="2">
             <StatRow label="Planned" value="18 pts" />
             <StatRow label="Completed" value="14 pts" color="success" />
@@ -205,18 +205,18 @@ export default function DesignSystemPage() {
           </Box>
         </Card>
 
-        <Card variant="default" title="Team Availability" titleVariant="subheading">
-          <Divider spacing="sm" />
+        <Card variant="default" padding="sm">
+          <Card.Header title="Team Availability" titleVariant="subheading" />
           <Stack gap="2">
             <StatRow label="Hendrik" value="Available" color="success" />
             <StatRow label="Sarah" value="In Meeting" color="warn" />
             <StatRow label="James" value="Available" color="success" />
             <StatRow label="Alex" value="Out of Office" color="danger" bordered />
           </Stack>
-          <Box _marginTop="16px" _display="flex" _justifyContent="space-between" _alignItems="center">
-            <Button variant="tertiary" size="sm" iconLeft="mail">Message All</Button>
+          <Card.Footer>
+            <Button variant="tertiary" size="sm" iconLeft="mail" _marginRight="auto">Message All</Button>
             <Button variant="ghost" size="sm" iconOnly><Icon name="refresh" size="sm" /></Button>
-          </Box>
+          </Card.Footer>
         </Card>
       </Row>
 

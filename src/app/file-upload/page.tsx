@@ -32,7 +32,7 @@ export default function FileUploadPage() {
           </Text>
         </Box>
 
-        <SectionHead number="01" title="FileInput" accent="standalone" uppercase />
+        <SectionHead size="micro" number="01" title="FileInput" accent="standalone" uppercase />
         <Card>
           <Stack gap="4">
             <Field>
@@ -55,7 +55,7 @@ export default function FileUploadPage() {
 
         <Divider />
 
-        <SectionHead number="02" title="FileUpload" accent="with progress table" uppercase />
+        <SectionHead size="micro" number="02" title="FileUpload" accent="with progress table" uppercase />
         <Card>
           <Stack gap="3">
             <Text size="body-sm" color="dim">

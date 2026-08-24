@@ -95,17 +95,33 @@
 .body {
   flex: 1;
   overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.body::-webkit-scrollbar {
+  display: none;
 }
 
 .bodyPadNone { padding: 0; }
-.bodyPadSm { padding: var(--sp-1) var(--sp-3); }
-.bodyPadMd { padding: var(--sp-1) var(--sp-5); }
-.bodyPadLg { padding: var(--sp-1) var(--sp-6); }
+.bodyPadSm { padding: 0 var(--sp-3); }
+.bodyPadMd { padding: 0 var(--sp-5); }
+.bodyPadLg { padding: 0 var(--sp-6); }
+
+.bodyTopNone {}
+.bodyTopSm { padding-top: var(--sp-3); }
+.bodyTopMd { padding-top: var(--sp-5); }
+.bodyTopLg { padding-top: var(--sp-6); }
+
+.bodyBottomNone {}
+.bodyBottomSm { padding-bottom: var(--sp-3); }
+.bodyBottomMd { padding-bottom: var(--sp-5); }
+.bodyBottomLg { padding-bottom: var(--sp-6); }
 
 /* Footer */
 .footer {
   flex-shrink: 0;
   display: flex;
+  align-items: center;
   gap: 8px;
   justify-content: flex-end;
   border-top: 1px solid transparent;

@@ -72,7 +72,7 @@ export default function Dashboard() {
           </Box>
 
           {/* KPI Row */}
-          <SectionHead title="Key metrics" uppercase/>
+          <SectionHead size="micro" title="Key metrics" uppercase/>
 
           {/* Status strip */}
           <StatusStrip trailing={<Link href="#" arrow><Text color="primary">View Logs</Text></Link>}>
@@ -92,13 +92,14 @@ export default function Dashboard() {
           <Divider spacing="lg" />
 
           {/* Main grid: chart + side widgets */}
-          <SectionHead title="Analytics" uppercase/>
+          <SectionHead size="micro" title="Analytics" uppercase/>
 
           <Box className={dashStyles.dashGrid}>
             {/* Left column */}
             <Stack gap="6">
               {/* Activity table (moved above charts) */}
-              <Card variant="default" padding="none" title="Recent Activity">
+              <Card variant="default" padding="none">
+                <Card.Header title="Recent Activity" />
                 <DataTable>
                   <DataTable.Head>
                     <DataTable.Row>
@@ -143,7 +144,8 @@ export default function Dashboard() {
                 </DataTable>
               </Card>
 
-              <Card variant="default" padding="none" title="Metrics" titleVariant="heading" >
+              <Card variant="default" padding="none">
+                <Card.Header title="Metrics" titleVariant="heading" />
               {/* Featured chart */}
               <Chart
                 variant="area"
