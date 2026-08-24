@@ -27,6 +27,8 @@
   border: 0;
   border-radius: var(--r-xs);
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
   outline: 0;
   transition: background var(--dur-fast), box-shadow var(--dur-fast);
 }
