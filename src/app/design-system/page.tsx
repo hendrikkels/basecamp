@@ -88,7 +88,13 @@ export default function DesignSystem() {
           </Box>
 
           {/* Colors */}
-          <SectionHead number="01" title="Colors" accent="tokens" uppercase />
+          <SectionHead
+            size="micro"
+            number="01"
+            title="Colors"
+            accent="tokens"
+            uppercase
+          />
           <Row columns="6" gap="2">
             {[
               {
@@ -179,7 +185,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Typography */}
-          <SectionHead number="02" title="Typography" uppercase />
+          <SectionHead size="micro" number="02" title="Typography" uppercase />
           <Stack gap="4">
             <Box
               className={`${styles.typographyRow} ${styles.typographyRowBordered}`}
@@ -311,6 +317,7 @@ export default function DesignSystem() {
 
           {/* Icons */}
           <SectionHead
+            size="micro"
             number="03"
             title="Icons"
             accent="unicode glyphs"
@@ -388,7 +395,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Buttons */}
-          <SectionHead number="04" title="Buttons" uppercase />
+          <SectionHead size="micro" number="04" title="Buttons" uppercase />
           <Stack gap="4">
             <Text size="micro" color="dim">
               Small
@@ -582,7 +589,12 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Form Controls */}
-          <SectionHead number="05" title="Form Controls" uppercase />
+          <SectionHead
+            size="micro"
+            number="05"
+            title="Form Controls"
+            uppercase
+          />
           <Row columns="2" gap="4">
             <Stack gap="4">
               <Field>
@@ -686,7 +698,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Dropdowns */}
-          <SectionHead number="06" title="Dropdowns" uppercase />
+          <SectionHead size="micro" number="06" title="Dropdowns" uppercase />
           <Row columns="2" gap="4">
             <Card variant="default" padding="sm">
               <Field>
@@ -741,7 +753,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Badges */}
-          <SectionHead number="07" title="Badges" uppercase />
+          <SectionHead size="micro" number="07" title="Badges" uppercase />
           <Stack direction="horizontal" gap="2" wrap>
             <Badge>Default</Badge>
             <Badge color="primary">Primary</Badge>
@@ -768,7 +780,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Cards */}
-          <SectionHead number="08" title="Cards" uppercase />
+          <SectionHead size="micro" number="08" title="Cards" uppercase />
           <Row columns="3" gap="4">
             <Card variant="default" title="Default" titleVariant="heading">
               <Text color="muted">Standard surface card.</Text>
@@ -781,10 +793,137 @@ export default function DesignSystem() {
             </Card>
           </Row>
 
+          {/* <Row columns="3" gap="4"> */}
+          <Card variant="default" maxHeight="200px" padding="sm">
+            <Card.Header title="Small Padding" titleVariant="heading" />
+            <Text color="muted">
+              This card uses padding sm. The header border appears when you
+              scroll down, and the footer border appears when there is more
+              content below.
+            </Text>
+            <Text color="muted">
+              Additional content to demonstrate the scroll behavior within a
+              constrained card height.
+            </Text>
+            <Text color="muted">
+              Keep scrolling to see the border indicators update dynamically.
+            </Text>
+            <Text color="muted">
+              The footer actions remain fixed at the bottom.
+            </Text>
+            <Text color="muted">
+              This card uses padding lg. The scroll-aware borders provide a
+              visual cue that more content exists beyond the visible area.
+            </Text>
+            <Text color="muted">
+              All three padding sizes distribute space consistently across
+              header, body, and footer.
+            </Text>
+            <Text color="muted">
+              Large padding gives the content more breathing room.
+            </Text>
+            <Text color="muted">
+              Footer buttons remain accessible at all times.
+            </Text>
+            <Card.Footer>
+              <Button variant="ghost" size="sm">
+                Cancel
+              </Button>
+              <Button variant="primary" size="sm">
+                Save
+              </Button>
+            </Card.Footer>
+          </Card>
+          <Card variant="default" maxHeight="200px" padding="md">
+            <Card.Header title="Medium Padding" titleVariant="heading" />
+            <Text color="muted">
+              This card uses padding md. Borders animate smoothly as content
+              enters or leaves the visible area.
+            </Text>
+            <Text color="muted">
+              The header and footer sections stay fixed while the body content
+              scrolls between them.
+            </Text>
+            <Text color="muted">
+              This pattern works across all card variants and padding sizes.
+            </Text>
+            <Text color="muted">
+              More content to ensure overflow is triggered.
+            </Text>
+            <Text color="muted">
+              This card uses padding lg. The scroll-aware borders provide a
+              visual cue that more content exists beyond the visible area.
+            </Text>
+            <Text color="muted">
+              All three padding sizes distribute space consistently across
+              header, body, and footer.
+            </Text>
+            <Text color="muted">
+              Large padding gives the content more breathing room.
+            </Text>
+            <Text color="muted">
+              Footer buttons remain accessible at all times.
+            </Text>
+            <Card.Footer>
+              <Button variant="ghost" size="sm">
+                Cancel
+              </Button>
+              <Button variant="primary" size="sm">
+                Save
+              </Button>
+            </Card.Footer>
+          </Card>
+          <Card variant="default" maxHeight="300px" padding="lg">
+            <Card.Header title="Large Padding" titleVariant="heading" />
+            <Text color="muted">
+              This card uses padding lg. The scroll-aware borders provide a
+              visual cue that more content exists beyond the visible area.
+            </Text>
+            <Text color="muted">
+              All three padding sizes distribute space consistently across
+              header, body, and footer.
+            </Text>
+            <Text color="muted">
+              Large padding gives the content more breathing room.
+            </Text>
+            <Text color="muted">
+              Footer buttons remain accessible at all times.
+            </Text>
+            <Text color="muted">
+              This card uses padding lg. The scroll-aware borders provide a
+              visual cue that more content exists beyond the visible area.
+            </Text>
+            <Text color="muted">
+              All three padding sizes distribute space consistently across
+              header, body, and footer.
+            </Text>
+            <Text color="muted">
+              Large padding gives the content more breathing room.
+            </Text>
+            <Text color="muted">
+              Footer buttons remain accessible at all times.
+            </Text>
+            <Card.Footer>
+              <Button variant="ghost" size="sm">
+                Cancel
+              </Button>
+              <Button variant="primary" size="sm">
+                Save
+              </Button>
+            </Card.Footer>
+          </Card>
+          {/* </Row> */}
+
           <Divider />
 
           {/* Charts */}
-          <SectionHead number="09" title="Charts" accent="recharts" uppercase />
+          <SectionHead
+            size="micro"
+            number="09"
+            title="Charts"
+            accent="recharts"
+            uppercase
+          />
           <Stack gap="4">
             <Row columns="2" gap="4">
               <Chart
@@ -842,7 +981,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Modal */}
-          <SectionHead number="10" title="Modal" uppercase />
+          <SectionHead size="micro" number="10" title="Modal" uppercase />
           <Button variant="primary" onClick={() => setModalOpen(true)}>
             Open Modal
           </Button>
@@ -875,7 +1014,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Alerts */}
-          <SectionHead number="11" title="Alerts" uppercase />
+          <SectionHead size="micro" number="11" title="Alerts" uppercase />
           <Stack gap="3">
             <Alert severity="info" title="Information">
               Informational message for the user.
@@ -925,7 +1064,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Avatars */}
-          <SectionHead number="12" title="Avatars" uppercase />
+          <SectionHead size="micro" number="12" title="Avatars" uppercase />
           <Stack direction="horizontal" gap="3" align="center" wrap>
             <Avatar size="sm">SM</Avatar>
             <Avatar size="md">MD</Avatar>
@@ -942,6 +1081,7 @@ export default function DesignSystem() {
 
           {/* Progress, Loaders & Empty State */}
           <SectionHead
+            size="micro"
             number="13"
             title="Progress, Loaders & Empty State"
             uppercase
@@ -991,7 +1131,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Data Table */}
-          <SectionHead number="14" title="Data Table" uppercase />
+          <SectionHead size="micro" number="14" title="Data Table" uppercase />
           <DataTable>
             <DataTable.Head>
               <DataTable.Row>
@@ -1040,7 +1180,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Breadcrumbs */}
-          <SectionHead number="15" title="Breadcrumbs" uppercase />
+          <SectionHead size="micro" number="15" title="Breadcrumbs" uppercase />
           <Breadcrumbs>
             <Breadcrumbs.Item href="/">Home</Breadcrumbs.Item>
             <Breadcrumbs.Item href="/design-system">
@@ -1052,7 +1192,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* Tooltips */}
-          <SectionHead number="16" title="Tooltips" uppercase />
+          <SectionHead size="micro" number="16" title="Tooltips" uppercase />
           <Stack direction="horizontal" gap="4" align="center" wrap>
             <Tooltip content="Top tooltip">
               <Button variant="tertiary">Tooltip (top)</Button>
@@ -1065,7 +1205,7 @@ export default function DesignSystem() {
           <Divider />
 
           {/* KPI */}
-          <SectionHead number="17" title="KPI" uppercase />
+          <SectionHead size="micro" number="17" title="KPI" uppercase />
           <Row columns="3" gap="4">
             <KpiTile
               label="Revenue"

@@ -15,7 +15,8 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-import { Box, H3, Span } from "@/components/primitives";
+import { Box, Span } from "@/components/primitives";
+import { Text } from "../Text";
 import styles from "./Chart.module.css";
 
 export type ChartVariant = "line" | "bar" | "area";
@@ -185,10 +186,10 @@ export function Chart({
   return (
     <Box className={classes}>
       {title && (
-        <H3 className={styles.title} _fontWeight={600}>
+        <Text size="body" weight="semibold" className={styles.title}>
           {title}
           {subtitle && <Span className={styles.subtitle}> · {subtitle}</Span>}
-        </H3>
+        </Text>
       )}
       <ResponsiveContainer width="100%" height={height}>
         {renderChart()}

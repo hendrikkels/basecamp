@@ -47,7 +47,7 @@
   background: var(--acc);
 }
 
-/* Padding sizes */
+/* Padding sizes (simple mode) */
 .padNone { padding: 0; }
 .padSm { padding: var(--sp-3); }
 .padMd { padding: var(--sp-5); }
@@ -59,13 +59,64 @@
   margin-bottom: 8px;
 }
 
-.padNone .title {
-  padding: 16px 20px;
-  margin-bottom: 0;
-  box-shadow: inset 0 -1px 0 var(--hairline);
-}
-
 .uppercase {
   text-transform: uppercase;
   letter-spacing: var(--ls-wide);
 }
+
+/* Structured mode (header/footer/scroll) */
+.scrollable {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  flex-shrink: 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast);
+}
+
+.header .title {
+  margin-bottom: 0;
+}
+
+.headerBorder {
+  border-bottom-color: var(--hairline);
+}
+
+.headerPadNone { padding: 0; }
+.headerPadSm { padding: var(--sp-3) var(--sp-3) var(--sp-2); }
+.headerPadMd { padding: var(--sp-5) var(--sp-5) var(--sp-3); }
+.headerPadLg { padding: var(--sp-6) var(--sp-6) var(--sp-4); }
+
+/* Body (scrollable area) */
+.body {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.bodyPadNone { padding: 0; }
+.bodyPadSm { padding: var(--sp-1) var(--sp-3); }
+.bodyPadMd { padding: var(--sp-1) var(--sp-5); }
+.bodyPadLg { padding: var(--sp-1) var(--sp-6); }
+
+/* Footer */
+.footer {
+  flex-shrink: 0;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  border-top: 1px solid transparent;
+  transition: border-color var(--dur-fast);
+}
+
+.footerBorder {
+  border-top-color: var(--hairline);
+}
+
+.footerPadNone { padding: 0; }
+.footerPadSm { padding: var(--sp-2) var(--sp-3) var(--sp-3); }
+.footerPadMd { padding: var(--sp-3) var(--sp-4) var(--sp-4); }
+.footerPadLg { padding: var(--sp-5) var(--sp-5) var(--sp-5); }

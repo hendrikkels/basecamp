@@ -12,4 +12,5 @@
 .subtitle {
   color: var(--dim);
   font-weight: var(--fw-regular);
+  font-size: inherit;
 }
